@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scriptes\Spike Script.cs" />
      <Compile Include="Assets\Scriptes\TreasureChest Script.cs" />
      <Compile Include="Assets\Scriptes\Turret Script.cs" />
+     <Compile Include="Assets\Wolf.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
