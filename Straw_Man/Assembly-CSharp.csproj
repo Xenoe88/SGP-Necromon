@@ -46,24 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scriptes\Arrow Script.cs" />
-     <Compile Include="Assets\Scriptes\Bomb Script.cs" />
-     <Compile Include="Assets\Scriptes\Boss Door.cs" />
+     <Compile Include="Assets\Scriptes\ArrowScript.cs" />
+     <Compile Include="Assets\Scriptes\BombScript.cs" />
+     <Compile Include="Assets\Scriptes\BossDoor.cs" />
      <Compile Include="Assets\Scriptes\Demon.cs" />
-     <Compile Include="Assets\Scriptes\Dropping Platform.cs" />
+     <Compile Include="Assets\Scriptes\DroppingPlatform.cs" />
      <Compile Include="Assets\Scriptes\Entity.cs" />
+     <Compile Include="Assets\Scriptes\EthrealBeing.cs" />
      <Compile Include="Assets\Scriptes\HitBox.cs" />
-     <Compile Include="Assets\Scriptes\Moving Platform.cs" />
-     <Compile Include="Assets\Scriptes\Player Controller.cs" />
-     <Compile Include="Assets\Scriptes\Player Inventory.cs" />
+     <Compile Include="Assets\Scriptes\LookForward.cs" />
+     <Compile Include="Assets\Scriptes\MovingPlatform.cs" />
+     <Compile Include="Assets\Scriptes\PlayerController.cs" />
+     <Compile Include="Assets\Scriptes\PlayerInventory.cs" />
      <Compile Include="Assets\Scriptes\PlayerScript.cs" />
-     <Compile Include="Assets\Scriptes\Revive Script.cs" />
-     <Compile Include="Assets\Scriptes\Rune Script.cs" />
-     <Compile Include="Assets\Scriptes\Spike Script.cs" />
+     <Compile Include="Assets\Scriptes\ReviveScript.cs" />
+     <Compile Include="Assets\Scriptes\RuneScript.cs" />
+     <Compile Include="Assets\Scriptes\SoldieScript.cs" />
+     <Compile Include="Assets\Scriptes\SpikeScript.cs" />
      <Compile Include="Assets\Scriptes\TreasureChest Script.cs" />
-     <Compile Include="Assets\Scriptes\Turret Script.cs" />
+     <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
+     <None Include="Assets\Sprites\Enemies\Bird\data.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
