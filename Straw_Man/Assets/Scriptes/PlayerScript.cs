@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
     {
         switch (m_player.m_status)
         {
-            case Entity.Status.STUN:
+            case STATUS.STUN:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
                 break;
             case Entity.Status.SLOW:

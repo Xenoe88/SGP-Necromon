@@ -28,7 +28,7 @@ public class Entity : MonoBehaviour {
   
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
-    public enum Status { NONE, STUN, SLOW, CONFUSE };
+   
     public Status m_status;
 
 
