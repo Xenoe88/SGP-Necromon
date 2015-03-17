@@ -29,6 +29,7 @@ GameObject:
   - 50: {fileID: 5005058}
   - 61: {fileID: 6105058}
   - 114: {fileID: 11405058}
+  - 114: {fileID: 11446092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalPosition: {x: .421999991, y: .483999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 200
-  m_dmg: 5
+  m_dmg: -5
   m_speed: 2
   m_attackCooldown: 0
   m_statusModifier: 1
@@ -146,10 +147,35 @@ MonoBehaviour:
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
-  m_stunTexture: {fileID: 0}
-  m_slowTexture: {fileID: 0}
-  m_confuseTexture: {fileID: 0}
+  m_stunTexture: {fileID: 2800000, guid: e19f0e53ca04e534783c75f7e315f0a6, type: 3}
+  m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
+  m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
   m_status: 0
+--- !u!114 &11446092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c9db8f4fdaac4cbffe364d39cba3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_movement: 1
+  m_jumpHeight: 1
+  m_groundCheck: {fileID: 405058}
+  m_whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  m_groundRadius: .0500000007
+  m_isGrounded: 0
+  canDoubleJump: 0
+  m_fallRate: 0
+  m_jumpParticles: {fileID: 0}
+  m_numActiveNecromon: 0
+  m_hitBox: {fileID: 191826, guid: e1a12ce88939d044db78b359e5f0d76d, type: 2}
+  m_player: {fileID: 105060}
 --- !u!212 &21205058
 SpriteRenderer:
   m_ObjectHideFlags: 1
