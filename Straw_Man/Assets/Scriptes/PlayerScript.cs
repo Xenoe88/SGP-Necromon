@@ -32,13 +32,13 @@ public class PlayerScript : MonoBehaviour
     {
         switch (m_player.m_status)
         {
-            case Entity.Status.STUN:
+            case Status.STUN:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
                 break;
-            case Entity.Status.SLOW:
+            case Status.SLOW:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_slowTexture);
                 break;
-            case Entity.Status.CONFUSE:
+            case Status.CONFUSE:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_confuseTexture);
                 break;
         }
