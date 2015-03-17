@@ -46,9 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scriptes\Arrow Script.cs" />
-     <Compile Include="Assets\Scriptes\Bomb Script.cs" />
-     <Compile Include="Assets\Scriptes\Boss Door.cs" />
+     <Compile Include="Assets\Scriptes\ArrowScript.cs" />
+     <Compile Include="Assets\Scriptes\BombScript.cs" />
+     <Compile Include="Assets\Scriptes\BossDoor.cs" />
      <Compile Include="Assets\Scriptes\Demon.cs" />
      <Compile Include="Assets\Scriptes\DroppingPlatform.cs" />
      <Compile Include="Assets\Scriptes\Entity.cs" />
@@ -57,9 +57,9 @@
      <Compile Include="Assets\Scriptes\PlayerController.cs" />
      <Compile Include="Assets\Scriptes\PlayerInventory.cs" />
      <Compile Include="Assets\Scriptes\PlayerScript.cs" />
-     <Compile Include="Assets\Scriptes\Revive Script.cs" />
-     <Compile Include="Assets\Scriptes\Rune Script.cs" />
-     <Compile Include="Assets\Scriptes\Spike Script.cs" />
+     <Compile Include="Assets\Scriptes\ReviveScript.cs" />
+     <Compile Include="Assets\Scriptes\RuneScript.cs" />
+     <Compile Include="Assets\Scriptes\SpikeScript.cs" />
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
  <Reference Include="UnityEngine.UI">

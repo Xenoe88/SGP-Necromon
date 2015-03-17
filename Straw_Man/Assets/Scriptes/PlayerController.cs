@@ -3,10 +3,13 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    //ET
     //start 2:30 pm
     //pause 3:45 pm
     //start 5:25 pm
     //stop 8:55 pm
+    //start 2:15 pm
+    //stop 2:40 pm //on hold until player inventory is complete
 
     public float m_movement;
     public int m_jumpHeight;
@@ -37,6 +40,16 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("k"))
             Attack();
+
+        if (Input.GetKeyDown("l"))
+        {
+            Summon();
+        }
+
+        if (Input.GetKeyDown("j"))
+        {
+            Bomb();
+        }
 
     }
 
@@ -77,4 +90,13 @@ public class PlayerController : MonoBehaviour
         Destroy(temp, 0.2f);
     }
 
+    void Summon()
+    {
+
+    }
+
+    void Bomb()
+    {
+
+    }
 }
