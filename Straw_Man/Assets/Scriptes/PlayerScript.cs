@@ -30,18 +30,17 @@ public class PlayerScript : MonoBehaviour
 
     void OnGUI()
     {
-       
-        //switch (m_player.m_status)
-        //{
-        //    case Entity.Status.STUN:
-        //        GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
-        //        break;
-        //    case Entity.Status.SLOW:
-        //        GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_slowTexture);
-        //        break;
-        //    case Entity.Status.CONFUSE:
-        //        GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_confuseTexture);
-        //        break;
-        //}
+        switch (m_player.m_status)
+        {
+            case Status.STUN:
+                GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
+                break;
+            case Status.SLOW:
+                GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_slowTexture);
+                break;
+            case Status.CONFUSE:
+                GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_confuseTexture);
+                break;
+        }
     }
 }
