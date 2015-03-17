@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Status { NONE, STUN, SLOW, CONFUSE };
+public struct StatusMod
+{
+    public Status _stat;
+    public float _statMod;
+    public float _statTimer;
+}
 public class Entity : MonoBehaviour {
 
     public int m_health;
@@ -17,15 +24,14 @@ public class Entity : MonoBehaviour {
 
     public Animator m_animator;
 
+
+  
+    public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
+
     public enum Status { NONE, STUN, SLOW, CONFUSE };
     public Status m_status;
 
-    public struct StatusMod
-    {
-        public Status _stat;
-        public float _statMod;
-        public float _statTimer;
-    }
+
 	// Use this for initialization
 	public void Start () 
     {
