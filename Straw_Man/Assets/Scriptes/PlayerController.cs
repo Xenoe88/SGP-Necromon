@@ -24,22 +24,33 @@ public class PlayerController : MonoBehaviour
     public GameObject m_hitBox;
     public GameObject m_player;
 
+    private Animator m_animator;
+
     // Use this for initialization
     void Start()
     {
-
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (m_player.GetComponent<Entity>().m_health <= 0)
+        {
+            m_animator.SetInteger("PlayerAnim", 5);
+            return;
+        }
         // left/right
         Move();
 
         Jump();
 
         if (Input.GetKeyDown("k"))
-            Attack();
+        {
+            m_animator.SetInteger("PlayerAnim", 3);
+        }
+            //Attack();
 
         if (Input.GetKeyDown("l"))
         {
@@ -60,7 +71,12 @@ public class PlayerController : MonoBehaviour
 
         // turn
         if (m_movement != 0)
+        {
+            m_animator.SetInteger("PlayerAnim", 1);
             m_player.transform.localScale = new Vector3(m_movement, 1);
+        }
+        else
+            m_animator.SetInteger("PlayerAnim", 0);
 
         // move
         m_player.rigidbody2D.velocity = new Vector2(m_movement * m_player.GetComponent<Entity>().m_speed * m_player.GetComponent<Entity>().m_statusModifier, m_player.rigidbody2D.velocity.y);
@@ -69,6 +85,11 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         m_isGrounded = Physics2D.OverlapCircle(m_groundCheck.position, m_groundRadius, m_whatIsGround);
+
+        if (!m_isGrounded)
+            m_animator.SetInteger("PlayerAnim", 4);
+        else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 4)
+             m_animator.SetInteger("PlayerAnim", 0);
 
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
@@ -85,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        print("success!");
         GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x + (m_player.transform.localScale.x * 0.2f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, m_player.collider2D);
         Destroy(temp, 0.2f);
@@ -92,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
     void Summon()
     {
+        m_animator.SetInteger("PlayerAnim", 2);
 
     }
 

@@ -49,6 +49,7 @@ public class SoldieScript : MonoBehaviour
             }
             else if (isNecro)
             {
+
             }
             else if(target)
             {
