@@ -23,6 +23,8 @@ public class PlayerInventory : MonoBehaviour
         {
             runes[i] = null;
         }
+        for (int i = 0; i < 3; i++)
+            equippedp[i] = null;
 	
 	}
 	
@@ -32,23 +34,17 @@ public class PlayerInventory : MonoBehaviour
 	
 	}
 
-   public void EquipNecro(RuneScript _equip)
+   public void EquipNecro(RuneScript _equip, int place)
     {
-        for (int i = 0; i < 3; i++)
-            equipped[i] = _equip;
+        if( place < 3 )
+            equipped[place] = _equip;
     }
-    public void UnEquipeNecro(RuneScript _unEquip)
+    public void UnEquipeNecro(RuneScript _unEquip, int place)
     {
-        //if(equipped == _unEquip)
-        // equipped = null;
-        
-        //waiting for Equipped to be turned into array
+        if (place < 3)
 
-        for (int i = 0; i < 3; i++)
-        {
-            if (equipped[i] == _unEquip)
-                equipped[i] = null;
-        }
+            if (equipped[place] == _unEquip)
+                equipped[place] = null;
     }
    public  void AddRune(RuneScript _rune)
     {
