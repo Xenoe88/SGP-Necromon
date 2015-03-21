@@ -24,22 +24,38 @@ public class PlayerController : MonoBehaviour
     public GameObject m_hitBox;
     public GameObject m_player;
 
+    private Animator m_animator;
+
+    public AudioSource m_audioSource;
+    public AudioClip m_walkingSFX, m_swingSFX, m_jumpSFX, m_doubleJumpSFX;
+
     // Use this for initialization
     void Start()
     {
-
+        m_animator = GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (m_player.GetComponent<Entity>().m_health <= 0)
+        {
+            m_animator.SetInteger("PlayerAnim", 5);
+            return;
+        }
+
         // left/right
         Move();
 
         Jump();
 
+        //attack (function called in animation)
         if (Input.GetKeyDown("k"))
-            Attack();
+        {
+            m_animator.SetInteger("PlayerAnim", 3);
+        }
 
         if (Input.GetKeyDown("l"))
         {
@@ -60,7 +76,15 @@ public class PlayerController : MonoBehaviour
 
         // turn
         if (m_movement != 0)
+        {
+            m_animator.SetInteger("PlayerAnim", 1);
             m_player.transform.localScale = new Vector3(m_movement, 1);
+
+            if (m_audioSource.isPlaying == false)
+                m_audioSource.Play();
+        }
+        else
+            m_animator.SetInteger("PlayerAnim", 0);
 
         // move
         m_player.rigidbody2D.velocity = new Vector2(m_movement * m_player.GetComponent<Entity>().m_speed * m_player.GetComponent<Entity>().m_statusModifier, m_player.rigidbody2D.velocity.y);
@@ -70,20 +94,38 @@ public class PlayerController : MonoBehaviour
     {
         m_isGrounded = Physics2D.OverlapCircle(m_groundCheck.position, m_groundRadius, m_whatIsGround);
 
+        if (!m_isGrounded)
+            m_animator.SetInteger("PlayerAnim", 4);
+        else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 4)
+            m_animator.SetInteger("PlayerAnim", 0);
+
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
+            AudioSource.PlayClipAtPoint(m_jumpSFX, Camera.main.transform.position);
             canDoubleJump = true;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
 
         }
         else if (Input.GetKeyDown("w") && canDoubleJump)
         {
+            AudioSource.PlayClipAtPoint(m_doubleJumpSFX, Camera.main.transform.position);
             canDoubleJump = false;
             m_player.rigidbody2D.velocity = Vector2.zero;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
         }
     }
 
+    void Summon()
+    {
+        m_animator.SetInteger("PlayerAnim", 2);
+    }
+
+    void Bomb()
+    {
+
+    }
+
+    //following functions called in animation
     void Attack()
     {
         GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x + (m_player.transform.localScale.x * 0.2f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
@@ -91,13 +133,8 @@ public class PlayerController : MonoBehaviour
         Destroy(temp, 0.2f);
     }
 
-    void Summon()
+    void SwingSound()
     {
-
-    }
-
-    void Bomb()
-    {
-
+        AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position);
     }
 }

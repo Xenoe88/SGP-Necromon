@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae99b179aea0db94a86c8dc19c655605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_player: {fileID: 11405062, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
+  m_hit: {fileID: 8300000, guid: 7bb0f151e6ad744459b34f9f0cbd8510, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
