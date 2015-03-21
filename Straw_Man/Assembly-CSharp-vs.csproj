@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scriptes\Entity.cs" />
      <Compile Include="Assets\Scriptes\EthrealBeing.cs" />
      <Compile Include="Assets\Scriptes\HitBox.cs" />
+     <Compile Include="Assets\Scriptes\JumpForward.cs" />
      <Compile Include="Assets\Scriptes\LookForward.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatform.cs" />
      <Compile Include="Assets\Scriptes\PlayerController.cs" />
