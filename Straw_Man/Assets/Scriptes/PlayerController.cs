@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             canDoubleJump = true;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
+
         }
         else if (Input.GetKeyDown("w") && canDoubleJump)
         {
