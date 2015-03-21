@@ -24,7 +24,7 @@ public class PlayerInventory : MonoBehaviour
             runes[i] = null;
         }
         for (int i = 0; i < 3; i++)
-            equippedp[i] = null;
+            equipped[i] = null;
 	
 	}
 	
@@ -59,6 +59,11 @@ public class PlayerInventory : MonoBehaviour
     {
         numBombs++;
     }
+    public void UseBomb()
+    {
+        if(numBombs > 0)
+            numBombs--;
+    }
     public int GetNumRevives()
     {
         return numRevives;
@@ -66,5 +71,10 @@ public class PlayerInventory : MonoBehaviour
     public void AddRevive()
     {
         numRevives++;
+    }
+    public void UseRevives()
+    {
+        if (numRevives > 0)
+            numRevives--;
     }
 }
