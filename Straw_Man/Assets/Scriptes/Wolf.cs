@@ -22,6 +22,7 @@ public class Wolf : MonoBehaviour {
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 5;
+        m_Entity.m_health = 20;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +33,11 @@ public class Wolf : MonoBehaviour {
         //    m_animator.SetInteger("AnimState", 3);
         //    return;
         //}
+        if (m_Entity.m_health <= 0)
+        {
+            m_animator.SetInteger("AnimState", 3);
+            return;
+        }
         if (m_moving)
         {
             rigidbody2D.velocity = new Vector2(transform.localScale.x, 0) * m_Entity.m_speed;
@@ -59,6 +65,12 @@ public class Wolf : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D target)
     {
+        if (m_Entity.m_health <= 0)
+        {
+            m_animator.SetInteger("AnimState", 3);
+            print("hi");
+            return;
+        }
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (distance > 2)
         {
@@ -72,7 +84,7 @@ public class Wolf : MonoBehaviour {
         {
             if (!m_isNecro)
             {
-                if (target.tag == "Player")
+                if (target.tag == "Player" && target.transform.position.y <= transform.position.y)
                 {
                     m_animator.SetInteger("AnimState", 2);
                     m_moving = false;
@@ -113,6 +125,11 @@ public class Wolf : MonoBehaviour {
     void OnTriggerExit2D(Collider2D target)
     {
         m_target = null;
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
     }
 }
 

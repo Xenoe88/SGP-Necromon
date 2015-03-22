@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
         Move();
 
         Jump();
-
         //attack (function called in animation)
         if (Input.GetKeyDown("k"))
         {

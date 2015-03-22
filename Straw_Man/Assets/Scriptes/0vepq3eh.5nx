@@ -35,7 +35,7 @@ public class MovingPlatform : MonoBehaviour {
     {
         if (target.tag == "Player")
         {
-            target.transform.Translate(new Vector3(transform.position.x, 0, 0) * m_speed * Time.deltaTime, Space.World);
+            target.transform.Translate(new Vector3(transform.position.x, 0, 0) * Time.deltaTime, Space.World);
         }
     }
 }
