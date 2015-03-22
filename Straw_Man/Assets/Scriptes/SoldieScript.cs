@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class SoldieScript : MonoBehaviour
 {
     bool isNecro = false;
+    bool seeEnemy = false;
+    public Transform sightStart, sightEnd;
+
     private bool ReadyToAttack = false;
     //private bool block = false;
 
@@ -33,14 +36,15 @@ public class SoldieScript : MonoBehaviour
         Texture2D bitmapTexture = null;
         //bitmapTexture = (Texture2D)Resources.Load("WhitePixel");
 
-        GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
+       // GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
     }
     // Update is called once per frame
     void Update()
     {
+
         if (GetComponent<Entity>().m_health > 0)
         {
-
+     
 
             if (Block())
             {
@@ -51,18 +55,18 @@ public class SoldieScript : MonoBehaviour
             {
 
             }
-            else if (target)
+            else if (target != null)
             {
 
-                if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
+                if ( GetComponent<Entity>().m_attackCooldown <= 0)
                 {
                     GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+                    GetComponent<Entity>().m_attackCooldown = 5;
 
-                    GetComponent<Entity>().m_attackCooldown = 30;
+                    //GetComponent<Entity>().m_attackCooldown = 30;
 
                 }
-                if (GetComponent<Entity>().m_attackCooldown > 0)
-                    GetComponent<Entity>().m_attackCooldown -= 1;
+               
 
             }
             else //if (target)
@@ -95,28 +99,51 @@ public class SoldieScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D _target)
     {
 
-        if (Vector3.Distance(transform.position, _target.transform.position) <= 4)
+        if (GetComponent<SeenEnemy>().collision)
         {
-            if (isNecro && _target.tag == "Enemy")
-                target = _target.gameObject;
-            else if (!isNecro && _target.tag == "Player")
-                target = _target.gameObject;
+            print("test0:");
+            target = _target.gameObject;
         }
-        else if (_target.gameObject.tag == "Player")
+        else
         {
             if (ReadyToAttack)
             {
+
             }
             else
-                GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+            {
+
+            }
+       
         }
+
+        //if (Vector3.Distance(transform.position, _target.transform.position) <= 4 && target == null)
+        //{
+        //    if (isNecro && _target.tag == "Enemy")
+        //        target = _target.gameObject;
+        //    else if (!isNecro && _target.tag == "Player")
+        //        target = _target.gameObject;
+        //}
+        //else if ( _target.gameObject.tag == "Player")
+        //{
+        //    ReadyToAttack = true;
+        //    GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+        //}
     }
     void OnTriggerExit2D()
     {
+        ReadyToAttack = false;
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
         if ((target.transform.position.x - transform.position.x > 4))
             target = null;
+        //ReadyToAttack = false;
+        seeEnemy = false;
+
 
     }
+
+ 
     //Function called as part of the animation in Unity 
     public void Attack()
     {
