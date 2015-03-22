@@ -13,6 +13,7 @@ public class Wolf : MonoBehaviour {
     public bool m_isNecro = false;
 
     public Animator m_animator;
+    public GameObject m_target;
 
 	// Use this for initialization
 	void Start () 
@@ -47,47 +48,71 @@ public class Wolf : MonoBehaviour {
         {
             this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
         }
+        if (m_target != null && m_moving == true)
+        {
+          
+            Vector3 destination = m_target.transform.position;
+            Vector3 direction = (destination - transform.position).normalized;
+            transform.Translate(direction * Time.deltaTime, Space.World);
+        }
 	}
-    
+
     void OnTriggerStay2D(Collider2D target)
     {
-        if (!m_isNecro)
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+        if (distance > 2)
         {
             if (target.tag == "Player")
             {
-                m_animator.SetInteger("AnimState", 2);
-                m_moving = false;
-                target.SendMessage("ModifyHealth", m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                int random = Random.Range(0, 5);
-                if (random == 3)
+                m_target = target.gameObject;
+            }
+            m_moving = true;
+        }
+        else if (distance < 1)
+        {
+            if (!m_isNecro)
+            {
+                if (target.tag == "Player")
                 {
-                    StatusMod slow;
-                    slow._stat = Status.SLOW;
-                    slow._statMod = 0.5f;
-                    slow._statTimer = 2.0f;
-                    target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                    //print("slowed");
+                    m_animator.SetInteger("AnimState", 2);
+                    m_moving = false;
+                    target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+                    int random = Random.Range(0, 5);
+                    if (random == 3)
+                    {
+                        StatusMod slow;
+                        slow._stat = Status.SLOW;
+                        slow._statMod = 0.5f;
+                        slow._statTimer = 2.0f;
+                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
+                        print("slowed");
+                    }
                 }
             }
-        }
-        else
-        {
-            if (target.tag == "Enemy")
+            else
             {
-                m_animator.SetInteger("AnimState", 2);
-                m_moving = false;
-                target.SendMessage("ModifyHealth", m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                int random = Random.Range(0, 5);
-                if (random == 3)
+                if (target.tag == "Enemy")
                 {
-                    StatusMod slow;
-                    slow._stat = Status.SLOW;
-                    slow._statMod = 0.5f;
-                    slow._statTimer = 2.0f;
-                    target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                    //print("slowed");
+                    m_animator.SetInteger("AnimState", 2);
+                    m_moving = false;
+                    target.SendMessage("ModifyHealth", m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+                    int random = Random.Range(0, 5);
+                    if (random == 3)
+                    {
+                        StatusMod slow;
+                        slow._stat = Status.SLOW;
+                        slow._statMod = 0.5f;
+                        slow._statTimer = 2.0f;
+                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
+                        //print("slowed");
+                    }
                 }
             }
         }
     }
+    void OnTriggerExit2D(Collider2D target)
+    {
+        m_target = null;
+    }
 }
+
