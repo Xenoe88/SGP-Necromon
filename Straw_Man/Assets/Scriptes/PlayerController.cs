@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     //stop 2:40 pm //on hold until player inventory is complete
 
     public float m_movement;
+    private float m_facingDirection; //-1 == left, 1 == right
     public int m_jumpHeight;
     public Transform m_groundCheck;
     public LayerMask m_whatIsGround;
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
+
+        m_facingDirection = 1;
     }
 
     // Update is called once per frame
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 3);
         }
 
-        if (Input.GetKeyDown("l"))
+        if (Input.GetKeyDown("l") && m_player.GetComponent<PlayerInventory>().m_selectedRune != null)
         {
             Summon();
         }
@@ -71,8 +74,20 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+        //dont move if stunned
+        if (m_player.GetComponent<Entity>().m_status == Status.STUN)
+            return;
+        
         // get direction
         m_movement = Input.GetAxisRaw("Horizontal");
+
+        //reverse controls if confused
+        if (m_player.GetComponent<Entity>().m_status == Status.CONFUSE)
+            m_movement *= -1f;
+
+        //get facing direction
+        if (m_movement == -1 || m_movement == 1)
+            m_facingDirection = m_movement;
 
         // turn
         if (m_movement != 0)
@@ -118,6 +133,7 @@ public class PlayerController : MonoBehaviour
     void Summon()
     {
         m_animator.SetInteger("PlayerAnim", 2);
+        m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0), m_player.GetComponent<PlayerInventory>().m_selectedRune.m_timerAmount);
     }
 
     void Bomb()

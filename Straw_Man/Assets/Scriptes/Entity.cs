@@ -24,9 +24,9 @@ public class Entity : MonoBehaviour {
 
     public Animator m_animator;
 
-
-  
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
+
+    public AudioClip m_entityHitSFX;
 
     //public enum Status { NONE, STUN, SLOW, CONFUSE };
     public Status m_status;
@@ -60,6 +60,9 @@ public class Entity : MonoBehaviour {
     public void ModifyHealth(int _dmg)
     {
         m_health += _dmg;
+
+        if (_dmg < 0)
+            AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
     }
 
     public void ModifyStatus(StatusMod _statusmod)

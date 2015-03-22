@@ -135,6 +135,10 @@ MonoBehaviour:
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
+  m_stunTexture: {fileID: 0}
+  m_slowTexture: {fileID: 0}
+  m_confuseTexture: {fileID: 0}
+  m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
   m_status: 0
 --- !u!114 &11433984
 MonoBehaviour:

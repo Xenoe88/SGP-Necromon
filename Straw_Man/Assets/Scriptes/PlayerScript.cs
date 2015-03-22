@@ -41,6 +41,8 @@ public class PlayerScript : MonoBehaviour
             case Status.CONFUSE:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_confuseTexture);
                 break;
+            default:
+                break;
         }
     }
 }
