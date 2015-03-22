@@ -30,10 +30,10 @@ public class SoldieScript : MonoBehaviour
     }
     void OnGUI()
     {
-        Texture2D bitmapTexture = null;
+        //Texture2D bitmapTexture = null;
         //bitmapTexture = (Texture2D)Resources.Load("WhitePixel");
 
-        GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
+        //GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
     }
     // Update is called once per frame
     void Update()

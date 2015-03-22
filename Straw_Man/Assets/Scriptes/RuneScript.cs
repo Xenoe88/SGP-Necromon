@@ -3,7 +3,8 @@ using System.Collections;
 
 public class RuneScript : MonoBehaviour 
 {
-    GameObject necro;
+    public float m_timerAmount;
+    public GameObject necro;
     public int enemyID;
     public float cooldown;
     public bool isActive = false;
@@ -13,13 +14,11 @@ public class RuneScript : MonoBehaviour
     public  string NecroName;
     public string type;
 
-
 	// Use this for initialization
 	void Start () 
     {
         
 	}
-
 
 	// Update is called once per frame
 	void Update () 
@@ -33,15 +32,20 @@ public class RuneScript : MonoBehaviour
         }
 	}
   
-    public void Summon()
+    public void Summon(Vector3 _position, float _cooldown)
     {
-        if (cooldown <= 0)
+        if (isActive == false && cooldown <= 0)
         {
-            Instantiate(necro, Camera.main.transform.position, Camera.main.transform.rotation);
+            Instantiate(necro, _position, Camera.main.transform.rotation);
             isActive = true;
+            cooldown = _cooldown;
         }
     }
+
     public int GetID() { return enemyID; }
+
+    public void EnemyInactive() { isActive = false; }
+
     void OnTriggerEnter2D(Collider2D _target)
     {
         
@@ -51,8 +55,7 @@ public class RuneScript : MonoBehaviour
 
             GetComponent<PlayerInventory>().AddRune(this);
 
-
-            Destroy(this);     
+            Destroy(this);
         }
         
     }
