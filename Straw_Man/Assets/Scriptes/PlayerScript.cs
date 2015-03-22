@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+	 
 	}
 
     void ModifyRank()
@@ -30,6 +30,10 @@ public class PlayerScript : MonoBehaviour
 
     void OnGUI()
     {
+        GUI.Box(new Rect(0, 0, 75, 20), "Rank");
+
+        GUI.Box(new Rect(0, 20, 75, 20), m_rank.ToString());
+
         switch (m_player.m_status)
         {
             case Status.STUN:
@@ -42,5 +46,9 @@ public class PlayerScript : MonoBehaviour
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_confuseTexture);
                 break;
         }
+    }
+    public int GetHealth()
+    {
+        return m_player.m_health;
     }
 }
