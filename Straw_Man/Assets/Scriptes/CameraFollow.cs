@@ -17,33 +17,42 @@ public class CameraFollow : MonoBehaviour
 
     }
 
+
+
+
     // Update is called once per frame
     void Update()
     {
         //if(_t == _past)
-        transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
-       
+
+        if (target.GetComponent<PlayerController>().m_movement > 0)
+            transform.position = new Vector3((_t.position.x * 1.2f), (_t.position.y), transform.position.z);
+
+        if (target.GetComponent<PlayerController>().m_movement < 0)
+            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
+
     }
-    public void CameraMove(string _dir)
-    {
-        if(_dir == "Up")
-        {
-            transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
 
-        }
-        if (_dir == "Down")
-        {
+    //public void CameraMove(string _dir)
+    //{
+    //    if(_dir == "Up")
+    //    {
+    //        //transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
 
-        }
-        if (_dir == "Left")
-        {
+    //    }
+    //    if (_dir == "Down")
+    //    {
 
-        }
-        if (_dir == "Right")
-        {
-          //  transform.position = new Vector3((_t.position.x), (_t.position.y +10), transform.position.z);
+    //    }
+    //    if (_dir == "Left")
+    //    {
 
-        }
-    }
+    //    }
+    //    if (_dir == "Right")
+    //    {
+    //      //  transform.position = new Vector3((_t.position.x), (_t.position.y +10), transform.position.z);
+
+    //    }
+    //}
 
 }

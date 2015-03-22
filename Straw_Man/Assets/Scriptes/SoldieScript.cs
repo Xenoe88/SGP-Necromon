@@ -6,7 +6,7 @@ public class SoldieScript : MonoBehaviour
 {
     bool isNecro = false;
     private bool ReadyToAttack = false;
-    private bool block = false;
+    //private bool block = false;
 
     public GameObject target = null;
 
@@ -40,9 +40,9 @@ public class SoldieScript : MonoBehaviour
     {
         if (GetComponent<Entity>().m_health > 0)
         {
-            
 
-            if(Block())
+
+            if (Block())
             {
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
@@ -51,12 +51,13 @@ public class SoldieScript : MonoBehaviour
             {
 
             }
-            else if(target)
+            else if (target)
             {
+
                 if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
                 {
                     GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-                               
+
                     GetComponent<Entity>().m_attackCooldown = 30;
 
                 }
@@ -76,45 +77,56 @@ public class SoldieScript : MonoBehaviour
         {
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 4);
 
-            //Destroy(gameObject);
         }
     }
     public bool Block()
     {
         float num = Random.Range(0.0f, 1.0f);
-       
-        if(num > .90f)
-            return true;
+
+        //if(num > .90f)
+        //    return true;
         return false;
     }
     void ModifyHealth(int _amount)
     {
         GetComponent<Entity>().m_health += _amount;
-        if(GetComponent<Entity>().m_health <= 0 )
-        {
-            Destroy(gameObject);
-        }
+   
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
-        target = _target.gameObject;
-        if(ReadyToAttack)
-        { }
-        else
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-    
+
+        if (Vector3.Distance(transform.position, _target.transform.position) <= 4)
+        {
+            if (isNecro && _target.tag == "Enemy")
+                target = _target.gameObject;
+            else if (!isNecro && _target.tag == "Player")
+                target = _target.gameObject;
+        }
+        else if (_target.gameObject.tag == "Player")
+        {
+            if (ReadyToAttack)
+            {
+            }
+            else
+                GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+        }
     }
     void OnTriggerExit2D()
     {
-        target = null;
+        if ((target.transform.position.x - transform.position.x > 4))
+            target = null;
+
     }
     //Function called as part of the animation in Unity 
     public void Attack()
     {
-       
-        //ReadyToAttack = true;
-        //target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+
+        ReadyToAttack = true;
+        target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
 
     }
-
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 }
