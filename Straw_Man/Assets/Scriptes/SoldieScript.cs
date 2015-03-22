@@ -66,7 +66,9 @@ public class SoldieScript : MonoBehaviour
                     //GetComponent<Entity>().m_attackCooldown = 30;
 
                 }
-               
+               if(target.transform.localScale == transform.localScale)
+                   this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
+
 
             }
             else //if (target)
@@ -135,10 +137,10 @@ public class SoldieScript : MonoBehaviour
         ReadyToAttack = false;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
 
-        if ((target.transform.position.x - transform.position.x > 4))
+        //if ((target.transform.position.x - transform.position.x > 4))
             target = null;
         //ReadyToAttack = false;
-        seeEnemy = false;
+        //seeEnemy = false;
 
 
     }
