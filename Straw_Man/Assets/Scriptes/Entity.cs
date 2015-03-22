@@ -55,6 +55,8 @@ public class Entity : MonoBehaviour {
                 m_status = Status.NONE;
             }
         }
+        if (m_attackCooldown > 0)
+            m_attackCooldown -= Time.deltaTime;
 	}
 
     public void ModifyHealth(int _dmg)
