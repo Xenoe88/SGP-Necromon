@@ -23,17 +23,15 @@ public class PlayerScript : MonoBehaviour
 	
 	}
 
-    void ModifyRank()
-    {
-        m_rank++;
-    }
+    void ModifyRank() { m_rank++; }
 
     void OnGUI()
     {
+        //status icons
         switch (m_player.m_status)
         {
             case Status.STUN:
-                GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
+                GUI.DrawTexture(new Rect(m_player.transform.position.x , m_player.transform.position.y, 20, 20), m_player.m_stunTexture);
                 break;
             case Status.SLOW:
                 GUI.DrawTexture(new Rect(m_player.transform.position.x, m_player.transform.position.y, 20, 20), m_player.m_slowTexture);

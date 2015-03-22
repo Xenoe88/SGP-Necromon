@@ -138,7 +138,11 @@ public class PlayerController : MonoBehaviour
 
     void Bomb()
     {
-
+        if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
+        {
+            Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0), transform.rotation);
+            m_player.GetComponent<PlayerInventory>().UseBomb();
+        }
     }
 
     //following functions called in animation
@@ -149,8 +153,5 @@ public class PlayerController : MonoBehaviour
         Destroy(temp, 0.2f);
     }
 
-    void SwingSound()
-    {
-        AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position);
-    }
+    void SwingSound() { AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position); }
 }

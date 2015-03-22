@@ -6,13 +6,14 @@ public class PlayerInventory : MonoBehaviour
 
     public RuneScript[] runes;
 
-    private int numBombs = 0;
-    private int numRevives = 0;
+    public int numBombs = 0;
+    public int numRevives = 0;
 
     //Needs to be an array of pointers to reference the runes 
     public RuneScript[] equipped;
 
     public RuneScript m_selectedRune;
+    public BombScript m_bomb;
 
     // Use this for initialization
     void Start()
