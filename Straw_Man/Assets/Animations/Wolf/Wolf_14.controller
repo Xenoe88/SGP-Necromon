@@ -26,6 +26,26 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &110102478
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110249394}
+  m_DstState: {fileID: 110220630}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: AnimState
+    m_EventTreshold: 3
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110106666
 Transition:
   serializedVersion: 2
@@ -141,6 +161,26 @@ Transition:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimState
     m_EventTreshold: 2
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110186490
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110289570}
+  m_DstState: {fileID: 110220630}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: AnimState
+    m_EventTreshold: 3
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -274,11 +314,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110249394}
-      second:
-      - {fileID: 110169704}
-      - {fileID: 110178854}
-    data:
       first: {fileID: 110252068}
       second:
       - {fileID: 110140942}
@@ -292,9 +327,16 @@ StateMachine:
       second:
       - {fileID: 110128772}
       - {fileID: 110197286}
+      - {fileID: 110186490}
     data:
       first: {fileID: 110220630}
       second: []
+    data:
+      first: {fileID: 110249394}
+      second:
+      - {fileID: 110169704}
+      - {fileID: 110178854}
+      - {fileID: 110102478}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 348, y: 96, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
