@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
+     <Compile Include="Assets\Slimer.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Sprites\Enemies\Bird\data.xml" />

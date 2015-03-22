@@ -71,8 +71,8 @@ MonoBehaviour:
   m_timerAmount: 15
   necro: {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
   enemyID: 0
-  cooldown: 0
-  isActive: 0
+  cooldown: 7.70628977
+  isActive: 1
   collected: 0
   descript: 
   NecroName: 

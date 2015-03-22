@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _t = target.transform;
+       // _t = target.transform;
 
     }
 
@@ -26,24 +26,24 @@ public class CameraFollow : MonoBehaviour
     }
     public void CameraMove(string _dir)
     {
-        if(_dir == "Up")
-        {
-            transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
+        //if(_dir == "Up")
+        //{
+        //    transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
 
-        }
-        if (_dir == "Down")
-        {
+        //}
+        //if (_dir == "Down")
+        //{
 
-        }
-        if (_dir == "Left")
-        {
+        //}
+        //if (_dir == "Left")
+        //{
 
-        }
-        if (_dir == "Right")
-        {
-          //  transform.position = new Vector3((_t.position.x), (_t.position.y +10), transform.position.z);
+        //}
+        //if (_dir == "Right")
+        //{
+        //  //  transform.position = new Vector3((_t.position.x), (_t.position.y +10), transform.position.z);
 
-        }
+        //}
     }
 
 }

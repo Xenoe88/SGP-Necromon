@@ -247,7 +247,7 @@ MonoBehaviour:
   numBombs: 0
   numRevives: 0
   equipped: []
-  m_selectedRune: {fileID: 0}
+  m_selectedRune: {fileID: 11487404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
   m_bomb: {fileID: 11491660, guid: c449b2a6c1f909441add7f5e2c2d46c9, type: 2}
 --- !u!212 &21205058
 SpriteRenderer:
