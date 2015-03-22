@@ -49,6 +49,7 @@ public class SoldieScript : MonoBehaviour
             }
             else if (isNecro)
             {
+
             }
             else if(target)
             {
@@ -103,12 +104,16 @@ public class SoldieScript : MonoBehaviour
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
     
     }
+    void OnTriggerExit2D()
+    {
+        target = null;
+    }
     //Function called as part of the animation in Unity 
     public void Attack()
     {
        
-        ReadyToAttack = true;
-        target.SendMessage("ModifyHealth", -GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        //ReadyToAttack = true;
+        //target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
 
     }
 

@@ -3,10 +3,12 @@ using System.Collections;
 
 public class HitBox : MonoBehaviour
 {
+    public Entity m_player;
+    public AudioClip m_hit;
+
     void OnTriggerEnter2D(Collider2D _target)
     {
-        _target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg);
-        print(GetComponent<Entity>().m_dmg);
-        print("^^ This should equal the players Dmg");
+        AudioSource.PlayClipAtPoint(m_hit,Camera.main.transform.position);
+        _target.SendMessage("ModifyHealth", m_player.m_dmg);
     }
 }
