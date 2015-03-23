@@ -4,12 +4,13 @@ using System.Collections.Generic;
 
 public class SoldieScript : MonoBehaviour
 {
-    bool isNecro = false;
+    //bool isNecro = false;
     bool canAttack = false;
     public bool seeEnemy = false;
     public Transform sightStart, sightEnd;
+    public float dist = 555.0f;
 
-    private bool ReadyToAttack = false;
+    //private bool ReadyToAttack = false;
     //private bool block = false;
 
     public GameObject target = null;
@@ -26,29 +27,25 @@ public class SoldieScript : MonoBehaviour
 
         this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
 
-        //GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
 
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
-        //target = GameObject.FindGameObjectWithTag("Player");
     }
     void OnGUI()
     {
-        //Texture2D bitmapTexture = null;
-        //bitmapTexture = (Texture2D)Resources.Load("WhitePixel");
 
-        // GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
     }
     // Update is called once per frame
     void Update()
     {
 
-        
+
         if (GetComponent<Entity>().m_health > 0)
         {
 
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
 
         }
         else
@@ -77,43 +74,37 @@ public class SoldieScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
-
-        //if (target == null )
-        //{
-        //    target = _target.gameObject;
-        //}
-        //else if (target)
-        //{
-
-        //    if (Vector3.Distance(transform.position, target.transform.position) < .76f)
-        //        canAttack = true;
-        //}
-
+        if (canAttack)
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
 
     }
     void OnTriggerStay2D(Collider2D _target)
     {
-        float dist = Vector3.Distance(transform.position, target.transform.position);
         if (target == null)
-             target = _target.gameObject;
-        if ( dist < .76f && GetComponent<Entity>().m_attackCooldown <= 0)
+            target = _target.gameObject;
+        else
         {
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+            dist = Vector3.Distance(transform.position, target.transform.position);
+
+        }
+        if (dist < 1.0f)
+        {
+         
             GetComponent<Entity>().m_attackCooldown = 5;
-            canAttack = false;
+            canAttack = true;
         }
     }
     void OnTriggerExit2D()
     {
+
         if (canAttack)
         {
-            ReadyToAttack = false;
+            //ReadyToAttack = false;
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
             canAttack = false;
         }
         else
             target = null;
-
 
     }
 
@@ -122,9 +113,9 @@ public class SoldieScript : MonoBehaviour
     public void Attack()
     {
 
-        ReadyToAttack = true;
-        if (target)
-            target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        //ReadyToAttack = true;
+
+        target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
 
     }
     public void Death()
