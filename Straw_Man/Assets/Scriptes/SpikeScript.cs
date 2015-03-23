@@ -4,12 +4,20 @@ using System.Collections;
 public class SpikeScript : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+    public int m_damage = 300;
+	void Start () 
+    {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        target.SendMessage("ModifyHealth", -m_damage, SendMessageOptions.DontRequireReceiver);
+    }
 }
