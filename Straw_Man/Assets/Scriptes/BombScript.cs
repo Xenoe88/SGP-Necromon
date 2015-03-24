@@ -5,16 +5,24 @@ public class BombScript : MonoBehaviour
 {
     ArrayList list = new ArrayList();
     public GameObject m_area;
+    bool thrown = false;
+    public Animator animate; 
 	// Use this for initialization
 	void Start () 
     {
+        animate = GetComponent<Animator>();
 
+        Rigidbody2D.AddForce(new Vector2(100, 100));
 
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+
+        if(thrown)
+         animate.SetInteger("AnimState", 1);
+
 	
 	}
     void OntriggerEnter2D(Collider2D _target)
