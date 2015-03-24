@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.14400005, y: 2.49399996, z: 0}
+  m_LocalPosition: {x: -.833999991, y: -2.52200007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_stunTexture: {fileID: 2800000, guid: e19f0e53ca04e534783c75f7e315f0a6, type: 3}
   m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
   m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
-  m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
+  m_entityHitSFX: {fileID: 0}
   m_status: 0
 --- !u!114 &11446092
 MonoBehaviour:
@@ -244,11 +244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runes: []
-  numBombs: 0
+  numBombs: 2
   numRevives: 0
   equipped: []
-  m_selectedRune: {fileID: 11487404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
-  m_bomb: {fileID: 11491660, guid: c449b2a6c1f909441add7f5e2c2d46c9, type: 2}
+  m_selectedRune: {fileID: 0}
+  bomb: {fileID: 155476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
 --- !u!212 &21205058
 SpriteRenderer:
   m_ObjectHideFlags: 1

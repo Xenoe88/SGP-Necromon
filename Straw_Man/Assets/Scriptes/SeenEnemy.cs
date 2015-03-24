@@ -22,7 +22,7 @@ public class SeenEnemy : MonoBehaviour {
         collision = Physics2D.Linecast(sightStart.position, sightEnd.position, 1 << LayerMask.NameToLayer("Default"));
         Debug.DrawLine(sightStart.position, sightEnd.position, Color.green);
        
-        GetComponent<SoldieScript>().seeEnemy = true;
+     //   GetComponent<SoldieScript>().seeEnemy = true;
 
     }
 }
