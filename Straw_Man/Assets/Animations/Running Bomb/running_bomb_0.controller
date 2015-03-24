@@ -66,6 +66,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110144198
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110214990}
+  m_DstState: {fileID: 110267844}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1102 &110214990
 State:
   m_ObjectHideFlags: 3
@@ -78,6 +98,21 @@ State:
   - {fileID: 7400000, guid: f3b698e40ec7ab14680b380df5023331, type: 2}
   m_ParentStateMachine: {fileID: 110789452}
   m_Position: {x: 36, y: 108, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110267844
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Bomb_Explosion_Animation
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: b49bf668fdfd7884a9c51bd0ce5fd443, type: 2}
+  m_ParentStateMachine: {fileID: 110789452}
+  m_Position: {x: 291, y: 124, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -107,17 +142,19 @@ StateMachine:
   m_States:
   - {fileID: 110289452}
   - {fileID: 110214990}
+  - {fileID: 110267844}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110214990}
-      second:
-      - {fileID: 110137622}
-    data:
       first: {fileID: 110289452}
       second:
       - {fileID: 110129802}
+    data:
+      first: {fileID: 110214990}
+      second:
+      - {fileID: 110137622}
+      - {fileID: 110144198}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

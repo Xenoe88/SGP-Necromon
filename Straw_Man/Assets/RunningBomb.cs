@@ -42,10 +42,13 @@ public class RunningBomb : MonoBehaviour {
         }
         if (m_target != null && m_moving == true)
         {
-
-            Vector3 destination = m_target.transform.position;
-            Vector3 direction = (destination - transform.position).normalized;
-            transform.Translate(direction * Time.deltaTime, Space.World);
+            float distance = Vector3.Distance(m_target.transform.position, transform.position);
+            if (distance < 3 && m_target.transform.position.y <= transform.position.y)
+            {
+                Vector3 destination = m_target.transform.position;
+                Vector3 direction = (destination - transform.position).normalized;
+                transform.Translate(direction * Time.deltaTime, Space.World);
+            }
         }
 	}
 
@@ -75,16 +78,16 @@ public class RunningBomb : MonoBehaviour {
             {
                 if (target.tag == "Enemy")
                 {
-                    m_animator.SetInteger("AnimState", 2);
+                    m_animator.SetInteger("AnimState", 1);
                     m_moving = false;
                 }
             }
         }
     }
-    void OnTriggerExit2D(Collider2D target)
-    {
-        m_target = null;
-    }
+    //void OnTriggerExit2D(Collider2D target)
+    //{
+    //    m_target = null;
+    //}
     public void Attack()
     {
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);

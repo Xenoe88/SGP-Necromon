@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3937163b1da053b4dbe38ef1e9fcc27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_sound: {fileID: 8300000, guid: c1a19b4276c60444fb95a316685aba19, type: 3}
   m_damage: 300
 --- !u!212 &21267672
 SpriteRenderer:
