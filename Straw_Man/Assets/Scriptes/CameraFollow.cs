@@ -23,11 +23,11 @@ public class CameraFollow : MonoBehaviour
     {
         //if(_t == _past)
 
-        if (target.GetComponent<PlayerController>().m_movement > 0)
-            transform.position = new Vector3((_t.position.x * 1.2f), (_t.position.y), transform.position.z);
+        //if (target.GetComponent<PlayerController>().m_movement > 0)
+        //    transform.position = new Vector3((_t.position.x * 1.2f), (_t.position.y), transform.position.z);
 
-        if (target.GetComponent<PlayerController>().m_movement < 0)
-            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
+        //if (target.GetComponent<PlayerController>().m_movement < 0)
+        //    transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
 
     }
 
