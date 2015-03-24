@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Bomb_Explosion_Animation
+  serializedVersion: 4
+  m_AnimationType: 2
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 7999c0cbe2b470f469d4a74c0ea1eb4b, type: 3}
+    - time: .0833333358
+      value: {fileID: 21300000, guid: bf29ec252d65d844b92bc94ea6b6bcc8, type: 3}
+    - time: .166666672
+      value: {fileID: 21300000, guid: f1d2d72eb0cd9be4bba201de3a0274b0, type: 3}
+    - time: .25
+      value: {fileID: 21300000, guid: 3b4303453921d034ab03a8f1d7e55a1b, type: 3}
+    - time: .333333343
+      value: {fileID: 21300000, guid: 9b7bea7dd7aa66e45b86edd48b7aebaf, type: 3}
+    - time: .416666657
+      value: {fileID: 21300000, guid: d7a5b6855b8cffe478e4396dcc39a630, type: 3}
+    - time: .5
+      value: {fileID: 21300000, guid: 04888bd9e59d980428c749fd6aedbb4c, type: 3}
+    - time: .583333313
+      value: {fileID: 21300000, guid: 8e2ae7e818675bc4ca6deafcdc69e999, type: 3}
+    - time: .666666687
+      value: {fileID: 21300000, guid: 7834f65055498834397c4813111796ff, type: 3}
+    - time: .75
+      value: {fileID: 21300000, guid: 3703f46c7cc675d40a05a62b00529f2e, type: 3}
+    - time: .833333313
+      value: {fileID: 21300000, guid: 9b117f3177a28f14dacb1fd0fc089d58, type: 3}
+    - time: .916666687
+      value: {fileID: 21300000, guid: 5d1fbdfdba4c29f409d77a4228f640e5, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: 162f50464a97e7f4eb50ef3087b7a2c8, type: 3}
+    - time: 1.08333337
+      value: {fileID: 21300000, guid: 52667b5f6caf67b4fb91be909b237cbf, type: 3}
+    - time: 1.16666663
+      value: {fileID: 21300000, guid: 11406065b2b443f4396c9e573e4e766a, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 12
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 0
+      script: {fileID: 0}
+      classID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 7999c0cbe2b470f469d4a74c0ea1eb4b, type: 3}
+    - {fileID: 21300000, guid: bf29ec252d65d844b92bc94ea6b6bcc8, type: 3}
+    - {fileID: 21300000, guid: f1d2d72eb0cd9be4bba201de3a0274b0, type: 3}
+    - {fileID: 21300000, guid: 3b4303453921d034ab03a8f1d7e55a1b, type: 3}
+    - {fileID: 21300000, guid: 9b7bea7dd7aa66e45b86edd48b7aebaf, type: 3}
+    - {fileID: 21300000, guid: d7a5b6855b8cffe478e4396dcc39a630, type: 3}
+    - {fileID: 21300000, guid: 04888bd9e59d980428c749fd6aedbb4c, type: 3}
+    - {fileID: 21300000, guid: 8e2ae7e818675bc4ca6deafcdc69e999, type: 3}
+    - {fileID: 21300000, guid: 7834f65055498834397c4813111796ff, type: 3}
+    - {fileID: 21300000, guid: 3703f46c7cc675d40a05a62b00529f2e, type: 3}
+    - {fileID: 21300000, guid: 9b117f3177a28f14dacb1fd0fc089d58, type: 3}
+    - {fileID: 21300000, guid: 5d1fbdfdba4c29f409d77a4228f640e5, type: 3}
+    - {fileID: 21300000, guid: 162f50464a97e7f4eb50ef3087b7a2c8, type: 3}
+    - {fileID: 21300000, guid: 52667b5f6caf67b4fb91be909b237cbf, type: 3}
+    - {fileID: 21300000, guid: 11406065b2b443f4396c9e573e4e766a, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1.25
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_Events:
+  - time: 1.16666663
+    functionName: Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
