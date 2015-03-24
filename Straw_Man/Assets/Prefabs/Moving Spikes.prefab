@@ -41,7 +41,7 @@ GameObject:
   - 212: {fileID: 21239848}
   - 114: {fileID: 11439850}
   - 61: {fileID: 6139848}
-  - 114: {fileID: 11421432}
+  - 114: {fileID: 11423592}
   m_Layer: 0
   m_Name: Moving Spikes
   m_TagString: Untagged
@@ -79,8 +79,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.67710018, y: -4.58640003, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.707804739, w: .706408203}
+  m_LocalPosition: {x: 24.1745052, y: -10.6666422, z: 0}
   m_LocalScale: {x: .615430534, y: .615430653, z: .615430653}
   m_Children:
   - {fileID: 439850}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 2.28999996, y: .200000003}
   m_Center: {x: 0, y: 0}
---- !u!114 &11421432
+--- !u!114 &11423592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,14 +106,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 139852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cd314721332d34c9c0f251825d391c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d5991c24d3df60449ee05e972f64ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 0
-  m_botPos: 0
-  m_topPos: 0
-  m_bot: {fileID: 139848}
-  m_top: {fileID: 139850}
+  m_right: {fileID: 139850}
+  m_left: {fileID: 139848}
+  m_rightPos: 0
+  m_leftPos: 0
 --- !u!114 &11439850
 MonoBehaviour:
   m_ObjectHideFlags: 1

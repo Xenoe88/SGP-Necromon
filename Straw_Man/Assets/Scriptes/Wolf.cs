@@ -74,7 +74,11 @@ public class Wolf : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (distance > 2)
         {
-            if (target.tag == "Player")
+            if (!m_isNecro && target.tag == "Player")
+            {
+                m_target = target.gameObject;
+            }
+            else if (m_isNecro && target.tag == "Enemy")
             {
                 m_target = target.gameObject;
             }
@@ -107,7 +111,7 @@ public class Wolf : MonoBehaviour {
                 {
                     m_animator.SetInteger("AnimState", 2);
                     m_moving = false;
-                    target.SendMessage("ModifyHealth", m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+                    target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
                     int random = Random.Range(0, 5);
                     if (random == 3)
                     {

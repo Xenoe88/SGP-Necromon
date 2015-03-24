@@ -28,6 +28,10 @@ public class RunningBomb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        if (m_Entity.m_health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         if (m_moving)
         {
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * m_Entity.m_speed;
@@ -57,7 +61,12 @@ public class RunningBomb : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (distance > 1)
         {
-            if (target.tag == "Player")
+            if (!m_isNecro && target.tag == "Player")
+            {
+                print("hi");
+                m_target = target.gameObject;
+            }
+            else if (m_isNecro && target.tag == "Enemy")
             {
                 print("hi");
                 m_target = target.gameObject;
