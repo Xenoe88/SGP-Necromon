@@ -12,7 +12,7 @@ public class BombScript : MonoBehaviour
     {
         animate = GetComponent<Animator>();
 
-        Rigidbody2D.AddForce(new Vector2(100, 100));
+    rigidbody2D.AddForce(new Vector2(100, 100));
 
 	}
 	
