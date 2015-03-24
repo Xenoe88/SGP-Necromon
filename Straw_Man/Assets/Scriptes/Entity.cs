@@ -46,6 +46,11 @@ public class Entity : MonoBehaviour {
             m_isAlive = false;
             m_health = 0;
         }
+        if(m_attackCooldown > 0)
+        {
+            m_attackCooldown -= Time.deltaTime;
+            
+        }
         if (m_statusTimer > 0)
         {
             m_statusTimer -= Time.deltaTime;
