@@ -91,18 +91,6 @@ public class Wolf : MonoBehaviour {
                 if (target.tag == "Player" && target.transform.position.y <= transform.position.y)
                 {
                     m_animator.SetInteger("AnimState", 2);
-                    m_moving = false;
-                    target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                    int random = Random.Range(0, 5);
-                    if (random == 3)
-                    {
-                        StatusMod slow;
-                        slow._stat = Status.SLOW;
-                        slow._statMod = 0.5f;
-                        slow._statTimer = 2.0f;
-                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                        print("slowed");
-                    }
                 }
             }
             else
@@ -110,18 +98,6 @@ public class Wolf : MonoBehaviour {
                 if (target.tag == "Enemy")
                 {
                     m_animator.SetInteger("AnimState", 2);
-                    m_moving = false;
-                    target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                    int random = Random.Range(0, 5);
-                    if (random == 3)
-                    {
-                        StatusMod slow;
-                        slow._stat = Status.SLOW;
-                        slow._statMod = 0.5f;
-                        slow._statTimer = 2.0f;
-                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                        //print("slowed");
-                    }
                 }
             }
         }
@@ -134,6 +110,22 @@ public class Wolf : MonoBehaviour {
     public void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    public void Attack()
+    {
+        m_moving = false;
+        SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+        int random = Random.Range(0, 5);
+        if (random == 3)
+        {
+            StatusMod slow;
+            slow._stat = Status.SLOW;
+            slow._statMod = 0.5f;
+            slow._statTimer = 2.0f;
+            SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
+            print("slowed");
+        }
     }
 }
 

@@ -28,7 +28,7 @@ public class CameraFollow : MonoBehaviour
     {
         if(_dir == "Up")
         {
-            transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
+           // transform.position = new Vector3((_t.position.x), (_t.position.y + 15), transform.position.z);
 
         }
         if (_dir == "Down")
