@@ -116,6 +116,8 @@ public class Wolf : MonoBehaviour {
             }
             else
             {
+                this.tag = "Player";
+
                 if (target.tag == "Enemy")
                 {
                     if (m_Entity.m_attackCooldown <= 0)
@@ -151,6 +153,11 @@ public class Wolf : MonoBehaviour {
     public void Die()
     {
         Destroy(this.gameObject);
+    }
+    void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
     }
 }
 
