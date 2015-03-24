@@ -13,8 +13,8 @@ public class PlayerInventory : MonoBehaviour
     public RuneScript[] equipped;
 
     public RuneScript m_selectedRune;
-    public BombScript m_bomb;
-
+   // public BombScript m_bomb;
+    public GameObject  bomb;
     // Use this for initialization
     void Start()
     {
