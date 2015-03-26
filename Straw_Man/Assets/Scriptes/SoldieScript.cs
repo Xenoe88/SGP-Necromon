@@ -6,7 +6,7 @@ public class SoldieScript : MonoBehaviour
 {
     bool isNecro = false;
     private bool ReadyToAttack = false;
-    private bool block = false;
+    //private bool block = false;
 
     public GameObject target = null;
 
@@ -113,7 +113,7 @@ public class SoldieScript : MonoBehaviour
     {
        
         //ReadyToAttack = true;
-        //target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
 
     }
 

@@ -68,8 +68,8 @@ public class Entity : MonoBehaviour {
     {
         m_health += _dmg;
 
-        if (_dmg < 0)
-            AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
+       // if (_dmg < 0)
+           // AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
     }
 
     public void ModifyStatus(StatusMod _statusmod)
