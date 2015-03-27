@@ -13,6 +13,9 @@ public class RunningBomb : MonoBehaviour {
     public bool m_isNecro = false;
 
     public Animator m_animator;
+
+    public AudioClip m_sound;
+
     public GameObject m_target;
 
 	// Use this for initialization
@@ -101,5 +104,9 @@ public class RunningBomb : MonoBehaviour {
     {
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
         Destroy(this.gameObject);
+    }
+    public void Explodesound()
+    {
+        AudioSource.PlayClipAtPoint(m_sound, transform.position);
     }
 }

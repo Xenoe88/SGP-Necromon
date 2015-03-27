@@ -4,7 +4,7 @@ using System.Collections;
 public class RuneScript : MonoBehaviour 
 {
     public float m_timerAmount;
-    public GameObject necro;
+    public GameObject necro, m_player;
     public int enemyID;
     public float cooldown;
     public bool isActive = false;
@@ -14,10 +14,12 @@ public class RuneScript : MonoBehaviour
     public  string NecroName;
     public string type;
 
+    private Animator animator;
+
 	// Use this for initialization
 	void Start () 
     {
-        
+        animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -32,32 +34,40 @@ public class RuneScript : MonoBehaviour
         }
 	}
   
-    public void Summon(Vector3 _position, float _cooldown)
+    public void Summon(Vector3 _position)
     {
         if (isActive == false && cooldown <= 0)
         {
-            Instantiate(necro, _position, Camera.main.transform.rotation);
+            GameObject temp = (GameObject)Instantiate(necro, _position, Camera.main.transform.rotation);
+            temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
+            //Instantiate(m_necroBox, _position, Camera.main.transform.rotation);
             isActive = true;
-            cooldown = _cooldown;
+            cooldown = m_timerAmount;
         }
     }
 
     public int GetID() { return enemyID; }
 
-    public void EnemyInactive() { isActive = false; }
+    //public void EnemyInactive(int _necroID) 
+    //{ 
+    //    isActive = false;
+    //}
 
     void OnTriggerEnter2D(Collider2D _target)
     {
-        
         if(_target.tag == "Player")
         {
-            collected = true;
+            //collected = true;
 
-            GetComponent<PlayerInventory>().AddRune(this);
+            m_player.GetComponent<PlayerInventory>().AddRune(enemyID);
 
-            Destroy(this);
+            animator.SetInteger("RuneAnim", 1);
         }
-        
+    }
+
+    void Destroy()
+    {
+        Destroy(gameObject);
     }
 
 }

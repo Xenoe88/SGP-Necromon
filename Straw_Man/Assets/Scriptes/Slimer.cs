@@ -5,15 +5,16 @@ public class Slimer : MonoBehaviour
 {
     public float m_moveTimer, m_groundRadius;
     public Entity m_Slimer;
-    public Transform m_startMoveSight, m_endMoveSight, m_groundCheck;
+    public Transform m_startMoveSight, m_endMoveSight, m_groundCheck, m_lookforward, m_start;
     public LayerMask m_whatIsGround;
     private Collider2D m_target;
 
-    public bool m_needCollision = true, m_collision = false, m_isNecro = false, m_isAttacking = false, m_isGrounded;
+    public bool m_needCollision = true, m_collision = false, m_isNecro = false, m_isAttacking = false, m_isGrounded, m_doesntNeedCollision = false, m_lookForwardCollision = false;
 
     private Animator m_animator;
 
-    public GameObject m_hitBox, m_rune;
+    public GameObject m_hitBox, m_player;
+    public RuneScript m_rune;
 
     // Use this for initialization
     void Start()
@@ -49,14 +50,15 @@ public class Slimer : MonoBehaviour
             m_animator.SetInteger("SlimerAnim", 1);
 
         m_moveTimer -= Time.deltaTime;
+
+        Debug.DrawLine(m_startMoveSight.position, m_endMoveSight.position, Color.green);
+        //Debug.DrawLine(m_start.position, m_lookforward.position, Color.red);
     }
 
     void Move()
     {
         m_collision = Physics2D.Linecast(m_startMoveSight.position, m_endMoveSight.position, 1 << LayerMask.NameToLayer("Ground"));
-        Debug.DrawLine(m_startMoveSight.position, m_endMoveSight.position, Color.green);
 
-        //we can jump forward
         if (m_needCollision == m_collision)
         {
             //which way should we aim the jump?
@@ -86,42 +88,58 @@ public class Slimer : MonoBehaviour
         //Destroy(temp, 0.2f);
     }
 
-    void Destroy() 
+    void Destroy()
     {
         int randomVariable = Random.Range(0, 100);
 
-        if (randomVariable >= 0 && randomVariable <= 20)
+        if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
         {
             Instantiate(m_rune, transform.position, transform.rotation);
 
             //TODO
-            //m_rune.SendMessage("")
         }
-            
+
+        if (m_isNecro)
+        {
+            print("NECRODEAD!");
+            //m_rune.SendMessage("EnemyInactive", SendMessageOptions.DontRequireReceiver);
+            //m_player.SendMessage("EnemyInactive", SendMessageOptions.DontRequireReceiver);
+            m_player.GetComponent<PlayerInventory>().SendMessage("EnemyInactive", m_rune.enemyID, SendMessageOptions.DontRequireReceiver);
+        }
+
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D _target)
+    {
+        //just turns the enemy if they hit another enemy
+        if (_target.tag == "Enemy" && m_isNecro == false)
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+            else if (transform.localScale.x < 0)
+                transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        }
+
+
     }
 
     void OnTriggerStay2D(Collider2D _target)
     {
-        //print("trigger");
         if (m_Slimer.m_attackCooldown > 0)
             return;
 
         m_target = _target;
-        print(m_target.tag);
 
-        //m_isAttacking = true;
         if (_target.tag == "Player" && m_isNecro == false)
             m_animator.SetInteger("SlimerAnim", 2);
         else if (_target.tag == "Enemy" && m_isNecro == true)
             m_animator.SetInteger("SlimerAnim", 2);
     }
 
-    //void OnTriggerExit2D(Collider2D _target)
-    //{
-    //    //print("attack false");
-    //    m_isAttacking = false;
-
-    //    m_Slimer.m_attackCooldown = 2.0f;
-    //}
+    public void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
+    }
 }
