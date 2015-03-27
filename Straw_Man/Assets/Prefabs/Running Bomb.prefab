@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81999993, y: -.349999994, z: 0}
+  m_LocalPosition: {x: 3.76456714, y: -.026890533, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 482270}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_moving: 1
   m_isNecro: 0
   m_animator: {fileID: 0}
+  m_sound: {fileID: 8300000, guid: cda0d06a366501f498f59f4aa6ab5aa7, type: 3}
   m_target: {fileID: 0}
 --- !u!114 &11437224
 MonoBehaviour:
