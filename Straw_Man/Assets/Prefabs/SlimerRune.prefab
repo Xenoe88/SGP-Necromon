@@ -72,7 +72,7 @@ MonoBehaviour:
   necro: {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
   m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
   enemyID: 1
-  cooldown: -.0111117046
+  cooldown: 0
   isActive: 1
   collected: 0
   descript: 

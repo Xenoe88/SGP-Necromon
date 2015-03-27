@@ -39,15 +39,20 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>F:/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>F:/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CooldownScript.cs" />
      <Compile Include="Assets\FireBall.cs" />
      <Compile Include="Assets\FireReaper.cs" />
+     <Compile Include="Assets\HUDScript.cs" />
+     <Compile Include="Assets\MovingPlatformY.cs" />
+     <Compile Include="Assets\Projectile.cs" />
+     <Compile Include="Assets\RunningBomb.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BombScript.cs" />
      <Compile Include="Assets\Scriptes\BossDoor.cs" />
@@ -56,6 +61,7 @@
      <Compile Include="Assets\Scriptes\DroppingPlatform.cs" />
      <Compile Include="Assets\Scriptes\Entity.cs" />
      <Compile Include="Assets\Scriptes\EthrealBeing.cs" />
+     <Compile Include="Assets\Scriptes\ExplodingBox.cs" />
      <Compile Include="Assets\Scriptes\HitBox.cs" />
      <Compile Include="Assets\Scriptes\JumpForward.cs" />
      <Compile Include="Assets\Scriptes\LookForward.cs" />
@@ -66,17 +72,23 @@
      <Compile Include="Assets\Scriptes\PlayerScript.cs" />
      <Compile Include="Assets\Scriptes\ReviveScript.cs" />
      <Compile Include="Assets\Scriptes\RuneScript.cs" />
+     <Compile Include="Assets\Scriptes\SeenEnemy.cs" />
      <Compile Include="Assets\Scriptes\Slimer.cs" />
      <Compile Include="Assets\Scriptes\SoldieScript.cs" />
      <Compile Include="Assets\Scriptes\SpikeScript.cs" />
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
+     <Compile Include="Assets\Teleporter.cs" />
+     <Compile Include="Assets\Turret.cs" />
+     <Compile Include="Assets\Visible.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
+     <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />
      <None Include="Assets\Sprites\Enemies\Bird\data.xml" />
+     <None Include="Assets\Sprites\Enviroment\Bomb\data.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
