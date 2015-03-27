@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MovingPlatformY.cs" />
+     <Compile Include="Assets\Projectile.cs" />
      <Compile Include="Assets\RunningBomb.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BombScript.cs" />
@@ -72,6 +73,8 @@
      <Compile Include="Assets\Scriptes\Wolf.cs" />
      <Compile Include="Assets\Slimer.cs" />
      <Compile Include="Assets\Teleporter.cs" />
+     <Compile Include="Assets\Turret.cs" />
+     <Compile Include="Assets\Visible.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />
