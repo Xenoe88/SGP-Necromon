@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
 
     public RuneScript[] runes;
+
+    public List<RuneScript> enemiesTEST = new List<RuneScript>();
 
     public int numBombs = 0;
     public int numRevives = 0;
@@ -15,30 +18,44 @@ public class PlayerInventory : MonoBehaviour
     public RuneScript m_selectedRune;
     public BombScript m_bomb;
 
+    public RuneScript m_slime;
+
     // Use this for initialization
     void Start()
     {
+        enemiesTEST.Add(m_slime);
+
         //sizing a null arrays
-        runes = new RuneScript[14];
-        equipped = new RuneScript[3];
+        //runes = new RuneScript[14];
+        //equipped = new RuneScript[3];
         m_selectedRune = null;
 
-        for (int i = 0; i < 14; i++)
-        {
-            runes[i] = null;
-        }
-        for (int i = 0; i < 3; i++)
-            equipped[i] = null;
+        //for (int i = 0; i < 14; i++)
+        //{
+        //    runes[i] = null;
+        //}
+        //for (int i = 0; i < 3; i++)
+        //    equipped[i] = null;
 
+        //runes[1] = m_slime;
+
+        AddRune(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_selectedRune != null && m_selectedRune.isActive)
+        foreach (RuneScript item in enemiesTEST)
         {
-            m_selectedRune.cooldown -= Time.deltaTime;
+            if (item.cooldown >= 0)
+                item.cooldown -= Time.deltaTime;
+            else
+                item.cooldown = 0;
         }
+        //if (m_selectedRune != null && m_selectedRune.isActive)
+        //{
+        //    m_selectedRune.cooldown -= Time.deltaTime;
+        //}
     }
 
     public void EquipNecro(RuneScript _equip, int place)
@@ -59,14 +76,22 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void AddRune(RuneScript _rune)
+    public void AddRune(int _enemyID)
     {
-        int ID = _rune.GetID();
-        runes[ID] = _rune;
+        foreach (RuneScript enemy in enemiesTEST)
+        {
+            if (enemy.enemyID == _enemyID)
+            {
+                enemy.isActive = true;
 
-        //if there's no rune selected, select the one we just added
-        if (m_selectedRune == null)
-            m_selectedRune = _rune;
+                if (m_selectedRune == null)
+                {
+                    m_selectedRune = enemy;
+                }
+            }
+        }
+
+
     }
 
     public void Select(int _place) { m_selectedRune = equipped[_place]; }
@@ -102,5 +127,17 @@ public class PlayerInventory : MonoBehaviour
         if (numRevives > 0)
             numRevives--;
     }
+    public void EnemyInactive(int _necroID)
+    {
+        foreach (RuneScript enemy in enemiesTEST)
+        {
+            if (enemy.enemyID == _necroID)
+            {
+                enemy.isActive = false;
 
+                if (enemy.enemyID == m_selectedRune.enemyID)
+                    m_selectedRune.isActive = false;
+            }
+        }
+    }
 }

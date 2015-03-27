@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     void Summon()
     {
         m_animator.SetInteger("PlayerAnim", 2);
-        m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0), m_player.GetComponent<PlayerInventory>().m_selectedRune.m_timerAmount);
+        m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
     }
 
     void Bomb()

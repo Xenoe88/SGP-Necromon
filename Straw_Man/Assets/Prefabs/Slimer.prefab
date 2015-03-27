@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 426354}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 426356}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: MoveForward?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,8 +45,38 @@ GameObject:
   - 114: {fileID: 11438224}
   - 61: {fileID: 6160832}
   - 61: {fileID: 6143578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Slimer
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &187166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 487166}
+  m_Layer: 0
+  m_Name: TurnAround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &199716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499716}
+  m_Layer: 0
+  m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,13 +113,39 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.51999998, y: -3.67000008, z: 0}
+  m_LocalPosition: {x: 3.00999999, y: -.310000002, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 426356}
   - {fileID: 426354}
+  - {fileID: 487166}
+  - {fileID: 499716}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &487166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.71000004, y: -.75999999, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 455698}
+  m_RootOrder: 2
+--- !u!4 &499716
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.31999993, y: -.629999995, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 455698}
+  m_RootOrder: 3
 --- !u!50 &5055698
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -159,6 +215,8 @@ MonoBehaviour:
   m_startMoveSight: {fileID: 455698}
   m_endMoveSight: {fileID: 426356}
   m_groundCheck: {fileID: 426354}
+  m_lookforward: {fileID: 487166}
+  m_start: {fileID: 499716}
   m_whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -167,8 +225,11 @@ MonoBehaviour:
   m_isNecro: 0
   m_isAttacking: 0
   m_isGrounded: 0
+  m_doesntNeedCollision: 0
+  m_lookForwardCollision: 0
   m_hitBox: {fileID: 127818, guid: aff8e400d104f2644adb0f872d287d91, type: 2}
-  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
+  m_rune: {fileID: 11487404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
 --- !u!114 &11455698
 MonoBehaviour:
   m_ObjectHideFlags: 1

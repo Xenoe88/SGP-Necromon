@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ReviveScript : MonoBehaviour 
 {
-    public Entity m_player;
+    //public GameObject m_player;
     public AudioClip m_pickupSFX;
 
 	// Use this for initialization
@@ -22,7 +22,7 @@ public class ReviveScript : MonoBehaviour
     {
         if (_target.tag == "Player")
         {
-            m_player.GetComponent<PlayerInventory>().AddRevive();
+            _target.GetComponent<PlayerInventory>().AddRevive();
             AudioSource.PlayClipAtPoint(m_pickupSFX, Camera.main.transform.position);
             Destroy(gameObject);
         }

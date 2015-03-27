@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FireBall.cs" />
+     <Compile Include="Assets\FireReaper.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BombScript.cs" />
      <Compile Include="Assets\Scriptes\BossDoor.cs" />
@@ -58,17 +60,18 @@
      <Compile Include="Assets\Scriptes\JumpForward.cs" />
      <Compile Include="Assets\Scriptes\LookForward.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatform.cs" />
+     <Compile Include="Assets\Scriptes\NecroBox.cs" />
      <Compile Include="Assets\Scriptes\PlayerController.cs" />
      <Compile Include="Assets\Scriptes\PlayerInventory.cs" />
      <Compile Include="Assets\Scriptes\PlayerScript.cs" />
      <Compile Include="Assets\Scriptes\ReviveScript.cs" />
      <Compile Include="Assets\Scriptes\RuneScript.cs" />
+     <Compile Include="Assets\Scriptes\Slimer.cs" />
      <Compile Include="Assets\Scriptes\SoldieScript.cs" />
      <Compile Include="Assets\Scriptes\SpikeScript.cs" />
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
-     <Compile Include="Assets\Slimer.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Sprites\Enemies\Bird\data.xml" />
