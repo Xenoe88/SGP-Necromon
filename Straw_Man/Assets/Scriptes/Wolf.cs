@@ -23,6 +23,7 @@ public class Wolf : MonoBehaviour {
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 5;
         m_Entity.m_health = 20;
+        m_Entity.m_attackCooldown = 1.0f;
 	}
 	
 	// Update is called once per frame
@@ -74,7 +75,11 @@ public class Wolf : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (distance > 2)
         {
-            if (target.tag == "Player")
+            if (!m_isNecro && target.tag == "Player")
+            {
+                m_target = target.gameObject;
+            }
+            else if (m_isNecro && target.tag == "Enemy")
             {
                 m_target = target.gameObject;
             }
@@ -86,37 +91,55 @@ public class Wolf : MonoBehaviour {
             {
                 if (target.tag == "Player" && target.transform.position.y <= transform.position.y)
                 {
-                    m_animator.SetInteger("AnimState", 2);
-                    m_moving = false;
-                    target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                    int random = Random.Range(0, 5);
-                    if (random == 3)
+                    if (m_Entity.m_attackCooldown <= 0)
                     {
-                        StatusMod slow;
-                        slow._stat = Status.SLOW;
-                        slow._statMod = 0.5f;
-                        slow._statTimer = 2.0f;
-                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                        print("slowed");
+                        m_animator.SetInteger("AnimState", 2);
+                        m_moving = false;
+                        target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+                        int random = Random.Range(0, 5);
+                        if (random == 3)
+                        {
+                            StatusMod slow;
+                            slow._stat = Status.SLOW;
+                            slow._statMod = 0.5f;
+                            slow._statTimer = 2.0f;
+                            target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
+                            print("slowed");
+                        }
+                        m_Entity.m_attackCooldown = 1.0f;
+                    }
+                    else
+                    {
+                        m_Entity.m_attackCooldown -= Time.fixedDeltaTime;
                     }
                 }
             }
             else
             {
+                this.tag = "Player";
+
                 if (target.tag == "Enemy")
                 {
-                    m_animator.SetInteger("AnimState", 2);
-                    m_moving = false;
-                    target.SendMessage("ModifyHealth", m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
-                    int random = Random.Range(0, 5);
-                    if (random == 3)
+                    if (m_Entity.m_attackCooldown <= 0)
                     {
-                        StatusMod slow;
-                        slow._stat = Status.SLOW;
-                        slow._statMod = 0.5f;
-                        slow._statTimer = 2.0f;
-                        target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-                        //print("slowed");
+                        m_animator.SetInteger("AnimState", 2);
+                        m_moving = false;
+                        target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+                        int random = Random.Range(0, 5);
+                        if (random == 3)
+                        {
+                            StatusMod slow;
+                            slow._stat = Status.SLOW;
+                            slow._statMod = 0.5f;
+                            slow._statTimer = 2.0f;
+                            target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
+                            print("slowed");
+                        }
+                        m_Entity.m_attackCooldown = 1.0f;
+                    }
+                    else
+                    {
+                        m_Entity.m_attackCooldown -= Time.fixedDeltaTime;
                     }
                 }
             }
@@ -130,6 +153,11 @@ public class Wolf : MonoBehaviour {
     public void Die()
     {
         Destroy(this.gameObject);
+    }
+    void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
     }
 }
 

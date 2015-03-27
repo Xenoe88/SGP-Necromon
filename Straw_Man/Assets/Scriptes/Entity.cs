@@ -46,6 +46,11 @@ public class Entity : MonoBehaviour {
             m_isAlive = false;
             m_health = 0;
         }
+        if(m_attackCooldown > 0)
+        {
+            m_attackCooldown -= Time.deltaTime;
+            
+        }
         if (m_statusTimer > 0)
         {
             m_statusTimer -= Time.deltaTime;
@@ -63,8 +68,8 @@ public class Entity : MonoBehaviour {
     {
         m_health += _dmg;
 
-        if (_dmg < 0)
-            AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
+       // if (_dmg < 0)
+           // AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
     }
 
     public void ModifyStatus(StatusMod _statusmod)

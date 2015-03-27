@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
         {
-            Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0), transform.rotation);
+            Instantiate(m_player.GetComponent<PlayerInventory>().bomb, m_player.transform.position + new Vector3(1 * m_facingDirection, 2, 0), transform.rotation);
             m_player.GetComponent<PlayerInventory>().UseBomb();
         }
     }

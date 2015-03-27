@@ -18,15 +18,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: -0
-      value: {fileID: 21300000, guid: 29fa565e71b54704ab99f5d2f49c7648, type: 3}
+      value: {fileID: 21300000, guid: 6127f2d1125343046a492d615e3a3e7e, type: 3}
     - time: .0833333358
-      value: {fileID: 21300000, guid: 29fa565e71b54704ab99f5d2f49c7648, type: 3}
+      value: {fileID: 21300000, guid: e597eb8443cf43c42a43884a2e4285cd, type: 3}
     - time: .166666672
-      value: {fileID: 21300000, guid: 9a7a7d6d6fe62ae4bb5bced07f2b7202, type: 3}
+      value: {fileID: 21300000, guid: cf1da7030b85c5f47b466546b5bb8cd9, type: 3}
     - time: .25
-      value: {fileID: 21300000, guid: e9ed08525a6b5e34197f078f0d0e5412, type: 3}
+      value: {fileID: 21300000, guid: f6664234a0d0665478d15de6da5cc787, type: 3}
     - time: .333333343
-      value: {fileID: 21300000, guid: 67e0691bb9a3f6c46859477256fa7ef8, type: 3}
+      value: {fileID: 21300000, guid: 926e61fca66d3f44c9613c9525333e33, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,11 +45,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 29fa565e71b54704ab99f5d2f49c7648, type: 3}
-    - {fileID: 21300000, guid: 29fa565e71b54704ab99f5d2f49c7648, type: 3}
-    - {fileID: 21300000, guid: 9a7a7d6d6fe62ae4bb5bced07f2b7202, type: 3}
-    - {fileID: 21300000, guid: e9ed08525a6b5e34197f078f0d0e5412, type: 3}
-    - {fileID: 21300000, guid: 67e0691bb9a3f6c46859477256fa7ef8, type: 3}
+    - {fileID: 21300000, guid: 6127f2d1125343046a492d615e3a3e7e, type: 3}
+    - {fileID: 21300000, guid: e597eb8443cf43c42a43884a2e4285cd, type: 3}
+    - {fileID: 21300000, guid: cf1da7030b85c5f47b466546b5bb8cd9, type: 3}
+    - {fileID: 21300000, guid: f6664234a0d0665478d15de6da5cc787, type: 3}
+    - {fileID: 21300000, guid: 926e61fca66d3f44c9613c9525333e33, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
@@ -69,4 +69,11 @@ AnimationClip:
     m_Mirror: 0
   m_EditorCurves: []
   m_EulerEditorCurves: []
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

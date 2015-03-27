@@ -39,7 +39,7 @@ public class MovingPlatform : MonoBehaviour {
             target.transform.Translate(new Vector3(m_speed, 0, 0), Space.World);
             //target.transform.Translate(new Vector3(transform.position.x, 0, 0) * m_speed, Space.World);
             //target.transform.position = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
-            target.rigidbody2D.velocity = transform.rigidbody2D.velocity;
+            //target.rigidbody2D.velocity = transform.rigidbody2D.velocity;
         }
     }
 }
