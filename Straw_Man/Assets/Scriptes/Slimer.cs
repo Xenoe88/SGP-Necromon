@@ -14,7 +14,8 @@ public class Slimer : MonoBehaviour
     private Animator m_animator;
 
     public GameObject m_hitBox, m_player;
-    public RuneScript m_rune;
+    public GameObject m_rune;
+    public int slot = 0;
 
     // Use this for initialization
     void Start()
@@ -81,7 +82,7 @@ public class Slimer : MonoBehaviour
 
     void Attack()
     {
-        m_target.SendMessage("ModifyHealth", m_Slimer.m_dmg);
+        m_target.SendMessage("ModifyHealth", m_Slimer.m_dmg,SendMessageOptions.DontRequireReceiver);
         //print("Attacked!");
         //GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_Slimer.transform.position.x + (m_Slimer.transform.localScale.x * 0.2f), m_Slimer.transform.position.y, m_Slimer.transform.position.z), transform.rotation);
         //Physics2D.IgnoreCollision(temp.collider2D, m_Slimer.collider2D);
@@ -94,20 +95,20 @@ public class Slimer : MonoBehaviour
 
         if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
         {
-            Instantiate(m_rune, transform.position, transform.rotation);
-
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
             //TODO
         }
 
         if (m_isNecro)
         {
-            print("NECRODEAD!");
-            //m_rune.SendMessage("EnemyInactive", SendMessageOptions.DontRequireReceiver);
-            //m_player.SendMessage("EnemyInactive", SendMessageOptions.DontRequireReceiver);
-            m_player.GetComponent<PlayerInventory>().SendMessage("EnemyInactive", m_rune.enemyID, SendMessageOptions.DontRequireReceiver);
-        }
 
-        Destroy(gameObject);
+            m_Slimer.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.RequireReceiver);
+           // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
+        
+        }
+      
+         Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D _target)

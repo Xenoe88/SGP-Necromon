@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FireBall.cs" />
+     <Compile Include="Assets\FireReaper.cs" />
+     <Compile Include="Assets\Projectile.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BirdScript.cs" />
      <Compile Include="Assets\Scriptes\BombScript.cs" />
@@ -64,6 +67,7 @@
      <Compile Include="Assets\Scriptes\LookForward.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatform.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatformY.cs" />
+     <Compile Include="Assets\Scriptes\NecroBox.cs" />
      <Compile Include="Assets\Scriptes\PatrolPointScript.cs" />
      <Compile Include="Assets\Scriptes\PauseMenuScript.cs" />
      <Compile Include="Assets\Scriptes\PlayerController.cs" />
@@ -81,6 +85,8 @@
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
+     <Compile Include="Assets\Turret.cs" />
+     <Compile Include="Assets\Visible.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />

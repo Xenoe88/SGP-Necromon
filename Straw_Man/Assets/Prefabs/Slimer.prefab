@@ -229,7 +229,8 @@ MonoBehaviour:
   m_lookForwardCollision: 0
   m_hitBox: {fileID: 127818, guid: aff8e400d104f2644adb0f872d287d91, type: 2}
   m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
-  m_rune: {fileID: 11487404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  slot: 0
 --- !u!114 &11455698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,9 +245,11 @@ MonoBehaviour:
   m_health: 10
   m_dmg: -2
   m_speed: 1
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 1
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
@@ -254,6 +257,7 @@ MonoBehaviour:
   m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
   m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
   m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21255698
 SpriteRenderer:

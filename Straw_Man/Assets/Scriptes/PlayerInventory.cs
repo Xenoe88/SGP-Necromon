@@ -1,97 +1,125 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+public struct NecroEnemy
+{
+    public GameObject necro;
+    public bool active;
+    public bool collected;
+}
 public class PlayerInventory : MonoBehaviour
 {
 
-    public RuneScript[] runes;
-
-    public List<RuneScript> enemiesTEST = new List<RuneScript>();
+    public NecroEnemy[] runes;
+    public GameObject[] temp;
+    //public List<RuneScript> enemiesTEST = new List<RuneScript>();
 
     public int numBombs = 0;
     public int numRevives = 0;
 
     //Needs to be an array of pointers to reference the runes 
-    public RuneScript[] equipped;
+    public int[] equipped = { 0, 0, 0, 0 };
 
-    public RuneScript m_selectedRune;
+    public int m_selectedRune;
     public BombScript m_bomb;
-
-    public RuneScript m_slime;
+    public GameObject player;
+    //public RuneScript m_slime;
 
     // Use this for initialization
     void Start()
     {
-        enemiesTEST.Add(m_slime);
+        //enemiesTEST.Add(m_slime);
 
         //sizing a null arrays
         //runes = new RuneScript[14];
         //equipped = new RuneScript[3];
-        m_selectedRune = null;
+        m_selectedRune = 0;
+        runes = new NecroEnemy[temp.Length];
+        for (int i = 0; i < temp.Length; i++)
+        {
+            runes[i].necro = temp[i];
+            runes[i].active = false;
+            runes[i].collected = false;
+        }
 
-        //for (int i = 0; i < 14; i++)
-        //{
-        //    runes[i] = null;
-        //}
+
+
         //for (int i = 0; i < 3; i++)
-        //    equipped[i] = null;
+        //    equipped[i] = 4;
 
         //runes[1] = m_slime;
 
-        AddRune(1);
+        //AddRune(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (RuneScript item in enemiesTEST)
+        m_selectedRune = 0;
+        for (int i = 0; i < runes.Length; i++)
         {
-            if (item.cooldown >= 0)
-                item.cooldown -= Time.deltaTime;
-            else
-                item.cooldown = 0;
-        }
-        //if (m_selectedRune != null && m_selectedRune.isActive)
-        //{
-        //    m_selectedRune.cooldown -= Time.deltaTime;
-        //}
-    }
-
-    public void EquipNecro(RuneScript _equip, int place)
-    {
-        if (place < 3)
-            equipped[place] = _equip;
-    }
-
-    public void UnEquipeNecro(RuneScript _unEquip, int place)
-    {
-        if (place < 3)
-        {
-            if (equipped[place] == _unEquip)
-                equipped[place] = null;
-
-            if (equipped[place] == m_selectedRune)
-                m_selectedRune = null;
+            //runes[i].GetComponent<Entity>().m_ID = 0;
         }
     }
 
-    public void AddRune(int _enemyID)
+    public void EquipNecro(int _ref)
     {
-        foreach (RuneScript enemy in enemiesTEST)
-        {
-            if (enemy.enemyID == _enemyID)
+        if (!runes[_ref].collected)
+            return;
+        if (_ref < runes.Length)
+            for (int i = 0; i < 3; i++)
             {
-                enemy.isActive = true;
-
-                if (m_selectedRune == null)
+                if (equipped[i] == 4)
                 {
-                    m_selectedRune = enemy;
+                    equipped[i] = _ref;
+                    return;
+
                 }
             }
+        equipped[0] = _ref;
+
+    }
+
+    public void UnEquipeNecro(int _ref)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (equipped[i] == _ref)
+            {
+                equipped[i] = 4;
+
+            }
         }
+    }
+    public void Summon(Vector3 pos)
+    {
+        //if (runes[m_selectedRune].active)
+        //    return;
 
+        if (runes[m_selectedRune].active)
+            return;
 
+        GameObject temp = (GameObject)Instantiate(runes[m_selectedRune].necro, pos, Camera.main.transform.rotation);
+        EnemyActive(m_selectedRune);
+        temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
+        temp.GetComponent<Entity>().m_NecroCooldown = 10;
+        temp.SendMessage("MakeOwner", gameObject, SendMessageOptions.DontRequireReceiver);
+    }
+    public void Unsummon(int _selected)
+    {
+       // print(_selected);
+       // print(runes[_selected].necro.gameObject);
+    
+        //runes[_selected].necro = temp[_selected];
+        //runes[_selected].active = false;
+       // Destroy(runes[_selected].necro.gameObject);
+
+    }
+    public void AddRune(int _enemyID)
+    {
+        print(_enemyID);
+
+        runes[_enemyID].collected = true;
     }
 
     public void Select(int _place) { m_selectedRune = equipped[_place]; }
@@ -127,17 +155,15 @@ public class PlayerInventory : MonoBehaviour
         if (numRevives > 0)
             numRevives--;
     }
-    public void EnemyInactive(int _necroID)
+    public void EnemyActive(int _necroID)
     {
-        foreach (RuneScript enemy in enemiesTEST)
-        {
-            if (enemy.enemyID == _necroID)
-            {
-                enemy.isActive = false;
+        print("HASDFJD");
+        if (runes[_necroID].active)
+            runes[_necroID].active = false;
+        else
+            runes[_necroID].active = true;
 
-                if (enemy.enemyID == m_selectedRune.enemyID)
-                    m_selectedRune.isActive = false;
-            }
-        }
+        print(runes[_necroID].active);
+
     }
 }

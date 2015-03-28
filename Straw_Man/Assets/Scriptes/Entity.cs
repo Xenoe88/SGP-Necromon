@@ -13,10 +13,12 @@ public class Entity : MonoBehaviour {
     public int m_health;
     public int m_dmg;
     public int m_speed;
+    public int m_ID;
 
     public float m_attackCooldown;
     public float m_statusModifier;
     public float m_statusTimer;
+    public float m_NecroCooldown;
 
     public bool m_isAlive;
 
@@ -27,11 +29,15 @@ public class Entity : MonoBehaviour {
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
     public AudioClip m_entityHitSFX;
+    public GameObject Owner = null;
 
     //public enum Status { NONE, STUN, SLOW, CONFUSE };
     public Status m_status;
 
-
+    public void MakeOwner(GameObject _owner)
+    {
+        Owner = _owner;
+    }
 	// Use this for initialization
 	public void Start () 
     {
@@ -51,6 +57,9 @@ public class Entity : MonoBehaviour {
             m_attackCooldown -= Time.deltaTime;
             
         }
+        if (m_NecroCooldown > 0)
+            m_NecroCooldown -= Time.deltaTime;
+
         if (m_statusTimer > 0)
         {
             m_statusTimer -= Time.deltaTime;
@@ -68,8 +77,9 @@ public class Entity : MonoBehaviour {
     {
         m_health += _dmg;
 
+       //
        // if (_dmg < 0)
-           // AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
+         //   AudioSource.PlayClipAtPoint(m_entityHitSFX, Camera.main.transform.position);
     }
 
     public void ModifyStatus(StatusMod _statusmod)

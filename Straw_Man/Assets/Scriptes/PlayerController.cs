@@ -132,14 +132,18 @@ public class PlayerController : MonoBehaviour
     void Summon()
     {
         m_animator.SetInteger("PlayerAnim", 2);
-        m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
+        m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
+        print("pooi");
+        
+        //GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_selectedRune,m_player.transform.position + new Vector3(1*m_facingDirection,0), Camera.main.transform.rotation);
+        //temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
     }
 
     void Bomb()
     {
         if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
         {
-            Instantiate(m_player.GetComponent<PlayerInventory>().bomb, m_player.transform.position + new Vector3(1 * m_facingDirection, 2, 0), transform.rotation);
+            Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, m_player.transform.position + new Vector3(1 * m_facingDirection, 2, 0), transform.rotation);
             m_player.GetComponent<PlayerInventory>().UseBomb();
         }
     }
