@@ -41,13 +41,21 @@ public class Turret : MonoBehaviour {
             //{
             //    transform.Rotate(new Vector3(m_target.transform.position.x, m_target.transform.position.y, 0) * Time.deltaTime * m_Entity.m_speed);
             //}
-            Quaternion m_rotation = Quaternion.LookRotation(new Vector3(m_target.transform.position.x, m_target.transform.position.y, m_target.transform.position.z)+ new Vector3(transform.position.x, transform.position.y, transform.position.z));
-            transform.rotation = Quaternion.Slerp(new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0), new Quaternion(m_rotation.x, m_rotation.y,0,0), Time.deltaTime * m_Entity.m_speed);
+            //Quaternion m_rotation = Quaternion.LookRotation(new Vector3(m_target.transform.position.x, m_target.transform.position.y, m_target.transform.position.z)+ new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            //transform.rotation = Quaternion.Slerp(new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0), new Quaternion(m_rotation.x, m_rotation.y,0,0), Time.deltaTime * m_Entity.m_speed);
+            if (m_target.transform.position.x > transform.position.x)
+            {
+                this.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (m_target.transform.position.x < transform.position.x)
+            {
+                this.transform.localScale = new Vector3(1, 1, 1);
+            }
         }
         if (m_Entity.m_attackCooldown < 0.0f)
         {
-                Attack();
-                m_Entity.m_attackCooldown = 2.0f;
+            Attack();
+            m_Entity.m_attackCooldown = 2.0f;
         }
         m_Entity.m_attackCooldown -= Time.deltaTime;
 	}
@@ -74,9 +82,9 @@ public class Turret : MonoBehaviour {
     {
         if (m_proj)
         {
-            Projectile clone = Instantiate(m_proj, new Vector3(transform.position.x-.05f, transform.position.y-0.5f, 0), Quaternion.identity) as Projectile;
+            Projectile clone = Instantiate(m_proj, transform.position, Quaternion.identity) as Projectile;
             Physics2D.IgnoreCollision(clone.collider2D, this.collider2D);
-            clone.rigidbody2D.velocity = -m_target.transform.position * m_Entity.m_speed;
+            clone.rigidbody2D.velocity = -transform.right * m_Entity.m_speed;
         }
     }
 }
