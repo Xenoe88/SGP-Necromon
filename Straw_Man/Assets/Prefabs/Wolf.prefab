@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.62775946, y: .00156637107, z: 0}
+  m_LocalPosition: {x: 3.87533641, y: .12669602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475676}
@@ -146,6 +146,8 @@ MonoBehaviour:
   m_isNecro: 0
   m_animator: {fileID: 0}
   m_target: {fileID: 0}
+  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_arrayIndex: 2
 --- !u!114 &11475676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,9 +162,11 @@ MonoBehaviour:
   m_health: 0
   m_dmg: 0
   m_speed: 0
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 0
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
@@ -170,6 +174,7 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21249338
 SpriteRenderer:

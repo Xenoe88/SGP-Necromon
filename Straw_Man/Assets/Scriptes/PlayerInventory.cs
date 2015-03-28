@@ -55,7 +55,7 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_selectedRune = 0;
+        
         for (int i = 0; i < runes.Length; i++)
         {
             //runes[i].GetComponent<Entity>().m_ID = 0;
