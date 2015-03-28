@@ -12,7 +12,7 @@ public class BombScript : MonoBehaviour
     {
         animate = GetComponent<Animator>();
 
-    rigidbody2D.AddForce(new Vector2(500, 100));
+    rigidbody2D.AddForce(new Vector2(500, 10));
 
 	}
 	
@@ -43,7 +43,7 @@ public class BombScript : MonoBehaviour
     {
         GameObject temp = (GameObject)Instantiate(m_area, transform.position, transform.rotation);
 
-        Destroy(temp, 5.0f);
+        Destroy(temp, 0.2f);
         Destroy(gameObject);
     }
 }
