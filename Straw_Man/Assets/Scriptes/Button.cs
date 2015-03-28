@@ -4,7 +4,7 @@ using System.Collections;
 public class Button : MonoBehaviour
 {
     public AudioClip m_buttonClick, m_buttonSwoosh;
-    
+    public Camera up;
     public void ChangeScene(int _scene) 
     {
         AudioSource.PlayClipAtPoint(m_buttonClick, Camera.main.transform.position);
@@ -25,5 +25,11 @@ public class Button : MonoBehaviour
         //only works during runtime, will not quit in Unity Editor        
         Screen.fullScreen = !Screen.fullScreen;
         AudioSource.PlayClipAtPoint(m_buttonSwoosh, Camera.main.transform.position);
+    }
+
+    public void TogglePauseMenu()
+    {
+        print("Ooi");
+       up.GetComponent<PauseMenuScript>().UnPauseGame();
     }
 }
