@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour {
 
     public bool m_moving = true;
     public bool m_isNecro = false;
+    public int m_facing = 1;
 
     public GameObject m_target;
     public Projectile m_proj;
@@ -15,8 +16,8 @@ public class Turret : MonoBehaviour {
         m_Entity = GetComponent<Entity>();
         m_Entity.m_dmg = 10;
         m_Entity.m_health = 20;
-        m_Entity.m_attackCooldown = 2.0f;
-        m_Entity.m_speed = 3;
+        m_Entity.m_attackCooldown = 4.0f;
+        m_Entity.m_speed = 8;
 	}
 	
 	// Update is called once per frame
@@ -45,17 +46,19 @@ public class Turret : MonoBehaviour {
             //transform.rotation = Quaternion.Slerp(new Quaternion(transform.rotation.x, transform.rotation.y, 0, 0), new Quaternion(m_rotation.x, m_rotation.y,0,0), Time.deltaTime * m_Entity.m_speed);
             if (m_target.transform.position.x > transform.position.x)
             {
-                this.transform.localScale = new Vector3(-1, 1, 1);
+                m_facing = -1;
+                this.transform.localScale = new Vector3(m_facing, 1, 1);
             }
             else if (m_target.transform.position.x < transform.position.x)
             {
-                this.transform.localScale = new Vector3(1, 1, 1);
+                m_facing = 1;
+                this.transform.localScale = new Vector3(m_facing, 1, 1);
             }
         }
         if (m_Entity.m_attackCooldown < 0.0f)
         {
             Attack();
-            m_Entity.m_attackCooldown = 2.0f;
+            m_Entity.m_attackCooldown = 4.0f;
         }
         m_Entity.m_attackCooldown -= Time.deltaTime;
 	}
@@ -74,7 +77,7 @@ public class Turret : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D target)
     {
-        m_Entity.m_attackCooldown = 2.0f;
+        m_Entity.m_attackCooldown = 4.0f;
         m_target = null;
     }
 
@@ -84,7 +87,12 @@ public class Turret : MonoBehaviour {
         {
             Projectile clone = Instantiate(m_proj, transform.position, Quaternion.identity) as Projectile;
             Physics2D.IgnoreCollision(clone.collider2D, this.collider2D);
-            clone.rigidbody2D.velocity = -transform.right * m_Entity.m_speed;
+            clone.rigidbody2D.velocity = new Vector3(-m_facing,0,0) * m_Entity.m_speed;
         }
+    }
+
+    void ModifyHealth(int _dmg)
+    {
+        m_Entity.m_health += _dmg;
     }
 }

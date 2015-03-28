@@ -151,6 +151,7 @@ GameObject:
   - 223: {fileID: 431862273}
   - 114: {fileID: 431862272}
   - 114: {fileID: 431862271}
+  - 114: {fileID: 431862274}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -231,6 +232,18 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &431862274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431862269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c3f796309071439f76be2dd1fb45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: CourtyardScene
 --- !u!1 &1198700425
 GameObject:
   m_ObjectHideFlags: 0

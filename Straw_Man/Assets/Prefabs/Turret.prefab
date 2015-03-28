@@ -68,9 +68,11 @@ MonoBehaviour:
   m_health: 0
   m_dmg: 0
   m_speed: 0
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 0
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
@@ -78,6 +80,7 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!114 &11425260
 MonoBehaviour:
@@ -93,6 +96,7 @@ MonoBehaviour:
   m_Entity: {fileID: 0}
   m_moving: 1
   m_isNecro: 0
+  m_facing: -1
   m_target: {fileID: 0}
   m_proj: {fileID: 11443888, guid: 6f625de1f18ccf245a00824240836ff7, type: 2}
 --- !u!212 &21225258

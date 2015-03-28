@@ -5,6 +5,7 @@ public class ChangeSceneScript : MonoBehaviour
 {
     public string scene;
     private bool LoadLock;
+    
 
     // Use this for initialization
     void Start()
