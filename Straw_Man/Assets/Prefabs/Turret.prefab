@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 425258}
   - 212: {fileID: 21225258}
-  - 61: {fileID: 6125258}
   - 114: {fileID: 11425260}
   - 114: {fileID: 11425258}
   - 58: {fileID: 5825258}
+  - 61: {fileID: 6118498}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Turret
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125258}
   m_LocalRotation: {x: 0, y: 0, z: -.00635289866, w: .999979854}
-  m_LocalPosition: {x: .540000021, y: .699999988, z: 0}
+  m_LocalPosition: {x: 3.01019454, y: .0695690438, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 2.19268775
   m_Center: {x: 0, y: 0}
---- !u!61 &6125258
+--- !u!61 &6118498
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,8 +52,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .389999986, y: 1.19000006}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 1.19000006, y: .389999986}
+  m_Center: {x: 0, y: -7.4505806e-09}
 --- !u!114 &11425258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_moving: 1
   m_isNecro: 0
   m_target: {fileID: 0}
-  m_proj: {fileID: 0}
+  m_proj: {fileID: 11443888, guid: 6f625de1f18ccf245a00824240836ff7, type: 2}
 --- !u!212 &21225258
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab964f4b5e839fb409a4bb743eefe021, type: 3}
+  m_Sprite: {fileID: 21300012, guid: ab964f4b5e839fb409a4bb743eefe021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
