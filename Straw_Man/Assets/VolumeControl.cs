@@ -6,7 +6,7 @@ public class VolumeControl : MonoBehaviour
 {
     public Slider m_slider;
     public AudioClip m_sound;
-    public float prevVol, newVol;
+   // public float prevVol, newVol;
 
     // Use this for initialization
     void Start()
@@ -16,7 +16,7 @@ public class VolumeControl : MonoBehaviour
         if (m_slider.tag == "Music")
         {
             print("music");
-            m_slider.value = AudioListener.volume;
+            //m_slider.value = AudioListener.volume;
         }
         else if (m_slider.tag == "SFX")
         {
@@ -28,9 +28,9 @@ public class VolumeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        prevVol = AudioListener.volume;
+       // prevVol = AudioListener.volume;
         AudioListener.volume = m_slider.value;
-        newVol = AudioListener.volume;
+        //newVol = AudioListener.volume;
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
             OnMouseUp();
