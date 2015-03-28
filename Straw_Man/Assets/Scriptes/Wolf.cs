@@ -167,7 +167,7 @@ public class Wolf : MonoBehaviour {
         if (m_isNecro)
         {
 
-            m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.RequireReceiver);
+            m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
         }
         Destroy(this.gameObject);
     }

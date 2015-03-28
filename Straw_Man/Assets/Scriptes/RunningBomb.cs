@@ -17,6 +17,9 @@ public class RunningBomb : MonoBehaviour {
     public AudioClip m_sound;
 
     public GameObject m_target;
+    public GameObject m_rune;
+
+    public int m_arrayIndex = 4;
 
 	// Use this for initialization
 	void Start () 
@@ -88,6 +91,7 @@ public class RunningBomb : MonoBehaviour {
             }
             else
             {
+                this.tag = "Player";
                 if (target.tag == "Enemy")
                 {
                     m_animator.SetInteger("AnimState", 1);
@@ -103,6 +107,18 @@ public class RunningBomb : MonoBehaviour {
     public void Attack()
     {
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
+        int randomVariable = 20;//Random.Range(0, 100);
+        if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
+        {
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", m_arrayIndex, SendMessageOptions.DontRequireReceiver);
+            //TODO
+        }
+        if (m_isNecro)
+        {
+
+            m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
+        }
         Destroy(this.gameObject);
     }
     public void Explodesound()

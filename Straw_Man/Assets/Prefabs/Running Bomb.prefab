@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.76456714, y: -.026890533, z: 0}
+  m_LocalPosition: {x: 4.6500001, y: -.370000005, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 482270}
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_animator: {fileID: 0}
   m_sound: {fileID: 8300000, guid: cda0d06a366501f498f59f4aa6ab5aa7, type: 3}
   m_target: {fileID: 0}
+  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_arrayIndex: 4
 --- !u!114 &11437224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,9 +163,11 @@ MonoBehaviour:
   m_health: 0
   m_dmg: 0
   m_speed: 0
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 0
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
@@ -171,6 +175,7 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21237224
 SpriteRenderer:
