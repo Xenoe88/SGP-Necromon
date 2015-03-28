@@ -121,6 +121,48 @@ AnimationClip:
   m_EditorCurves: []
   m_EulerEditorCurves: []
   m_Events:
+  - time: .666666687
+    functionName: Attack2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .666666687
+    functionName: PlayATK2SFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .916666687
+    functionName: Attack2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .916666687
+    functionName: PlayATK2SFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.25
+    functionName: Attack2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.25
+    functionName: PlayATK2SFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.75
     functionName: ResetAnim
     data: 

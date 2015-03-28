@@ -7,6 +7,7 @@ public class DarkKnight : MonoBehaviour
     private Entity m_darkKnight;
     public GameObject m_target, m_primaryAttack, m_specialAttack;
     public float m_attack1Timer = 10.0f, m_attack2Timer = 30.0f;
+    public AudioClip m_atk1SFX, m_atk2SFX;
 
     // Use this for initialization
     void Start()
@@ -39,14 +40,13 @@ public class DarkKnight : MonoBehaviour
                 }
                 else
                 {
+                    //m_animator.SetInteger("KnightAnim", 2);
                     if (m_attack1Timer <= 0.0f)
                         m_animator.SetInteger("KnightAnim", 3);
 
                     //check if it's time to use attack 2 (player health <  50% every 20/25/30 sec?)
                     if (m_attack2Timer <= 0 && m_target.GetComponent<Entity>().m_health <= 100)
-                    {
                         m_animator.SetInteger("KnightAnim", 2);
-                    }
                 }
             }
         }
@@ -59,6 +59,8 @@ public class DarkKnight : MonoBehaviour
 
     void ResetAnim() { m_animator.SetInteger("KnightAnim", 0); }
     void Destroy() { Destroy(gameObject); }
+    void PlayATK1SFX() { AudioSource.PlayClipAtPoint(m_atk1SFX, Camera.main.transform.position); }
+    void PlayATK2SFX() { AudioSource.PlayClipAtPoint(m_atk2SFX, Camera.main.transform.position); }
 
     void Attack1()
     {
@@ -69,9 +71,16 @@ public class DarkKnight : MonoBehaviour
 
     void Attack2()
     {
-        //GameObject temp = (GameObject)Instantiate(m_specialAttack, m_target.transform.position, m_target.transform.rotation);
-        //temp.SendMessage("SetOwner", gameObject, SendMessageOptions.RequireReceiver);
-        //m_attack1Timer = 30.0f;
+        int offset;
+        if (transform.localScale.x > 0)
+            offset = -1;
+        else
+            offset = 1;
+
+        GameObject temp = (GameObject)Instantiate(m_specialAttack, transform.position + new Vector3(offset * 3.0f, 0f, 0.0f), m_target.transform.rotation);
+        Physics2D.IgnoreCollision(temp.collider2D, gameObject.collider2D);
+        temp.SendMessage("SetPlayer", gameObject, SendMessageOptions.RequireReceiver);
+        m_attack2Timer = 30.0f;
     }
 
     void Move()
