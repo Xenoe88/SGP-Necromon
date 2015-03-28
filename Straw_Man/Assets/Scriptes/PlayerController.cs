@@ -153,6 +153,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x + (m_player.transform.localScale.x * 0.2f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, m_player.collider2D);
+        temp.SendMessage("SetPlayer", gameObject, SendMessageOptions.DontRequireReceiver);
         Destroy(temp, 0.2f);
     }
 
