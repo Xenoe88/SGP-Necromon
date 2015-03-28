@@ -46,8 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Button.cs" />
+     <Compile Include="Assets\ControlChangeScene.cs" />
+     <Compile Include="Assets\CreditsSceneChange.cs" />
      <Compile Include="Assets\DKAttack2.cs" />
      <Compile Include="Assets\DarkKnightAttack1.cs" />
+     <Compile Include="Assets\InstructionsChangeScene.cs" />
      <Compile Include="Assets\LoseScenChange.cs" />
      <Compile Include="Assets\NecromonInfo.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
@@ -91,7 +95,9 @@
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
      <Compile Include="Assets\Turret.cs" />
+     <Compile Include="Assets\TutorialChangeScene.cs" />
      <Compile Include="Assets\Visible.cs" />
+     <Compile Include="Assets\VolumeControl.cs" />
      <Compile Include="Assets\WinSceneChange.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
