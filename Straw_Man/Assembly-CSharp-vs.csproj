@@ -39,15 +39,16 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>F:/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>F:/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DKAttack2.cs" />
      <Compile Include="Assets\DarkKnightAttack1.cs" />
+     <Compile Include="Assets\LoseScenChange.cs" />
      <Compile Include="Assets\NecromonInfo.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BirdScript.cs" />
@@ -91,13 +92,14 @@
      <Compile Include="Assets\Scriptes\Wolf.cs" />
      <Compile Include="Assets\Turret.cs" />
      <Compile Include="Assets\Visible.cs" />
+     <Compile Include="Assets\WinSceneChange.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />
      <None Include="Assets\Sprites\Enemies\Bird\data.xml" />
      <None Include="Assets\Sprites\Enviroment\Bomb\data.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
