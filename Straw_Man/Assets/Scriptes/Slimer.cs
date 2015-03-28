@@ -103,7 +103,7 @@ public class Slimer : MonoBehaviour
         if (m_isNecro)
         {
 
-            m_Slimer.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.RequireReceiver);
+            m_Slimer.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
            // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
         
         }
