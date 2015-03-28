@@ -16,10 +16,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CourtyardScene.unity
   - enabled: 1
-    path: Assets/Scenes/CourtyardBossScene.unity
-  - enabled: 1
     path: Assets/Scenes/LoseScene.unity
+  - enabled: 1
+    path: Assets/Scenes/CourtyardBossScene.unity
   - enabled: 1
     path: Assets/Scenes/PlayerMenuScene.unity
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity

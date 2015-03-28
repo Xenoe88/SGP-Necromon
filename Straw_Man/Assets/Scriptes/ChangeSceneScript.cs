@@ -4,6 +4,7 @@ using System.Collections;
 public class ChangeSceneScript : MonoBehaviour
 {
     public string scene;
+    public int sceneNum;
     private bool LoadLock;
     
 
