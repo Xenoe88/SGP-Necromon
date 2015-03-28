@@ -4,89 +4,80 @@ using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public GameObject[] m_necromon;
+    public int[] m_equippedNecromon;
+    public int m_selectedRune;
 
-    public RuneScript[] runes;
+    public GameObject m_slimer;
 
-    public List<RuneScript> enemiesTEST = new List<RuneScript>();
-
-    public int numBombs = 0;
-    public int numRevives = 0;
-
-    //Needs to be an array of pointers to reference the runes 
-    public RuneScript[] equipped;
-
-    public RuneScript m_selectedRune;
     public BombScript m_bomb;
+    public int numBombs = 0;
 
-    public RuneScript m_slime;
+    public int numRevives = 0;
 
     // Use this for initialization
     void Start()
     {
-        enemiesTEST.Add(m_slime);
+        m_necromon = new GameObject[1];
+        m_equippedNecromon = new int[3];
 
-        //sizing a null arrays
-        //runes = new RuneScript[14];
-        //equipped = new RuneScript[3];
-        m_selectedRune = null;
+        for (int i = 0; i < m_equippedNecromon.Length; i++)
+        {
+            m_equippedNecromon[i] = -1;
+        }
+        m_selectedRune = -1;
 
-        //for (int i = 0; i < 14; i++)
-        //{
-        //    runes[i] = null;
-        //}
-        //for (int i = 0; i < 3; i++)
-        //    equipped[i] = null;
-
-        //runes[1] = m_slime;
-
-        AddRune(1);
+        m_necromon[0] = m_slimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (RuneScript item in enemiesTEST)
+        foreach (GameObject necromon in m_necromon)
         {
-            if (item.cooldown >= 0)
-                item.cooldown -= Time.deltaTime;
-            else
-                item.cooldown = 0;
+            necromon.GetComponent<NecromonInfo>().m_spawnCooldown -= Time.deltaTime;
+
+            if (necromon.GetComponent<NecromonInfo>().m_spawnCooldown < 0)
+                necromon.GetComponent<NecromonInfo>().m_spawnCooldown = 0;
+
+            //if they aren't active and their cooldown has expired, modify the summon variable
+            if (necromon.GetComponent<NecromonInfo>().m_isActive == false && necromon.GetComponent<NecromonInfo>().m_spawnCooldown <= 0)
+                necromon.GetComponent<NecromonInfo>().ModifyCanSummon();
+
         }
-        //if (m_selectedRune != null && m_selectedRune.isActive)
-        //{
-        //    m_selectedRune.cooldown -= Time.deltaTime;
-        //}
     }
 
-    public void EquipNecro(RuneScript _equip, int place)
+    public void EquipNecro(GameObject _equip, int _index, int _enemyID)
     {
-        if (place < 3)
-            equipped[place] = _equip;
+        if (_index < 3)
+            m_equippedNecromon[_index] = _enemyID;
     }
 
-    public void UnEquipeNecro(RuneScript _unEquip, int place)
+    public void UnEquipeNecro(GameObject _unEquip, int _index, int _enemyID)
     {
-        if (place < 3)
+        if (_index < 3)
         {
-            if (equipped[place] == _unEquip)
-                equipped[place] = null;
+            if (m_equippedNecromon[_index] == _enemyID)
+                m_equippedNecromon[_index] = -1;
 
-            if (equipped[place] == m_selectedRune)
-                m_selectedRune = null;
+            if (m_equippedNecromon[_index] == m_selectedRune)
+                m_selectedRune = -1;
         }
     }
 
     public void AddRune(int _enemyID)
     {
-        foreach (RuneScript enemy in enemiesTEST)
+        foreach (GameObject enemy in m_necromon)
         {
-            if (enemy.enemyID == _enemyID)
+            if (enemy.GetComponent<NecromonInfo>().m_ID == _enemyID)
             {
-                enemy.isActive = true;
+                enemy.GetComponent<NecromonInfo>().Collect();
 
-                if (m_selectedRune == null)
+                //this should run the first time we collect a necromon
+                if (m_selectedRune == -1)
                 {
-                    m_selectedRune = enemy;
+                    m_equippedNecromon[0] = _enemyID;
+                    m_selectedRune = _enemyID;
                 }
             }
         }
@@ -94,17 +85,11 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    public void Select(int _place) { m_selectedRune = equipped[_place]; }
+    public void Select(int _place) { m_selectedRune = m_equippedNecromon[_place]; }
 
-    public int GetNumBomb()
-    {
-        return numBombs;
-    }
+    public int GetNumBomb() { return numBombs; }
 
-    public void AddBomb()
-    {
-        numBombs++;
-    }
+    public void AddBomb() { numBombs++; }
 
     public void UseBomb()
     {
@@ -112,32 +97,32 @@ public class PlayerInventory : MonoBehaviour
             numBombs--;
     }
 
-    public int GetNumRevives()
-    {
-        return numRevives;
-    }
+    public int GetNumRevives() { return numRevives; }
 
-    public void AddRevive()
-    {
-        numRevives++;
-    }
+    public void AddRevive() { numRevives++; }
 
     public void UseRevives()
     {
         if (numRevives > 0)
             numRevives--;
     }
-    public void EnemyInactive(int _necroID)
-    {
-        foreach (RuneScript enemy in enemiesTEST)
-        {
-            if (enemy.enemyID == _necroID)
-            {
-                enemy.isActive = false;
 
-                if (enemy.enemyID == m_selectedRune.enemyID)
-                    m_selectedRune.isActive = false;
-            }
-        }
+    public void Summon()
+    {
+        GameObject temp = (GameObject)Instantiate(m_necromon[m_selectedRune], GetComponent<PlayerController>().m_player.transform.position, Camera.main.transform.rotation);
+        temp.SendMessage("MakeNecro", SendMessageOptions.RequireReceiver);
     }
+    //public void EnemyInactive(int _necroID)
+    //{
+    //    //foreach (GameObject enemy in m_necromon)
+    //    //{
+    //    //    if (enemy.enemyID == _necroID)
+    //    //    {
+    //    //        enemy.isActive = false;
+
+    //    //        if (enemy.enemyID == m_selectedRune.enemyID)
+    //    //            m_selectedRune.isActive = false;
+    //    //    }
+    //    //}
+    //}
 }

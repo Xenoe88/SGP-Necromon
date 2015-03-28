@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public int m_numActiveNecromon;
     public GameObject m_hitBox;
     public GameObject m_player;
+    private PlayerInventory m_inventory;
 
     private Animator m_animator;
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
+        m_inventory = GetComponent<PlayerInventory>();
 
         m_facingDirection = 1;
     }
@@ -59,7 +61,8 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 3);
         }
 
-        if (Input.GetKeyDown("l") && m_player.GetComponent<PlayerInventory>().m_selectedRune != null)
+        int selected = m_player.GetComponent<PlayerInventory>().m_selectedRune;
+        if (Input.GetKeyDown("l") && m_inventory.m_selectedRune != -1 && m_inventory.m_necromon[selected].GetComponent<NecromonInfo>().m_isActive == false)
         {
             Summon();
         }
@@ -132,7 +135,8 @@ public class PlayerController : MonoBehaviour
     void Summon()
     {
         m_animator.SetInteger("PlayerAnim", 2);
-        m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
+        m_inventory.Summon();
+        //m_player.GetComponent<PlayerInventory>().m_selectedRune.Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
     }
 
     void Bomb()
@@ -149,6 +153,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x + (m_player.transform.localScale.x * 0.2f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, m_player.collider2D);
+        temp.SendMessage("SetPlayer", gameObject, SendMessageOptions.RequireReceiver);
         Destroy(temp, 0.2f);
     }
 

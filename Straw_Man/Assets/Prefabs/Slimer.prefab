@@ -45,6 +45,7 @@ GameObject:
   - 114: {fileID: 11438224}
   - 61: {fileID: 6160832}
   - 61: {fileID: 6143578}
+  - 114: {fileID: 11451906}
   m_Layer: 0
   m_Name: Slimer
   m_TagString: Enemy
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.00999999, y: -.310000002, z: 0}
+  m_LocalPosition: {x: -.202244639, y: -.759970486, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 426356}
@@ -230,6 +231,22 @@ MonoBehaviour:
   m_hitBox: {fileID: 127818, guid: aff8e400d104f2644adb0f872d287d91, type: 2}
   m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
   m_rune: {fileID: 11487404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+--- !u!114 &11451906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018bf1f15853922458afdaf19fc8282f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ID: 0
+  m_isActive: 0
+  m_isCollected: 1
+  m_canSummon: 1
+  m_spawnCooldown: 0
 --- !u!114 &11455698
 MonoBehaviour:
   m_ObjectHideFlags: 1
