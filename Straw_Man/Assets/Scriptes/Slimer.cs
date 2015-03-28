@@ -107,6 +107,7 @@ public class Slimer : MonoBehaviour
             m_player.GetComponent<PlayerInventory>().SendMessage("EnemyInactive", m_rune.enemyID, SendMessageOptions.DontRequireReceiver);
         }
 
+        GetComponent<NecromonInfo>().ModifyActiveStatus();
         Destroy(gameObject);
     }
 
@@ -141,5 +142,6 @@ public class Slimer : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
+        GetComponent<NecromonInfo>().m_isActive = true;
     }
 }
