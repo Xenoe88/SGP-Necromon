@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ControlChangeScene.cs" />
+     <Compile Include="Assets\CreditsSceneChange.cs" />
+     <Compile Include="Assets\InstructionsChangeScene.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BirdScript.cs" />
      <Compile Include="Assets\Scriptes\BombScript.cs" />
@@ -95,6 +98,7 @@
      <Compile Include="Assets\Scriptes\VolumeControl.cs" />
      <Compile Include="Assets\Scriptes\WinSceneChange.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
+     <Compile Include="Assets\TutorialChangeScene.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />
