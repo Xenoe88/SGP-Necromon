@@ -11,7 +11,8 @@ public class ChangeSceneScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        //Screen.SetResolution(800, 600, true);
+        //Application.targetFrameRate = 30;
     }
 
     // Update is called once per frame
@@ -22,6 +23,6 @@ public class ChangeSceneScript : MonoBehaviour
 	}
     void LoadScene()
     {
-        Application.LoadLevel(sceneNum);
+        Application.LoadLevel(1);
     }
 }

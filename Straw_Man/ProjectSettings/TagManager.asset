@@ -5,7 +5,8 @@ TagManager:
   tags:
   - Enemy
   - HitBox
-  - Boy
+  - Music
+  - SFX
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
