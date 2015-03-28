@@ -158,4 +158,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void SwingSound() { AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position); }
+
+    void ChangeScene() { Application.LoadLevel(6); }
 }

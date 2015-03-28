@@ -62,6 +62,8 @@ public class DarkKnight : MonoBehaviour
     void PlayATK1SFX() { AudioSource.PlayClipAtPoint(m_atk1SFX, Camera.main.transform.position); }
     void PlayATK2SFX() { AudioSource.PlayClipAtPoint(m_atk2SFX, Camera.main.transform.position); }
 
+    void ChangeScene() { Application.LoadLevel(8); }
+
     void Attack1()
     {
         GameObject temp = (GameObject)Instantiate(m_primaryAttack, m_target.transform.position + new Vector3(0.25f, 0.25f, 0.0f), m_target.transform.rotation);
