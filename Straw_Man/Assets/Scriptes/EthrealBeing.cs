@@ -27,7 +27,7 @@ public class EthrealBeing : MonoBehaviour
     {
 
 
-        if (GetComponent<Entity>().m_health > 0 && target && !Attacking)
+        if (GetComponent<Entity>().m_health > 0 && target  && !Attacking)
         {
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
@@ -55,14 +55,16 @@ public class EthrealBeing : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
-        if (_target.tag != tag && _target.tag != "Platform")
+        if (_target.tag != tag && _target.tag != "Platform" && _target.tag != "HitBox")
         {
             target = _target.gameObject;
         }
     }
     void OnTriggerStay2D(Collider2D _stay)
     {
-        if (_stay.tag != tag && _stay.tag != "Platform")
+        float dist = Vector3.Distance(_stay.transform.position, transform.position);
+
+        if (_stay.tag != tag && dist < 1)
         {
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
             Attacking = true;
@@ -76,11 +78,15 @@ public class EthrealBeing : MonoBehaviour
             target = null;
         }
     }
- 
+
     public void Attack()
     {
-        target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        if (this != null)
+        {
+            target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        }
         Attacking = false;
+
     }
     public void Die()
     {
