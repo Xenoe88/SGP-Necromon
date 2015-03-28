@@ -126,6 +126,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110136294
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110255498}
+  m_DstState: {fileID: 110215948}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: KnightAnim
+    m_EventTreshold: 3
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110140876
 Transition:
   serializedVersion: 2
@@ -221,6 +241,26 @@ Transition:
   - m_ConditionMode: 6
     m_ConditionEvent: KnightAnim
     m_EventTreshold: 4
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110159384
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110215948}
+  m_DstState: {fileID: 110255498}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: KnightAnim
+    m_EventTreshold: 2
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -390,11 +430,13 @@ StateMachine:
       second:
       - {fileID: 110107428}
       - {fileID: 110111826}
+      - {fileID: 110159384}
     data:
       first: {fileID: 110255498}
       second:
       - {fileID: 110144798}
       - {fileID: 110142934}
+      - {fileID: 110136294}
     data:
       first: {fileID: 110215750}
       second: []
