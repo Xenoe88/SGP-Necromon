@@ -4,6 +4,7 @@ using System.Collections;
 public class ChangeSceneScript : MonoBehaviour
 {
     public string scene;
+    public int sceneNum;
     private bool LoadLock;
     
 
@@ -21,6 +22,6 @@ public class ChangeSceneScript : MonoBehaviour
 	}
     void LoadScene()
     {
-        Application.LoadLevel(scene);
+        Application.LoadLevel(4);
     }
 }

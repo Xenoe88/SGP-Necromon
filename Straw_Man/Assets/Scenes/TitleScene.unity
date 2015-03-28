@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: CourtyardScene
+  sceneNum: 3
 --- !u!1 &1198700425
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: MainMenuScene
+  sceneNum: 0
 --- !u!1 &1716805325
 GameObject:
   m_ObjectHideFlags: 0
