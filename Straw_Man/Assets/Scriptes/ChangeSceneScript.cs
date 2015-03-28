@@ -22,6 +22,6 @@ public class ChangeSceneScript : MonoBehaviour
 	}
     void LoadScene()
     {
-        Application.LoadLevel(4);
+        Application.LoadLevel(sceneNum);
     }
 }
