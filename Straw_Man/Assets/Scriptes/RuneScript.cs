@@ -17,41 +17,12 @@ public class RuneScript : MonoBehaviour
     private Animator animator;
 
 	// Use this for initialization
-	void Start () 
+    void Start()
     {
         animator = GetComponent<Animator>();
-	}
-
-	// Update is called once per frame
-    //void Update () 
-    //{
-    //    if (isActive)
-    //    {
-    //        cooldown -= Time.deltaTime;
-
-    //        if (cooldown < 0)
-    //            cooldown = 0;
-    //    }
-    //}
-  
-    //public void Summon(Vector3 _position)
-    //{
-    //    if (isActive == false && cooldown <= 0)
-    //    {
-    //        GameObject temp = (GameObject)Instantiate(necro, _position, Camera.main.transform.rotation);
-    //        temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
-    //        //Instantiate(m_necroBox, _position, Camera.main.transform.rotation);
-    //        isActive = true;
-    //        cooldown = m_timerAmount;
-    //    }
-    //}
+    }
 
     public int GetID() { return enemyID; }
-
-    //public void EnemyInactive(int _necroID) 
-    //{ 
-    //    isActive = false;
-    //}
 
     void OnTriggerEnter2D(Collider2D _target)
     {

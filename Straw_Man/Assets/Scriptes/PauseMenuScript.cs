@@ -40,6 +40,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public void PauseGame()
     {
+        anim.SetInteger("PauseState", 0);
+
         anim.enabled = true;
         anim.Play("PauseMenuSlideIn");
         isPaused = true;
@@ -51,7 +53,7 @@ public class PauseMenuScript : MonoBehaviour
     public void UnPauseGame()
     {
         isPaused = false;
-        anim.Play("PauseMenuSlideOut");
+        anim.SetInteger("PauseState",1);
         Time.timeScale = 1;
         
     }
