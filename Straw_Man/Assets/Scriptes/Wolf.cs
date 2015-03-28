@@ -13,7 +13,11 @@ public class Wolf : MonoBehaviour {
     public bool m_isNecro = false;
 
     public Animator m_animator;
+
     public GameObject m_target;
+    public GameObject m_rune;
+
+    public int m_arrayIndex = 2;
 
 	// Use this for initialization
 	void Start () 
@@ -152,6 +156,19 @@ public class Wolf : MonoBehaviour {
 
     public void Die()
     {
+        int randomVariable = 20;//Random.Range(0, 100);
+        if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
+        {
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", m_arrayIndex, SendMessageOptions.DontRequireReceiver);
+            //TODO
+        }
+
+        if (m_isNecro)
+        {
+
+            m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.RequireReceiver);
+        }
         Destroy(this.gameObject);
     }
     void MakeNecro()

@@ -246,11 +246,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a3bc7e14caa6f46b993c862353dde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp: []
+  temp:
+  - {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
+  - {fileID: 197588, guid: 0b3a2d66f67d6cd47b76b2a2599da9a6, type: 2}
+  - {fileID: 149338, guid: 0cf097e306f709e419b581317eb92642, type: 2}
+  - {fileID: 171368, guid: 7dd5f56d011b9314492a5d47c1549f10, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000
-  m_selectedRune: 0
+  m_selectedRune: 2
   m_bomb: {fileID: 11455476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
   player: {fileID: 0}
 --- !u!212 &21205058
