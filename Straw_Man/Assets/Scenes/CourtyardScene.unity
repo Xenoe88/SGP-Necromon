@@ -42284,11 +42284,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716805325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1eed4cddff17594eb24e01d228a2767, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d34351acb5130d4f9d399e80c89e808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fill: 0
-  player: {fileID: 1277998370}
+  pauseMenuPanel: {fileID: 1330339891}
 --- !u!1001 &1719098873
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RunningBomb : MonoBehaviour {
+public class RunningBomb : MonoBehaviour
+{
 
     public Transform sightStart, sightEnd;
 
@@ -18,21 +19,22 @@ public class RunningBomb : MonoBehaviour {
 
     public GameObject m_target;
     public GameObject m_rune;
+    public int slot = 4;
 
     public int m_arrayIndex = 4;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 20;
         m_Entity.m_health = 10;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (m_Entity.m_health <= 0)
         {
@@ -60,7 +62,7 @@ public class RunningBomb : MonoBehaviour {
                 transform.Translate(direction * Time.deltaTime, Space.World);
             }
         }
-	}
+    }
 
     void OnTriggerStay2D(Collider2D target)
     {
@@ -121,6 +123,33 @@ public class RunningBomb : MonoBehaviour {
         }
         Destroy(this.gameObject);
     }
+    void Destroy()
+    {
+        int randomVariable = Random.Range(0, 100);
+
+        if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
+        {
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
+            //TODO
+        }
+
+        if (m_isNecro)
+        {
+
+            m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
+            // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
+
+        }
+
+        Destroy(gameObject);
+    }
+    public void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
+    }
+
     public void Explodesound()
     {
         AudioSource.PlayClipAtPoint(m_sound, transform.position);

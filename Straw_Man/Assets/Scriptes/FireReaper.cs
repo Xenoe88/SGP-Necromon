@@ -9,6 +9,7 @@ public class FireReaper : MonoBehaviour
 
     public bool m_isNecro = false, m_isTargeting = false;
     public RuneScript m_rune;
+    public int slot = 1;
 
     public GameObject m_target, m_fireBall;
     public float distanceTest;
@@ -142,16 +143,22 @@ public class FireReaper : MonoBehaviour
         //TODO - also need to test if we've already collected this enemies rune
         if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
         {
-            Instantiate(m_rune, transform.position, transform.rotation);
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         if (m_isNecro)
         {
-            //m_player.GetComponent<PlayerInventory>().SendMessage("EnemyInactive", m_rune.enemyID, SendMessageOptions.DontRequireReceiver);
+           GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         Destroy(gameObject);
     }
 
+    public void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
+    }
     void ResetAnim() { m_animation.SetInteger("FireReaperAnim", 0); }
 }

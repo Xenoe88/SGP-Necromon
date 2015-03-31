@@ -3,16 +3,8 @@ using System.Collections;
 
 public class RuneScript : MonoBehaviour 
 {
-    public float m_timerAmount;
-    public GameObject necro, m_player;
+    public GameObject necro;
     public int enemyID;
-    public float cooldown;
-    public bool isActive = false;
-    public bool collected = false;
-
-    public string descript;
-    public  string NecroName;
-    public string type;
 
     private Animator animator;
 
