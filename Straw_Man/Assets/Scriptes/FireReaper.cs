@@ -32,7 +32,6 @@ public class FireReaper : MonoBehaviour
         if (m_isTargeting == false)
             m_target = FindClosestTarget();
 
-
         
         if (Vector3.Distance(m_target.transform.position, transform.position) < 8.0f)
         {
@@ -75,25 +74,29 @@ public class FireReaper : MonoBehaviour
 
         GameObject[] possibleTargets = GameObject.FindGameObjectsWithTag(tag);
 
-        //loop thru all possible targets
-        for (int i = 0; i < possibleTargets.Length; i++)
+        if (possibleTargets.Length > 0)
         {
-            //just set the first one, but paranoid check in case there are no other enemies in the scene
-            if (i == 0 && possibleTargets[i] != gameObject)
-                closestTarget = possibleTargets[i];
-            else
+
+            //loop thru all possible targets
+            for (int i = 0; i < possibleTargets.Length; i++)
             {
-                //if any of the others are closer, set the variable
-                if (Vector3.Distance(closestTarget.transform.position, transform.position) >= Vector3.Distance(possibleTargets[i].transform.position, transform.position))
+                //just set the first one, but paranoid check in case there are no other enemies in the scene
+                if (i == 0 && possibleTargets[i] != gameObject)
+                    closestTarget = possibleTargets[i];
+                else
                 {
-                    //don't let the enemy target itself
-                    if (gameObject != possibleTargets[i])
-                        closestTarget = possibleTargets[i];
+                    //if any of the others are closer, set the variable
+                    if (Vector3.Distance(closestTarget.transform.position, transform.position) >= Vector3.Distance(possibleTargets[i].transform.position, transform.position))
+                    {
+                        //don't let the enemy target itself
+                        if (gameObject != possibleTargets[i])
+                            closestTarget = possibleTargets[i];
+                    }
                 }
             }
-        }
 
-        //set targeting to true so we don't keep switching targets
+            //set targeting to true so we don't keep switching targets
+        }
         m_isTargeting = true;
         return closestTarget;
     }
