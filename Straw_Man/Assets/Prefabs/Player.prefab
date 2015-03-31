@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.83338702, y: .834394574, z: 0}
+  m_LocalPosition: {x: .529999971, y: -14.8599997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -251,7 +251,7 @@ MonoBehaviour:
   - {fileID: 197588, guid: 0b3a2d66f67d6cd47b76b2a2599da9a6, type: 2}
   - {fileID: 149338, guid: 0cf097e306f709e419b581317eb92642, type: 2}
   - {fileID: 171368, guid: 7dd5f56d011b9314492a5d47c1549f10, type: 2}
-  - {fileID: 0}
+  - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -264,7 +264,7 @@ MonoBehaviour:
   numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000
-  m_selectedRune: 2
+  m_selectedRune: 0
   m_bomb: {fileID: 11455476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
   player: {fileID: 0}
 --- !u!212 &21205058
