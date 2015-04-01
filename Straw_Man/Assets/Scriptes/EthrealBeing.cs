@@ -3,11 +3,12 @@ using System.Collections;
 
 public class EthrealBeing : MonoBehaviour
 {
-    bool isNecro = false;
+    public bool isNecro = false;
     public GameObject target = null;
     bool Attacking = false;
 
-  
+    public GameObject m_rune;
+    public int slot = 6;
 
 
     // Use this for initialization
@@ -34,7 +35,13 @@ public class EthrealBeing : MonoBehaviour
         }
         else if (Attacking)
         {
+            if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
+            {
+                GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
 
+                GetComponent<Entity>().m_attackCooldown = 10;
+
+            }
         }
        
 
@@ -81,7 +88,7 @@ public class EthrealBeing : MonoBehaviour
 
     public void Attack()
     {
-        if (this != null)
+        if (this != null && target)
         {
             target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
         }
@@ -90,6 +97,21 @@ public class EthrealBeing : MonoBehaviour
     }
     public void Die()
     {
+        int randomVariable = Random.Range(0, 100);
+       
+        if (randomVariable >= 0 && randomVariable <= 20 && isNecro == false)
+        {
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
+            //TODO
+        }
+
+        if (isNecro)
+        {
+
+            GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
+
+        }
         Destroy(gameObject);
     }
 }

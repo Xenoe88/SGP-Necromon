@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 3);
         }
 
-        if (Input.GetKeyDown("l") && m_player.GetComponent<PlayerInventory>().m_selectedRune != null)
+        if (Input.GetKeyDown("l") && m_player.GetComponent<PlayerInventory>().m_selectedRune != -1)
         {
             Summon();
         }

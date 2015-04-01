@@ -9,6 +9,7 @@ public class FireReaper : MonoBehaviour
 
     public bool m_isNecro = false, m_isTargeting = false;
     public RuneScript m_rune;
+    public int slot = 1;
 
     public GameObject m_target, m_fireBall;
     public float distanceTest;
@@ -30,7 +31,6 @@ public class FireReaper : MonoBehaviour
         //if we aren't already targeting someone to attack, set target to the closest enemy
         if (m_isTargeting == false)
             m_target = FindClosestTarget();
-
 
         
         if (Vector3.Distance(m_target.transform.position, transform.position) < 8.0f)
@@ -74,25 +74,29 @@ public class FireReaper : MonoBehaviour
 
         GameObject[] possibleTargets = GameObject.FindGameObjectsWithTag(tag);
 
-        //loop thru all possible targets
-        for (int i = 0; i < possibleTargets.Length; i++)
+        if (possibleTargets.Length > 0)
         {
-            //just set the first one, but paranoid check in case there are no other enemies in the scene
-            if (i == 0 && possibleTargets[i] != gameObject)
-                closestTarget = possibleTargets[i];
-            else
+
+            //loop thru all possible targets
+            for (int i = 0; i < possibleTargets.Length; i++)
             {
-                //if any of the others are closer, set the variable
-                if (Vector3.Distance(closestTarget.transform.position, transform.position) >= Vector3.Distance(possibleTargets[i].transform.position, transform.position))
+                //just set the first one, but paranoid check in case there are no other enemies in the scene
+                if (i == 0 && possibleTargets[i] != gameObject)
+                    closestTarget = possibleTargets[i];
+                else
                 {
-                    //don't let the enemy target itself
-                    if (gameObject != possibleTargets[i])
-                        closestTarget = possibleTargets[i];
+                    //if any of the others are closer, set the variable
+                    if (Vector3.Distance(closestTarget.transform.position, transform.position) >= Vector3.Distance(possibleTargets[i].transform.position, transform.position))
+                    {
+                        //don't let the enemy target itself
+                        if (gameObject != possibleTargets[i])
+                            closestTarget = possibleTargets[i];
+                    }
                 }
             }
-        }
 
-        //set targeting to true so we don't keep switching targets
+            //set targeting to true so we don't keep switching targets
+        }
         m_isTargeting = true;
         return closestTarget;
     }
@@ -142,16 +146,22 @@ public class FireReaper : MonoBehaviour
         //TODO - also need to test if we've already collected this enemies rune
         if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
         {
-            Instantiate(m_rune, transform.position, transform.rotation);
+            GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
+            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         if (m_isNecro)
         {
-            //m_player.GetComponent<PlayerInventory>().SendMessage("EnemyInactive", m_rune.enemyID, SendMessageOptions.DontRequireReceiver);
+           GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         Destroy(gameObject);
     }
 
+    public void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
+    }
     void ResetAnim() { m_animation.SetInteger("FireReaperAnim", 0); }
 }
