@@ -1,0 +1,751 @@
+fileFormatVersion: 2
+guid: 9c05bc9cb772ef04281c864ad02af5b3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: xpchest_0
+    21300002: xpchest_1
+    21300004: xpchest_2
+    21300006: xpchest_3
+    21300008: xpchest_4
+    21300010: xpchest_5
+    21300012: xpchest_6
+    21300014: xpchest_7
+    21300016: xpchest_8
+    21300018: xpchest_9
+    21300020: xpchest_10
+    21300022: xpchest_11
+    21300024: xpchest_12
+    21300026: xpchest_13
+    21300028: xpchest_14
+    21300030: xpchest_15
+    21300032: xpchest_16
+    21300034: xpchest_17
+    21300036: xpchest_18
+    21300038: xpchest_19
+    21300040: xpchest_20
+    21300042: xpchest_21
+    21300044: xpchest_22
+    21300046: xpchest_23
+    21300048: xpchest_24
+    21300050: xpchest_25
+    21300052: xpchest_26
+    21300054: xpchest_27
+    21300056: xpchest_28
+    21300058: xpchest_29
+    21300060: xpchest_30
+    21300062: xpchest_31
+    21300064: xpchest_32
+    21300066: xpchest_33
+    21300068: xpchest_34
+    21300070: xpchest_35
+    21300072: xpchest_36
+    21300074: xpchest_37
+    21300076: xpchest_38
+    21300078: xpchest_39
+    21300080: xpchest_40
+    21300082: xpchest_41
+    21300084: xpchest_42
+    21300086: xpchest_43
+    21300088: xpchest_44
+    21300090: xpchest_45
+    21300092: xpchest_46
+    21300094: xpchest_47
+    21300096: xpchest_48
+    21300098: xpchest_49
+    21300100: xpchest_50
+    21300102: xpchest_51
+    21300104: xpchest_52
+    21300106: xpchest_53
+    21300108: xpchest_54
+    21300110: xpchest_55
+    21300112: xpchest_56
+    21300114: xpchest_57
+    21300116: xpchest_58
+    21300118: xpchest_59
+    21300120: xpchest_60
+    21300122: xpchest_61
+    21300124: xpchest_62
+    21300126: xpchest_63
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: xpchest_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 337
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 337
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 337
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 337
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 337
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 337
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 336
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 289
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 289
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 289
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_15
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 289
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 289
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_18
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_19
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_20
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 289
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_22
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_23
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 288
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 241
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_25
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 241
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_26
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 241
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_27
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 241
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_28
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 241
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_30
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_31
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_32
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 241
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_33
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_34
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_35
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 240
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 193
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_37
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 193
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 193
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_39
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 193
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_40
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 193
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_41
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_42
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_43
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_44
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 193
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_45
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_46
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_47
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 192
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 145
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 145
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_50
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 145
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_51
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 145
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_52
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 97
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_53
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 97
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_54
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 97
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_55
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_56
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 49
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_57
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 49
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_58
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 49
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_59
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 49
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_60
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_61
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_62
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xpchest_63
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
