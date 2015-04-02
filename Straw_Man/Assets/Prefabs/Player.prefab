@@ -193,7 +193,7 @@ MonoBehaviour:
   m_speed: 2
   m_ID: 0
   m_attackCooldown: 0
-  m_statusModifier: 1
+  m_statusModifier: -10.5600004
   m_statusTimer: 0
   m_NecroCooldown: 0
   m_isAlive: 0

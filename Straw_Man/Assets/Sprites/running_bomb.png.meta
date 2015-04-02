@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: d9d11d4f0ad554a40a5151a9a94161f5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: running_bomb_0
+    21300002: running_bomb_1
+    21300004: running_bomb_2
+    21300006: running_bomb_3
+    21300008: running_bomb_4
+    21300010: running_bomb_5
+    21300012: running_bomb_6
+    21300014: running_bomb_7
+    21300016: running_bomb_8
+    21300018: running_bomb_9
+    21300020: running_bomb_10
+    21300022: running_bomb_11
+    21300024: running_bomb_12
+    21300026: running_bomb_13
+    21300028: running_bomb_14
+    21300030: running_bomb_15
+    21300032: running_bomb_21
+    21300034: running_bomb_22
+    21300036: running_bomb_23
+    21300038: running_bomb_24
+    21300040: running_bomb_25
+    21300042: running_bomb_26
+    21300044: running_bomb_27
+    21300046: running_bomb_28
+    21300048: running_bomb_29
+    21300050: running_bomb_30
+    21300052: running_bomb_31
+    21300054: running_bomb_32
+    21300056: running_bomb_33
+    21300058: running_bomb_34
+    21300060: running_bomb_35
+    21300062: running_bomb_36
+    21300064: running_bomb_37
+    21300066: running_bomb_38
+    21300068: running_bomb_39
+    21300070: running_bomb_40
+    21300072: running_bomb_41
+    21300074: running_bomb_42
+    21300076: running_bomb_43
+    21300078: running_bomb_44
+    21300080: running_bomb_45
+    21300082: running_bomb_46
+    21300084: running_bomb_47
+    21300086: running_bomb_48
+    21300088: running_bomb_49
+    21300090: running_bomb_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: running_bomb_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 466
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 466
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 466
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 466
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 466
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 466
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_6
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 466
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 437
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 437
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 437
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 437
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 437
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 437
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_13
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 435
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_14
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 439
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_15
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 439
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_21
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 412
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_22
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 412
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_23
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 412
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_24
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 412
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_25
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 412
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_26
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 412
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_27
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 370
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_28
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 370
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_29
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 370
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_30
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 370
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_31
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 370
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_32
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 370
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_33
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 344
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_34
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 344
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_35
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 344
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 344
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_37
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 344
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 344
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_39
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 319
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_40
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 319
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_41
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 319
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_42
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 319
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_43
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 319
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 319
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_45
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 318
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_46
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 319
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_47
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 291
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_48
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 291
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 291
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: running_bomb_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 436
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
