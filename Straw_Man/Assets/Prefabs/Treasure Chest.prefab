@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .389152139, y: -.401156515, z: 0}
+  m_LocalPosition: {x: 4.09775734, y: -.410345405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animate: {fileID: 0}
-  m_object: {fileID: 150040, guid: a425d419cb543754fa0227138cf68e3e, type: 2}
+  m_object:
+  - {fileID: 150040, guid: a425d419cb543754fa0227138cf68e3e, type: 2}
+  - {fileID: 155476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
+  - {fileID: 149338, guid: 0cf097e306f709e419b581317eb92642, type: 2}
+  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
+  - {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
+  - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
   m_sfx: {fileID: 8300000, guid: eff3db455da1a4f4c904c39a1ad4c457, type: 3}
+  m_opened: 0
 --- !u!212 &21230262
 SpriteRenderer:
   m_ObjectHideFlags: 1

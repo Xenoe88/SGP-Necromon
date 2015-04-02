@@ -7,6 +7,8 @@ public class Necromancer : MonoBehaviour
     public GameObject   m_target;
     public GameObject   m_summonPortal;
 
+    public AudioClip    m_sounds;
+
     public Entity       m_Entity;
 
     public Animator     m_animator;
@@ -50,11 +52,13 @@ public class Necromancer : MonoBehaviour
                 if (m_teleportTimer <= 0.0f)
                 {
                     m_animator.SetInteger("AnimState", 5);
+                    AudioSource.PlayClipAtPoint(m_sounds, transform.position);
                     m_teleportTimer = 30.0f;
                 }
             }
             if (distance < 15)
             {
+                rigidbody2D.isKinematic = true;
                 if (m_summonTimer <= 0.0f)
                 {
                     m_animator.SetInteger("AnimState", 2);
@@ -62,6 +66,7 @@ public class Necromancer : MonoBehaviour
             }
             else if (distance < 20)
             {
+                rigidbody2D.isKinematic = false;
                 Vector3 destination = m_target.transform.position;
                 Vector3 direction = (destination - transform.position).normalized;
                 transform.Translate(direction * Time.deltaTime, Space.World);
@@ -84,6 +89,7 @@ public class Necromancer : MonoBehaviour
         //float randy = Random.Range(transform.position.y - 10.0f, transform.position.y + 10.0f);
         transform.position = new Vector3(randx, transform.position.y, transform.position.z);
         m_animator.SetInteger("AnimState", 6);
+        AudioSource.PlayClipAtPoint(m_sounds, transform.position);
     }
     void Idling()
     {

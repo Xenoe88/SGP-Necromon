@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Knight : MonoBehaviour
 {
+    public AudioClip m_sound;
 
     public Transform sightStart, sightEnd;
 
@@ -92,6 +93,17 @@ public class Knight : MonoBehaviour
             m_target = target.gameObject;
             this.tag = "Player";
         }
+    }
+
+    public void ModifyHealth(int _dmg)
+    {
+        int blockChance = Random.Range(1, 100);
+        if (blockChance > 1 && blockChance < 30)
+        {
+            print("blocked");
+            AudioSource.PlayClipAtPoint(m_sound, transform.position);
+        }
+        else { m_Entity.m_health += _dmg; }
     }
 
     void OnTriggerExit2D(Collider2D target)
