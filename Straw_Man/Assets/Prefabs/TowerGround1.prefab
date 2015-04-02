@@ -10,11 +10,11 @@ GameObject:
   - 4: {fileID: 441688}
   - 212: {fileID: 21241688}
   - 114: {fileID: 11441688}
-  - 61: {fileID: 6141688}
   - 50: {fileID: 5041022}
-  m_Layer: 0
+  - 61: {fileID: 6185656}
+  m_Layer: 8
   m_Name: TowerGround1
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.0629997, y: -1.68900001, z: 0}
+  m_LocalPosition: {x: -10.5319996, y: -1.08700001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +46,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6141688
+--- !u!61 &6185656
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .899999976, y: .300000012}
+  m_Size: {x: 1, y: .333333343}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11441688
 MonoBehaviour:
