@@ -119,6 +119,7 @@ MonoBehaviour:
   m_animator: {fileID: 0}
   m_summonTimer: 20
   m_teleportTimer: 30
+  m_regen: 0
 --- !u!212 &21215388
 SpriteRenderer:
   m_ObjectHideFlags: 1
