@@ -1,0 +1,16 @@
+Library
+
+Debug
+
+Temp
+*.suo
+*.sdf
+*.opensdf
+TestScene.unity
+TestScene.unity.meta
+*.csproj
+*.csproj
+TestScene.unity
+TestScene.unity.meta
+/Straw_Man/Assets/Sprites/Misc
+Misc.meta

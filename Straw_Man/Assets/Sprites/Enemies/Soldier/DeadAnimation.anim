@@ -71,7 +71,7 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_Events:
   - time: .333333343
-    functionName: Death
+    functionName: Die
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5774e8e37095a404cb2815cc4a344df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  necro: {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
   enemyID: 0
 --- !u!212 &21287404
 SpriteRenderer:
