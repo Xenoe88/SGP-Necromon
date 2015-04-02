@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.67000008, y: .720000029, z: 0}
+  m_LocalPosition: {x: -9.23999977, y: 1.82000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_numActiveNecromon: 0
   m_hitBox: {fileID: 191826, guid: e1a12ce88939d044db78b359e5f0d76d, type: 2}
   m_player: {fileID: 105060}
+  m_RevivePositon: {x: 0, y: 0, z: 0}
   m_audioSource: {fileID: 0}
   m_walkingSFX: {fileID: 8300000, guid: fd86bf87ca0e34c42948000c8206bf1b, type: 3}
   m_swingSFX: {fileID: 8300000, guid: 56bcbc39c2c77c94c97ea5d27b1c535f, type: 3}
