@@ -60,6 +60,7 @@ public class BirdScript : MonoBehaviour
 
             //Destroy(gameObject);
         }
+        Attacking = true;
 
     }
     public void Turn()

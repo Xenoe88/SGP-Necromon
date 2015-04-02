@@ -11,6 +11,7 @@ public class ChangeSceneScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        LoadLock = false;
         //Screen.SetResolution(800, 600, true);
         //Application.targetFrameRate = 30;
     }
