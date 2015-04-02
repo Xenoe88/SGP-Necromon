@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RuneScript : MonoBehaviour 
 {
-    public GameObject necro;
+    //public GameObject necro;
     public int enemyID;
 
     private Animator animator;
@@ -21,8 +21,12 @@ public class RuneScript : MonoBehaviour
         if(_target.tag == "Player")
         {
             //collected = true;
-            necro.GetComponent<Entity>().Owner = _target.gameObject;
-            necro.GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().AddRune(enemyID);
+            //necro.GetComponent<Entity>().Owner = _target.gameObject;
+            //necro.GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().AddRune(enemyID);
+            //_target.GetComponent<PlayerController>().SendMessage("SetRevivePosition", SendMessageOptions.DontRequireReceiver);
+
+            _target.GetComponent<PlayerInventory>().AddRune(enemyID);
+            _target.GetComponent<PlayerController>().SetRevivePosition(gameObject.transform.position);
 
             animator.SetInteger("RuneAnim", 1);
         }

@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public GameObject m_hitBox;
     public GameObject m_player;
 
+    private Color m_startColor, m_endColor;
+    public Vector3 m_RevivePositon = Vector3.zero;
+    private float m_deathTimer = 0.0f;
+
     private Animator m_animator;
 
     public AudioSource m_audioSource;
@@ -36,6 +40,9 @@ public class PlayerController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
 
+        m_startColor = GetComponent<SpriteRenderer>().color;
+        m_endColor = new Color(m_startColor.r, m_startColor.g, m_startColor.b, 0.0f);
+
         m_facingDirection = 1;
     }
 
@@ -43,9 +50,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (m_player.GetComponent<Entity>().m_health <= 0)
+        if (m_player.GetComponent<Entity>().m_isAlive == false)
         {
-            m_animator.SetInteger("PlayerAnim", 0);
+            //m_animator.SetInteger("PlayerAnim", 0);
+
+            if (renderer.material.color.a >= 0.0f)
+            {
+                m_deathTimer += Time.deltaTime;
+
+                renderer.material.color = Color.Lerp(m_startColor, m_endColor, m_deathTimer * 0.5f); 
+            }
+
+            if (renderer.material.color.a <= 0.0f)
+            {
+                gameObject.transform.position = m_RevivePositon;
+                renderer.material.color = m_startColor;
+                m_player.GetComponent<PlayerInventory>().UseRevives();
+                m_player.GetComponent<Entity>().m_health = 200;
+                m_player.GetComponent<Entity>().m_isAlive = true;
+            }
+
             return;
         }
 
@@ -53,6 +77,7 @@ public class PlayerController : MonoBehaviour
         Move();
 
         Jump();
+
         //attack (function called in animation)
         if (Input.GetKeyDown("k"))
         {
@@ -160,4 +185,6 @@ public class PlayerController : MonoBehaviour
     void SwingSound() { AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position); }
 
     void ChangeScene() { Application.LoadLevel(6); }
+
+    public void SetRevivePosition(Vector3 _pos) { m_RevivePositon = _pos; }
 }

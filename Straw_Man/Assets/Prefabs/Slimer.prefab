@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.00999999, y: -.310000002, z: 0}
+  m_LocalPosition: {x: -4.50899982, y: -1.12899995, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 426356}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_lookForwardCollision: 0
   m_hitBox: {fileID: 127818, guid: aff8e400d104f2644adb0f872d287d91, type: 2}
   m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
-  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 0
 --- !u!114 &11455698
 MonoBehaviour:

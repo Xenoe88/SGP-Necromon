@@ -43,7 +43,7 @@ public class BombScript : MonoBehaviour
     {
         GameObject temp = (GameObject)Instantiate(m_area, transform.position, transform.rotation);
 
-        Destroy(temp, 0.2f);
+        Destroy(temp, 2.0f);
         Destroy(gameObject);
     }
 }

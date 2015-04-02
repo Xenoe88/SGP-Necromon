@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.31807566, y: -.530185938, z: 0}
+  m_LocalPosition: {x: -2.44256687, y: -1.19878507, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 445568}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_isNecro: 0
   m_animator: {fileID: 0}
   m_target: {fileID: 0}
-  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
+  m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   m_arrayIndex: 5
 --- !u!212 &21245568
 SpriteRenderer:
