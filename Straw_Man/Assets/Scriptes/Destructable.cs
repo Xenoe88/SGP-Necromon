@@ -6,16 +6,6 @@ public class Destructable : MonoBehaviour
     public WorldPiece m_worldPiece;
     public int m_numPieces = 25;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     void Explode()
     {
         Destroy(gameObject);

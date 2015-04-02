@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (m_player.GetComponent<Entity>().m_health <= 0)
         {
-            m_animator.SetInteger("PlayerAnim", 5);
+            m_animator.SetInteger("PlayerAnim", 0);
             return;
         }
 
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         if (m_movement != 0)
         {
             m_animator.SetInteger("PlayerAnim", 1);
-            m_player.transform.localScale = new Vector3(m_movement, 1);
+            m_player.transform.localScale = new Vector3(m_movement * -1.0f, 1);
 
             if (m_audioSource.isPlaying == false)
                 m_audioSource.Play();
@@ -109,8 +109,8 @@ public class PlayerController : MonoBehaviour
         m_isGrounded = Physics2D.OverlapCircle(m_groundCheck.position, m_groundRadius, m_whatIsGround);
 
         if (!m_isGrounded)
-            m_animator.SetInteger("PlayerAnim", 4);
-        else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 4)
+            m_animator.SetInteger("PlayerAnim", 2);
+        else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 2)
             m_animator.SetInteger("PlayerAnim", 0);
 
         if (Input.GetKeyDown("w") && m_isGrounded)
@@ -131,9 +131,9 @@ public class PlayerController : MonoBehaviour
 
     void Summon()
     {
-        m_animator.SetInteger("PlayerAnim", 2);
+        m_animator.SetInteger("PlayerAnim", 4);
         m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
-        print("pooi");
+        //print("pooi");
         
         //GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_selectedRune,m_player.transform.position + new Vector3(1*m_facingDirection,0), Camera.main.transform.rotation);
         //temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
     //following functions called in animation
     void Attack()
     {
-        GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x + (m_player.transform.localScale.x * 0.2f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
+        GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_player.transform.position.x - (m_player.transform.localScale.x * 0.4f), m_player.transform.position.y, m_player.transform.position.z), transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, m_player.collider2D);
         temp.SendMessage("SetPlayer", this.gameObject, SendMessageOptions.DontRequireReceiver);
         Destroy(temp, 0.2f);
