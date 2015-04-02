@@ -1,30 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Necromancer : MonoBehaviour {
+public class Necromancer : MonoBehaviour
+{
 
-    public GameObject m_target;
-    public GameObject m_summonPortal;
+    public GameObject   m_target;
+    public GameObject   m_summonPortal;
 
-    public Entity m_Entity;
+    public Entity       m_Entity;
 
-    public Animator m_animator;
+    public Animator     m_animator;
 
-    public float m_summonTimer = 20.0f;
-    public float m_teleportTimer = 30.0f;
+    public float        m_summonTimer       =   20.0f;
+    public float        m_teleportTimer     =   30.0f;
 
-    public bool m_regen = false;
+    public bool         m_regen             =   false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_health = 300;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (m_Entity.m_health <= 0)
         {
@@ -51,24 +53,30 @@ public class Necromancer : MonoBehaviour {
                     m_teleportTimer = 30.0f;
                 }
             }
-            else if (distance < 15)
+            if (distance < 15)
             {
                 if (m_summonTimer <= 0.0f)
                 {
                     m_animator.SetInteger("AnimState", 2);
                 }
-
-                if (m_teleportTimer > 0)
-                {
-                    m_teleportTimer -= Time.fixedDeltaTime;
-                }
-                if (m_summonTimer > 0)
-                {
-                    m_summonTimer -= Time.fixedDeltaTime;
-                }
+            }
+            else if (distance < 20)
+            {
+                Vector3 destination = m_target.transform.position;
+                Vector3 direction = (destination - transform.position).normalized;
+                transform.Translate(direction * Time.deltaTime, Space.World);
+                m_animator.SetInteger("AnimState", 1);
+            }
+            if (m_teleportTimer > 0)
+            {
+                m_teleportTimer -= Time.fixedDeltaTime;
+            }
+            if (m_summonTimer > 0)
+            {
+                m_summonTimer -= Time.fixedDeltaTime;
             }
         }
-	}
+    }
 
     void Teleport()
     {
