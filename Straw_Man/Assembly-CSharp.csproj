@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Knight.cs" />
+     <Compile Include="Assets\Necromancer.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BirdScript.cs" />
      <Compile Include="Assets\Scriptes\BombCounterScript.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scriptes\DarkKnight.cs" />
      <Compile Include="Assets\Scriptes\DarkKnightAttack1.cs" />
      <Compile Include="Assets\Scriptes\Demon.cs" />
+     <Compile Include="Assets\Scriptes\Destructable.cs" />
      <Compile Include="Assets\Scriptes\DroppingPlatform.cs" />
      <Compile Include="Assets\Scriptes\Entity.cs" />
      <Compile Include="Assets\Scriptes\EthrealBeing.cs" />
@@ -86,6 +89,7 @@
      <Compile Include="Assets\Scriptes\PlayerScript.cs" />
      <Compile Include="Assets\Scriptes\PointOneScript.cs" />
      <Compile Include="Assets\Scriptes\Projectile.cs" />
+     <Compile Include="Assets\Scriptes\RandomSprite.cs" />
      <Compile Include="Assets\Scriptes\ReviveScript.cs" />
      <Compile Include="Assets\Scriptes\RuneScript.cs" />
      <Compile Include="Assets\Scriptes\RunningBomb.cs" />
@@ -102,6 +106,9 @@
      <Compile Include="Assets\Scriptes\VolumeControl.cs" />
      <Compile Include="Assets\Scriptes\WinSceneChange.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
+     <Compile Include="Assets\SummoningPortal.cs" />
+     <Compile Include="Assets\TutorialChangeScene.cs" />
+     <Compile Include="Assets\WorldPiece.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ice Reaper\data.xml" />
