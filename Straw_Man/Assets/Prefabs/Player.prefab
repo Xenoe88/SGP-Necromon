@@ -26,12 +26,12 @@ GameObject:
   - 212: {fileID: 21205058}
   - 114: {fileID: 11405062}
   - 50: {fileID: 5005058}
-  - 61: {fileID: 6105058}
   - 114: {fileID: 11405058}
   - 114: {fileID: 11446092}
   - 95: {fileID: 9533580}
   - 82: {fileID: 8287634}
   - 114: {fileID: 11496218}
+  - 61: {fileID: 6142168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4499998, y: -1.73000002, z: 0}
+  m_LocalPosition: {x: -9.67000008, y: .720000029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -79,7 +79,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6105058
+--- !u!61 &6142168
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,8 +88,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .230000004, y: .444960475}
-  m_Center: {x: 0, y: -.0519236624}
+  m_Size: {x: .600000024, y: .870000005}
+  m_Center: {x: 0, y: 0}
 --- !u!82 &8287634
 AudioSource:
   m_ObjectHideFlags: 1
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_speed: 2
   m_ID: 0
   m_attackCooldown: 0
-  m_statusModifier: -10.5600004
+  m_statusModifier: 1
   m_statusTimer: 0
   m_NecroCooldown: 0
   m_isAlive: 0
@@ -287,7 +287,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300174, guid: 7b6a151e0cc89854b81b9f7729f84c61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87492d767b811234198eeb7291b9678b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
