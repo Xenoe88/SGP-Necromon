@@ -83,9 +83,14 @@ public class Knight : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D target)
     {
-        if (target.tag == "Player")
+        if (target.tag == "Player" && !m_isNecro)
         {
             m_target = target.gameObject;
+        }
+        else if (target.tag == "Enemy" && m_isNecro)
+        {
+            m_target = target.gameObject;
+            this.tag = "Player";
         }
     }
 
