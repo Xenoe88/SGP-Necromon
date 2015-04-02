@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TutorialChangeScene : MonoBehaviour {
+public class TutorialsChangeScene : MonoBehaviour {
 
     private bool LoadLock;
     // Use this for initialization
