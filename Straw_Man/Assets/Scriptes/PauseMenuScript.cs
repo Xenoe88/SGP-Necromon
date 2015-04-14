@@ -14,7 +14,8 @@ public class PauseMenuScript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        anim = pauseMenuPanel.GetComponent<Animator>();
+        if (pauseMenuPanel)
+            anim = pauseMenuPanel.GetComponent<Animator>();
         anim.enabled = false;
 
     }
@@ -22,20 +23,20 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            if (Input.GetKeyUp(KeyCode.Escape) && !isPaused)
-            {
-                print("pooi");
 
-                PauseGame();
-            }
-            else if (Input.GetKeyUp(KeyCode.Escape) && isPaused)
-            {
+        if (Input.GetKeyUp(KeyCode.Escape) && !isPaused)
+        {
+            print("pooi");
 
-                UnPauseGame();
-                
-            }
-        
+            PauseGame();
+        }
+        else if (Input.GetKeyUp(KeyCode.Escape) && isPaused)
+        {
+
+            UnPauseGame();
+
+        }
+
     }
 
     public void PauseGame()
@@ -47,14 +48,14 @@ public class PauseMenuScript : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
 
-        
+
     }
 
     public void UnPauseGame()
     {
         isPaused = false;
-        anim.SetInteger("PauseState",1);
+        anim.SetInteger("PauseState", 1);
         Time.timeScale = 1;
-        
+
     }
 }

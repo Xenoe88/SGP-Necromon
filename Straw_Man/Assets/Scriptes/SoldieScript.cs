@@ -112,8 +112,12 @@ public class SoldieScript : MonoBehaviour
     }
     void ModifyHealth(int _amount)
     {
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
         GetComponent<Entity>().m_health += _amount;
-       
+
+        if(GetComponent<Entity>().m_health <= 0)
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+
     }
     void OnTriggerEnter2D(Collider2D _target)
     {

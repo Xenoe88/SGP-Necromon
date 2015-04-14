@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject m_hitBox;
     public GameObject m_player;
 
+
     private Animator m_animator;
 
     public AudioSource m_audioSource;
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
 
         if (m_player.GetComponent<Entity>().m_health <= 0)
         {
@@ -68,7 +71,8 @@ public class PlayerController : MonoBehaviour
         {
             Bomb();
         }
-
+      
+        
     }
 
     void Move()
@@ -76,7 +80,7 @@ public class PlayerController : MonoBehaviour
         //dont move if stunned
         if (m_player.GetComponent<Entity>().m_status == Status.STUN)
             return;
-        
+
         // get direction
         m_movement = Input.GetAxisRaw("Horizontal");
 
@@ -102,6 +106,9 @@ public class PlayerController : MonoBehaviour
 
         // move
         m_player.rigidbody2D.velocity = new Vector2(m_movement * m_player.GetComponent<Entity>().m_speed * m_player.GetComponent<Entity>().m_statusModifier, m_player.rigidbody2D.velocity.y);
+
+
+
     }
 
     void Jump()
@@ -112,7 +119,7 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 2);
         else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 2)
             m_animator.SetInteger("PlayerAnim", 0);
-
+       
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
             AudioSource.PlayClipAtPoint(m_jumpSFX, Camera.main.transform.position);
@@ -127,6 +134,7 @@ public class PlayerController : MonoBehaviour
             m_player.rigidbody2D.velocity = Vector2.zero;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
         }
+       
     }
 
     void Summon()
@@ -134,7 +142,7 @@ public class PlayerController : MonoBehaviour
         m_animator.SetInteger("PlayerAnim", 4);
         m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
         //print("pooi");
-        
+
         //GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_selectedRune,m_player.transform.position + new Vector3(1*m_facingDirection,0), Camera.main.transform.rotation);
         //temp.SendMessage("MakeNecro", SendMessageOptions.DontRequireReceiver);
     }

@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
     //parallel container to modify in Unity
     public GameObject[] temp;
 
-    public int numBombs = 0;
+    public int numBombs = 57;
     public int numRevives = 0;
 
     //Needs to be an array of pointers to reference the runes 
