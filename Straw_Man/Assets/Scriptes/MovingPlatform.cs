@@ -4,8 +4,9 @@ using System.Collections;
 public class MovingPlatform : MonoBehaviour {
 
     public float m_speed;
-    public GameObject m_right, m_left;
     public float m_rightPos, m_leftPos;
+
+    public GameObject m_right, m_left;
 
 	// Use this for initialization
 	void Start () 
@@ -36,9 +37,9 @@ public class MovingPlatform : MonoBehaviour {
     {
         if (target.tag == "Player")
         {
-            target.transform.Translate(new Vector3(m_speed, 0, 0), Space.World);
+            //target.transform.Translate(new Vector3(m_speed, 0, 0), Space.World);
             //target.transform.Translate(new Vector3(transform.position.x, 0, 0) * m_speed, Space.World);
-            //target.transform.parent.position = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
+            target.transform.position = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
             //target.rigidbody2D.velocity = transform.rigidbody2D.velocity;
         }
     }
