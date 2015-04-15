@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21255476}
   - 95: {fileID: 9555476}
   - 50: {fileID: 5055476}
-  - 61: {fileID: 6155476}
   - 114: {fileID: 11455476}
+  - 61: {fileID: 6162746}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.33999991, y: -1.88999999, z: 0}
+  m_LocalPosition: {x: 19.9225273, y: 3.79061532, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6155476
+--- !u!61 &6162746
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -56,8 +56,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .40891555, y: .575179577}
-  m_Center: {x: -.0125135779, y: -.692410231}
+  m_Size: {x: .332298279, y: .342210293}
+  m_Center: {x: -.0293083191, y: -.808894873}
 --- !u!95 &9555476
 Animator:
   serializedVersion: 3
