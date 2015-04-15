@@ -4,7 +4,7 @@ using System.Collections;
 public class Destructable : MonoBehaviour 
 {
     public WorldPiece m_worldPiece;
-    public int m_numPieces = 25;
+    public int m_numPieces = 6;
 
     void Explode()
     {

@@ -1,32 +1,13 @@
 fileFormatVersion: 2
-guid: f0ffc96557e6f8444b8677fe39cfe637
+guid: bc0e9fa7200997f4c910856aa8e1062d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TowerPieces_0
-    21300002: TowerPieces_1
-    21300004: TowerPieces_2
-    21300006: TowerPieces_3
-    21300008: TowerPieces_4
-    21300010: TowerPieces_5
-    21300012: TowerPieces_6
-    21300014: TowerPieces_7
-    21300016: TowerPieces_8
-    21300018: TowerPieces_9
-    21300020: TowerPieces_10
-    21300022: TowerPieces_11
-    21300024: TowerPieces_12
-    21300026: TowerPieces_13
-    21300028: TowerPieces_14
-    21300030: TowerPieces_15
-    21300032: TowerPieces_16
-    21300034: TowerPieces_17
-    21300036: TowerPieces_18
-    21300038: TowerPieces_19
-    21300040: TowerPieces_20
-    21300042: TowerPieces_21
-    21300044: TowerPieces_22
-    21300046: TowerPieces_23
-    21300048: TowerPieces_24
+    21300000: towerPieces_0
+    21300002: towerPieces_1
+    21300004: towerPieces_2
+    21300006: towerPieces_3
+    21300008: towerPieces_4
+    21300010: towerPieces_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -68,253 +49,63 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: TowerPieces_0
+    - name: towerPieces_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 18
-        height: 12
+        y: 30
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_1
+    - name: towerPieces_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 48
-        width: 18
-        height: 12
+        x: 30
+        y: 30
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_2
+    - name: towerPieces_2
       rect:
         serializedVersion: 2
-        x: 36
-        y: 48
-        width: 18
-        height: 12
+        x: 60
+        y: 30
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_3
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 48
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_4
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 36
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_6
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 36
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_7
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 36
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_8
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 36
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_9
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 36
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 24
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_11
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 24
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_12
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 24
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_13
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 24
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_14
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 24
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 12
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_16
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 12
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_17
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 12
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_18
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 12
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_19
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 12
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_20
+    - name: towerPieces_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 18
-        height: 12
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_21
+    - name: towerPieces_4
       rect:
         serializedVersion: 2
-        x: 18
+        x: 30
         y: 0
-        width: 18
-        height: 12
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_22
+    - name: towerPieces_5
       rect:
         serializedVersion: 2
-        x: 36
+        x: 60
         y: 0
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_23
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 18
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TowerPieces_24
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 18
-        height: 12
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

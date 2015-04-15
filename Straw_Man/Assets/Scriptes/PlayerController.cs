@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             //m_animator.SetInteger("PlayerAnim", 0);
 
+            //fade away
             if (renderer.material.color.a >= 0.0f)
             {
                 m_deathTimer += Time.deltaTime;
@@ -61,7 +62,8 @@ public class PlayerController : MonoBehaviour
                 renderer.material.color = Color.Lerp(m_startColor, m_endColor, m_deathTimer * 0.5f); 
             }
 
-            if (renderer.material.color.a <= 0.0f)
+            //revive if we can
+            if (renderer.material.color.a <= 0.0f && m_player.GetComponent<PlayerInventory>().GetNumRevives() > 0)
             {
                 gameObject.transform.position = m_RevivePositon;
                 renderer.material.color = m_startColor;
