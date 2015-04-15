@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scriptes\SpikeScript.cs" />
      <Compile Include="Assets\Scriptes\SummoningPortal.cs" />
      <Compile Include="Assets\Scriptes\Teleporter.cs" />
+     <Compile Include="Assets\Scriptes\ToolTip.cs" />
      <Compile Include="Assets\Scriptes\TreasureChestScript.cs" />
      <Compile Include="Assets\Scriptes\Turret.cs" />
      <Compile Include="Assets\Scriptes\TurretScript.cs" />
@@ -109,6 +110,7 @@
      <Compile Include="Assets\Scriptes\WinSceneChange.cs" />
      <Compile Include="Assets\Scriptes\Wolf.cs" />
      <Compile Include="Assets\Scriptes\WorldPiece.cs" />
+     <Compile Include="Assets\TutorialChangeScene.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ice Reaper\data.xml" />
