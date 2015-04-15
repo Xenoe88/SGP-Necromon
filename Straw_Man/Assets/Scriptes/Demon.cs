@@ -30,11 +30,14 @@ public class Demon : MonoBehaviour
 
         rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
+        if (target)
+        {
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+        }
     }
     void Attack()
     {
-        print("Po");
-
         target.SendMessage("ModifyHealth", -10, SendMessageOptions.DontRequireReceiver);
     }
     void OnTriggerEnter2D(Collider2D _collider)
