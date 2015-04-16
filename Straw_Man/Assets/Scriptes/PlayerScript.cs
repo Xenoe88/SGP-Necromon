@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
 	}
 
     void ModifyRank() { m_rank++; }
-
+    void ModifyStatus() { m_gameStatus++; }
     void OnGUI()
     {
         //status icons

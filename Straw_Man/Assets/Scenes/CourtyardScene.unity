@@ -46113,8 +46113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d34351acb5130d4f9d399e80c89e808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuPanel: {fileID: 0}
-  canvas: {fileID: 0}
+  pauseMenuPanel: {fileID: 287020301}
+  canvas: {fileID: 1343783141}
 --- !u!1001 &1719098873
 Prefab:
   m_ObjectHideFlags: 0
@@ -46824,7 +46824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da1ace6e4a9c48804b53d55143931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_worldPiece: {fileID: 11451628, guid: 0cfa50cdde9ba6f49ac22165fe8756f2, type: 2}
+  m_worldPiece: {fileID: 0}
   m_numPieces: 25
 --- !u!212 &1732754888
 SpriteRenderer:
