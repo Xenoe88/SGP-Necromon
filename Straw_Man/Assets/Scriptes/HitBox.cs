@@ -8,7 +8,7 @@ public class HitBox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D _target)
     {
-        _target.SendMessage("ModifyHealth", m_player.GetComponent<Entity>().m_dmg);
+        _target.SendMessage("ModifyHealth", m_player.GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
         //AudioSource.PlayClipAtPoint(m_hit, Camera.main.transform.position);
     }
 
