@@ -46,7 +46,7 @@ public class Necromancer : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
             float distance = Vector3.Distance(m_target.transform.position, transform.position);
-            print(distance);
+            //print(distance);
             if (distance < 2)
             {
                 rigidbody2D.isKinematic = true;
