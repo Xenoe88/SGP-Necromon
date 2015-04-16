@@ -91,7 +91,6 @@ public class Knight : MonoBehaviour
         else if (target.tag == "Enemy" && m_isNecro)
         {
             m_target = target.gameObject;
-            this.tag = "Player";
         }
     }
 
@@ -133,8 +132,14 @@ public class Knight : MonoBehaviour
 
         if (m_isNecro)
         {
+            print("line");
             m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
         }
         Destroy(this.gameObject);
+    }
+    public void MakeNecro()
+    {
+        m_isNecro = true;
+        this.tag = "Player";
     }
 }
