@@ -5,7 +5,7 @@ public class PauseMenuScript : MonoBehaviour
 {
 
     public GameObject pauseMenuPanel;
-
+    public Canvas canvas;
     private Animator anim;
 
     private bool isPaused = false;
@@ -13,6 +13,7 @@ public class PauseMenuScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+       
         Time.timeScale = 1;
         if (pauseMenuPanel)
             anim = pauseMenuPanel.GetComponent<Animator>();

@@ -22,6 +22,8 @@ public class Demon : MonoBehaviour
 
 
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
     }
 
     // Update is called once per frame
@@ -29,7 +31,6 @@ public class Demon : MonoBehaviour
     {
 
         rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-        GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
 
         if (target)
         {
@@ -38,7 +39,11 @@ public class Demon : MonoBehaviour
     }
     void Attack()
     {
-        target.SendMessage("ModifyHealth", -10, SendMessageOptions.DontRequireReceiver);
+        GameObject temp = (GameObject)Instantiate(this.gameObject, transform.position, transform.rotation);
+
+        Destroy(temp, 2.0f);
+        Destroy(gameObject);
+
     }
     void OnTriggerEnter2D(Collider2D _collider)
     {
@@ -53,10 +58,20 @@ public class Demon : MonoBehaviour
     {
         GetComponent<Entity>().m_health += _dmg;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+        CheckHealth();
+    }
+    void CheckHealth()
+    {
+    
 
         if (GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 4);
+        {
+            
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 5);
 
+        }
+        else
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
 
     }
     void Destroy()

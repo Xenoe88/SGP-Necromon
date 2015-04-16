@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scriptes\DarkKnight.cs" />
      <Compile Include="Assets\Scriptes\DarkKnightAttack1.cs" />
      <Compile Include="Assets\Scriptes\Demon.cs" />
+     <Compile Include="Assets\Scriptes\DemonHitBox.cs" />
      <Compile Include="Assets\Scriptes\Destructable.cs" />
      <Compile Include="Assets\Scriptes\DroppingPlatform.cs" />
      <Compile Include="Assets\Scriptes\Entity.cs" />

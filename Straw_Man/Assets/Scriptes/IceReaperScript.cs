@@ -6,19 +6,21 @@ public class IceReaperScript : MonoBehaviour
     public bool isNecro = false;
     public GameObject target = null;
     public GameObject projectile = null;
-    public float atkrange = 5.0f;
+    public float atkrange = 3.0f;
     public bool fired = false;
     int spd;
     public GameObject m_rune;
     public int slot = 6;
-    public Vector2 vel;
+  
+
+    public bool Hit = false;
     // Use this for initialization
     void Start()
     {
         GetComponent<Entity>().m_dmg = -15;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         spd = GetComponent<Entity>().m_speed = 50;
-        GetComponent<Entity>().m_health = 40;
+        GetComponent<Entity>().m_health = 60;
         GetComponent<Entity>().m_attackCooldown = 14;
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
@@ -27,13 +29,14 @@ public class IceReaperScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vel = rigidbody2D.velocity;
+
+      
         if (target)
         {
             Vector3 move = (target.transform.position - transform.position).normalized;
             //following target
-            if ( move.x > 0)
-             rigidbody2D.velocity = new Vector2(.5f, rigidbody2D.velocity.y);
+            if (move.x > 0)
+                rigidbody2D.velocity = new Vector2(.5f, rigidbody2D.velocity.y);
             else if (move.x < 0)
                 rigidbody2D.velocity = new Vector2(-.5f, rigidbody2D.velocity.y);
             if (move.y > 0)
@@ -42,15 +45,22 @@ public class IceReaperScript : MonoBehaviour
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -.5f);
 
 
-       
-            if (Vector3.Distance(transform.position, target.transform.position) <= atkrange && GetComponent<Entity>().m_attackCooldown <= 0)
+
+            if (Vector3.Distance(transform.position, target.transform.position) <= atkrange && !fired && GetComponent<Entity>().m_attackCooldown <= 0)
             {
+
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+                GetComponent<Entity>().m_attackCooldown = 8;
+            }
+            else if (fired && GetComponent<Entity>().m_attackCooldown > 0)
+            {
+                GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
+
             }
 
-       
+
         }
-        if(GetComponent<Entity>().m_attackCooldown <= 0)
+        if (GetComponent<Entity>().m_attackCooldown <= 0)
         {
             fired = false;
         }
@@ -58,43 +68,43 @@ public class IceReaperScript : MonoBehaviour
     }
     public void Attack()
     {
-        if (!fired)
-        {
 
-            GameObject reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 0, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, 0);
+        if (fired)
+            return;
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, 0, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, 0);
+        GameObject reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 0, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, 0);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(0, 1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(0, 1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, 0, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, 0);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(0, -1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(0, -1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(0, 1);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, 1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(0, -1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(0, -1);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, -1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, -1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, 1);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, 1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, 1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, -1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, -1);
 
-            reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, -1, 0), transform.rotation);
-            reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
-            reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, -1);
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(-1, 1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(-1, 1);
 
-            fired = true;
-        }
+        reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, -1, 0), transform.rotation);
+        reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(1, -1);
+
+        fired = true;
         //GameObject[] bullet = new GameObject[numShot];
         //Quaternion[] shootDirections = 
         //GameObject temp = (GameObject)Instantiate(projectile, transform.position, Camera.main.transform.rotation);
@@ -103,10 +113,9 @@ public class IceReaperScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D _collider)
     {
-        if (_collider.gameObject.tag == "Player")
+        if (_collider.gameObject.tag != this.tag && (_collider.gameObject.tag == "Player" || _collider.gameObject.tag == "Enemy"))
             target = _collider.gameObject;
-
-
+       
     }
 
 
@@ -120,15 +129,24 @@ public class IceReaperScript : MonoBehaviour
     }
     public void ModifyHealth(int _dmg)
     {
+        
         GetComponent<Entity>().m_health += _dmg;
-        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-
-
-        if (GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
     }
+    void CheckHealth()
+    {
 
+        if (GetComponent<Entity>().m_health <= 0)
+        {
+
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 5);
+
+        }
+        else
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
+
+    }
     public void MakeNecro()
     {
         isNecro = true;
@@ -151,6 +169,7 @@ public class IceReaperScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
+       
         Destroy(gameObject);
     }
 }

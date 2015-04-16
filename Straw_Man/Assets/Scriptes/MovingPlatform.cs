@@ -23,12 +23,12 @@ public class MovingPlatform : MonoBehaviour {
 
         if (transform.position.x > m_rightPos)
         {
-            print("turn left");
+            
             m_speed = -0.025f;
         }
         else if (transform.position.x < m_leftPos)
         {
-            print("turn right");
+            
             m_speed = 0.025f;
         }
 	}
