@@ -23,11 +23,13 @@ public class MovingPlatform : MonoBehaviour {
 
         if (transform.position.x > m_rightPos)
         {
-                    m_speed = -0.025f;
+            
+            m_speed = -0.025f;
         }
         else if (transform.position.x < m_leftPos)
         {
-             m_speed = 0.025f;
+            
+            m_speed = 0.025f;
         }
 	}
 
