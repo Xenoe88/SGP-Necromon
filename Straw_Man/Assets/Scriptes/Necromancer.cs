@@ -13,8 +13,8 @@ public class Necromancer : MonoBehaviour
 
     public Animator     m_animator;
 
-    public float        m_summonTimer       =   20.0f;
-    public float        m_teleportTimer     =   30.0f;
+    public float        m_summonTimer       =   10.0f;
+    public float        m_teleportTimer     =   15.0f;
 
     public bool         m_regen             =   false;
 
@@ -46,19 +46,24 @@ public class Necromancer : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
             float distance = Vector3.Distance(m_target.transform.position, transform.position);
-            print(distance);
+            //print(distance);
             if (distance < 2)
             {
+                rigidbody2D.isKinematic = true;
                 if (m_teleportTimer <= 0.0f)
                 {
                     m_animator.SetInteger("AnimState", 5);
                     AudioSource.PlayClipAtPoint(m_sounds, transform.position);
-                    m_teleportTimer = 30.0f;
+                    m_teleportTimer = 15.0f;
                 }
+            }
+            else if (distance > 5)
+            {
+                rigidbody2D.isKinematic = false;
             }
             if (distance < 15)
             {
-                rigidbody2D.isKinematic = true;
+               //rigidbody2D.isKinematic = true;
                 if (m_summonTimer <= 0.0f)
                 {
                     m_animator.SetInteger("AnimState", 2);
@@ -66,7 +71,7 @@ public class Necromancer : MonoBehaviour
             }
             else if (distance < 20)
             {
-                rigidbody2D.isKinematic = false;
+                //rigidbody2D.isKinematic = false;
                 Vector3 destination = m_target.transform.position;
                 Vector3 direction = (destination - transform.position).normalized;
                 transform.Translate(direction * Time.deltaTime, Space.World);
@@ -85,7 +90,7 @@ public class Necromancer : MonoBehaviour
 
     void Teleport()
     {
-        float randx = Random.Range(transform.position.x - 10.0f, transform.position.x + 10.0f);
+        float randx = Random.Range(transform.position.x - 5.0f, transform.position.x + 5.0f);
         //float randy = Random.Range(transform.position.y - 10.0f, transform.position.y + 10.0f);
         transform.position = new Vector3(randx, transform.position.y, transform.position.z);
         m_animator.SetInteger("AnimState", 6);
@@ -117,6 +122,6 @@ public class Necromancer : MonoBehaviour
         {
             GameObject clonereg = Instantiate(m_summonPortal, new Vector3(m_target.transform.position.x, m_target.transform.position.y - 0.25f, m_target.transform.position.z), Quaternion.identity) as GameObject;
         }
-        m_summonTimer = 20.0f;
+        m_summonTimer = 10.0f;
     }
 }

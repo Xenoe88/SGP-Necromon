@@ -71,12 +71,12 @@ public class RunningBomb : MonoBehaviour
         {
             if (!m_isNecro && target.tag == "Player")
             {
-                print("hi");
+                //print("hi");
                 m_target = target.gameObject;
             }
             else if (m_isNecro && target.tag == "Enemy")
             {
-                print("hi");
+                //print("hi");
                 m_target = target.gameObject;
             }
             m_moving = true;

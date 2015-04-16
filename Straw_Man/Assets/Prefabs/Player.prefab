@@ -31,7 +31,8 @@ GameObject:
   - 95: {fileID: 9533580}
   - 82: {fileID: 8287634}
   - 114: {fileID: 11496218}
-  - 61: {fileID: 6142168}
+  - 58: {fileID: 5852840}
+  - 114: {fileID: 11417786}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.23999977, y: 1.82000005, z: 0}
+  m_LocalPosition: {x: 92.9300003, y: -57.6300011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -79,8 +80,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6142168
-BoxCollider2D:
+--- !u!58 &5852840
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -88,8 +89,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .600000024, y: .870000005}
-  m_Center: {x: 0, y: 0}
+  m_Radius: .318145752
+  m_Center: {x: 0, y: -.0900000036}
 --- !u!82 &8287634
 AudioSource:
   m_ObjectHideFlags: 1
@@ -205,6 +206,18 @@ MonoBehaviour:
   m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
   Owner: {fileID: 0}
   m_status: 0
+--- !u!114 &11417786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007521663d2c41141b9b602955545617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 105060}
 --- !u!114 &11446092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,7 +300,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87492d767b811234198eeb7291b9678b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

@@ -24,8 +24,8 @@ public class TwoWayPlatform : MonoBehaviour
         {
             Physics2D.IgnoreCollision(HitAbove.collider, this.collider2D, true);
             //player.rigidbody2D.velocity = new Vector2(player.rigidbody2D.velocity.x, player.rigidbody2D.velocity.y + player.GetComponent<PlayerController>().m_jumpHeight);
-
         }
+
         //Two Way Platform Drop down
         if (Input.GetKeyDown("s"))
         {

@@ -41,9 +41,10 @@ public class BombScript : MonoBehaviour
     }
     public  void Explode()
     {
-        GameObject temp = (GameObject)Instantiate(m_area, transform.position, transform.rotation);
+        //modified instantite position so the bomb destroys the tiles it's sitting on
+        GameObject temp = (GameObject)Instantiate(m_area, transform.position - new Vector3(0.0f, 0.5f, 0.0f), transform.rotation);
 
-        Destroy(temp, 2.0f);
+        Destroy(temp, 0.2f);
         Destroy(gameObject);
     }
 }

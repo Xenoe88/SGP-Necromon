@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     public enum Rank { D, C, B, A };
     public Rank m_rank;
 
+    public int m_gameStatus = 0;
+
 	// Use this for initialization
 	void Start () 
     {
