@@ -31,8 +31,8 @@ GameObject:
   - 95: {fileID: 9533580}
   - 82: {fileID: 8287634}
   - 114: {fileID: 11496218}
-  - 61: {fileID: 6142168}
   - 58: {fileID: 5852840}
+  - 114: {fileID: 11417786}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.830002, y: -27.75, z: 0}
+  m_LocalPosition: {x: 92.9300003, y: -57.6300011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -91,17 +91,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .318145752
   m_Center: {x: 0, y: -.0900000036}
---- !u!61 &6142168
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105060}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .600000024, y: .827269018}
-  m_Center: {x: 0, y: .021365881}
 --- !u!82 &8287634
 AudioSource:
   m_ObjectHideFlags: 1
@@ -217,6 +206,18 @@ MonoBehaviour:
   m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
   Owner: {fileID: 0}
   m_status: 0
+--- !u!114 &11417786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007521663d2c41141b9b602955545617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 105060}
 --- !u!114 &11446092
 MonoBehaviour:
   m_ObjectHideFlags: 1

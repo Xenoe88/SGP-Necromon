@@ -62,7 +62,7 @@ public class EthrealBeing : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
-        if (_target.tag != tag && _target.tag != "Platform" && _target.tag != "HitBox")
+        if (_target.tag != tag && _target.tag != "Platform" && _target.tag != "HitBox" && _target.tag != "Untagged")
         {
             target = _target.gameObject;
         }

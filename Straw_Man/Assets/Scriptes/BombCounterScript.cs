@@ -16,7 +16,7 @@ public class BombCounterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(l);
+        //print(l);
        l = info.GetComponent<PlayerInventory>().GetNumBomb();
        p = info.GetComponent<PlayerInventory>().GetNumRevives();
         //OnGUI();

@@ -21,7 +21,10 @@ public class TwoWayPlatform : MonoBehaviour
         RaycastHit2D HitBelow = Physics2D.Raycast(bot, -Vector3.up, 1);
 
         if (HitAbove && HitAbove.collider.CompareTag("TwoWay"))
+        {
             Physics2D.IgnoreCollision(HitAbove.collider, this.collider2D, true);
+            //player.rigidbody2D.velocity = new Vector2(player.rigidbody2D.velocity.x, player.rigidbody2D.velocity.y + player.GetComponent<PlayerController>().m_jumpHeight);
+        }
 
         //Two Way Platform Drop down
         if (Input.GetKeyDown("s"))
