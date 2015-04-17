@@ -16,9 +16,25 @@ GameObject:
   - 114: {fileID: 11437224}
   - 61: {fileID: 6182268}
   - 61: {fileID: 6182270}
+  - 114: {fileID: 11456404}
   m_Layer: 0
   m_Name: Running Bomb
   m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &156404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 456404}
+  m_Layer: 0
+  m_Name: AvoidWall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,12 +61,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6500001, y: -.370000005, z: 0}
+  m_LocalPosition: {x: -.0820000023, y: -.49000001, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 482270}
+  - {fileID: 456404}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &456404
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.318000019, y: .00400000811, z: -.312999994}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 437224}
+  m_RootOrder: 1
 --- !u!4 &482270
 Transform:
   m_ObjectHideFlags: 1
@@ -178,6 +207,20 @@ MonoBehaviour:
   m_entityHitSFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
+--- !u!114 &11456404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8efe680011ffb4cad300c204946a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightStart: {fileID: 437224}
+  sightEnd: {fileID: 456404}
+  needsCollision: 1
 --- !u!212 &21237224
 SpriteRenderer:
   m_ObjectHideFlags: 1

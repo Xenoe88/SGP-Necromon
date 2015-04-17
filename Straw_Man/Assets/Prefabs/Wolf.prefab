@@ -16,6 +16,7 @@ GameObject:
   - 50: {fileID: 5075676}
   - 61: {fileID: 6175674}
   - 61: {fileID: 6172450}
+  - 114: {fileID: 11495750}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -38,6 +39,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &195750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495750}
+  m_Layer: 0
+  m_Name: AvoidForward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &449338
 Transform:
   m_ObjectHideFlags: 1
@@ -45,10 +61,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.57999992, y: -12.79, z: 0}
+  m_LocalPosition: {x: -.248648524, y: -.300034285, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475676}
+  - {fileID: 495750}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &475676
@@ -63,6 +80,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449338}
   m_RootOrder: 0
+--- !u!4 &495750
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .768648505, y: .0300342739, z: -.310000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449338}
+  m_RootOrder: 1
 --- !u!50 &5075676
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -176,6 +205,20 @@ MonoBehaviour:
   m_entityHitSFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
+--- !u!114 &11495750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8efe680011ffb4cad300c204946a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightStart: {fileID: 449338}
+  sightEnd: {fileID: 495750}
+  needsCollision: 1
 --- !u!212 &21249338
 SpriteRenderer:
   m_ObjectHideFlags: 1
