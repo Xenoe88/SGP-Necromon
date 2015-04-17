@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 0524eeb9441026047ad24e51bf097367
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hudNecromon_0
+    21300002: hudNecromon_1
+    21300004: hudNecromon_2
+    21300006: hudNecromon_3
+    21300008: hudNecromon_4
+    21300010: hudNecromon_5
+    21300012: hudNecromon_6
+    21300014: hudNecromon_7
+    21300016: hudNecromon_8
+    21300018: hudNecromon_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hudNecromon_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 750
+        width: 113
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 716
+        width: 76
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 748
+        width: 76
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_3
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 747
+        width: 50
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_4
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 770
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_5
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 705
+        width: 124
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 469
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 451
+        width: 91
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_8
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 470
+        width: 80
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hudNecromon_9
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 464
+        width: 102
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

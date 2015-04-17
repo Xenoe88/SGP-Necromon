@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11496218}
   - 58: {fileID: 5852840}
   - 114: {fileID: 11417786}
+  - 114: {fileID: 11430818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -59,8 +60,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.9300003, y: -57.6300011, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 93.3000031, y: -57.5, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
   m_Father: {fileID: 0}
@@ -178,6 +179,18 @@ MonoBehaviour:
   m_inventory: {fileID: 0}
   m_player: {fileID: 11405062}
   m_rank: 0
+  m_gameStatus: 0
+  m_hudSprites:
+  - {fileID: 2800000, guid: 4de10e44bf63ad34c9ca9d7453464247, type: 3}
+  - {fileID: 2800000, guid: edd6e6404ddb6ca4886adbb96fd3ac61, type: 3}
+  - {fileID: 2800000, guid: a5e03a581cd96a54d9cbbf477e1791f8, type: 3}
+  - {fileID: 2800000, guid: c1b2ff9324317a046931a4aca9e709a3, type: 3}
+  - {fileID: 2800000, guid: 91d4ad2ed6deb50408be33f2254d6e95, type: 3}
+  - {fileID: 2800000, guid: 30be78e0cf1359a4eb8c4488eb1a202e, type: 3}
+  - {fileID: 2800000, guid: 6127f2d1125343046a492d615e3a3e7e, type: 3}
+  - {fileID: 2800000, guid: 7f233c91c4aee46408d17ad669ce48ff, type: 3}
+  - {fileID: 2800000, guid: cbae5b7824016854d81b6dade0dcbab9, type: 3}
+  - {fileID: 2800000, guid: 023b3ad1c5f1c854d810b179d7c4372e, type: 3}
 --- !u!114 &11405062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +231,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 105060}
+--- !u!114 &11430818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aee5f2d3798174a81d43a3792cbe48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11446092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movement: 0
-  m_jumpHeight: 4
+  m_jumpHeight: 5
   m_groundCheck: {fileID: 405058}
   m_whatIsGround:
     serializedVersion: 2
@@ -268,19 +292,14 @@ MonoBehaviour:
   - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
   - {fileID: 160202, guid: 47a96f18300e55e468fb1cc09c9ed746, type: 2}
   - {fileID: 166294, guid: 79f78cadb1b3c3d4b84674b9f5e3ae46, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 139754, guid: ae74f6d2081eba244a630a077e94ac49, type: 2}
+  - {fileID: 120202, guid: eb96a3ca68564c2449c28ec87489b5f2, type: 2}
+  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
   numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000
   m_selectedRune: -1
   m_bomb: {fileID: 11455476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
-  player: {fileID: 0}
 --- !u!212 &21205058
 SpriteRenderer:
   m_ObjectHideFlags: 1
