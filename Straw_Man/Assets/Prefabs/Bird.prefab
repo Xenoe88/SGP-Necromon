@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: .5, z: 0}
+  m_LocalPosition: {x: 89.229805, y: -63.3396149, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 460604}
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   turnPoint: {x: 0, y: 0, z: 0}
+  m_rune: {fileID: 0}
+  slot: 5
 --- !u!114 &11487034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,9 +207,11 @@ MonoBehaviour:
   m_health: 0
   m_dmg: 0
   m_speed: 0
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 0
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
@@ -215,6 +219,7 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21260202
 SpriteRenderer:
