@@ -12,4 +12,10 @@ public class BossDoor : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D _target)
+    {
+        if (_target.gameObject.GetComponent<PlayerScript>().m_gameStatus == 3)
+            Application.LoadLevel(13);
+    }
 }

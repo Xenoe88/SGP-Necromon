@@ -31,3 +31,5 @@ EditorBuildSettings:
     path: Assets/Scenes/NecroTutorialScene.unity
   - enabled: 1
     path: Assets/Scenes/ThroneRoomeScene.unity
+  - enabled: 1
+    path: Assets/Scenes/EvilWizardScene.unity

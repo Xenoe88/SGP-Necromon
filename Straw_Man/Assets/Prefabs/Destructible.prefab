@@ -53,7 +53,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163594}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7c1fd06aea11d284aa886321b8279085, type: 2}
   m_IsTrigger: 0
   m_Size: {x: .639999986, y: .639999986}
   m_Center: {x: 0, y: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649da1ace6e4a9c48804b53d55143931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_worldPiece: {fileID: 11451628, guid: 7531d30bb67303644b76277bc65ad414, type: 2}
+  m_worldPiece: {fileID: 11451628, guid: 0cfa50cdde9ba6f49ac22165fe8756f2, type: 2}
   m_numPieces: 10
 --- !u!212 &21263594
 SpriteRenderer:
