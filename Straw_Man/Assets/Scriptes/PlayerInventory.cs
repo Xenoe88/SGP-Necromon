@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
     //parallel container to modify in Unity
     public GameObject[] temp;
 
-    public int numBombs = 57;
+    public int numBombs = 0;
     public int numRevives = 0;
 
     //Needs to be an array of pointers to reference the runes 
@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour
     public int m_selectedRune = -1;
 
     public BombScript m_bomb;
-    public GameObject player;
+    //public GameObject player;
 
     // Use this for initialization
     void Start()
@@ -49,7 +49,9 @@ public class PlayerInventory : MonoBehaviour
     {
         if (!runes[_ref].collected)
             return;
+
         if (_ref < runes.Length)
+        {
             for (int i = 0; i < 3; i++)
             {
                 if (equipped[i] == 25)
@@ -59,7 +61,8 @@ public class PlayerInventory : MonoBehaviour
 
                 }
             }
-        equipped[0] = _ref;
+        }
+        equipped[_ref] = _ref;
 
     }
 
@@ -95,6 +98,11 @@ public class PlayerInventory : MonoBehaviour
         print(_enemyID);
 
         runes[_enemyID].collected = true;
+
+        if (m_selectedRune == -1)
+        {
+            m_selectedRune = _enemyID;
+        }
     }
 
     public void Select(int _place) { m_selectedRune = equipped[_place]; }

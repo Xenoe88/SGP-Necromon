@@ -9,7 +9,8 @@ public class DemonHitBox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D _target)
     {
-        _target.SendMessage("ModifyHealth", m_player.GetComponent<Entity>().m_dmg);
+        _target.SendMessage("ModifyHealth", m_player.GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        _target.gameObject.transform.localPosition += new Vector3(3.0f, 0.0f, 0.0f);
         //AudioSource.PlayClipAtPoint(m_hit, Camera.main.transform.position);
     }
 	

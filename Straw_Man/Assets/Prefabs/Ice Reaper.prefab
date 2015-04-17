@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.38000011, y: 3.5, z: 0}
+  m_LocalPosition: {x: 100.465149, y: -63.1884651, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,8 +101,10 @@ MonoBehaviour:
   target: {fileID: 0}
   projectile: {fileID: 158096, guid: 781d3efa7610fb44baba7108f1367813, type: 2}
   atkrange: 7
-  m_rune: {fileID: 187404, guid: 254dfd27451f11043a0f16b9e5ca0a94, type: 2}
-  slot: 6
+  fired: 0
+  m_rune: {fileID: 0}
+  slot: 7
+  Hit: 0
 --- !u!114 &11485166
 MonoBehaviour:
   m_ObjectHideFlags: 1

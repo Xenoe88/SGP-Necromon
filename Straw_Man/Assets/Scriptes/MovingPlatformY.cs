@@ -20,12 +20,12 @@ public class MovingPlatformY : MonoBehaviour {
 
         if (transform.position.y < m_botPos)
         {
-            print("go up");
+         
             m_speed = 0.025f;
         }
         else if (transform.position.y > m_topPos)
         {
-            print("go down");
+          
             m_speed = -0.025f;
         }
 	}

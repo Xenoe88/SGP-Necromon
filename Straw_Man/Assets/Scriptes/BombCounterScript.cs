@@ -4,8 +4,8 @@ using System.Collections;
 public class BombCounterScript : MonoBehaviour 
 {
     public GameObject info;
-    int l = 0;
-    int p = 0;
+    int l = 0  ;
+    int p  = 0 ;
     void OnGUI()
     {
 
