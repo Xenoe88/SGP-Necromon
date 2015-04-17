@@ -8,6 +8,7 @@ public class Demon : MonoBehaviour
     public RuneScript m_rune;
     public int slot = 7;
     public GameObject target;
+    public GameObject box;
     // Use this for initialization
     void Start()
     {
@@ -32,33 +33,23 @@ public class Demon : MonoBehaviour
 
         rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
-        if (target)
+        if (target && Vector3.Distance(target.transform.localPosition, transform.localPosition) <= 5 )
         {
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
         }
+        
     }
     void Attack()
     {
-        GameObject temp = (GameObject)Instantiate(this.gameObject, transform.position, transform.rotation);
-
+        GameObject temp = (GameObject)Instantiate(box, transform.position + new Vector3(1.0f,0.0f,0.0f), transform.rotation);
         Destroy(temp, 2.0f);
-        Destroy(gameObject);
-
     }
-    void OnTriggerEnter2D(Collider2D _collider)
-    {
-        if (_collider.tag == "Player")
-        {
-           
-            target = _collider.gameObject;
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-        }
-    }
+  
     void ModifyHealth(int _dmg)
     {
         GetComponent<Entity>().m_health += _dmg;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
-        CheckHealth();
+        
     }
     void CheckHealth()
     {

@@ -24,22 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414018}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &152364
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 452364}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Name: Avoid Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +47,7 @@ GameObject:
   - 114: {fileID: 11471922}
   - 58: {fileID: 5840820}
   - 61: {fileID: 6114018}
+  - 114: {fileID: 11487676}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -88,23 +74,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.17000008, y: .0299999993, z: -1}
+  m_LocalPosition: {x: -.5, y: .0299999993, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 471368}
   m_RootOrder: 1
---- !u!4 &452364
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.17000008, y: .0299999993, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 471368}
-  m_RootOrder: 2
 --- !u!4 &471368
 Transform:
   m_ObjectHideFlags: 1
@@ -112,12 +86,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.25, y: -2.47000003, z: 0}
+  m_LocalPosition: {x: 39.1417007, y: -7.44019413, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408878}
   - {fileID: 414018}
-  - {fileID: 452364}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5071368
@@ -197,15 +170,19 @@ MonoBehaviour:
   m_health: 0
   m_dmg: 0
   m_speed: 0
+  m_ID: 0
   m_attackCooldown: 0
   m_statusModifier: 0
   m_statusTimer: 0
+  m_NecroCooldown: 0
   m_isAlive: 0
   m_facingDirection: {x: 0, y: 0, z: 0}
   m_animator: {fileID: 0}
   m_stunTexture: {fileID: 0}
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
+  m_entityHitSFX: {fileID: 0}
+  Owner: {fileID: 0}
   m_status: 0
 --- !u!114 &11433984
 MonoBehaviour:
@@ -218,10 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602bff182c4958e4cba5a226c10332e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeEnemy: 0
-  sightStart: {fileID: 471368}
-  sightEnd: {fileID: 414018}
   target: {fileID: 0}
+  m_rune: {fileID: 0}
+  slot: 3
 --- !u!114 &11471922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +212,20 @@ MonoBehaviour:
   sightStart: {fileID: 471368}
   sightEnd: {fileID: 408878}
   needsCollision: 0
+--- !u!114 &11487676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8efe680011ffb4cad300c204946a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightStart: {fileID: 471368}
+  sightEnd: {fileID: 414018}
+  needsCollision: 1
 --- !u!212 &21271368
 SpriteRenderer:
   m_ObjectHideFlags: 1
