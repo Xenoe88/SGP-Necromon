@@ -11,12 +11,20 @@ public class PlayerScript : MonoBehaviour
 
     public int m_gameStatus = 0;
 
+    //public string m_resource;
+    public Texture[] m_hudSprites;
+
 	// Use this for initialization
 	void Start () 
     {
         m_rank = Rank.D;
         m_inventory = GetComponent<PlayerInventory>();
         m_player = GetComponent<Entity>();
+
+        //m_hudSprites = new Texture[gameObject.GetComponent<PlayerInventory>().runes.Length];
+
+        //if (m_resource != "")
+        //    m_hudSprites = Resources.LoadAll<Texture>(m_resource);
 	}
 	
 	// Update is called once per frame
@@ -26,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 	}
 
     void ModifyRank() { m_rank++; }
-
+    void ModifyStatus() { m_gameStatus++; }
     void OnGUI()
     {
         //status icons
@@ -43,6 +51,14 @@ public class PlayerScript : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        if (gameObject.GetComponent<PlayerInventory>().m_selectedRune != -1)
+        {
+            if (gameObject.GetComponent<PlayerInventory>().runes[gameObject.GetComponent<PlayerInventory>().m_selectedRune].collected != false)
+            {
+                GUI.DrawTexture(new Rect(300, 25, 50, 50), m_hudSprites[gameObject.GetComponent<PlayerInventory>().m_selectedRune]);
+            }
         }
     }
 }

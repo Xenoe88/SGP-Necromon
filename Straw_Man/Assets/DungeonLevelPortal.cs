@@ -14,7 +14,7 @@ public class DungeonLevelPortal : MonoBehaviour {
     }
     void LoadScene()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(14);
     }
 
     void OnTriggerEnter2D(Collider2D target)
