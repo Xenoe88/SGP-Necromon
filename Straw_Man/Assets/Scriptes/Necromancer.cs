@@ -107,6 +107,7 @@ public class Necromancer : MonoBehaviour
     void Die()
     {
         Destroy(this.gameObject);
+        Application.LoadLevel(13);
     }
     void Necromance()
     {

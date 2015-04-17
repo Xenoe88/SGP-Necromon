@@ -99,7 +99,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 2107063638}
   m_GameObject: {fileID: 17213539}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: fcf1d3dd991445d499ce753e2646723a, type: 2}
+  m_Material: {fileID: 6200000, guid: 711aa492bb6038c4dbd66ba2c5527c57, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 2.3900001, y: 1.67999995}
   m_Center: {x: 0, y: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   - 95: {fileID: 514825830}
   - 82: {fileID: 514825829}
   - 114: {fileID: 514825828}
-  - 61: {fileID: 514825827}
+  - 58: {fileID: 514825827}
   - 114: {fileID: 514825826}
   m_Layer: 0
   m_Name: Player
@@ -1403,7 +1403,7 @@ Transform:
 --- !u!114 &514825826
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438890, guid: 32df629527a636b44b75ddd743bbfb59,
+  m_PrefabParentObject: {fileID: 11417786, guid: 32df629527a636b44b75ddd743bbfb59,
     type: 2}
   m_PrefabInternal: {fileID: 603855046}
   m_GameObject: {fileID: 514825824}
@@ -1413,18 +1413,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 514825824}
---- !u!61 &514825827
-BoxCollider2D:
+--- !u!58 &514825827
+CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6142168, guid: 32df629527a636b44b75ddd743bbfb59,
+  m_PrefabParentObject: {fileID: 5852840, guid: 32df629527a636b44b75ddd743bbfb59,
     type: 2}
   m_PrefabInternal: {fileID: 603855046}
   m_GameObject: {fileID: 514825824}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .600000024, y: .870000005}
-  m_Center: {x: 0, y: 0}
+  m_Radius: .318145752
+  m_Center: {x: 0, y: -.0900000036}
 --- !u!114 &514825828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   - {fileID: 149338, guid: 0cf097e306f709e419b581317eb92642, type: 2}
   - {fileID: 171368, guid: 7dd5f56d011b9314492a5d47c1549f10, type: 2}
   - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
-  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
+  - {fileID: 160202, guid: 47a96f18300e55e468fb1cc09c9ed746, type: 2}
   - {fileID: 166294, guid: 79f78cadb1b3c3d4b84674b9f5e3ae46, type: 2}
   - {fileID: 0}
   - {fileID: 0}
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  numBombs: 10
+  numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000
   m_selectedRune: -1
@@ -1646,7 +1646,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87492d767b811234198eeb7291b9678b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &603855046
@@ -2886,7 +2886,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 1564619608}
   m_GameObject: {fileID: 1170167960}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: fcf1d3dd991445d499ce753e2646723a, type: 2}
+  m_Material: {fileID: 6200000, guid: 711aa492bb6038c4dbd66ba2c5527c57, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 2.3900001, y: 1.67999995}
   m_Center: {x: 0, y: 0}
@@ -3441,7 +3441,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 412438105}
   m_GameObject: {fileID: 1531657181}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: fcf1d3dd991445d499ce753e2646723a, type: 2}
+  m_Material: {fileID: 6200000, guid: 711aa492bb6038c4dbd66ba2c5527c57, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 2.3900001, y: 1.67999995}
   m_Center: {x: 0, y: 0}
@@ -3962,7 +3962,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 2008208513}
   m_GameObject: {fileID: 1697683148}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: fcf1d3dd991445d499ce753e2646723a, type: 2}
+  m_Material: {fileID: 6200000, guid: 711aa492bb6038c4dbd66ba2c5527c57, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 2.3900001, y: 1.67999995}
   m_Center: {x: 0, y: 0}
@@ -4371,7 +4371,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 92120408}
   m_GameObject: {fileID: 1765382009}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: fcf1d3dd991445d499ce753e2646723a, type: 2}
+  m_Material: {fileID: 6200000, guid: 711aa492bb6038c4dbd66ba2c5527c57, type: 2}
   m_IsTrigger: 0
   m_Size: {x: 2.3900001, y: 1.67999995}
   m_Center: {x: 0, y: 0}

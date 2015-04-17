@@ -14,7 +14,7 @@ public class TowerLevelPortal : MonoBehaviour {
     }
     void LoadScene()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(13);
     }
 
     void OnTriggerEnter2D(Collider2D target)
