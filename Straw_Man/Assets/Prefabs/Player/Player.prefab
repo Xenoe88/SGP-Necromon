@@ -181,16 +181,16 @@ MonoBehaviour:
   m_rank: 0
   m_gameStatus: 0
   m_hudSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 4de10e44bf63ad34c9ca9d7453464247, type: 3}
+  - {fileID: 2800000, guid: edd6e6404ddb6ca4886adbb96fd3ac61, type: 3}
+  - {fileID: 2800000, guid: a5e03a581cd96a54d9cbbf477e1791f8, type: 3}
+  - {fileID: 2800000, guid: c1b2ff9324317a046931a4aca9e709a3, type: 3}
+  - {fileID: 2800000, guid: 91d4ad2ed6deb50408be33f2254d6e95, type: 3}
+  - {fileID: 2800000, guid: 30be78e0cf1359a4eb8c4488eb1a202e, type: 3}
+  - {fileID: 2800000, guid: 6127f2d1125343046a492d615e3a3e7e, type: 3}
+  - {fileID: 2800000, guid: 7f233c91c4aee46408d17ad669ce48ff, type: 3}
+  - {fileID: 2800000, guid: cbae5b7824016854d81b6dade0dcbab9, type: 3}
+  - {fileID: 2800000, guid: 023b3ad1c5f1c854d810b179d7c4372e, type: 3}
 --- !u!114 &11405062
 MonoBehaviour:
   m_ObjectHideFlags: 1
