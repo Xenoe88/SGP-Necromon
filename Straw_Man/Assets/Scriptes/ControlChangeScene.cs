@@ -14,7 +14,7 @@ public class ControlChangeScene : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return) && !LoadLock)
             LoadScene();
-    }
+           }
     void LoadScene()
     {
         Application.LoadLevel(3);
