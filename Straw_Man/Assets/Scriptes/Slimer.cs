@@ -74,9 +74,9 @@ public class Slimer : MonoBehaviour
         else //we need to turn around, but still need to jump so don't reset the timer yet...maybe?
         {
             if (transform.localScale.x > 0)
-                transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+                transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
             else if (transform.localScale.x < 0)
-                transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
     }
 
@@ -117,9 +117,9 @@ public class Slimer : MonoBehaviour
         if (_target.tag == "Enemy" && m_isNecro == false)
         {
             if (transform.localScale.x > 0)
-                transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+                transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
             else if (transform.localScale.x < 0)
-                transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
 
 

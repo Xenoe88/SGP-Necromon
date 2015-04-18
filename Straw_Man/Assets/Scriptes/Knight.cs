@@ -19,7 +19,7 @@ public class Knight : MonoBehaviour
     public GameObject m_target;
     public GameObject m_rune;
 
-    public int m_arrayIndex = 5;
+    public int m_arrayIndex = 9;
     // Use this for initialization
     void Start()
     {

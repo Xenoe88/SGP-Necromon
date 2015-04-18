@@ -22,7 +22,7 @@ public class PlayerInventory : MonoBehaviour
 
     public int m_selectedRune = -1;
 
-    public BombScript m_bomb;
+    public GameObject m_bomb;
     //public GameObject player;
 
     // Use this for initialization

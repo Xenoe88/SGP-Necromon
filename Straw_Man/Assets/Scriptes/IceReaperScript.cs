@@ -10,7 +10,7 @@ public class IceReaperScript : MonoBehaviour
     public bool fired = false;
     int spd;
     public GameObject m_rune;
-    public int slot = 6;
+    public int slot = 7;
   
 
     public bool Hit = false;
