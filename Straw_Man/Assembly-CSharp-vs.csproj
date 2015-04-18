@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AlertScript.cs" />
+     <Compile Include="Assets\Bats.cs" />
      <Compile Include="Assets\Cheat.cs" />
      <Compile Include="Assets\CheckPlayerProgress.cs" />
      <Compile Include="Assets\CourtyardScenePortal.cs" />
