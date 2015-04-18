@@ -80,7 +80,7 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimState
-    m_EventTreshold: 0
+    m_EventTreshold: 2
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -100,7 +100,7 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimState
-    m_EventTreshold: 2
+    m_EventTreshold: 0
     m_ExitTime: .75
   m_Atomic: 1
   m_Solo: 0
@@ -118,6 +118,21 @@ State:
   - {fileID: 7400000, guid: 191a58c4b34772b4d8273608c8a07172, type: 2}
   m_ParentStateMachine: {fileID: 110746390}
   m_Position: {x: 24, y: 48, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110261118
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DeathAnimation
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 2f00949539c993141aa30dbaaaae180a, type: 2}
+  m_ParentStateMachine: {fileID: 110746390}
+  m_Position: {x: 323, y: 245, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -163,18 +178,19 @@ StateMachine:
   - {fileID: 110246390}
   - {fileID: 110277626}
   - {fileID: 110263414}
+  - {fileID: 110261118}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
-    data:
-      first: {fileID: 110263414}
-      second:
-      - {fileID: 110166260}
     data:
       first: {fileID: 110246390}
       second:
       - {fileID: 110118736}
       - {fileID: 110154116}
+    data:
+      first: {fileID: 110263414}
+      second:
+      - {fileID: 110166260}
     data:
       first: {fileID: 110277626}
       second:
