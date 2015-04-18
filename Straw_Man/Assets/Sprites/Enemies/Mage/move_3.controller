@@ -7,7 +7,13 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: move_3
   serializedVersion: 2
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: AnimState
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -31,7 +37,22 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 191a58c4b34772b4d8273608c8a07172, type: 2}
   m_ParentStateMachine: {fileID: 110746390}
-  m_Position: {x: 50, y: 50, z: 0}
+  m_Position: {x: 24, y: 48, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110277626
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FireAtkAnimation
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 8e39a238585919a4baf02099b7f2ae36, type: 2}
+  m_ParentStateMachine: {fileID: 110746390}
+  m_Position: {x: 59, y: 113, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -45,9 +66,13 @@ StateMachine:
   m_DefaultState: {fileID: 110246390}
   m_States:
   - {fileID: 110246390}
+  - {fileID: 110277626}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
-  m_OrderedTransitions: {}
+  m_OrderedTransitions:
+    data:
+      first: {fileID: 110246390}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
