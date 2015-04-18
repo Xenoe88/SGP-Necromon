@@ -4,15 +4,18 @@ using System.Collections.Generic;
 public class BombScript : MonoBehaviour 
 {
     ArrayList list = new ArrayList();
-    public GameObject m_area;
+    public GameObject m_area, m_player;
     bool thrown = false;
-    public Animator animate; 
+    public Animator animate;
+
 	// Use this for initialization
 	void Start () 
     {
         animate = GetComponent<Animator>();
 
-    rigidbody2D.AddForce(new Vector2(500, 10));
+        //print(m_player.gameObject.GetComponent<PlayerController>().m_facingDirection);
+
+    //rigidbody2D.AddForce(new Vector2(100 * m_player.gameObject.GetComponent<PlayerController>().m_facingDirection, 50));
 
 	}
 	

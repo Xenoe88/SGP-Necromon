@@ -11,12 +11,16 @@ public class PlayerScript : MonoBehaviour
 
     public int m_gameStatus = 0;
 
+
     //public string m_resource;
     public Texture[] m_hudSprites;
 
 	// Use this for initialization
 	void Start () 
     {
+
+        DontDestroyOnLoad(transform.gameObject);
+
         m_rank = Rank.D;
         m_inventory = GetComponent<PlayerInventory>();
         m_player = GetComponent<Entity>();
@@ -34,7 +38,7 @@ public class PlayerScript : MonoBehaviour
 	}
 
     void ModifyRank() { m_rank++; }
-    void ModifyStatus() { m_gameStatus++; }
+    void ModifyGameStatus() { m_gameStatus++; }
     void OnGUI()
     {
         //status icons

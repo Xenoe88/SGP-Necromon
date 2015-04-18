@@ -21,6 +21,7 @@ public class Necromancer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        m_target = GameObject.FindGameObjectWithTag("Player");
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
@@ -108,7 +109,7 @@ public class Necromancer : MonoBehaviour
     {
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyStatus", SendMessageOptions.DontRequireReceiver);
-        Application.LoadLevel(13); 
+        Application.LoadLevel(12); 
     }
     void Necromance()
     {

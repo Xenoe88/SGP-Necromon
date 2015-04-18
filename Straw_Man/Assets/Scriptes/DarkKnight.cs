@@ -64,7 +64,7 @@ public class DarkKnight : MonoBehaviour
 
     void ChangeScene()
     {
-        m_target.SendMessage("ModifyStatus", SendMessageOptions.DontRequireReceiver);
+        m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel(12); 
     }
 

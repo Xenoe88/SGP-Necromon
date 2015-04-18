@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //stop 2:40 pm //on hold until player inventory is complete
 
     public float m_movement;
-    private float m_facingDirection; //-1 == left, 1 == right
+    public float m_facingDirection; //-1 == left, 1 == right
     public int m_jumpHeight;
     public Transform m_groundCheck;
     public LayerMask m_whatIsGround;
@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
     public GameObject m_player;
 
     private Color m_startColor, m_endColor;
-    public Vector3 m_RevivePositon = Vector3.zero;
+    public Vector3 m_RevivePositon = Vector3.zero, m_reLoadPosition = Vector3.zero;
+    private bool m_inMenu = false;
+    public int m_lastLevel;
     private float m_deathTimer = 0.0f;
 
     private Animator m_animator;
@@ -49,7 +51,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (m_inMenu)
+            return;
 
         //if (m_player.GetComponent<Entity>().m_health <= 0)
         if (m_player.GetComponent<Entity>().m_isAlive == false)
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour
             {
                 m_deathTimer += Time.deltaTime;
 
-                renderer.material.color = Color.Lerp(m_startColor, m_endColor, m_deathTimer * 0.5f); 
+                renderer.material.color = Color.Lerp(m_startColor, m_endColor, m_deathTimer * 0.5f);
             }
 
             //revive if we can
@@ -93,8 +96,8 @@ public class PlayerController : MonoBehaviour
         {
             Bomb();
         }
-      
-        
+
+
     }
 
     void Move()
@@ -141,7 +144,7 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 2);
         else if (m_isGrounded && m_animator.GetInteger("PlayerAnim") == 2)
             m_animator.SetInteger("PlayerAnim", 0);
-       
+
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
             AudioSource.PlayClipAtPoint(m_jumpSFX, Camera.main.transform.position);
@@ -156,7 +159,7 @@ public class PlayerController : MonoBehaviour
             m_player.rigidbody2D.velocity = Vector2.zero;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
         }
-       
+
     }
 
     void Summon()
@@ -173,7 +176,8 @@ public class PlayerController : MonoBehaviour
     {
         if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
         {
-            Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, m_player.transform.position, transform.rotation);
+            GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, new Vector3(m_player.transform.position.x - (m_player.transform.localScale.x * 0.4f), m_player.transform.position.y + 0.8f, m_player.transform.position.z), transform.rotation);
+            temp.rigidbody2D.AddForce(new Vector2(100 * (m_player.transform.localScale.x * -1), 50));
             m_player.GetComponent<PlayerInventory>().UseBomb();
         }
     }
@@ -200,5 +204,13 @@ public class PlayerController : MonoBehaviour
         m_player.GetComponent<PlayerInventory>().UseRevives();
         m_player.GetComponent<Entity>().m_health = 200;
         m_player.GetComponent<Entity>().m_isAlive = true;
+    }
+
+    public void EnterExitMenu() 
+    {
+        print("BEFORE: " + m_inMenu);
+        //m_inMenu = !m_inMenu;
+        print("AFTER: " + m_inMenu);
+
     }
 }

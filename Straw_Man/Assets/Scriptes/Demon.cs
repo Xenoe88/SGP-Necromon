@@ -6,7 +6,7 @@ public class Demon : MonoBehaviour
 
     public bool m_isNecro = false;
     public RuneScript m_rune;
-    public int slot = 7;
+    public int slot = 8;
     public GameObject target;
     public GameObject box;
     // Use this for initialization

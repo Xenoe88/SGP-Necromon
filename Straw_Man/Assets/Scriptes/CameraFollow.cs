@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject target;
+    private GameObject target;
     private Transform _t, _past;
 
     void Awake()
@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
         _t = target.transform;
 
     }

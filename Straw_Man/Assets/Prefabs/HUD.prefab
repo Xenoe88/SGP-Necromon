@@ -28,6 +28,7 @@ GameObject:
   - 222: {fileID: 22233450}
   - 114: {fileID: 11433452}
   - 114: {fileID: 11433450}
+  - 114: {fileID: 11487480}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -63,6 +64,7 @@ GameObject:
   - 222: {fileID: 22233454}
   - 114: {fileID: 11433458}
   - 114: {fileID: 11433456}
+  - 114: {fileID: 11468814}
   m_Layer: 5
   m_Name: PlayerMenu
   m_TagString: Untagged
@@ -98,6 +100,7 @@ GameObject:
   - 222: {fileID: 22233458}
   - 114: {fileID: 11433464}
   - 114: {fileID: 11433462}
+  - 114: {fileID: 11472182}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -371,7 +374,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11433452
@@ -462,17 +465,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 133474}
-        m_MethodName: 
+      - m_Target: {fileID: 11433474}
+        m_MethodName: PlayerMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11433458
@@ -574,7 +578,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11433464
@@ -696,6 +700,7 @@ MonoBehaviour:
   m_buttonClick: {fileID: 8300000, guid: 69f1ee81cf0c4ad42aed6affe7297a3d, type: 3}
   m_buttonSwoosh: {fileID: 8300000, guid: 7afe0dc4e8ba4eb41b7954fe963dddff, type: 3}
   up: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!114 &11433476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,6 +859,51 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11468814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4790d9cfa21db4b9eadc391a17cedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_buttonClick: {fileID: 0}
+  m_buttonSwoosh: {fileID: 0}
+  up: {fileID: 0}
+  m_player: {fileID: 105060, guid: 32df629527a636b44b75ddd743bbfb59, type: 2}
+--- !u!114 &11472182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4790d9cfa21db4b9eadc391a17cedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_buttonClick: {fileID: 0}
+  m_buttonSwoosh: {fileID: 0}
+  up: {fileID: 0}
+  m_player: {fileID: 0}
+--- !u!114 &11487480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4790d9cfa21db4b9eadc391a17cedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_buttonClick: {fileID: 0}
+  m_buttonSwoosh: {fileID: 0}
+  up: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!222 &22233448
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1118,8 +1168,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 139, y: 314}
-  m_SizeDelta: {x: 278, y: 628}
+  m_AnchoredPosition: {x: 138.5, y: 323.5}
+  m_SizeDelta: {x: 277, y: 647}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22433466
 RectTransform:

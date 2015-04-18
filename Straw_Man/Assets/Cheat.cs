@@ -59,5 +59,15 @@ public class Cheat : MonoBehaviour
         {
             gameObject.GetComponent<PlayerController>().Revive();
         }
+
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            gameObject.GetComponent<PlayerScript>().m_gameStatus += 1;
+
+            if (gameObject.GetComponent<PlayerScript>().m_gameStatus > 3)
+            {
+                gameObject.GetComponent<PlayerScript>().m_gameStatus = 3;
+            }
+        }
     }
 }
