@@ -46,7 +46,7 @@ public class MageScript : MonoBehaviour
     void Die()
     {
         Destroy(this.gameObject);
-        //target.SendMessage("ModifyStatus", SendMessageOptions.DontRequireReceiver);
+        target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel(12); 
     }
 }
