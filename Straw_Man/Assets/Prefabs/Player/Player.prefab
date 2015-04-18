@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11496218}
   - 58: {fileID: 5852840}
   - 114: {fileID: 11417786}
+  - 114: {fileID: 11479718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -179,7 +180,17 @@ MonoBehaviour:
   m_player: {fileID: 11405062}
   m_rank: 0
   m_gameStatus: 0
-  m_hudSprites: []
+  m_hudSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11405062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +265,17 @@ MonoBehaviour:
   m_swingSFX: {fileID: 8300000, guid: 56bcbc39c2c77c94c97ea5d27b1c535f, type: 3}
   m_jumpSFX: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
   m_doubleJumpSFX: {fileID: 8300000, guid: 6d5989b9db1f3fa4da76e53695be5b04, type: 3}
+--- !u!114 &11479718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aee5f2d3798174a81d43a3792cbe48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11496218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,18 +295,14 @@ MonoBehaviour:
   - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
   - {fileID: 160202, guid: 47a96f18300e55e468fb1cc09c9ed746, type: 2}
   - {fileID: 166294, guid: 79f78cadb1b3c3d4b84674b9f5e3ae46, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 139754, guid: ae74f6d2081eba244a630a077e94ac49, type: 2}
+  - {fileID: 120202, guid: eb96a3ca68564c2449c28ec87489b5f2, type: 2}
+  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
   numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000
   m_selectedRune: -1
-  m_bomb: {fileID: 0}
+  m_bomb: {fileID: 155476, guid: fb60a7dc724c3e34585f94da5c77753e, type: 2}
 --- !u!212 &21205058
 SpriteRenderer:
   m_ObjectHideFlags: 1
