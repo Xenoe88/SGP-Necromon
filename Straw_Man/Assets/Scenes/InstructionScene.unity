@@ -345,6 +345,7 @@ GameObject:
   - 114: {fileID: 746912716}
   - 114: {fileID: 746912715}
   - 114: {fileID: 746912718}
+  - 114: {fileID: 746912719}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -437,6 +438,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08781810a718a1744b49872e6de4629f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &746912719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 746912713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a4c34fc951c1b4aa5106833aaa9633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &886362113
@@ -839,6 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_buttonClick: {fileID: 8300000, guid: 7afe0dc4e8ba4eb41b7954fe963dddff, type: 3}
   m_buttonSwoosh: {fileID: 8300000, guid: 69f1ee81cf0c4ad42aed6affe7297a3d, type: 3}
+  up: {fileID: 0}
 --- !u!4 &1315565112
 Transform:
   m_ObjectHideFlags: 0
