@@ -3908,7 +3908,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .418746948
+  m_Radius: .902711868
   m_Center: {x: 0, y: 0}
 --- !u!212 &2040634269
 SpriteRenderer:
