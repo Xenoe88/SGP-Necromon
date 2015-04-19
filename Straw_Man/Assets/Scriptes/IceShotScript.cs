@@ -40,6 +40,8 @@ public class IceShotScript : MonoBehaviour
         {
             m_animator.SetInteger("AnimState", 1);
             _collider.gameObject.SendMessage("ModifyHealth", -15, SendMessageOptions.DontRequireReceiver);
+            _collider.gameObject.SendMessage("ModifyStatus", Status.STUN, SendMessageOptions.DontRequireReceiver);
+
         }
     }
    

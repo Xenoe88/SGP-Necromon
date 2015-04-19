@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movement: 0
   m_facingDirection: 0
-  m_jumpHeight: 4
+  m_jumpHeight: 5
   m_groundCheck: {fileID: 405058}
   m_whatIsGround:
     serializedVersion: 2

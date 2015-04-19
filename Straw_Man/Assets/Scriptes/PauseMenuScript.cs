@@ -13,6 +13,9 @@ public class PauseMenuScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+       pauseMenuPanel = GameObject.FindGameObjectWithTag("PauseMenu");
+      
+
        
         Time.timeScale = 1;
         if (pauseMenuPanel)

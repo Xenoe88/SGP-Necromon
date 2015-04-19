@@ -73,7 +73,6 @@ public class Wolf : MonoBehaviour {
         if (m_Entity.m_health <= 0)
         {
             m_animator.SetInteger("AnimState", 3);
-            print("hi");
             return;
         }
         float distance = Vector3.Distance(target.transform.position, transform.position);

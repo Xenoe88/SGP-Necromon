@@ -9,6 +9,9 @@ public class Demon : MonoBehaviour
     public int slot = 8;
     public GameObject target;
     public GameObject box;
+    public AudioClip HitSound;
+    public AudioClip deathSound;
+
     // Use this for initialization
     void Start()
     {
@@ -31,10 +34,12 @@ public class Demon : MonoBehaviour
     void Update()
     {
 
-        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+        rigidbody2D.velocity = new Vector2(transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
         if (target && Vector3.Distance(target.transform.localPosition, transform.localPosition) <= 5 )
         {
+            AudioSource.PlayClipAtPoint(HitSound, transform.localPosition);
+
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
         }
         
@@ -80,7 +85,7 @@ public class Demon : MonoBehaviour
         {
             GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
-
+        AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
         Destroy(gameObject);
     }
 }
