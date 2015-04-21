@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5999999, y: -.519999981, z: 0}
+  m_LocalPosition: {x: 6.16040707, y: -4.55696726, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,10 +115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
   m_summonPortal: {fileID: 152884, guid: 4afd82681adf33a4ea7b68e9e205f693, type: 2}
+  m_lightning: {fileID: 176642, guid: 3a8e6efd22640ab4f88890168db41a0c, type: 2}
   m_sounds: {fileID: 0}
   m_Entity: {fileID: 0}
   m_animator: {fileID: 0}
   m_summonTimer: 10
+  m_lightTimer: 20
   m_regen: 0
 --- !u!212 &21264666
 SpriteRenderer:
