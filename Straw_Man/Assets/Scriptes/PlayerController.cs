@@ -72,7 +72,10 @@ public class PlayerController : MonoBehaviour
             {
                 Revive();
             }
-
+            else if (renderer.material.color.a <= 0.0f && m_player.GetComponent<PlayerInventory>().GetNumRevives() == 0)
+            {
+                ChangeScene();
+            }
             return;
         }
 

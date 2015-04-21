@@ -108,7 +108,7 @@ public class Necromancer : MonoBehaviour
     void Die()
     {
         Destroy(this.gameObject);
-        m_target.SendMessage("ModifyStatus", SendMessageOptions.DontRequireReceiver);
+        m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel(12); 
     }
     void Necromance()
