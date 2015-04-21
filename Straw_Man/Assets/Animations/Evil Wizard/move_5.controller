@@ -412,7 +412,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Wiz_Attack2_Animation
-  m_Speed: 1
+  m_Speed: .75
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 56d57a2c48e8b714bafe9767ddcde709, type: 2}
@@ -439,22 +439,12 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110262616}
+      first: {fileID: 110224670}
       second:
-      - {fileID: 110117548}
-      - {fileID: 110162990}
-      - {fileID: 110191452}
-      - {fileID: 110135120}
-    data:
-      first: {fileID: 110234716}
-      second: []
-    data:
-      first: {fileID: 110263822}
-      second:
-      - {fileID: 110151736}
-      - {fileID: 110193890}
-      - {fileID: 110135356}
-      - {fileID: 110173394}
+      - {fileID: 110136722}
+      - {fileID: 110195030}
+      - {fileID: 110182058}
+      - {fileID: 110141544}
     data:
       first: {fileID: 110280028}
       second:
@@ -463,12 +453,22 @@ StateMachine:
       - {fileID: 110157140}
       - {fileID: 110154714}
     data:
-      first: {fileID: 110224670}
+      first: {fileID: 110263822}
       second:
-      - {fileID: 110136722}
-      - {fileID: 110195030}
-      - {fileID: 110182058}
-      - {fileID: 110141544}
+      - {fileID: 110151736}
+      - {fileID: 110193890}
+      - {fileID: 110135356}
+      - {fileID: 110173394}
+    data:
+      first: {fileID: 110234716}
+      second: []
+    data:
+      first: {fileID: 110262616}
+      second:
+      - {fileID: 110117548}
+      - {fileID: 110162990}
+      - {fileID: 110191452}
+      - {fileID: 110135120}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
