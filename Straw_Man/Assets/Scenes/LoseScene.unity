@@ -158,6 +158,7 @@ GameObject:
   - 223: {fileID: 741691861}
   - 114: {fileID: 741691860}
   - 114: {fileID: 741691859}
+  - 114: {fileID: 741691862}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -238,6 +239,19 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &741691862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741691857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3827ec071394d45be298e0ed89c5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 
+  sceneNum: 9
 --- !u!1 &1424168569
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +412,6 @@ GameObject:
   - 224: {fileID: 1925690829}
   - 222: {fileID: 1925690828}
   - 114: {fileID: 1925690827}
-  - 114: {fileID: 1925690830}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -450,16 +463,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1925690830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925690826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3827ec071394d45be298e0ed89c5c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 
-  sceneNum: 0
