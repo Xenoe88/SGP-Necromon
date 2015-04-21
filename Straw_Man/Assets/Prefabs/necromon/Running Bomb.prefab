@@ -11,11 +11,9 @@ GameObject:
   - 212: {fileID: 21237224}
   - 95: {fileID: 9537224}
   - 50: {fileID: 5037224}
-  - 61: {fileID: 6137224}
   - 114: {fileID: 11437222}
   - 114: {fileID: 11437224}
   - 61: {fileID: 6182268}
-  - 61: {fileID: 6182270}
   - 58: {fileID: 5881014}
   - 114: {fileID: 11497560}
   - 114: {fileID: 11456404}
@@ -63,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.2400017, y: -38.5499992, z: 0}
+  m_LocalPosition: {x: -1.597, y: -.250999987, z: 0}
   m_LocalScale: {x: -3, y: 3, z: 3}
   m_Children:
   - {fileID: 482270}
@@ -120,17 +118,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .100000001
   m_Center: {x: 0, y: -.0199999996}
---- !u!61 &6137224
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137224}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .170000002, y: .200000003}
-  m_Center: {x: 0, y: 0}
 --- !u!61 &6182268
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -140,19 +127,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 2.32937813, y: .31467694}
-  m_Center: {x: -1.274786, y: .0573384762}
---- !u!61 &6182270
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137224}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .189792544, y: .219792545}
-  m_Center: {x: .00141382217, y: -.00141376257}
+  m_Size: {x: 2.49011469, y: .220915884}
+  m_Center: {x: -.0023135345, y: .0104578733}
 --- !u!95 &9537224
 Animator:
   serializedVersion: 3
@@ -190,6 +166,7 @@ MonoBehaviour:
   m_sound: {fileID: 8300000, guid: cda0d06a366501f498f59f4aa6ab5aa7, type: 3}
   m_target: {fileID: 0}
   m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
+  m_area: {fileID: 110006, guid: 2a4689e195328504782b7dcf950ca679, type: 2}
   slot: 4
   m_arrayIndex: 4
 --- !u!114 &11437224
@@ -222,7 +199,7 @@ MonoBehaviour:
   m_status: 0
 --- !u!114 &11456404
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}

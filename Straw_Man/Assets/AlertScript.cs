@@ -20,6 +20,6 @@ public class AlertScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D _collider)
     {
         if (_collider.gameObject.tag != this.tag )
-            patrol.target = _collider.gameObject;
+            patrol.m_target = _collider.gameObject;
     }
 }
