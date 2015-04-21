@@ -43,17 +43,25 @@ public class SoldieScript : MonoBehaviour
         {
 
 
-            if (Block())
-            {
-                GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+            //if (Block())
+            //{
+            //    GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
-            }
-            else if (isNecro)
+            //}
+             if (isNecro)
             {
 
             }
             else if (target)
             {
+                if (transform.localScale.x == target.transform.localScale.x)
+                   transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
+                if(transform.localScale.x != target.transform.localScale.x && (target.transform.position.x > transform.position.x))
+                   transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
+                
+                if ((target.transform.position.x < transform.position.x) && (transform.localScale.x == target.transform.localScale.x))
+                    transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
+
                 if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
                 {
                     GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
