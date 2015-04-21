@@ -28,22 +28,23 @@ public class EthrealBeing : MonoBehaviour
     {
 
 
-        if (GetComponent<Entity>().m_health > 0 && target  && !Attacking)
+        if (GetComponent<Entity>().m_health > 0 && target && !Attacking)
         {
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
         }
         else if (Attacking)
         {
-            if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
-            {
-                GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+            if (target)
+                if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
+                {
+                    GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
 
-                GetComponent<Entity>().m_attackCooldown = 10;
+                    GetComponent<Entity>().m_attackCooldown = 10;
 
-            }
+                }
         }
-       
+
 
 
     }
@@ -55,10 +56,10 @@ public class EthrealBeing : MonoBehaviour
     void ModifyHealth(int _amount)
     {
         GetComponent<Entity>().m_health += _amount;
-        if( GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState",3);
-              
-       
+        if (GetComponent<Entity>().m_health <= 0)
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+
+
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
@@ -98,7 +99,7 @@ public class EthrealBeing : MonoBehaviour
     public void Die()
     {
         int randomVariable = Random.Range(0, 100);
-       
+
         if (randomVariable >= 0 && randomVariable <= 20 && isNecro == false)
         {
             GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);

@@ -20,6 +20,6 @@ public class SpikeScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D target)
     {
         target.SendMessage("ModifyHealth", -m_damage, SendMessageOptions.DontRequireReceiver);
-        AudioSource.PlayClipAtPoint(m_sound, transform.position);
+        //AudioSource.PlayClipAtPoint(m_sound, transform.position);
     }
 }

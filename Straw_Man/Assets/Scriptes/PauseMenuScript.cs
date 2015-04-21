@@ -27,8 +27,6 @@ public class PauseMenuScript : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape) && !isPaused)
         {
-            print("pooi");
-
             PauseGame();
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && isPaused)

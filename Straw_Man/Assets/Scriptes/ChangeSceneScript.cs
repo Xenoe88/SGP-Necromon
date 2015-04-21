@@ -21,6 +21,9 @@ public class ChangeSceneScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) && !LoadLock)
             LoadScene();
+          if (Input.GetKeyDown(KeyCode.Escape) && !LoadLock)
+              LoadScene();
+
 	}
     void LoadScene()
     {

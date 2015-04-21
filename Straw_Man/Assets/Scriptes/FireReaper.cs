@@ -40,9 +40,9 @@ public class FireReaper : MonoBehaviour
 
             //turn if necessary
             if (move.x > 0)
-                transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
             else if (move.x < 0)
-                transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
             //attack if we are close enough
             distanceTest = Vector3.Distance(m_target.transform.position, transform.position);
