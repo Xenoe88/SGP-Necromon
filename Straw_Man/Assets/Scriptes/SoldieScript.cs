@@ -34,10 +34,19 @@ public class SoldieScript : MonoBehaviour
     }
     void OnGUI()
     {
-        //Texture2D bitmapTexture = null;
-        //bitmapTexture = (Texture2D)Resources.Load("WhitePixel");
+        Rect position = new Rect(this.transform.localPosition.x , this.transform.localPosition.y + 1000, 100, 25);
+        Color color = new Color(1, 0, 0);
 
-        //GUI.DrawTexture(new Rect(150, 25, 250, 75), bitmapTexture);
+        Texture2D texture = new Texture2D(1, 1);
+        texture.SetPixel(0, 0, color);
+        texture.Apply();
+        GUI.skin.box.normal.background = texture;
+        GUI.Box(position, GUIContent.none);
+    }
+
+    private Rect Rect(int p1, int p2, int p3, int p4)
+    {
+        throw new System.NotImplementedException();
     }
     // Update is called once per frame
     void Update()
