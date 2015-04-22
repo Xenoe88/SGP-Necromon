@@ -8,7 +8,7 @@ public class LookForward : MonoBehaviour
     public Transform sightStart, sightEnd;
     public bool needsCollision = true;
 
-    private bool collision = false;
+    public bool collision = false;
 
 	// Use this for initialization
 	void Start () {

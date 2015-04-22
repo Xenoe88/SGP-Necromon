@@ -183,7 +183,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602bff182c4958e4cba5a226c10332e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNecro: 0
+  audioSource: {fileID: 0}
+  walkingSFX: {fileID: 0}
+  stabSFX: {fileID: 8300000, guid: e0bf49ba9bd897b459f20c1a6e95cab3, type: 3}
+  blockSFX: {fileID: 8300000, guid: ab03e56ae98fbae42b26e245b289649b, type: 3}
+  dmgSFX: {fileID: 8300000, guid: 46f39a0c08c7f38418bf291fd63c07c4, type: 3}
+  knockbackSFX: {fileID: 8300000, guid: 3a4cf09b09316a646a1f8ae85b1b5f8a, type: 3}
+  deathSFX: {fileID: 8300000, guid: 7ac84635a2875ee48a4f94da0f4478af, type: 3}
   target: {fileID: 0}
+  summoner: {fileID: 0}
   m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 3
 --- !u!114 &11471922
