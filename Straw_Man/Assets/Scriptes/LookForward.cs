@@ -24,8 +24,6 @@ public class LookForward : MonoBehaviour
         if (collision == needsCollision)
         {
             this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
-            this.transform.localScale = new Vector3((transform.localScale.y == 1) ? -1 : 1, 1, 1);
-
         }
 	}
 }
