@@ -8,11 +8,7 @@ public class CameraFollow : MonoBehaviour
 
     void Awake()
     {
-<<<<<<< HEAD
-        //camera.orthographicSize = ((Screen.height / 2.0f) / 100f);
-=======
         camera.orthographicSize = 4;
->>>>>>> 46c4189ff9b59ed926a36c59f01770c39e4fa3f0
     }
     // Use this for initialization
     void Start()
