@@ -11,7 +11,9 @@ public class IceReaperScript : MonoBehaviour
     int spd;
     public GameObject m_rune;
     public int slot = 7;
-  
+    public AudioClip HitSound;
+    public AudioClip deathSound;
+
 
     public bool Hit = false;
     // Use this for initialization
@@ -48,6 +50,7 @@ public class IceReaperScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) <= atkrange && !fired && GetComponent<Entity>().m_attackCooldown <= 0)
             {
+                AudioSource.PlayClipAtPoint(HitSound, transform.localPosition);
 
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
                 GetComponent<Entity>().m_attackCooldown = 8;
@@ -169,7 +172,7 @@ public class IceReaperScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-       
+        AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
         Destroy(gameObject);
     }
 }

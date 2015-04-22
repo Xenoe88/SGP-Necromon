@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+       
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
 
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Application.loadedLevelName == "LoseScene")
+            Destroy(this.gameObject);
+
         if (m_inMenu)
             return;
 

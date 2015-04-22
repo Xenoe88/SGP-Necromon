@@ -45,12 +45,11 @@ GameObject:
   - 114: {fileID: 11433982}
   - 114: {fileID: 11433984}
   - 114: {fileID: 11471922}
-  - 58: {fileID: 5840820}
   - 61: {fileID: 6114018}
   - 114: {fileID: 11487676}
   m_Layer: 0
   m_Name: Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.1417007, y: -7.44019413, z: 0}
+  m_LocalPosition: {x: -9.43999958, y: -1.35000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408878}
@@ -108,17 +107,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5840820
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 171368}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: .25
-  m_Center: {x: -.5, y: 0}
 --- !u!61 &6114018
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -196,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  m_rune: {fileID: 0}
+  m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 3
 --- !u!114 &11471922
 MonoBehaviour:

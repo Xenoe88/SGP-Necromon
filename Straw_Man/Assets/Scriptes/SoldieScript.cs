@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 public class SoldieScript : MonoBehaviour
 {
-    bool isNecro = false;
+    public bool isNecro = false;
     private bool ReadyToAttack = false;
     //private bool block = false;
 
     public GameObject target = null;
+    public GameObject summoner = null;
+
     public GameObject m_rune;
     public int slot = 3;
     // Use this for initialization
@@ -23,11 +25,9 @@ public class SoldieScript : MonoBehaviour
 
         this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
 
-        //GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
 
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
-        //target = GameObject.FindGameObjectWithTag("Player");
     }
     void OnGUI()
     {
@@ -41,43 +41,55 @@ public class SoldieScript : MonoBehaviour
     {
         if (GetComponent<Entity>().m_health > 0)
         {
-
-
-            if (Block())
+             if (isNecro)
             {
-                GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
-
+                summoner = GameObject.FindGameObjectWithTag("Player");
             }
-            else if (isNecro)
+            if(summoner)
             {
-
+                if(Mathf.Abs(Vector3.Distance(transform.localPosition, summoner.transform.localPosition)) > 5)
+                {
+                    target = summoner;
+                }
             }
             else if (target)
             {
-                if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
+                FollowTarget();
+           
+                if ( GetComponent<Entity>().m_attackCooldown <= 0 && Mathf.Abs(Vector3.Distance(target.gameObject.transform.position, this.transform.position)) < 1  && target.tag != this.tag)
                 {
-                    GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-
-                    GetComponent<Entity>().m_attackCooldown = 30;
-
+                   GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+                   KnockBack();
+                   GetComponent<Entity>().m_attackCooldown = 2;
                 }
-                if (GetComponent<Entity>().m_attackCooldown > 0)
-                    GetComponent<Entity>().m_attackCooldown -= 1;
-
+             
             }
-            else //if (target)
+            else 
             {
-                rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
             }
 
+             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
         }
         else
-        {
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 4);
+    }
+    void FollowTarget()
+    {
+             if ((target.transform.position.x < transform.position.x) )
+                    transform.localScale = new Vector3( 1, 1, 1);
+             if ((target.transform.position.x > transform.position.x) )
+                    transform.localScale = new Vector3(-1, 1, 1);
+            
+    }
+    void KnockBack()
+    {
+        float num = Random.Range(0.0f, 1.0f);
 
-            //Destroy(gameObject);
+        if (num > .80f)
+        {
+            target.gameObject.transform.localPosition = target.gameObject.transform.localPosition + (new Vector3(1.0f, 0.2f, 0.0f) * target.transform.localScale.x);
         }
     }
     public void Die()
@@ -88,19 +100,15 @@ public class SoldieScript : MonoBehaviour
         {
             GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
             temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
-            //TODO
         }
 
         if (isNecro)
         {
-
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
-            // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
-
+            GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
         }
 
         Destroy(gameObject);
-
     }
     public bool Block()
     {
@@ -112,33 +120,31 @@ public class SoldieScript : MonoBehaviour
     }
     void ModifyHealth(int _amount)
     {
+        if (Block())
+        {
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+            return;
+        }
+
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
         GetComponent<Entity>().m_health += _amount;
-
-        if(GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
-
     }
     void OnTriggerEnter2D(Collider2D _target)
     {
-        target = _target.gameObject;
-        if (ReadyToAttack)
-        { }
-        else
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-
+        if((_target.gameObject.tag =="Player" || _target.gameObject.tag == "Enemy") && _target.gameObject.tag != this.tag)
+         target = _target.gameObject;
+     
     }
     void OnTriggerExit2D()
     {
+        if(target.gameObject.tag != this.tag)
         target = null;
     }
     //Function called as part of the animation in Unity 
     public void Attack()
     {
-
-        //ReadyToAttack = true;
         target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
-
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
     }
 
     public void MakeNecro()

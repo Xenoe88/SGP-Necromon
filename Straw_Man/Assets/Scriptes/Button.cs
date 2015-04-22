@@ -12,7 +12,7 @@ public class Button : MonoBehaviour
         m_player = GameObject.FindGameObjectWithTag("Player");
 
         up = Camera.FindObjectOfType<Camera>();
-        print(up);
+      
     }
 
     public void ChangeScene(int _scene) 

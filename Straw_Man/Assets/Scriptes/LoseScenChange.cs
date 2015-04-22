@@ -10,11 +10,12 @@ public class LoseScenChange : MonoBehaviour {
     // Use this for initialization
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && !LoadLock)
+        if (Input.GetKeyDown(KeyCode.Return))
             LoadScene();
     }
     void LoadScene()
     {
-        Application.LoadLevel(9);
+        print("credits");
+        Application.LoadLevel("CreditsScene");
     }
 }

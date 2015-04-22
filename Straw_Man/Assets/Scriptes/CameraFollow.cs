@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         _t = target.transform;
+        transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
 
     }
 
@@ -22,13 +23,11 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(_t == _past)
 
-        //if (target.GetComponent<PlayerController>().m_movement > 0)
-            transform.position = new Vector3((_t.position.x ), (_t.position.y), transform.position.z);
-
-        //if (target.GetComponent<PlayerController>().m_movement < 0)
-        //    transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
+        //if (Mathf.Abs(transform.position.x - _t.position.x) > 0)
+        //   transform.position = new Vector3((_t.position.x)+.5f, (_t.position.y), transform.position.z);
+        //else
+            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
 
     }
 

@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scriptes\Knight.cs" />
      <Compile Include="Assets\Scriptes\LookForward.cs" />
      <Compile Include="Assets\Scriptes\LoseScenChange.cs" />
+     <Compile Include="Assets\Scriptes\MageAlertScript.cs" />
      <Compile Include="Assets\Scriptes\MageScript.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatform.cs" />
      <Compile Include="Assets\Scriptes\MovingPlatformY.cs" />
