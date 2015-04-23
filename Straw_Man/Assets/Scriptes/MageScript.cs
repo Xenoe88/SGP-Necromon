@@ -9,6 +9,7 @@ public class MageScript : MonoBehaviour
     private Entity mage;
     public bool attack = false;
 
+
     // Use this for initialization
     void Start()
     {
@@ -16,8 +17,9 @@ public class MageScript : MonoBehaviour
         mage.m_animator = GetComponent<Animator>();
        mage.m_facingDirection = new Vector2(1, 0);
 
-        mage.m_speed = 2;
+        mage.m_speed = 3;
         mage.m_health = 300;
+
 
     }
 
@@ -42,6 +44,8 @@ public class MageScript : MonoBehaviour
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
+
+
             if (distance >= 5 && !attack)
             {
                 Vector3 destination = target.transform.position;
@@ -49,29 +53,25 @@ public class MageScript : MonoBehaviour
                 transform.Translate(direction * Time.deltaTime, Space.World);
             }
 
-            if (distance <= 4)
-            {
-                attack = true;
-                mage.m_attackCooldown = 10;
-                mage.m_animator.SetInteger("AnimState", 2);
-            }
-            else if (distance >= 5 && distance <= 10)
+       
+            if ( distance <= 2)
             {
                 mage.m_attackCooldown = 5;
                 attack = true;
                 mage.m_animator.SetInteger("AnimState", 1);
             }
 
-        }
-        //else //if(!target)
-        //{
-        //    int rd = Random.Range(0, 1);
-        //    if (rd == 1)
-        //        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-        //    else if (rd == 0)
-        //        rigidbody2D.velocity = new Vector2(0, transform.localScale.y) * GetComponent<Entity>().m_speed;
 
-        //}
+
+        }
+        else
+        {
+
+            rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+
+        }
+     
+            
 
     }
     void FireAtk()
