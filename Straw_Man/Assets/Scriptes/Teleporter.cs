@@ -6,8 +6,9 @@ public class Teleporter : MonoBehaviour {
     public GameObject m_reciever;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
+        m_reciever = GameObject.FindGameObjectWithTag("Receiver");
 	}
 	
 	// Update is called once per frame
