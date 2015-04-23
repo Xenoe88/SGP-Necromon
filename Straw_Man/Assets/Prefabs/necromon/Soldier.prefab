@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.43999958, y: -1.35000002, z: 0}
+  m_LocalPosition: {x: 7.94000006, y: .889999986, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408878}
@@ -183,7 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602bff182c4958e4cba5a226c10332e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNecro: 0
   target: {fileID: 0}
+  summoner: {fileID: 0}
   m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 3
 --- !u!114 &11471922
