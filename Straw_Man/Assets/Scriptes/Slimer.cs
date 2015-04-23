@@ -28,9 +28,11 @@ public class Slimer : MonoBehaviour
     void Update()
     {
         //die
-        if (m_Slimer.m_isAlive == false)
+        if (m_Slimer.m_health <= 0)
+        {
             m_animator.SetInteger("SlimerAnim", 3);
-
+            return;
+        }
         //if we're attacking, don't run the rest of the update
         //if (m_isAttacking)
         //    return;
