@@ -47,8 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AlertScript.cs" />
+     <Compile Include="Assets\Bats.cs" />
+     <Compile Include="Assets\DisplayNecromon.cs" />
+     <Compile Include="Assets\DungeonLevelPortal.cs" />
      <Compile Include="Assets\EvilWizard.cs" />
+     <Compile Include="Assets\ExitPlayerMenu.cs" />
      <Compile Include="Assets\LightningAttack.cs" />
+     <Compile Include="Assets\PlayerMenu.cs" />
+     <Compile Include="Assets\PlayerMenuDisplayNecromon.cs" />
+     <Compile Include="Assets\PlayerMenuSetPlayerLocation.cs" />
+     <Compile Include="Assets\PositionPlayer.cs" />
      <Compile Include="Assets\Scriptes\ArrowScript.cs" />
      <Compile Include="Assets\Scriptes\BirdScript.cs" />
      <Compile Include="Assets\Scriptes\BombCounterScript.cs" />
@@ -88,6 +96,7 @@
      <Compile Include="Assets\Scriptes\InstructionsChangeScene.cs" />
      <Compile Include="Assets\Scriptes\JumpForward.cs" />
      <Compile Include="Assets\Scriptes\Knight.cs" />
+     <Compile Include="Assets\Scriptes\LoadingScreen.cs" />
      <Compile Include="Assets\Scriptes\LookForward.cs" />
      <Compile Include="Assets\Scriptes\LookUp.cs" />
      <Compile Include="Assets\Scriptes\LoseScenChange.cs" />

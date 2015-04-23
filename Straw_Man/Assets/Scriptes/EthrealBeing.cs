@@ -41,7 +41,7 @@ public class EthrealBeing : MonoBehaviour
         if (GetComponent<Entity>().m_health > 0)
         {
 
-            if (Random.Range(0.0f, 1.0f) > .70f && intangibleTimer <= 0 && Attacking == false)
+            if (Random.Range(0.0f, 1.0f) > .90f && intangibleTimer <= 0 && Attacking == false)
             {
                 Intangible();
                 intangibleTimer = 2.0f;
@@ -71,22 +71,21 @@ public class EthrealBeing : MonoBehaviour
                         Attacking = true;
                     }
                 }
-                else
-                {
-                    rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-                }
+               
+               }
             }
-            else
-            {
-                rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+            else if( target == null)
+            
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
-            }
+            
+        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+
         }
 
 
 
 
-    }
+    
     void Intangible()
     {
        

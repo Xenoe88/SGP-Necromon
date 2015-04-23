@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
 
     public void ChangeScene(int _scene) 
     {
-
+        LoadingScreen.show();
         AudioSource.PlayClipAtPoint(m_buttonClick, Camera.main.transform.position);
 
         Application.LoadLevel(_scene);
