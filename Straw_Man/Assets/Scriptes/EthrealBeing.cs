@@ -4,12 +4,18 @@ using System.Collections;
 public class EthrealBeing : MonoBehaviour
 {
     public bool isNecro = false;
+
+    public AudioSource audioSource;
+    public AudioClip walkingSFX, swordSFX, phasekSFX, dmgSFX, deathSFX;
+
     public GameObject target = null;
     bool Attacking = false;
+    public bool phased;
 
     public GameObject m_rune;
     public int slot = 6;
-
+    private float intangibleTimer;
+    private Color phaseColor, startColor;
 
     // Use this for initialization
     public void Start()
@@ -21,6 +27,10 @@ public class EthrealBeing : MonoBehaviour
         GetComponent<Entity>().m_attackCooldown = 8;
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
+        startColor = GetComponent<SpriteRenderer>().color;
+        phaseColor = new Color(startColor.r, startColor.g, startColor.b, .50f);
+
+        phased = false;
     }
 
     // Update is called once per frame
@@ -28,24 +38,77 @@ public class EthrealBeing : MonoBehaviour
     {
 
 
-        if (GetComponent<Entity>().m_health > 0 && target && !Attacking)
+        if (GetComponent<Entity>().m_health > 0)
         {
-            rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
-        }
-        else if (Attacking)
-        {
+
+            if (Random.Range(0.0f, 1.0f) > .70f && intangibleTimer <= 0 && Attacking == false)
+            {
+                Intangible();
+                intangibleTimer = 2.0f;
+            }
+
+            if (intangibleTimer > 0.0f)
+            {
+                intangibleTimer -= Time.deltaTime;
+            }
+            else if (intangibleTimer <= 0.0f)
+            {
+                Intangible();
+            }
             if (target)
-                if (target.tag == "Player" && GetComponent<Entity>().m_attackCooldown <= 0)
+            {
+                FollowTarget();
+
+                if (target && phased == false)
                 {
-                    GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-
-                    GetComponent<Entity>().m_attackCooldown = 10;
-
+                    
+                    if (GetComponent<Entity>().m_attackCooldown <= 0 && Mathf.Abs(Vector3.Distance(target.gameObject.transform.position, this.transform.position)) < 1)
+                    {
+                        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+                        print(GetComponent<Entity>().m_animator.name);
+                        GetComponent<Entity>().m_attackCooldown = 2;
+                        
+                        Attacking = true;
+                    }
                 }
+                else
+                {
+                    rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+                }
+            }
+            else
+            {
+                rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+                GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+            }
         }
 
 
+
+
+    }
+    void Intangible()
+    {
+       
+        if (phased == false)
+        {
+            renderer.material.color = phaseColor;
+            phased = true;
+
+        }
+        else
+        {
+            renderer.material.color = startColor;
+
+            phased = false;
+        }
+    }
+    void FollowTarget()
+    {
+        if ((target.transform.position.x < transform.position.x))
+            transform.localScale = new Vector3(1, 1, 1);
+        if ((target.transform.position.x > transform.position.x))
+            transform.localScale = new Vector3(-1, 1, 1);
 
     }
     public void MakeNecro()
@@ -55,6 +118,10 @@ public class EthrealBeing : MonoBehaviour
     }
     void ModifyHealth(int _amount)
     {
+        if (phased)
+        {
+            return;
+        }
         GetComponent<Entity>().m_health += _amount;
         if (GetComponent<Entity>().m_health <= 0)
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
@@ -68,19 +135,20 @@ public class EthrealBeing : MonoBehaviour
             target = _target.gameObject;
         }
     }
-    void OnTriggerStay2D(Collider2D _stay)
-    {
-        float dist = Vector3.Distance(_stay.transform.position, transform.position);
+    //void OnTriggerStay2D(Collider2D _stay)
+    //{
+    //    float dist = Vector3.Distance(_stay.transform.position, transform.position);
 
-        if (_stay.tag != tag && dist < 1)
-        {
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-            Attacking = true;
-        }
-    }
+    //    if (_stay.tag != tag && dist < 1)
+    //    {
+    //        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+    //        Attacking = true;
+    //    }
+    //}
     void OnTriggerExit2D(Collider2D _target)
     {
-        if (_target == target)
+
+        if (target)
         {
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
             target = null;
@@ -89,10 +157,10 @@ public class EthrealBeing : MonoBehaviour
 
     public void Attack()
     {
-        if (this != null && target)
-        {
+    
             target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
-        }
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+        
         Attacking = false;
 
     }

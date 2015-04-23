@@ -20,7 +20,6 @@ public class LookForward : MonoBehaviour
     {
         collision = Physics2D.Linecast(sightStart.position, sightEnd.position, 1 << LayerMask.NameToLayer("Ground"));
         Debug.DrawLine(sightStart.position, sightEnd.position, Color.green);
-
         if (collision == needsCollision)
         {
             this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
