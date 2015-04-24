@@ -2338,7 +2338,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -2451,6 +2451,7 @@ GameObject:
   - 212: {fileID: 1184057904}
   - 58: {fileID: 1184057903}
   - 114: {fileID: 1184057902}
+  - 114: {fileID: 1184057906}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -2514,6 +2515,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
+--- !u!114 &1184057906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184057901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4d785195513514481a77bdfaefde22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187674118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,6 +3100,7 @@ GameObject:
   - 212: {fileID: 1471901938}
   - 58: {fileID: 1471901937}
   - 114: {fileID: 1471901940}
+  - 114: {fileID: 1471901941}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -3149,6 +3162,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf88bd8fd32991941be8317bfe4d81b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1471901941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471901936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035939b51e90a39439e352bf99e56033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1472239926
@@ -4088,6 +4112,7 @@ GameObject:
   - 212: {fileID: 2040634269}
   - 58: {fileID: 2040634268}
   - 114: {fileID: 2040634271}
+  - 114: {fileID: 2040634272}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -4149,6 +4174,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b95f85e4afa94b43b8bc7a9df0aeaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2040634272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040634267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895c69fefb873f142b63324b75d50773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2051028906
