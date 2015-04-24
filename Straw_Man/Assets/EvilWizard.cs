@@ -99,7 +99,7 @@ public class EvilWizard : MonoBehaviour {
     {
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
-        Application.LoadLevel(9);
+        Application.LoadLevel("WinScene");
     }
 
     void Idling()
