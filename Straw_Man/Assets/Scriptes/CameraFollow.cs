@@ -25,7 +25,10 @@ public class CameraFollow : MonoBehaviour
         //if (Mathf.Abs(transform.position.x - _t.position.x) > 0)
         //   transform.position = new Vector3((_t.position.x)+.5f, (_t.position.y), transform.position.z);
         //else
-            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
+        if (target != null)
+        {
+            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z); 
+        }
 
     }
 
