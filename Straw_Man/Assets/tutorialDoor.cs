@@ -13,7 +13,7 @@ public class tutorialDoor : MonoBehaviour {
             for (int i = 0; i < length; i++)
                 Destroy(player[i].gameObject);
 
-            Application.LoadLevel(1); 
+            Application.LoadLevel(1);
         }
     }
 }

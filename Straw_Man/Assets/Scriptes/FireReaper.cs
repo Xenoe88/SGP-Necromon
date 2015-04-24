@@ -134,6 +134,15 @@ public class FireReaper : MonoBehaviour
     {
         GameObject reference = (GameObject)Instantiate(m_fireBall, transform.position, transform.rotation);
         Physics2D.IgnoreCollision(reference.collider2D, this.collider2D);
+
+        Vector3 direction = m_target.transform.position - reference.transform.position;
+        direction = m_target.transform.InverseTransformDirection(direction);
+
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        float angle = Mathf.Atan2(direction.y, direction.x);
+        reference.GetComponent<IceShotScript>().m_direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
         reference.SendMessage("SetTarget", m_target, SendMessageOptions.RequireReceiver);
 
         m_isTargeting = false;

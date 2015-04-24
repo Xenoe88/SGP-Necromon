@@ -31,8 +31,6 @@ public class IceReaperScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-      
         if (target)
         {
             Vector3 move = (target.transform.position - transform.position).normalized;
