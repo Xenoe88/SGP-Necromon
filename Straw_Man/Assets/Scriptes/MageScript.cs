@@ -113,6 +113,6 @@ public class MageScript : MonoBehaviour
     {
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
-        Application.LoadLevel(12);
+        Application.LoadLevel(13);
     }
 }
