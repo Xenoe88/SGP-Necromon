@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float m_movement;
     public float m_facingDirection; //-1 == left, 1 == right
-    public int m_jumpHeight;
+    public float m_jumpHeight;
     public Transform m_groundCheck;
     public LayerMask m_whatIsGround;
     public float m_groundRadius;
