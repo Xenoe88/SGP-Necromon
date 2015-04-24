@@ -205,7 +205,7 @@ AnimationClip:
   m_EditorCurves: []
   m_EulerEditorCurves: []
   m_Events:
-  - time: .416666657
+  - time: 3.25
     functionName: FireAtk
     data: 
     objectReferenceParameter: {fileID: 0}

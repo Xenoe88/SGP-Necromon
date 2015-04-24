@@ -75,9 +75,9 @@ GameObject:
   - 50: {fileID: 5024128}
   - 61: {fileID: 6124128}
   - 114: {fileID: 11460784}
-  - 114: {fileID: 11477760}
-  - 114: {fileID: 11413524}
   - 114: {fileID: 11413522}
+  - 114: {fileID: 11413524}
+  - 114: {fileID: 11477760}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Enemy
@@ -96,7 +96,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492542}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &460784
 Transform:
   m_ObjectHideFlags: 1
@@ -104,11 +104,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.95000005, y: -.360000014, z: 0}
+  m_LocalPosition: {x: -1.88, y: .129999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492542}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &460786
 Transform:
   m_ObjectHideFlags: 1
@@ -120,7 +120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492542}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &460788
 Transform:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492542}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!4 &492542
 Transform:
   m_ObjectHideFlags: 1
@@ -140,13 +140,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.13999987, y: -0, z: 0}
+  m_LocalPosition: {x: -6.51000023, y: 1.00999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 460788}
   - {fileID: 460786}
   - {fileID: 460784}
   - {fileID: 460782}
+  - {fileID: 460788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5024128
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -192,7 +192,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11413522
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192542}
@@ -206,7 +206,7 @@ MonoBehaviour:
   needsCollision: 1
 --- !u!114 &11413524
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192542}
@@ -230,8 +230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  sounds: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
+  sounds: {fileID: 0}
   attack: 0
+  fireAtk: {fileID: 105770, guid: 8856b14e6b553f049bcfab60029b616b, type: 2}
+  fire: 0
 --- !u!114 &11446848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,11 +274,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightStart: {fileID: 492542}
-  sightEnd: {fileID: 460788}
+  sightEnd: {fileID: 460784}
   needsCollision: 1
+  collision: 0
 --- !u!114 &11477760
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192542}
@@ -288,6 +291,7 @@ MonoBehaviour:
   sightStart: {fileID: 492542}
   sightEnd: {fileID: 460784}
   needsCollision: 1
+  collision: 0
 --- !u!212 &21292542
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -308,7 +312,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2bc03f0d81b24714cb7ea8210b9eef3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 344579533cd6b454f92cd641a632267b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

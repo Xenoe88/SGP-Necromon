@@ -6,15 +6,15 @@ public class BirdScript : MonoBehaviour
     bool isNecro = false;
     public GameObject target = null;
     bool Attacking = false;
-    public Vector3 turnPoint;
+    public Transform startPoint;
 
     public GameObject m_rune;
     public int slot = 5;
     // Use this for initialization
     public void Start()
     {
-        turnPoint = transform.position;
-        turnPoint.x = turnPoint.x + 4;
+        startPoint = transform;
+        
 
         GetComponent<Entity>().m_dmg = -10;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
@@ -45,13 +45,17 @@ public class BirdScript : MonoBehaviour
                 if (GetComponent<Entity>().m_attackCooldown > 0)
                     GetComponent<Entity>().m_attackCooldown -= 1;
 
-            }
-            else //if (target)
-            {
+           
                 rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-                GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
             }
 
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
+            if(transform.localPosition.x - startPoint.localPosition.x > 4)
+            {
+                this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
+
+            }
 
         }
         else
@@ -63,11 +67,7 @@ public class BirdScript : MonoBehaviour
         Attacking = true;
 
     }
-    public void Turn()
-    {
-        this.transform.localScale = new Vector3((transform.localScale.x == 1) ? -1 : 1, 1, 1);
-
-    }
+   
     void ModifyHealth(int _amount)
     {
         GetComponent<Entity>().m_health += _amount;
