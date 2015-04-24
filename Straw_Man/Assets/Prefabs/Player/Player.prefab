@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.82671547, y: -6.53482533, z: 0}
+  m_LocalPosition: {x: 21.7999992, y: -14.8400002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -261,7 +261,6 @@ MonoBehaviour:
   m_reLoadPosition: {x: 0, y: 0, z: 0}
   m_lastLevel: 0
   m_audioSource: {fileID: 0}
-  m_walkingSFX: {fileID: 8300000, guid: fd86bf87ca0e34c42948000c8206bf1b, type: 3}
   m_swingSFX: {fileID: 8300000, guid: 56bcbc39c2c77c94c97ea5d27b1c535f, type: 3}
   m_jumpSFX: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
   m_doubleJumpSFX: {fileID: 8300000, guid: 6d5989b9db1f3fa4da76e53695be5b04, type: 3}

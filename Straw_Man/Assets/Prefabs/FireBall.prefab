@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11483570}
   - 58: {fileID: 5883570}
   - 50: {fileID: 5060430}
+  - 114: {fileID: 11439698}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -73,13 +74,28 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11483570
+--- !u!114 &11439698
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183570}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea2545e889cbde449610ce7eb213e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_direction: {x: 0, y: 0}
+  m_spd: 25
+  m_animator: {fileID: 0}
+  m_OwnerTag: 
+--- !u!114 &11483570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183570}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ebf0680328a0c74ba129f181b5daa5b, type: 3}
   m_Name: 

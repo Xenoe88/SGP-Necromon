@@ -136,6 +136,7 @@
      <Compile Include="Assets\TowerLevelPortal.cs" />
      <Compile Include="Assets\TutorialChangeScene.cs" />
      <Compile Include="Assets\bombLookForward.cs" />
+     <Compile Include="Assets\tutorialDoor.cs" />
      <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
      <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
      <None Include="Assets\Sprites\Enemies\Mage\data.xml" />

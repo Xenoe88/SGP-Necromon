@@ -533,7 +533,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 11
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -626,7 +626,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tutorials
+  m_Text: 'Play Tutorial Level
+
+'
 --- !u!222 &961457315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -852,6 +854,7 @@ MonoBehaviour:
   m_buttonClick: {fileID: 8300000, guid: 7afe0dc4e8ba4eb41b7954fe963dddff, type: 3}
   m_buttonSwoosh: {fileID: 8300000, guid: 69f1ee81cf0c4ad42aed6affe7297a3d, type: 3}
   up: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!4 &1315565112
 Transform:
   m_ObjectHideFlags: 0

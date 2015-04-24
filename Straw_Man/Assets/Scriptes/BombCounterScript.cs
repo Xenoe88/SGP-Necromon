@@ -13,8 +13,6 @@ public class BombCounterScript : MonoBehaviour
     }
     void OnGUI()
     {
-
-      
         GUI.Box(new Rect(115,55, 25, 25), l.ToString() );
         GUI.Box(new Rect(190, 55, 25, 25), p.ToString());
     }
@@ -22,8 +20,11 @@ public class BombCounterScript : MonoBehaviour
     void Update()
     {
         //print(l);
-       l = info.GetComponent<PlayerInventory>().GetNumBomb();
-       p = info.GetComponent<PlayerInventory>().GetNumRevives();
+        if (info != null)
+        {
+            l = info.GetComponent<PlayerInventory>().GetNumBomb();
+            p = info.GetComponent<PlayerInventory>().GetNumRevives(); 
+        }
         //OnGUI();
     }
 }
