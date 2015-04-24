@@ -2133,6 +2133,10 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  m_AttackSFX: {fileID: 0}
+  m_takeDmgSFX: {fileID: 0}
+  m_deathSFX: {fileID: 0}
+  m_battlecrySFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!114 &712368288
@@ -2793,7 +2797,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
