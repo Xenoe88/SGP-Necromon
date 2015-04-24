@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private Animator m_animator;
 
     public AudioSource m_audioSource;
-    public AudioClip m_walkingSFX, m_swingSFX, m_jumpSFX, m_doubleJumpSFX;
+    public AudioClip m_swingSFX, m_jumpSFX, m_doubleJumpSFX;
 
     // Use this for initialization
     void Start()
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 1);
             m_player.transform.localScale = new Vector3(m_movement * -1.0f, 1);
 
-            if (m_audioSource.isPlaying == false)
+            if (m_audioSource.isPlaying == false && m_isGrounded == true)
                 m_audioSource.Play();
         }
         else
