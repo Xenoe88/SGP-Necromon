@@ -50,7 +50,7 @@ public class MageScript : MonoBehaviour
             if (!attack && distance < 10.0f)
             {
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
-                transform.position = new Vector3(transform.position.x + (transform.localScale.x * -1.0f) * m_darkKnight.m_speed * 0.08f, transform.position.y);
+                transform.position = new Vector3(transform.position.x + (transform.localScale.x * -1.0f) * mage.m_speed * 0.08f, transform.position.y);
 
             }
             if (mage.m_attackCooldown <= 0)

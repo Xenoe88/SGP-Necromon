@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.36999989, y: -1.69000006, z: 0}
+  m_LocalPosition: {x: -3.94000006, y: -.0199999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406378}
@@ -200,6 +200,10 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  m_AttackSFX: {fileID: 0}
+  m_takeDmgSFX: {fileID: 0}
+  m_deathSFX: {fileID: 0}
+  m_battlecrySFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!114 &11471688
