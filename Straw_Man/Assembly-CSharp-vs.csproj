@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scriptes\FireBall.cs" />
      <Compile Include="Assets\Scriptes\FireReaper.cs" />
      <Compile Include="Assets\Scriptes\HUDScript.cs" />
+     <Compile Include="Assets\Scriptes\HealthBar.cs" />
      <Compile Include="Assets\Scriptes\HitBox.cs" />
      <Compile Include="Assets\Scriptes\IceReaperScript.cs" />
      <Compile Include="Assets\Scriptes\IceShotScript.cs" />
