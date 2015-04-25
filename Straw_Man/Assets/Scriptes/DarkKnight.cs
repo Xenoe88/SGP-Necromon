@@ -9,9 +9,13 @@ public class DarkKnight : MonoBehaviour
     public float m_attack1Timer = 10.0f, m_attack2Timer = 30.0f;
     public AudioClip m_atk1SFX, m_atk2SFX;
 
+            public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_animator = GetComponent<Animator>();
         m_darkKnight = GetComponent<Entity>();
     }
@@ -22,7 +26,7 @@ public class DarkKnight : MonoBehaviour
         //check health
         if (m_darkKnight.m_isAlive == false)
         {
-            m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightDie"].Play();
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightDie"].Play();
             m_animator.SetInteger("KnightAnim", 4);
         }
         // if we can locate player
@@ -61,8 +65,8 @@ public class DarkKnight : MonoBehaviour
 
     void ResetAnim() { m_animator.SetInteger("KnightAnim", 0); }
     void Destroy() { Destroy(gameObject); }
-    void PlayATK1SFX() { m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMeleeAttack"].Play(); }
-    void PlayATK2SFX() { m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMagicAttack"].Play(); }
+    void PlayATK1SFX() { SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMeleeAttack"].Play(); }
+    void PlayATK2SFX() { SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMagicAttack"].Play(); }
 
     void ChangeScene()
     {

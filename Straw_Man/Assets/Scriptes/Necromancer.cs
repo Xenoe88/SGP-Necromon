@@ -18,9 +18,14 @@ public class Necromancer : MonoBehaviour
 
     public bool         m_regen             =   false;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_target = GameObject.FindGameObjectWithTag("Player");
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
@@ -91,7 +96,7 @@ public class Necromancer : MonoBehaviour
 
     void Teleport()
     {
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromanceTeleport"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerTeleport"].Play();
 
         float randx = Random.Range(transform.position.x - 5.0f, transform.position.x + 5.0f);
         //float randy = Random.Range(transform.position.y - 10.0f, transform.position.y + 10.0f);
@@ -105,13 +110,13 @@ public class Necromancer : MonoBehaviour
     }
     void Regen()
     {
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromanceRevive"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerRevive"].Play();
 
         m_Entity.m_health += 100;
     }
     void Die()
     {
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromanceDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerDie"].Play();
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
@@ -119,7 +124,7 @@ public class Necromancer : MonoBehaviour
     }
     void Necromance()
     {
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromanceSummon"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerSummon"].Play();
         if (m_Entity.m_health < 100 && !m_regen)
         {
             GameObject clone = Instantiate(m_summonPortal, new Vector3(m_target.transform.position.x + 2, m_target.transform.position.y - 0.25f, m_target.transform.position.z), Quaternion.identity) as GameObject;
