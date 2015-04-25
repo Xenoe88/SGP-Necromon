@@ -56,7 +56,7 @@ public class MageScript : MonoBehaviour
             if (mage.m_attackCooldown <= 0)
             {
 
-                rigidbody2D.isKinematic = true;
+                //rigidbody2D.isKinematic = true;
                 mage.m_attackCooldown = 10;
 
                 attack = true;
@@ -113,6 +113,6 @@ public class MageScript : MonoBehaviour
     {
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
-        Application.LoadLevel(13);
+        Application.LoadLevel("ThroneRoomeScene");
     }
 }
