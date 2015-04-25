@@ -31,6 +31,7 @@ public class IceReaperScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //CheckHealth();
         if (target)
         {
             Vector3 move = (target.transform.position - transform.position).normalized;
@@ -132,16 +133,16 @@ public class IceReaperScript : MonoBehaviour
     {
         
         GetComponent<Entity>().m_health += _dmg;
-        GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
 
     }
     void CheckHealth()
     {
-
         if (GetComponent<Entity>().m_health <= 0)
         {
+            print(GetComponent<Entity>().m_health);
 
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 5);
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
         }
         else
@@ -153,8 +154,12 @@ public class IceReaperScript : MonoBehaviour
         isNecro = true;
         tag = "Player";
     }
-    public void Die()
+   void Die()
     {
+       
+
+        print(gameObject);
+        
         int randomVariable = Random.Range(0, 100);
 
         if (randomVariable >= 0 && randomVariable <= 20 && isNecro == false)
@@ -170,7 +175,7 @@ public class IceReaperScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-        AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
-        Destroy(gameObject);
+        //AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
+        Destroy(this.gameObject);
     }
 }

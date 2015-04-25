@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.7000008, y: -11.8000002, z: 0}
+  m_LocalPosition: {x: -7.49587393, y: -.523667991, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -102,7 +102,7 @@ MonoBehaviour:
   projectile: {fileID: 158096, guid: 781d3efa7610fb44baba7108f1367813, type: 2}
   atkrange: 7
   fired: 0
-  m_rune: {fileID: 0}
+  m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 7
   HitSound: {fileID: 8300000, guid: 7ea10bad5bcacc046a03f460a63f327a, type: 3}
   deathSound: {fileID: 8300000, guid: db2f61124421aca43a71b0fd6a6f5a10, type: 3}
@@ -133,6 +133,10 @@ MonoBehaviour:
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
   m_entityHitSFX: {fileID: 0}
+  m_AttackSFX: {fileID: 0}
+  m_takeDmgSFX: {fileID: 0}
+  m_deathSFX: {fileID: 0}
+  m_battlecrySFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21239754

@@ -167,7 +167,8 @@ public class SoldieScript : MonoBehaviour
     }
     void OnTriggerExit2D()
     {
-        if (target.gameObject.tag != this.tag)
+        if(target)
+            if (target.gameObject.tag != this.tag)
             target = null;
     }
     //Function called as part of the animation in Unity 
