@@ -1096,7 +1096,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1256734530}
+        m_MethodName: PlayMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1256734530
@@ -1112,8 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_slider: {fileID: 0}
   m_sound: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
-  prevVol: 0
-  newVol: 0
+  music: {fileID: 0}
 --- !u!1 &1376878850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,6 +1509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_buttonClick: {fileID: 8300000, guid: 7afe0dc4e8ba4eb41b7954fe963dddff, type: 3}
   m_buttonSwoosh: {fileID: 8300000, guid: 69f1ee81cf0c4ad42aed6affe7297a3d, type: 3}
+  up: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!4 &1795891735
 Transform:
   m_ObjectHideFlags: 0
@@ -1593,7 +1606,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2059308494}
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2059308494
@@ -1609,5 +1634,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_slider: {fileID: 0}
   m_sound: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
-  prevVol: 0
-  newVol: 0
+  music: {fileID: 0}
