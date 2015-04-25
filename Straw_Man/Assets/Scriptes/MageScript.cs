@@ -47,7 +47,7 @@ public class MageScript : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 
-            if (!attack && distance < 10.0f)
+            if (!attack && distance < 8.0f)
             {
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
                 transform.position = new Vector3(transform.position.x + (transform.localScale.x * -1.0f) * mage.m_speed * 0.08f, transform.position.y);
@@ -56,7 +56,7 @@ public class MageScript : MonoBehaviour
             if (mage.m_attackCooldown <= 0)
             {
 
-                rigidbody2D.isKinematic = true;
+               
                 mage.m_attackCooldown = 10;
 
                 attack = true;
