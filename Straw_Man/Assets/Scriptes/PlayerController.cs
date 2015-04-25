@@ -33,13 +33,13 @@ public class PlayerController : MonoBehaviour
 
     private Animator m_animator;
 
-    public AudioSource m_audioSource;
-    public AudioClip m_swingSFX, m_jumpSFX, m_doubleJumpSFX;
+    public AudioSource m_audioSource ;
 
+    public Entity m_Player;
     // Use this for initialization
     void Start()
     {
-       
+
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
 
@@ -130,8 +130,9 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 1);
             m_player.transform.localScale = new Vector3(m_movement * -1.0f, 1);
 
-            if (m_audioSource.isPlaying == false && m_isGrounded == true)
-                m_audioSource.Play();
+            if (m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerWalking"].isPlaying == false && m_isGrounded == true)
+                m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerWalking"].Play();
+
         }
         else
             m_animator.SetInteger("PlayerAnim", 0);
@@ -154,14 +155,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
-            AudioSource.PlayClipAtPoint(m_jumpSFX, Camera.main.transform.position);
             canDoubleJump = true;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
+            m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerJump"].Play();
 
         }
         else if (Input.GetKeyDown("w") && canDoubleJump)
         {
-            AudioSource.PlayClipAtPoint(m_doubleJumpSFX, Camera.main.transform.position);
+            m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerJump"].Play();
+
             canDoubleJump = false;
             m_player.rigidbody2D.velocity = Vector2.zero;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
@@ -171,6 +173,9 @@ public class PlayerController : MonoBehaviour
 
     void Summon()
     {
+
+        m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerSummon"].Play();
+        print("jk;");
         m_animator.SetInteger("PlayerAnim", 4);
         m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
         //print("pooi");
@@ -183,6 +188,8 @@ public class PlayerController : MonoBehaviour
     {
         if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
         {
+            m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerThrowBomb"].Play();
+
             GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, new Vector3(m_player.transform.position.x - (m_player.transform.localScale.x * 0.4f), m_player.transform.position.y + 0.8f, m_player.transform.position.z), transform.rotation);
             temp.rigidbody2D.AddForce(new Vector2(100 * (m_player.transform.localScale.x * -1), 50));
             m_player.GetComponent<PlayerInventory>().UseBomb();
@@ -198,7 +205,7 @@ public class PlayerController : MonoBehaviour
         Destroy(temp, 0.2f);
     }
 
-    void SwingSound() { AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position); }
+    void SwingSound() { m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerAttackHit"].Play(); }
 
     void ChangeScene() { Application.LoadLevel(6); }
 
@@ -206,6 +213,8 @@ public class PlayerController : MonoBehaviour
 
     public void Revive()
     {
+        m_Player.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerRevive"].Play();
+
         gameObject.transform.position = m_RevivePositon;
         renderer.material.color = m_startColor;
         m_player.GetComponent<PlayerInventory>().UseRevives();
@@ -213,7 +222,7 @@ public class PlayerController : MonoBehaviour
         m_player.GetComponent<Entity>().m_isAlive = true;
     }
 
-    public void EnterExitMenu() 
+    public void EnterExitMenu()
     {
         print("BEFORE: " + m_inMenu);
         //m_inMenu = !m_inMenu;

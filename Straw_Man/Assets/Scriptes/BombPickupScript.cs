@@ -7,6 +7,7 @@ public class BombPickupScript : MonoBehaviour
     {
         if (_collider.gameObject.tag == "Player")
         {
+            GameObject.FindGameObjectWithTag("MusicController").GetComponent<LoadSoundFX>().m_soundFXsources["BombPickup"].Play();
             _collider.gameObject.GetComponent<PlayerInventory>().AddBomb();
             Destroy(gameObject);
         }

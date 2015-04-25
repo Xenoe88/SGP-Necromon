@@ -5,11 +5,11 @@ public class ReviveScript : MonoBehaviour
 {
     //public GameObject m_player;
     public AudioClip m_pickupSFX;
-
+    public GameObject sound;
 	// Use this for initialization
 	void Start () 
     {
-	
+        sound = GameObject.FindGameObjectWithTag("MusicController");
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class ReviveScript : MonoBehaviour
         if (_target.tag == "Player")
         {
             _target.GetComponent<PlayerInventory>().AddRevive();
-            AudioSource.PlayClipAtPoint(m_pickupSFX, Camera.main.transform.position);
+            sound.GetComponent<LoadSoundFX>().m_soundFXsources["RevivePickup"].Play();
             Destroy(gameObject);
         }
     }

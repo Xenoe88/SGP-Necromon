@@ -76,6 +76,8 @@ public class Demon : MonoBehaviour
     }
     void Attack()
     {
+        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonAttack"].Play();
+
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
     }
 
@@ -88,6 +90,8 @@ public class Demon : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
+        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonBattleCry"].Play();
+
     }
 
     void OnTriggerStay2D(Collider2D target)
@@ -131,7 +135,7 @@ public class Demon : MonoBehaviour
         {
             GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.DontRequireReceiver);
         }
-
+        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonDie"].Play();
         Destroy(this.gameObject);
     }
 }

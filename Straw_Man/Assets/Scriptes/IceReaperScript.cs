@@ -9,6 +9,8 @@ public class IceReaperScript : MonoBehaviour
     public float atkrange = 3.0f;
     public bool fired = false;
     int spd;
+
+    public Entity m_Ice;
     public GameObject m_rune;
     public int slot = 7;
     public AudioClip HitSound;
@@ -49,7 +51,7 @@ public class IceReaperScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) <= atkrange && !fired && GetComponent<Entity>().m_attackCooldown <= 0)
             {
-                AudioSource.PlayClipAtPoint(HitSound, transform.localPosition);
+                
 
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
                 GetComponent<Entity>().m_attackCooldown = 8;
@@ -73,6 +75,7 @@ public class IceReaperScript : MonoBehaviour
 
         if (fired)
             return;
+        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperAttack"].Play();
 
         GameObject reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 0, 0), transform.rotation);
         reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
@@ -134,13 +137,15 @@ public class IceReaperScript : MonoBehaviour
         
         GetComponent<Entity>().m_health += _dmg;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperTakeDamage"].Play();
+
 
     }
     void CheckHealth()
     {
         if (GetComponent<Entity>().m_health <= 0)
         {
-            print(GetComponent<Entity>().m_health);
+            
 
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
@@ -151,8 +156,11 @@ public class IceReaperScript : MonoBehaviour
     }
     public void MakeNecro()
     {
+
         isNecro = true;
         tag = "Player";
+        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperBattleCry"].Play();
+
     }
    void Die()
     {
@@ -175,7 +183,8 @@ public class IceReaperScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-        //AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
+
+        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
         Destroy(this.gameObject);
     }
 }

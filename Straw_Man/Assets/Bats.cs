@@ -11,7 +11,7 @@ public class Bats : MonoBehaviour
     public GameObject m_rune;
     public bool m_isNecro = false;
     private int m_necroSlot = 10;
-
+    public Entity m_Bats;
     // Use this for initialization
     void Start()
     {
@@ -66,6 +66,7 @@ public class Bats : MonoBehaviour
 
     void Attack()
     {
+        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsAttack"].Play();
 
     }
 
@@ -81,12 +82,19 @@ public class Bats : MonoBehaviour
 
         if (m_isNecro)
             gameObject.GetComponent<Entity>().Owner.gameObject.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_necroSlot, SendMessageOptions.RequireReceiver);
-
+        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsDie"].Play();
         Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D _target)
     {
 
+    }
+
+    void MakeNecro()
+    {
+        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsBattleCry"].Play();
+        m_isNecro = true;
+        tag = "Player";
     }
 }

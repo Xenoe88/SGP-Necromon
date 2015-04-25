@@ -135,6 +135,10 @@ public class FireReaper : MonoBehaviour
         GameObject reference = (GameObject)Instantiate(m_fireBall, transform.position, transform.rotation);
         Physics2D.IgnoreCollision(reference.collider2D, this.collider2D);
 
+        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperAttack"].Play();
+            
+
+
         Vector3 direction = m_target.transform.position - reference.transform.position;
         direction = m_target.transform.InverseTransformDirection(direction);
 
@@ -163,6 +167,7 @@ public class FireReaper : MonoBehaviour
         {
            GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
+        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperDie"].Play();
 
         Destroy(gameObject);
     }
@@ -171,6 +176,8 @@ public class FireReaper : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
+        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperBattleCry"].Play();
+
     }
     void ResetAnim() { m_animation.SetInteger("FireReaperAnim", 0); }
 }

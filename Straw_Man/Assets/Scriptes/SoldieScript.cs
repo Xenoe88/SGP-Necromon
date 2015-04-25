@@ -11,7 +11,7 @@ public class SoldieScript : MonoBehaviour
 
     public GameObject target = null;
     public GameObject summoner = null;
-
+    public Entity m_soldier;
     public GameObject m_rune;
     public int slot = 3;
     // Use this for initialization
@@ -72,7 +72,8 @@ public class SoldieScript : MonoBehaviour
 
                 if (GetComponent<Entity>().m_attackCooldown <= 0 && Mathf.Abs(Vector3.Distance(target.gameObject.transform.position, this.transform.position)) < 1 && target.tag != this.tag)
                 {
-                    AudioSource.PlayClipAtPoint(stabSFX, transform.localPosition);
+                    m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierAttack"].Play();
+                    
                     GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
                     KnockBack();
                     GetComponent<Entity>().m_attackCooldown = 2;
@@ -86,12 +87,10 @@ public class SoldieScript : MonoBehaviour
 
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+      
         }
         else
         {
-            AudioSource.PlayClipAtPoint(deathSFX, transform.localPosition);
 
 
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 4);
@@ -111,7 +110,8 @@ public class SoldieScript : MonoBehaviour
 
         if (num > .80f)
         {
-            AudioSource.PlayClipAtPoint(knockbackSFX, transform.localPosition);
+            m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierKnockBack"].Play();
+
             target.gameObject.transform.localPosition = target.gameObject.transform.localPosition + (new Vector3(1.0f, 0.2f, 0.0f) * target.transform.localScale.x);
 
         }
@@ -131,6 +131,7 @@ public class SoldieScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
             GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
         }
+        m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierDie"].Play();
 
         Destroy(gameObject);
     }
@@ -140,6 +141,8 @@ public class SoldieScript : MonoBehaviour
 
         if (num > .90f)
         {
+            m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierBlock"].Play();
+
             return true;
         }
         return false;
@@ -154,7 +157,7 @@ public class SoldieScript : MonoBehaviour
             return;
         }
 
-        AudioSource.PlayClipAtPoint(dmgSFX, transform.localPosition);
+        m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierTakeDamage"].Play();
 
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
         GetComponent<Entity>().m_health += _amount;
@@ -174,6 +177,8 @@ public class SoldieScript : MonoBehaviour
     //Function called as part of the animation in Unity 
     public void Attack()
     {
+        m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierAttack"].Play();
+
         target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
     }
@@ -182,6 +187,7 @@ public class SoldieScript : MonoBehaviour
     {
         isNecro = true;
         this.tag = "Player";
+        m_soldier.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierWarCry"].Play();
     }
 
 }

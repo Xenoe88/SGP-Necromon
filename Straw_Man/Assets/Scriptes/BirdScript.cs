@@ -7,7 +7,7 @@ public class BirdScript : MonoBehaviour
     public GameObject target = null;
     bool Attacking = false;
     public Transform startPoint;
-
+    public Entity m_Bird;
     public GameObject m_rune;
     public int slot = 5;
     // Use this for initialization
@@ -71,6 +71,8 @@ public class BirdScript : MonoBehaviour
     void ModifyHealth(int _amount)
     {
         GetComponent<Entity>().m_health += _amount;
+        m_Bird.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BirdTakeDamage"].Play();
+
         if (GetComponent<Entity>().m_health <= 0)
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
@@ -102,6 +104,8 @@ public class BirdScript : MonoBehaviour
 
     public void Attack()
     {
+        m_Bird.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BirdAttack"].Play();
+
         target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
         Attacking = false;
     }
@@ -123,6 +127,7 @@ public class BirdScript : MonoBehaviour
             // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
 
         }
+        m_Bird.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BirdDie"].Play();
         Destroy(gameObject);
     }
 }

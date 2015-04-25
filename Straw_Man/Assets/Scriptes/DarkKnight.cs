@@ -21,8 +21,10 @@ public class DarkKnight : MonoBehaviour
     {
         //check health
         if (m_darkKnight.m_isAlive == false)
+        {
+            m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightDie"].Play();
             m_animator.SetInteger("KnightAnim", 4);
-
+        }
         // if we can locate player
         if (m_target = GameObject.FindGameObjectWithTag("Player"))
         {
@@ -59,8 +61,8 @@ public class DarkKnight : MonoBehaviour
 
     void ResetAnim() { m_animator.SetInteger("KnightAnim", 0); }
     void Destroy() { Destroy(gameObject); }
-    void PlayATK1SFX() { AudioSource.PlayClipAtPoint(m_atk1SFX, Camera.main.transform.position); }
-    void PlayATK2SFX() { AudioSource.PlayClipAtPoint(m_atk2SFX, Camera.main.transform.position); }
+    void PlayATK1SFX() { m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMeleeAttack"].Play(); }
+    void PlayATK2SFX() { m_darkKnight.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DarkKnightMagicAttack"].Play(); }
 
     void ChangeScene()
     {
@@ -82,7 +84,7 @@ public class DarkKnight : MonoBehaviour
             offset = -1;
         else
             offset = 1;
-
+  
         GameObject temp = (GameObject)Instantiate(m_specialAttack, transform.position + new Vector3(offset * 3.0f, 0f, 0.0f), m_target.transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, gameObject.collider2D);
         temp.SendMessage("SetPlayer", gameObject, SendMessageOptions.RequireReceiver);

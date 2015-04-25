@@ -87,6 +87,8 @@ public class MageScript : MonoBehaviour
 
     void FireAtk()
     {
+        mage.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageMagicAttack1"].Play();
+
         target.SendMessage("ModifyHealth", -20, SendMessageOptions.DontRequireReceiver);
         //target.SendMessage("ModifyStatus", Status.CONFUSE, SendMessageOptions.DontRequireReceiver);
         mage.m_animator.SetInteger("AnimState", 0);
@@ -102,6 +104,8 @@ public class MageScript : MonoBehaviour
     }
     void IceAtk()
     {
+        mage.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageMagicAttack2"].Play();
+
         target.SendMessage("ModifyHealth", -10, SendMessageOptions.DontRequireReceiver);
         //target.SendMessage("ModifyStatus", Status.STUN, SendMessageOptions.DontRequireReceiver);
         mage.m_animator.SetInteger("AnimState", 0);
@@ -111,6 +115,7 @@ public class MageScript : MonoBehaviour
     }
     void Die()
     {
+        mage.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageDie"].Play();
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel("ThroneRoomeScene");

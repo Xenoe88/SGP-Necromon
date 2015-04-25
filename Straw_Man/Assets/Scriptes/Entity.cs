@@ -28,7 +28,8 @@ public class Entity : MonoBehaviour {
 
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
-    public AudioClip m_entityHitSFX, m_AttackSFX, m_takeDmgSFX, m_deathSFX, m_battlecrySFX;
+     public GameObject SFX;
+
 
     public GameObject Owner = null;
 
@@ -42,6 +43,7 @@ public class Entity : MonoBehaviour {
 	// Use this for initialization
 	public void Start () 
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         m_isAlive = true;
 	}
 	

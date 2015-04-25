@@ -8,7 +8,9 @@ public class Destructable : MonoBehaviour
 
     void Explode()
     {
+
         Destroy(gameObject);
+        GameObject.FindGameObjectWithTag("MusicController").GetComponent<LoadSoundFX>().m_soundFXsources["EnviromentBreaking"].Play();
 
         Transform t = transform;
 
