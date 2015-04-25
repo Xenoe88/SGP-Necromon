@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.3400002, y: -35.5, z: 0}
+  m_LocalPosition: {x: 5.29522943, y: -9.55027676, z: 0}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children:
   - {fileID: 426356}
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 155698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27e0f8d703a8757408c225f6912bef9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 91c926bf17b8f10429c27c9a5874b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sightStart: {fileID: 455698}
@@ -300,6 +300,10 @@ MonoBehaviour:
   m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
   m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
   m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
+  m_AttackSFX: {fileID: 0}
+  m_takeDmgSFX: {fileID: 0}
+  m_deathSFX: {fileID: 0}
+  m_battlecrySFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21255698

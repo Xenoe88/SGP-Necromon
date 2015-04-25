@@ -32,13 +32,20 @@ public class Button : MonoBehaviour
 
     }
 
+    public void ResumeGame()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().SendMessage("EnterExitMenu", SendMessageOptions.DontRequireReceiver);
+        Application.LoadLevel(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().m_lastLevel);
+    }
+
     public void PlayerMenu()
     {
         //up.GetComponent<PauseMenuScript>().UnPauseGame();
         print("TEST1");
         Time.timeScale = 1;
         m_player.gameObject.GetComponent<PlayerController>().m_reLoadPosition = m_player.gameObject.transform.position;
-        ChangeScene(7);
+        //ChangeScene(7);
+        Application.LoadLevel("PlayerMenuScene");
     }
 
     public void ToggleFullScreen()

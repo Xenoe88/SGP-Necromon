@@ -16,6 +16,9 @@ public class BossDoor : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D _target)
     {
         if (_target.gameObject.GetComponent<PlayerScript>().m_gameStatus == 3)
-            Application.LoadLevel(15);
+            Application.LoadLevel("EvilWizardScene");
+
+            //GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<LoadingScreen>().ChangeLevel("EvilWizardScene");
+
     }
 }

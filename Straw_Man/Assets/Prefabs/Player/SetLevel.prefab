@@ -36,11 +36,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 196584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a078773a3001b458d7b42e1fd3f184, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f3a58053cc03244c9cd213691bb8c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
-  m_levelID: 4
+  m_levelName: CourtyardScene
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

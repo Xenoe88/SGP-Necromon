@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ExitPlayerMenu : MonoBehaviour 
 {
-    public GameObject m_player;
+    private GameObject m_player;
 	// Use this for initialization
 	void Start () 
     {
@@ -16,6 +16,8 @@ public class ExitPlayerMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             m_player.GetComponent<PlayerController>().SendMessage("EnterExitMenu", SendMessageOptions.DontRequireReceiver);
+            //GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<LoadingScreen>().ChangeLevel(m_player.GetComponent<PlayerController>().m_lastLevel);
+
             Application.LoadLevel(m_player.GetComponent<PlayerController>().m_lastLevel);
         }
 	}

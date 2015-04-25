@@ -14,12 +14,15 @@ public class PositionPlayer : MonoBehaviour
         if (m_player.gameObject.GetComponent<PlayerController>().m_reLoadPosition == Vector3.zero)
             m_player.gameObject.transform.position = gameObject.transform.position;
         else
+        {
             m_player.gameObject.transform.position = m_player.gameObject.GetComponent<PlayerController>().m_reLoadPosition;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
+            m_player.gameObject.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+
+        }
+
+        if (m_player.gameObject.GetComponent<PlayerController>().m_inMenu == true)
+        {
+            m_player.gameObject.GetComponent<PlayerController>().m_inMenu = false;
+        }
 	}
 }

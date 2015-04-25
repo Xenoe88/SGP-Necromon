@@ -4,7 +4,7 @@ using System.Collections;
 public class CheckPlayerProgress : MonoBehaviour 
 {
     public int m_sealID;
-    public GameObject m_player;
+    private GameObject m_player;
 
 	// Use this for initialization
 	void Start () 

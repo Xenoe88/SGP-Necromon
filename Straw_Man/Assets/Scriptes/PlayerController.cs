@@ -27,8 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private Color m_startColor, m_endColor;
     public Vector3 m_RevivePositon = Vector3.zero, m_reLoadPosition = Vector3.zero;
-    private bool m_inMenu = false;
-    public int m_lastLevel;
+    public bool m_inMenu = false;
+    public string m_lastLevel;
     private float m_deathTimer = 0.0f;
 
     private Animator m_animator;
@@ -102,6 +102,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("j"))
         {
             Bomb();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EnterPlayerMenu();
         }
 
 
@@ -206,7 +211,11 @@ public class PlayerController : MonoBehaviour
 
     public void Revive()
     {
-        gameObject.transform.position = m_RevivePositon;
+        if (m_RevivePositon == Vector3.zero)
+            gameObject.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        else
+            gameObject.transform.position = m_RevivePositon;
+
         renderer.material.color = m_startColor;
         m_player.GetComponent<PlayerInventory>().UseRevives();
         m_player.GetComponent<Entity>().m_health = 200;
@@ -215,9 +224,19 @@ public class PlayerController : MonoBehaviour
 
     public void EnterExitMenu() 
     {
-        print("BEFORE: " + m_inMenu);
-        //m_inMenu = !m_inMenu;
-        print("AFTER: " + m_inMenu);
+        //print("BEFORE: " + m_inMenu);
+        m_inMenu = !m_inMenu;
+        //print("AFTER: " + m_inMenu);
 
+    }
+
+    void EnterPlayerMenu()
+    {
+        if (m_reLoadPosition == Vector3.zero)
+            m_reLoadPosition = gameObject.transform.position;
+
+        EnterExitMenu();
+
+        Application.LoadLevel("PlayerMenuScene");
     }
 }
