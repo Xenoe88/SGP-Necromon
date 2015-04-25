@@ -11,6 +11,7 @@ public struct StatusMod
 public class Entity : MonoBehaviour {
 
     public int m_health;
+    public int m_MaxHealth;
     public int m_dmg;
     public int m_speed;
     public int m_ID;
@@ -29,7 +30,6 @@ public class Entity : MonoBehaviour {
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
      public GameObject SFX;
-
 
     public GameObject Owner = null;
 
@@ -74,6 +74,7 @@ public class Entity : MonoBehaviour {
         }
         if (m_attackCooldown > 0)
             m_attackCooldown -= Time.deltaTime;
+        
 	}
 
     public void ModifyHealth(int _dmg)
