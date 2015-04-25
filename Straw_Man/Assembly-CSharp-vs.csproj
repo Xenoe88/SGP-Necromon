@@ -137,14 +137,6 @@
      <Compile Include="Assets\TutorialChangeScene.cs" />
      <Compile Include="Assets\bombLookForward.cs" />
      <Compile Include="Assets\tutorialDoor.cs" />
-     <None Include="Assets\Sprites\Enemies\Soldier\data.xml" />
-     <None Include="Assets\Sprites\Enemies\Ethreal Being\data.xml" />
-     <None Include="Assets\Sprites\Enemies\Mage\data.xml" />
-     <None Include="Assets\Sprites\Enemies\Ice Reaper\data.xml" />
-     <None Include="Assets\Animations\Running Bomb\Explosion\data.xml" />
-     <None Include="Assets\Sprites\Enemies\Bird\data.xml" />
-     <None Include="Assets\Sprites\Enviroment\Bomb\data.xml" />
-     <None Include="Assets\Sprites\Demon\data.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
