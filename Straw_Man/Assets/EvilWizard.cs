@@ -101,6 +101,7 @@ public class EvilWizard : MonoBehaviour {
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
+        Destroy(m_target);
         Application.LoadLevel("WinScene");
     }
 

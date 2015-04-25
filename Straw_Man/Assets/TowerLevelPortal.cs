@@ -14,7 +14,7 @@ public class TowerLevelPortal : MonoBehaviour {
     }
     void LoadScene()
     {
-        Application.LoadLevel(13);
+        Application.LoadLevel("TowerScene");
     }
 
     void OnTriggerEnter2D(Collider2D target)
@@ -22,6 +22,8 @@ public class TowerLevelPortal : MonoBehaviour {
         if (target.GetComponent<PlayerScript>().m_gameStatus > 1)
         {
             LoadScene();
+            //GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<LoadingScreen>().ChangeLevel("TowerScene");
+
         }
     }
 }
