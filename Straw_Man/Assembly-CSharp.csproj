@@ -58,7 +58,6 @@
      <Compile Include="Assets\Health.cs" />
      <Compile Include="Assets\LightningAttack.cs" />
      <Compile Include="Assets\LoadSoundFX.cs" />
-     <Compile Include="Assets\LoadingScreen.cs" />
      <Compile Include="Assets\PlayerMenu.cs" />
      <Compile Include="Assets\PlayerMenuDisplayNecromon.cs" />
      <Compile Include="Assets\PlayerMenuSetPlayerLocation.cs" />

@@ -73,12 +73,16 @@ public class EthrealBeing : MonoBehaviour
                 }
 
             }
+
+            else if (target == null)
+
+                GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
+            rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
         }
-        else if (target == null)
+        else
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
-
-        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
     }
 
@@ -125,9 +129,6 @@ public class EthrealBeing : MonoBehaviour
         }
         GetComponent<Entity>().m_health += _amount;
         m_Ethreal.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EthrealBeingTakeDamage"].Play();
-
-        if (GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
 
     }

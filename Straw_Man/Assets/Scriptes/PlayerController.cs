@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
         m_player.GetComponent<Entity>().m_health = 200;
         m_player.GetComponent<Entity>().m_isAlive = true;
     }
-
+    public void EnterExitMenu()
     {
         //print("BEFORE: " + m_inMenu);
         m_inMenu = !m_inMenu;

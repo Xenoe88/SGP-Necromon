@@ -30,7 +30,7 @@ public class Entity : MonoBehaviour {
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
      public GameObject SFX;
-
+     public GameObject HealthBar;
     public GameObject Owner = null;
 
     //public enum Status { NONE, STUN, SLOW, CONFUSE };
@@ -46,7 +46,7 @@ public class Entity : MonoBehaviour {
         SFX = GameObject.FindGameObjectWithTag("MusicController");
         m_isAlive = true;
 	}
-	
+   
 	// Update is called once per frame
 	public void Update () 
     {
@@ -55,6 +55,9 @@ public class Entity : MonoBehaviour {
             m_isAlive = false;
             m_health = 0;
         }
+
+        HealthBar.transform.localScale = new Vector3((float)m_health/(float)m_MaxHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
+        print(m_health / m_MaxHealth);
         if(m_attackCooldown > 0)
         {
             m_attackCooldown -= Time.deltaTime;
