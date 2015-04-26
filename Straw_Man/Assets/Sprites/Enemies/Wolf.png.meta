@@ -44,6 +44,7 @@ TextureImporter:
     21300078: Wolf_42
     21300080: Wolf_13
     21300082: Wolf_11
+    21300084: Wolf_22
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -92,7 +93,7 @@ TextureImporter:
         y: 938
         width: 76
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_1
@@ -102,7 +103,7 @@ TextureImporter:
         y: 942
         width: 40
         height: 24
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_2
@@ -112,7 +113,7 @@ TextureImporter:
         y: 942
         width: 38
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_3
@@ -122,7 +123,7 @@ TextureImporter:
         y: 942
         width: 42
         height: 23
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_4
@@ -132,7 +133,7 @@ TextureImporter:
         y: 942
         width: 42
         height: 25
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_5
@@ -142,7 +143,7 @@ TextureImporter:
         y: 942
         width: 40
         height: 25
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_6
@@ -152,7 +153,7 @@ TextureImporter:
         y: 942
         width: 38
         height: 26
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_7
@@ -162,7 +163,7 @@ TextureImporter:
         y: 943
         width: 49
         height: 24
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_8
@@ -172,7 +173,7 @@ TextureImporter:
         y: 942
         width: 55
         height: 24
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_9
@@ -182,7 +183,7 @@ TextureImporter:
         y: 873
         width: 89
         height: 51
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_10
@@ -192,7 +193,17 @@ TextureImporter:
         y: 873
         width: 100
         height: 45
-      alignment: 0
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wolf_11
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 879
+        width: 13
+        height: 28
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_12
@@ -202,7 +213,17 @@ TextureImporter:
         y: 879
         width: 106
         height: 52
-      alignment: 0
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wolf_13
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 882
+        width: 7
+        height: 22
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_14
@@ -212,7 +233,7 @@ TextureImporter:
         y: 806
         width: 91
         height: 50
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_15
@@ -222,7 +243,7 @@ TextureImporter:
         y: 806
         width: 100
         height: 45
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_16
@@ -232,7 +253,7 @@ TextureImporter:
         y: 806
         width: 103
         height: 46
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_17
@@ -242,7 +263,7 @@ TextureImporter:
         y: 806
         width: 103
         height: 47
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_18
@@ -252,7 +273,7 @@ TextureImporter:
         y: 806
         width: 91
         height: 51
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_19
@@ -262,8 +283,8 @@ TextureImporter:
         y: 806
         width: 92
         height: 51
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_20
       rect:
@@ -272,7 +293,7 @@ TextureImporter:
         y: 714
         width: 84
         height: 82
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_21
@@ -282,18 +303,28 @@ TextureImporter:
         y: 769
         width: 7
         height: 8
-      alignment: 0
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wolf_22
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 776
+        width: 17
+        height: 13
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_23
       rect:
         serializedVersion: 2
-        x: 201
+        x: 158
         y: 714
-        width: 86
-        height: 68
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        width: 129
+        height: 70
+      alignment: 7
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_24
       rect:
@@ -302,7 +333,7 @@ TextureImporter:
         y: 644
         width: 89
         height: 51
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_25
@@ -312,7 +343,7 @@ TextureImporter:
         y: 644
         width: 92
         height: 53
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_26
@@ -322,7 +353,7 @@ TextureImporter:
         y: 629
         width: 95
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_27
@@ -332,7 +363,7 @@ TextureImporter:
         y: 630
         width: 10
         height: 9
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_28
@@ -342,7 +373,7 @@ TextureImporter:
         y: 558
         width: 76
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_29
@@ -352,7 +383,7 @@ TextureImporter:
         y: 558
         width: 76
         height: 60
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_30
@@ -362,7 +393,7 @@ TextureImporter:
         y: 558
         width: 78
         height: 61
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_31
@@ -372,7 +403,7 @@ TextureImporter:
         y: 558
         width: 81
         height: 61
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_32
@@ -382,7 +413,7 @@ TextureImporter:
         y: 558
         width: 81
         height: 61
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_33
@@ -392,7 +423,7 @@ TextureImporter:
         y: 558
         width: 81
         height: 61
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_34
@@ -402,7 +433,7 @@ TextureImporter:
         y: 465
         width: 57
         height: 78
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_35
@@ -412,7 +443,7 @@ TextureImporter:
         y: 465
         width: 45
         height: 86
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_36
@@ -422,7 +453,7 @@ TextureImporter:
         y: 465
         width: 57
         height: 79
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_37
@@ -432,7 +463,7 @@ TextureImporter:
         y: 465
         width: 88
         height: 56
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_38
@@ -442,7 +473,7 @@ TextureImporter:
         y: 465
         width: 91
         height: 44
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_39
@@ -452,7 +483,7 @@ TextureImporter:
         y: 465
         width: 92
         height: 21
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wolf_40
@@ -462,48 +493,8 @@ TextureImporter:
         y: 465
         width: 91
         height: 20
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Wolf_41
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 624
-        width: 77
-        height: 86
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Wolf_42
-      rect:
-        serializedVersion: 2
-        x: 479
-        y: 872
-        width: 101
-        height: 60
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Wolf_13
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 713
-        width: 75
-        height: 82
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Wolf_11
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 872
-        width: 111
-        height: 55
-      alignment: 0
-      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
