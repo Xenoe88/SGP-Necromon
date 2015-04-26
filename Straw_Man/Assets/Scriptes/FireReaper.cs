@@ -14,9 +14,14 @@ public class FireReaper : MonoBehaviour
     public GameObject m_target, m_fireBall;
     public float distanceTest;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_fireReaper = GetComponent<Entity>();
         m_animation = GetComponent<Animator>();
     }
@@ -135,7 +140,7 @@ public class FireReaper : MonoBehaviour
         GameObject reference = (GameObject)Instantiate(m_fireBall, transform.position, transform.rotation);
         Physics2D.IgnoreCollision(reference.collider2D, this.collider2D);
 
-        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperAttack"].Play();
             
 
 
@@ -167,7 +172,7 @@ public class FireReaper : MonoBehaviour
         {
            GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
-        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperDie"].Play();
 
         Destroy(gameObject);
     }
@@ -176,7 +181,7 @@ public class FireReaper : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
-        m_fireReaper.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperBattleCry"].Play();
 
     }
     void ResetAnim() { m_animation.SetInteger("FireReaperAnim", 0); }

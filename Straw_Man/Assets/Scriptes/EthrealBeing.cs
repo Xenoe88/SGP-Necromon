@@ -16,9 +16,15 @@ public class EthrealBeing : MonoBehaviour
     private float intangibleTimer;
     private Color phaseColor, startColor;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     public void Start()
     {
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         GetComponent<Entity>().m_dmg = -5;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         GetComponent<Entity>().m_speed = 1;
@@ -65,7 +71,7 @@ public class EthrealBeing : MonoBehaviour
                     {
 
                         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-                        m_Ethreal.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EthrealBeingAttack"].Play();
+                        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingAttack"].Play();
                         GetComponent<Entity>().m_attackCooldown = 2;
 
                         Attacking = true;
@@ -82,8 +88,7 @@ public class EthrealBeing : MonoBehaviour
         }
         else
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
-
-
+            
     }
 
 
@@ -118,7 +123,7 @@ public class EthrealBeing : MonoBehaviour
     {
         isNecro = true;
         tag = "Player";
-        m_Ethreal.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EthrealBeingBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingBattleCry"].Play();
 
     }
     void ModifyHealth(int _amount)
@@ -128,7 +133,9 @@ public class EthrealBeing : MonoBehaviour
             return;
         }
         GetComponent<Entity>().m_health += _amount;
-        m_Ethreal.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EthrealBeingTakeDamage"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingTakeDamage"].Play();
+
+     
 
 
     }
@@ -185,7 +192,7 @@ public class EthrealBeing : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-        m_Ethreal.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EthrealBeingDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingDie"].Play();
 
         Destroy(gameObject);
     }

@@ -17,9 +17,13 @@ public class Slimer : MonoBehaviour
     public GameObject m_rune;
     public int slot = 0;
 
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_Slimer = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
     }
@@ -52,7 +56,7 @@ public class Slimer : MonoBehaviour
         if (m_moveTimer <= 0 && m_isGrounded)
         {
             m_animator.SetInteger("SlimerAnim", 1);
-            m_Slimer.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerJump"].Play();
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerJump"].Play();
             
         }
         m_moveTimer -= Time.deltaTime;
@@ -87,7 +91,7 @@ public class Slimer : MonoBehaviour
 
     void Attack()
     {
-        m_Slimer.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerAttack"].Play();
         m_target.SendMessage("ModifyHealth", m_Slimer.m_dmg,SendMessageOptions.DontRequireReceiver);
         //print("Attacked!");
         //GameObject temp = (GameObject)Instantiate(m_hitBox, new Vector3(m_Slimer.transform.position.x + (m_Slimer.transform.localScale.x * 0.2f), m_Slimer.transform.position.y, m_Slimer.transform.position.z), transform.rotation);
@@ -113,7 +117,7 @@ public class Slimer : MonoBehaviour
            // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
         
         }
-        m_Slimer.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerDie"].Play();
       
          Destroy(gameObject);
     }
@@ -147,7 +151,7 @@ public class Slimer : MonoBehaviour
 
     public void MakeNecro()
     {
-        m_Slimer.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerBattleCry"].Play();
 
         m_isNecro = true;
         this.tag = "Player";

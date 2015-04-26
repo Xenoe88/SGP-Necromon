@@ -12,9 +12,14 @@ public class Bats : MonoBehaviour
     public bool m_isNecro = false;
     private int m_necroSlot = 10;
     public Entity m_Bats;
+
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_animator = gameObject.GetComponent<Animator>();
 
         m_rightPos = m_rightBarrier.transform.position.x;
@@ -66,7 +71,7 @@ public class Bats : MonoBehaviour
 
     void Attack()
     {
-        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsAttack"].Play();
 
     }
 
@@ -82,7 +87,7 @@ public class Bats : MonoBehaviour
 
         if (m_isNecro)
             gameObject.GetComponent<Entity>().Owner.gameObject.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_necroSlot, SendMessageOptions.RequireReceiver);
-        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsDie"].Play();
         Destroy(gameObject);
     }
 
@@ -93,7 +98,7 @@ public class Bats : MonoBehaviour
 
     void MakeNecro()
     {
-        m_Bats.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BatsBattleCry"].Play();
         m_isNecro = true;
         tag = "Player";
     }

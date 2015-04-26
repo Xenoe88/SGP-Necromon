@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.0100002, y: -2.1500001, z: 0}
+  m_LocalPosition: {x: 3.0999999, y: 5.5, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,11 +102,13 @@ MonoBehaviour:
   projectile: {fileID: 158096, guid: 781d3efa7610fb44baba7108f1367813, type: 2}
   atkrange: 7
   fired: 0
+  m_Ice: {fileID: 0}
   m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 7
   HitSound: {fileID: 8300000, guid: 7ea10bad5bcacc046a03f460a63f327a, type: 3}
   deathSound: {fileID: 8300000, guid: 2308af2b724635145b83533c339e1e40, type: 3}
   Hit: 0
+  SFX: {fileID: 0}
 --- !u!114 &11485166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 0
+  m_MaxHealth: 0
   m_dmg: 0
   m_speed: 0
   m_ID: 0
@@ -132,11 +135,6 @@ MonoBehaviour:
   m_stunTexture: {fileID: 0}
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
-  m_entityHitSFX: {fileID: 0}
-  m_AttackSFX: {fileID: 0}
-  m_takeDmgSFX: {fileID: 0}
-  m_deathSFX: {fileID: 0}
-  m_battlecrySFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21239754

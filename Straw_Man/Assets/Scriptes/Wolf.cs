@@ -20,9 +20,14 @@ public class Wolf : MonoBehaviour
 
     public int m_arrayIndex = 2;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
@@ -114,7 +119,7 @@ public class Wolf : MonoBehaviour
     void Attack()
     {
         m_moving = false;
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfAttack"].Play();
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
         int random = Random.Range(0, 5);
         if (random == 3)
@@ -141,7 +146,7 @@ public class Wolf : MonoBehaviour
         {
             m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
         }
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfDie"].Play();
 
         Destroy(this.gameObject);
     }
@@ -149,7 +154,7 @@ public class Wolf : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
-        m_Entity.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfBattleCry"].Play();
          
     }
 }

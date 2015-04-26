@@ -18,9 +18,14 @@ public class IceReaperScript : MonoBehaviour
 
 
     public bool Hit = false;
+
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         GetComponent<Entity>().m_dmg = -15;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         spd = GetComponent<Entity>().m_speed = 50;
@@ -75,7 +80,7 @@ public class IceReaperScript : MonoBehaviour
 
         if (fired)
             return;
-        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperAttack"].Play();
 
         GameObject reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 0, 0), transform.rotation);
         reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
@@ -137,7 +142,7 @@ public class IceReaperScript : MonoBehaviour
         
         GetComponent<Entity>().m_health += _dmg;
         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperTakeDamage"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperTakeDamage"].Play();
 
 
     }
@@ -159,7 +164,7 @@ public class IceReaperScript : MonoBehaviour
 
         isNecro = true;
         tag = "Player";
-        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperBattleCry"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperBattleCry"].Play();
 
     }
    void Die()
@@ -184,7 +189,7 @@ public class IceReaperScript : MonoBehaviour
 
         }
 
-        m_Ice.SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
         Destroy(this.gameObject);
     }
 }
