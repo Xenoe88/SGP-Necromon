@@ -4,8 +4,8 @@ using System.Collections;
 public class PlayerMenu : MonoBehaviour
 {
     public int m_necroID;
-    public GameObject m_player;
-    public GameObject m_selectLocation;
+    private GameObject m_player;
+    private GameObject m_selectLocation;
 
     private Color m_visible;
 

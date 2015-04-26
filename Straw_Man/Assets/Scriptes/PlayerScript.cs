@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
 	void Start () 
     {
 
-        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(gameObject);
 
         m_rank = Rank.D;
         m_inventory = GetComponent<PlayerInventory>();

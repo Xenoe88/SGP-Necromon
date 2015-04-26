@@ -24,9 +24,14 @@ public class RunningBomb : MonoBehaviour
     public int slot = 4;
     public int m_arrayIndex = 4;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
@@ -55,6 +60,7 @@ public class RunningBomb : MonoBehaviour
             if (distance < 1)
             {
                 m_moving = false;
+                SFX.GetComponent<LoadSoundFX>().m_soundFXsources["RunningBombFuse"].Play();
                 m_animator.SetInteger("AnimState", 1);
             }
             else if (distance > 4)
@@ -113,6 +119,8 @@ public class RunningBomb : MonoBehaviour
 
     public void Attack()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["RunningBombFuse"].Play();
+
         GameObject hitbox = (GameObject)Instantiate(m_area, transform.position - new Vector3(0.0f, 0.5f, 0.0f), transform.rotation) as GameObject;
 
         int randomVariable = 20;//Random.Range(0, 100);
@@ -141,6 +149,7 @@ public class RunningBomb : MonoBehaviour
         {
             m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
         }
+
         Destroy(this.gameObject);
     }
     public void MakeNecro()
@@ -151,6 +160,7 @@ public class RunningBomb : MonoBehaviour
 
     public void Explodesound()
     {
-        AudioSource.PlayClipAtPoint(m_sound, transform.position);
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["RunningBombExplode"].Play();
+        
     }
 }

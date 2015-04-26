@@ -7,10 +7,12 @@ public class BombScript : MonoBehaviour
     public GameObject m_area, m_player;
     bool thrown = false;
     public Animator animate;
-
+    public GameObject sound;
 	// Use this for initialization
 	void Start () 
     {
+        sound = GameObject.FindGameObjectWithTag("MusicController");
+
         animate = GetComponent<Animator>();
 
         //print(m_player.gameObject.GetComponent<PlayerController>().m_facingDirection);
@@ -23,9 +25,11 @@ public class BombScript : MonoBehaviour
 	void Update ()
     {
 
-        if(thrown)
-         animate.SetInteger("AnimState", 1);
-
+        if (thrown)
+        {
+            sound.GetComponent<LoadSoundFX>().m_soundFXsources["BombFuse"].Play();
+            animate.SetInteger("AnimState", 1);
+        }
 	
 	}
     void OntriggerEnter2D(Collider2D _target)
@@ -46,6 +50,7 @@ public class BombScript : MonoBehaviour
     {
         //modified instantite position so the bomb destroys the tiles it's sitting on
         GameObject temp = (GameObject)Instantiate(m_area, transform.position - new Vector3(0.0f, 0.5f, 0.0f), transform.rotation);
+        sound.GetComponent<LoadSoundFX>().m_soundFXsources["BombExplode"].Play();
 
         Destroy(temp, 0.2f);
         Destroy(gameObject);

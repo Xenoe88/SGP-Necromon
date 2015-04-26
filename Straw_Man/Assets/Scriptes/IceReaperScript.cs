@@ -9,6 +9,8 @@ public class IceReaperScript : MonoBehaviour
     public float atkrange = 3.0f;
     public bool fired = false;
     int spd;
+
+    public Entity m_Ice;
     public GameObject m_rune;
     public int slot = 7;
     public AudioClip HitSound;
@@ -16,9 +18,14 @@ public class IceReaperScript : MonoBehaviour
 
 
     public bool Hit = false;
+
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         GetComponent<Entity>().m_dmg = -15;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         spd = GetComponent<Entity>().m_speed = 50;
@@ -31,6 +38,7 @@ public class IceReaperScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //CheckHealth();
         if (target)
         {
             Vector3 move = (target.transform.position - transform.position).normalized;
@@ -48,7 +56,7 @@ public class IceReaperScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) <= atkrange && !fired && GetComponent<Entity>().m_attackCooldown <= 0)
             {
-                AudioSource.PlayClipAtPoint(HitSound, transform.localPosition);
+                
 
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
                 GetComponent<Entity>().m_attackCooldown = 8;
@@ -72,6 +80,7 @@ public class IceReaperScript : MonoBehaviour
 
         if (fired)
             return;
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperAttack"].Play();
 
         GameObject reference = (GameObject)Instantiate(projectile, transform.position + new Vector3(1, 0, 0), transform.rotation);
         reference.GetComponent<IceShotScript>().m_OwnerTag = tag;
@@ -132,16 +141,18 @@ public class IceReaperScript : MonoBehaviour
     {
         
         GetComponent<Entity>().m_health += _dmg;
-        GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperTakeDamage"].Play();
+
 
     }
     void CheckHealth()
     {
-
         if (GetComponent<Entity>().m_health <= 0)
         {
+            
 
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 5);
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
 
         }
         else
@@ -150,11 +161,18 @@ public class IceReaperScript : MonoBehaviour
     }
     public void MakeNecro()
     {
+
         isNecro = true;
         tag = "Player";
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperBattleCry"].Play();
+
     }
-    public void Die()
+   void Die()
     {
+       
+
+        print(gameObject);
+        
         int randomVariable = Random.Range(0, 100);
 
         if (randomVariable >= 0 && randomVariable <= 20 && isNecro == false)
@@ -170,7 +188,8 @@ public class IceReaperScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-        AudioSource.PlayClipAtPoint(deathSound, transform.localPosition);
-        Destroy(gameObject);
+
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
+        Destroy(this.gameObject);
     }
 }

@@ -11,6 +11,7 @@ public struct StatusMod
 public class Entity : MonoBehaviour {
 
     public int m_health;
+    public int m_MaxHealth;
     public int m_dmg;
     public int m_speed;
     public int m_ID;
@@ -28,7 +29,7 @@ public class Entity : MonoBehaviour {
 
     public Texture m_stunTexture, m_slowTexture, m_confuseTexture;
 
-    public AudioClip m_entityHitSFX, m_AttackSFX, m_takeDmgSFX, m_deathSFX, m_battlecrySFX;
+     //public GameObject SFX;
 
     public GameObject Owner = null;
 
@@ -42,6 +43,8 @@ public class Entity : MonoBehaviour {
 	// Use this for initialization
 	public void Start () 
     {
+        //public GameObject SFX;
+        //SFX = GameObject.FindGameObjectWithTag("MusicController");
         m_isAlive = true;
 	}
 	
@@ -72,6 +75,7 @@ public class Entity : MonoBehaviour {
         }
         if (m_attackCooldown > 0)
             m_attackCooldown -= Time.deltaTime;
+        
 	}
 
     public void ModifyHealth(int _dmg)

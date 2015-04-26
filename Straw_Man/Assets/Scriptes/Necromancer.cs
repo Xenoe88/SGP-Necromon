@@ -18,9 +18,14 @@ public class Necromancer : MonoBehaviour
 
     public bool         m_regen             =   false;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_target = GameObject.FindGameObjectWithTag("Player");
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
@@ -91,6 +96,8 @@ public class Necromancer : MonoBehaviour
 
     void Teleport()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerTeleport"].Play();
+
         float randx = Random.Range(transform.position.x - 5.0f, transform.position.x + 5.0f);
         //float randy = Random.Range(transform.position.y - 10.0f, transform.position.y + 10.0f);
         transform.position = new Vector3(randx, transform.position.y, transform.position.z);
@@ -103,16 +110,21 @@ public class Necromancer : MonoBehaviour
     }
     void Regen()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerRevive"].Play();
+
         m_Entity.m_health += 100;
     }
     void Die()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerDie"].Play();
+
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel(12); 
     }
     void Necromance()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerSummon"].Play();
         if (m_Entity.m_health < 100 && !m_regen)
         {
             GameObject clone = Instantiate(m_summonPortal, new Vector3(m_target.transform.position.x + 2, m_target.transform.position.y - 0.25f, m_target.transform.position.z), Quaternion.identity) as GameObject;

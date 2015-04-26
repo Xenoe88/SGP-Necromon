@@ -24,22 +24,24 @@ public class PlayerController : MonoBehaviour
     public int m_numActiveNecromon;
     public GameObject m_hitBox;
     public GameObject m_player;
+    public GameObject music;
 
     private Color m_startColor, m_endColor;
     public Vector3 m_RevivePositon = Vector3.zero, m_reLoadPosition = Vector3.zero;
-    private bool m_inMenu = false;
-    public int m_lastLevel;
+    public bool m_inMenu = false;
+    public string m_lastLevel;
     private float m_deathTimer = 0.0f;
 
     private Animator m_animator;
 
-    public AudioSource m_audioSource;
-    public AudioClip m_swingSFX, m_jumpSFX, m_doubleJumpSFX;
+    public AudioSource m_audioSource ;
 
+    public Entity m_Player;
     // Use this for initialization
     void Start()
     {
-       
+        music = GameObject.FindGameObjectWithTag("MusicController");
+
         m_animator = GetComponent<Animator>();
         m_audioSource = GetComponent<AudioSource>();
 
@@ -104,6 +106,11 @@ public class PlayerController : MonoBehaviour
             Bomb();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EnterPlayerMenu();
+        }
+
 
     }
 
@@ -130,8 +137,9 @@ public class PlayerController : MonoBehaviour
             m_animator.SetInteger("PlayerAnim", 1);
             m_player.transform.localScale = new Vector3(m_movement * -1.0f, 1);
 
-            if (m_audioSource.isPlaying == false && m_isGrounded == true)
-                m_audioSource.Play();
+            if (music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerFootsteps"].isPlaying == false && m_isGrounded == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerFootsteps"].Play();
+
         }
         else
             m_animator.SetInteger("PlayerAnim", 0);
@@ -154,14 +162,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("w") && m_isGrounded)
         {
-            AudioSource.PlayClipAtPoint(m_jumpSFX, Camera.main.transform.position);
             canDoubleJump = true;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
+            music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerJump"].Play();
 
         }
         else if (Input.GetKeyDown("w") && canDoubleJump)
         {
-            AudioSource.PlayClipAtPoint(m_doubleJumpSFX, Camera.main.transform.position);
+            music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerJump"].Play();
+
             canDoubleJump = false;
             m_player.rigidbody2D.velocity = Vector2.zero;
             m_player.rigidbody2D.velocity = new Vector2(m_player.rigidbody2D.velocity.x, m_player.rigidbody2D.velocity.y + m_jumpHeight);
@@ -171,6 +180,9 @@ public class PlayerController : MonoBehaviour
 
     void Summon()
     {
+
+        music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerSummon"].Play();
+        print("jk;");
         m_animator.SetInteger("PlayerAnim", 4);
         m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
         //print("pooi");
@@ -183,6 +195,8 @@ public class PlayerController : MonoBehaviour
     {
         if (m_player.GetComponent<PlayerInventory>().GetNumBomb() > 0)
         {
+            music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerThrowBomb"].Play();
+
             GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_bomb, new Vector3(m_player.transform.position.x - (m_player.transform.localScale.x * 0.4f), m_player.transform.position.y + 0.8f, m_player.transform.position.z), transform.rotation);
             temp.rigidbody2D.AddForce(new Vector2(100 * (m_player.transform.localScale.x * -1), 50));
             m_player.GetComponent<PlayerInventory>().UseBomb();
@@ -198,7 +212,7 @@ public class PlayerController : MonoBehaviour
         Destroy(temp, 0.2f);
     }
 
-    void SwingSound() { AudioSource.PlayClipAtPoint(m_swingSFX, Camera.main.transform.position); }
+    void SwingSound() { music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerAttackHit"].Play(); }
 
     void ChangeScene() { Application.LoadLevel(6); }
 
@@ -206,7 +220,12 @@ public class PlayerController : MonoBehaviour
 
     public void Revive()
     {
-        gameObject.transform.position = m_RevivePositon;
+        music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerRevive"].Play();
+        if (m_RevivePositon == Vector3.zero)
+            gameObject.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        else
+            gameObject.transform.position = m_RevivePositon;
+
         renderer.material.color = m_startColor;
         m_player.GetComponent<PlayerInventory>().UseRevives();
         m_player.GetComponent<Entity>().m_health = 200;
@@ -215,9 +234,19 @@ public class PlayerController : MonoBehaviour
 
     public void EnterExitMenu() 
     {
-        print("BEFORE: " + m_inMenu);
-        //m_inMenu = !m_inMenu;
-        print("AFTER: " + m_inMenu);
+        //print("BEFORE: " + m_inMenu);
+        m_inMenu = !m_inMenu;
+        //print("AFTER: " + m_inMenu);
 
+    }
+
+    void EnterPlayerMenu()
+    {
+        if (m_reLoadPosition == Vector3.zero)
+            m_reLoadPosition = gameObject.transform.position;
+
+        EnterExitMenu();
+
+        Application.LoadLevel("PlayerMenuScene");
     }
 }

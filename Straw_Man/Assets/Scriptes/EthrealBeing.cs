@@ -5,8 +5,7 @@ public class EthrealBeing : MonoBehaviour
 {
     public bool isNecro = false;
 
-    public AudioSource audioSource;
-    public AudioClip walkingSFX, swordSFX, phasekSFX, dmgSFX, deathSFX;
+    public Entity m_Ethreal;
 
     public GameObject target = null;
     bool Attacking = false;
@@ -17,9 +16,15 @@ public class EthrealBeing : MonoBehaviour
     private float intangibleTimer;
     private Color phaseColor, startColor;
 
+                public GameObject SFX;
+
+
     // Use this for initialization
     public void Start()
     {
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         GetComponent<Entity>().m_dmg = -5;
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         GetComponent<Entity>().m_speed = 1;
@@ -61,34 +66,38 @@ public class EthrealBeing : MonoBehaviour
 
                 if (target && phased == false)
                 {
-                    
+
                     if (GetComponent<Entity>().m_attackCooldown <= 0 && Mathf.Abs(Vector3.Distance(target.gameObject.transform.position, this.transform.position)) < 1)
                     {
+
                         GetComponent<Entity>().m_animator.SetInteger("AnimState", 2);
-                        print(GetComponent<Entity>().m_animator.name);
+                        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingAttack"].Play();
                         GetComponent<Entity>().m_attackCooldown = 2;
-                        
+
                         Attacking = true;
                     }
                 }
-               
-               }
+
             }
-            else if( target == null)
-            
+
+            else if (target == null)
+
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
-            
-        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
 
+            rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
         }
+        else
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+            
+    }
 
 
 
 
-    
+
     void Intangible()
     {
-       
+
         if (phased == false)
         {
             renderer.material.color = phaseColor;
@@ -114,6 +123,8 @@ public class EthrealBeing : MonoBehaviour
     {
         isNecro = true;
         tag = "Player";
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingBattleCry"].Play();
+
     }
     void ModifyHealth(int _amount)
     {
@@ -122,8 +133,9 @@ public class EthrealBeing : MonoBehaviour
             return;
         }
         GetComponent<Entity>().m_health += _amount;
-        if (GetComponent<Entity>().m_health <= 0)
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingTakeDamage"].Play();
+
+     
 
 
     }
@@ -156,10 +168,10 @@ public class EthrealBeing : MonoBehaviour
 
     public void Attack()
     {
-    
-            target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
-            GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
-        
+
+        target.SendMessage("ModifyHealth", GetComponent<Entity>().m_dmg, SendMessageOptions.DontRequireReceiver);
+        GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
+
         Attacking = false;
 
     }
@@ -180,6 +192,9 @@ public class EthrealBeing : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingDie"].Play();
+
         Destroy(gameObject);
     }
 }
+   

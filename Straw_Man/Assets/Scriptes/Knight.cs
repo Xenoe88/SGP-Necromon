@@ -18,11 +18,15 @@ public class Knight : MonoBehaviour
 
     public GameObject m_target;
     public GameObject m_rune;
-
     public int m_arrayIndex = 9;
+
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         m_Entity = GetComponent<Entity>();
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
@@ -99,10 +103,13 @@ public class Knight : MonoBehaviour
         int blockChance = Random.Range(1, 100);
         if (blockChance > 1 && blockChance < 30)
         {
-            print("blocked");
             AudioSource.PlayClipAtPoint(m_sound, transform.position);
         }
-        else { m_Entity.m_health += _dmg; }
+        else
+        {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["KnightTakeDamage"].Play();
+ 
+            m_Entity.m_health += _dmg; }
     }
 
     void OnTriggerExit2D(Collider2D target)
@@ -112,6 +119,8 @@ public class Knight : MonoBehaviour
 
     void Attack()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["KnightAttack"].Play();
+
         m_target.SendMessage("ModifyHealth", -m_Entity.m_dmg, SendMessageOptions.DontRequireReceiver);
         int knockbackchance = Random.Range(1, 100);
         if (knockbackchance >= 1 && knockbackchance <= 60)
@@ -135,6 +144,8 @@ public class Knight : MonoBehaviour
             print("line");
             m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
         }
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["KnightDie"].Play();
+
         Destroy(this.gameObject);
     }
     public void MakeNecro()

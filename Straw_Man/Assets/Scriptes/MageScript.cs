@@ -11,9 +11,14 @@ public class MageScript : MonoBehaviour
 
     public GameObject fireAtk;
     public bool fire = false;
+
+                public GameObject SFX;
+
     // Use this for initialization
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         mage = GetComponent<Entity>();
         mage.m_animator = GetComponent<Animator>();
         mage.m_facingDirection = new Vector2(1, 0);
@@ -87,6 +92,8 @@ public class MageScript : MonoBehaviour
 
     void FireAtk()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageMagicAttack1"].Play();
+
         target.SendMessage("ModifyHealth", -20, SendMessageOptions.DontRequireReceiver);
         //target.SendMessage("ModifyStatus", Status.CONFUSE, SendMessageOptions.DontRequireReceiver);
         mage.m_animator.SetInteger("AnimState", 0);
@@ -102,6 +109,8 @@ public class MageScript : MonoBehaviour
     }
     void IceAtk()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageMagicAttack2"].Play();
+
         target.SendMessage("ModifyHealth", -10, SendMessageOptions.DontRequireReceiver);
         //target.SendMessage("ModifyStatus", Status.STUN, SendMessageOptions.DontRequireReceiver);
         mage.m_animator.SetInteger("AnimState", 0);
@@ -111,6 +120,7 @@ public class MageScript : MonoBehaviour
     }
     void Die()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageDie"].Play();
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
         Application.LoadLevel("ThroneRoomeScene");
