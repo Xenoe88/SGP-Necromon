@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.84000015, y: 1.95000005, z: 0}
+  m_LocalPosition: {x: -2.24000001, y: -7.90999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 471754}
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 128422}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.11356401, y: 6.20599937}
   m_Center: {x: -.1111269, y: -3.50732422}
 --- !u!95 &9528418
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_bottomPos: 0
   m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   m_isNecro: 0
+  m_Bats: {fileID: 0}
+  SFX: {fileID: 0}
 --- !u!114 &11428420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 10
+  m_MaxHealth: 0
   m_dmg: -5
   m_speed: 1
   m_ID: 10
@@ -244,7 +247,6 @@ MonoBehaviour:
   m_stunTexture: {fileID: 0}
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
-  m_entityHitSFX: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &21228418

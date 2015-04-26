@@ -4,7 +4,6 @@ using System.Collections;
 public class LookForward : MonoBehaviour 
 {
 
-
     public Transform sightStart, sightEnd;
     public bool needsCollision = true;
 

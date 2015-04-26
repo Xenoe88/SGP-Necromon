@@ -1727,7 +1727,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
 --- !u!114 &867966212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1823,6 @@ GameObject:
   - 124: {fileID: 907289961}
   - 81: {fileID: 907289960}
   - 114: {fileID: 907289959}
-  - 114: {fileID: 907289958}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1843,21 +1842,7 @@ Transform:
   m_Children:
   - {fileID: 1100111085}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
---- !u!114 &907289958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11489036, guid: 88953fbeb86f8f14aa49c8b5c33caa76,
-    type: 2}
-  m_PrefabInternal: {fileID: 314141812}
-  m_GameObject: {fileID: 907289956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d34351acb5130d4f9d399e80c89e808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuPanel: {fileID: 0}
-  canvas: {fileID: 0}
+  m_RootOrder: 28
 --- !u!114 &907289959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,7 +2289,7 @@ Transform:
   m_LocalScale: {x: 2.18574238, y: 2.18574214, z: 2.18574214}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
 --- !u!1 &1203538001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,7 +3755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
 --- !u!114 &2040634271
 MonoBehaviour:
   m_ObjectHideFlags: 0
