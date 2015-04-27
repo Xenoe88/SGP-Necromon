@@ -10,7 +10,7 @@ public class CheckPlayerProgress : MonoBehaviour
 	void Start () 
     {
         m_player = GameObject.FindGameObjectWithTag("Player");
-        if (m_player.gameObject.GetComponent<PlayerScript>().m_gameStatus == m_sealID)
+        if (m_player.gameObject.GetComponent<PlayerScript>().m_gameStatus >= m_sealID)
         {
             DestroyImmediate(gameObject);
         }
@@ -20,7 +20,7 @@ public class CheckPlayerProgress : MonoBehaviour
 	void Update () 
     {
         //temp
-        if (m_player.gameObject.GetComponent<PlayerScript>().m_gameStatus == m_sealID)
+        if (m_player.gameObject.GetComponent<PlayerScript>().m_gameStatus >= m_sealID)
         {
             DestroyImmediate(gameObject);
         }
