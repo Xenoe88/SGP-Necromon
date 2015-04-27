@@ -7,10 +7,9 @@ public class SetLevel : MonoBehaviour
     public string m_levelName;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
     {
         m_player = GameObject.FindGameObjectWithTag("Player");
         m_player.GetComponent<PlayerController>().m_lastLevel = m_levelName;
-
 	}
 }

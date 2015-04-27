@@ -22,6 +22,7 @@ public class SoldieScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        print("test");
         SFX = GameObject.FindGameObjectWithTag("MusicController");
 
         audioSource = GetComponent<AudioSource>();
@@ -40,6 +41,7 @@ public class SoldieScript : MonoBehaviour
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
     }
+
     void OnGUI()
     {
         //Rect position = new Rect(this.transform.localPosition.x , this.transform.localPosition.y + 1000, 100, 25);

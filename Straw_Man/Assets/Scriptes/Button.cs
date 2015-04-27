@@ -11,7 +11,7 @@ public class Button : MonoBehaviour
     public Color pushed;
 
     private Color originalColor;
-    
+
     public int level;
     public void Start()
     {
@@ -19,13 +19,19 @@ public class Button : MonoBehaviour
         m_player = GameObject.FindGameObjectWithTag("Player");
 
         up = Camera.FindObjectOfType<Camera>();
-        
-       // originalColor = gameObject.renderer.material.color ;
+
+        // originalColor = gameObject.renderer.material.color ;
 
     }
 
     public void ChangeScene(int _scene)
     {
+        //these prevent the player from being destroyed before entering key scenes
+        if (_scene != 12 && _scene != 3 && _scene != 16)
+        {
+            Destroy(m_player);
+        }
+
         // LoadingScreen.show();
         AudioSource.PlayClipAtPoint(m_buttonClick, Camera.main.transform.position);
 
@@ -36,11 +42,13 @@ public class Button : MonoBehaviour
     public void ExitGame()
     {
         print("TEST2");
-        AudioSource.PlayClipAtPoint(m_buttonSwoosh, Camera.main.transform.position);
-        sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenusMove"].Play();
+        //AudioSource.PlayClipAtPoint(m_buttonSwoosh, Camera.main.transform.position);
+        sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuMove"].Play();
+
+        while (sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuMove"].isPlaying) { }
 
         //only works during runtime, will not quit in Unity Editor
-        Application.Quit();
+                Application.Quit();
 
     }
 
@@ -80,7 +88,7 @@ public class Button : MonoBehaviour
     {
         if (level > -1)
             Application.LoadLevel(level);
-        else 
+        else
             Application.Quit();
     }
 

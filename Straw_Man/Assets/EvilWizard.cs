@@ -102,7 +102,7 @@ public class EvilWizard : MonoBehaviour {
 
     void Die()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WizardDie"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EvilWizardDie"].Play();
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
@@ -116,7 +116,7 @@ public class EvilWizard : MonoBehaviour {
     }
     void Necromance()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WizardSummon"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EvilWizardSummon"].Play();
         if (m_Entity.m_health < 100)
         {
             GameObject clone = Instantiate(m_summonPortal, new Vector3(m_target.transform.position.x + 2, m_target.transform.position.y - 0.25f, m_target.transform.position.z), Quaternion.identity) as GameObject;
@@ -132,7 +132,7 @@ public class EvilWizard : MonoBehaviour {
 
     void LightningAttack()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WizardMagicAttack"].Play();
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EvilWizardMagicAttack"].Play();
 
         GameObject clone = Instantiate(m_lightning, m_target.transform.position, Quaternion.identity) as GameObject;
         m_lightTimer = 20.0f;

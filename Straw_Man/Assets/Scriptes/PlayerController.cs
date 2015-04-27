@@ -57,6 +57,12 @@ public class PlayerController : MonoBehaviour
         if (Application.loadedLevelName == "LoseScene")
             Destroy(this.gameObject);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (m_lastLevel == "CourtyardScene" || m_lastLevel == "tutorialScene" || m_lastLevel == "TowerScene" || m_lastLevel == "DungeonScene" || m_lastLevel == "EvilWizardScene")
+                EnterPlayerMenu();                
+        }
+
         if (m_inMenu)
             return;
 
@@ -105,12 +111,6 @@ public class PlayerController : MonoBehaviour
         {
             Bomb();
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            EnterPlayerMenu();
-        }
-
 
     }
 
@@ -242,11 +242,23 @@ public class PlayerController : MonoBehaviour
 
     void EnterPlayerMenu()
     {
+        if (m_inMenu == true)
+        {
+            gameObject.transform.position = m_reLoadPosition;
+
+            m_reLoadPosition = Vector3.zero;
+
+            m_inMenu = false;
+            return;
+        }
+
         if (m_reLoadPosition == Vector3.zero)
             m_reLoadPosition = gameObject.transform.position;
 
         EnterExitMenu();
 
-        Application.LoadLevel("PlayerMenuScene");
+        Transform menuLocation = GameObject.FindGameObjectWithTag("PlayerMenuLocation").transform;
+
+        gameObject.transform.position = menuLocation.position;
     }
 }
