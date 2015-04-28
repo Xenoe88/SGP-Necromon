@@ -51,6 +51,14 @@ public class Wolf : MonoBehaviour
             m_animator.SetInteger("AnimState", 3);
             return;
         }
+        if (m_target)
+        {
+            if (m_target.GetComponent<Entity>().m_health <= 0 || m_target.GetComponent<Entity>().m_isAlive == false)
+            {
+                m_target = null;
+                m_moving = true;
+            }
+        }
         if (m_moving)
         {
             rigidbody2D.velocity = new Vector2(transform.localScale.x, 0) * m_Entity.m_speed;
