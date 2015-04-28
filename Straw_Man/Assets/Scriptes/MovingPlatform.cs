@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System;
+
+[Serializable]
 public class MovingPlatform : MonoBehaviour {
 
     public float m_speed;
@@ -11,7 +14,7 @@ public class MovingPlatform : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        m_speed = 0.025f;
+        m_speed = 15f;
         m_rightPos = m_right.transform.position.x;
         m_leftPos = m_left.transform.position.x;
 	}
@@ -19,17 +22,16 @@ public class MovingPlatform : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        transform.Translate(new Vector3( m_speed, 0, 0), Space.World);
+        transform.Translate(new Vector3( m_speed * Time.deltaTime, 0, 0), Space.World);
 
         if (transform.position.x > m_rightPos)
         {
-            
-            m_speed = -0.025f;
+            m_speed = -15f * Time.deltaTime;
         }
         else if (transform.position.x < m_leftPos)
         {
-            
-            m_speed = 0.025f;
+
+            m_speed = 15f * Time.deltaTime;
         }
 	}
 

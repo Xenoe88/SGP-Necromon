@@ -1071,6 +1071,7 @@ MonoBehaviour:
   m_player: {fileID: 955854009}
   m_rank: 0
   m_gameStatus: 0
+  m_inBossRoom: 0
   m_hudSprites:
   - {fileID: 2800000, guid: 4de10e44bf63ad34c9ca9d7453464247, type: 3}
   - {fileID: 2800000, guid: edd6e6404ddb6ca4886adbb96fd3ac61, type: 3}
@@ -1125,6 +1126,8 @@ MonoBehaviour:
   m_stunTexture: {fileID: 2800000, guid: e19f0e53ca04e534783c75f7e315f0a6, type: 3}
   m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
   m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
+  SFX: {fileID: 0}
+  HealthBar: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!212 &955854010
