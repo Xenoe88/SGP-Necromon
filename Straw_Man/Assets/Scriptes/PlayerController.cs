@@ -222,7 +222,7 @@ public class PlayerController : MonoBehaviour
     {
         music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerRevive"].Play();
         if (m_RevivePositon == Vector3.zero)
-            gameObject.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            gameObject.transform.position = GameObject.FindGameObjectWithTag("Start").transform.position;
         else
             gameObject.transform.position = m_RevivePositon;
 
@@ -230,6 +230,10 @@ public class PlayerController : MonoBehaviour
         m_player.GetComponent<PlayerInventory>().UseRevives();
         m_player.GetComponent<Entity>().m_health = 200;
         m_player.GetComponent<Entity>().m_isAlive = true;
+
+        if (gameObject.GetComponent<PlayerScript>().m_inBossRoom == true)
+            gameObject.GetComponent<PlayerScript>().m_inBossRoom = false;
+
     }
 
     public void EnterExitMenu() 

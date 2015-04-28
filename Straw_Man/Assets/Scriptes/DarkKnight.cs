@@ -23,6 +23,7 @@ public class DarkKnight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //check health
         if (m_darkKnight.m_isAlive == false)
         {
@@ -32,6 +33,13 @@ public class DarkKnight : MonoBehaviour
         // if we can locate player
         if (m_target = GameObject.FindGameObjectWithTag("Player"))
         {
+
+            if (m_target.GetComponent<PlayerScript>().m_inBossRoom == true)
+            {
+                print("TESTINGTESTING");
+            }
+
+            //print("TESTING DK BUG");
             //always face the player
             transform.localScale = new Vector3(m_target.transform.position.x < transform.position.x ? 0.5f : -0.5f, 0.5f, 0.5f);
 
@@ -55,10 +63,12 @@ public class DarkKnight : MonoBehaviour
                         m_animator.SetInteger("KnightAnim", 2);
                 }
             }
+
+            m_attack1Timer -= Time.deltaTime;
+            m_attack2Timer -= Time.deltaTime;
         }
 
-        m_attack1Timer -= Time.deltaTime;
-        m_attack2Timer -= Time.deltaTime;
+
     }
 
 
@@ -71,6 +81,17 @@ public class DarkKnight : MonoBehaviour
     void ChangeScene()
     {
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
+
+        if (SFX.GetComponent<LoadSoundFX>().m_soundFXsources["CourtyardBGM"].isPlaying == true)
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["CourtyardBGM"].Stop();
+
+        m_target.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+        m_target.GetComponent<PlayerController>().m_RevivePositon = Vector3.zero;
+        m_target.GetComponent<PlayerScript>().m_inBossRoom = false;
+
+        print("DK CHANGED SCENES!");
+
+
         Application.LoadLevel(12); 
     }
 

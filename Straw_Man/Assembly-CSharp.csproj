@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AdjustBGM.cs" />
      <Compile Include="Assets\Bats.cs" />
      <Compile Include="Assets\Cheat.cs" />
      <Compile Include="Assets\CheckPlayerProgress.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\LightningAttack.cs" />
      <Compile Include="Assets\LoadSoundFX.cs" />
      <Compile Include="Assets\LoadingScreen.cs" />
+     <Compile Include="Assets\PlayBGM.cs" />
      <Compile Include="Assets\PlayerInMenu.cs" />
      <Compile Include="Assets\PlayerMenu.cs" />
      <Compile Include="Assets\PlayerMenuDisplayNecromon.cs" />
@@ -134,6 +136,7 @@
      <Compile Include="Assets\Scriptes\Wolf.cs" />
      <Compile Include="Assets\Scriptes\WorldPiece.cs" />
      <Compile Include="Assets\SetLevel.cs" />
+     <Compile Include="Assets\SetSliders.cs" />
      <Compile Include="Assets\SlimerLookForward.cs" />
      <Compile Include="Assets\TowerLevelPortal.cs" />
      <Compile Include="Assets\TutorialChangeScene.cs" />

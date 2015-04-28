@@ -19,7 +19,10 @@ public class RuneScript : MonoBehaviour
         if (_target.tag == "Player")
         {
             _target.GetComponent<PlayerInventory>().AddRune(enemyID);
-            _target.GetComponent<PlayerController>().SetRevivePosition(gameObject.transform.position);
+
+            //shouldn't set revive position inside the boss room
+            if (_target.GetComponent<PlayerScript>().m_inBossRoom == false)
+                _target.GetComponent<PlayerController>().SetRevivePosition(gameObject.transform.position);                
 
             animator.SetInteger("RuneAnim", 1);
         }

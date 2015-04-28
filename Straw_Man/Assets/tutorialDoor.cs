@@ -13,6 +13,9 @@ public class tutorialDoor : MonoBehaviour {
             for (int i = 0; i < length; i++)
                 Destroy(player[i].gameObject);
 
+            _target.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+            _target.GetComponent<PlayerController>().m_RevivePositon = Vector3.zero;
+
             Application.LoadLevel(1);
         }
     }

@@ -19,6 +19,16 @@ public class CreditsSceneChange : MonoBehaviour {
 	}
     void LoadScene()
     {
+
+        if (m_player.GetComponent<PlayerController>().m_lastLevel == "LoseScene" || m_player.GetComponent<PlayerController>().m_lastLevel == "WinScene")
+        {
+            Destroy(m_player);
+            Destroy(GameObject.FindGameObjectWithTag("MusicController"));
+
+            Application.LoadLevel(0);
+            return;
+        }
+
         Destroy(m_player);
         Application.LoadLevel(1);
     }

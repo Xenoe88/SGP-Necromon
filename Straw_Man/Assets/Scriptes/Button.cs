@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Button : MonoBehaviour
@@ -27,9 +28,14 @@ public class Button : MonoBehaviour
     public void ChangeScene(int _scene)
     {
         //these prevent the player from being destroyed before entering key scenes
-        if (_scene != 12 && _scene != 3 && _scene != 16)
+        if (_scene != 12 && _scene != 3 && _scene != 16 && _scene != 9 && _scene != 2 && _scene != 10)
         {
             Destroy(m_player);
+        }
+
+        if (_scene == 12)
+        {
+            sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuBGM"].Stop();
         }
 
         // LoadingScreen.show();
@@ -99,5 +105,18 @@ public class Button : MonoBehaviour
     public void OnMouseExit()
     {
         gameObject.renderer.material.color = originalColor;
+    }
+
+    public void AdjustSFX(string _tag)
+    {
+        sound.GetComponent<LoadSoundFX>().m_soundFXVoume = GetComponent<Slider>().value;
+
+
+        sound.GetComponent<LoadSoundFX>().m_soundFXsources["BombPickup"].Play();
+    }
+
+    public void AdjustMusic(string _tag)
+    {
+        sound.GetComponent<LoadSoundFX>().m_soundFXVoume = GetComponent<Slider>().value;
     }
 }

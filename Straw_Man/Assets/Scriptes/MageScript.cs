@@ -121,8 +121,17 @@ public class MageScript : MonoBehaviour
     void Die()
     {
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageDie"].Play();
+
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
+
+        target.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+        target.GetComponent<PlayerController>().m_RevivePositon = Vector3.zero;
+
+        if (SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DungeonBGM"].isPlaying == true)
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DungeonBGM"].Stop();
+
+
         Application.LoadLevel("ThroneRoomeScene");
     }
 }

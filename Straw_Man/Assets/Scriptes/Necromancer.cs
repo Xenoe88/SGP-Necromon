@@ -120,6 +120,13 @@ public class Necromancer : MonoBehaviour
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
+
+        if (SFX.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].isPlaying == true)
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].Stop();
+
+        m_target.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+        m_target.GetComponent<PlayerController>().m_RevivePositon = Vector3.zero;
+
         Application.LoadLevel(12); 
     }
     void Necromance()
