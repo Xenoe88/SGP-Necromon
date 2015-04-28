@@ -57,10 +57,10 @@ public class Entity : MonoBehaviour {
         }
 
         //HEALTH BAR
-        if (m_health < m_MaxHealth)
-            HealthBar.transform.localScale = new Vector3((float)m_health / (float)m_MaxHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
-        else
-            HealthBar.transform.localScale = new Vector3(0.0f, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
+        //if (m_health < m_MaxHealth)
+        //    HealthBar.transform.localScale = new Vector3((float)m_health / (float)m_MaxHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
+        //else
+        //    HealthBar.transform.localScale = new Vector3(0.0f, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
        
         
         if(m_attackCooldown > 0)
