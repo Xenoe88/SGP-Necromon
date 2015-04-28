@@ -22,12 +22,19 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Abs(transform.position.x - _t.position.x) > 0)
-        //   transform.position = new Vector3((_t.position.x)+.5f, (_t.position.y), transform.position.z);
-        //else
         if (target != null)
         {
-            transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z); 
+            if (target.GetComponent<PlayerController>().m_inMenu == true)
+            {
+                camera.orthographicSize = 5;
+                GameObject temp = GameObject.FindGameObjectWithTag("CameraLocation");
+                transform.position = temp.transform.position;
+            }
+            else
+            {
+                camera.orthographicSize = 4;
+                transform.position = new Vector3((_t.position.x), (_t.position.y), transform.position.z);
+            }
         }
 
     }

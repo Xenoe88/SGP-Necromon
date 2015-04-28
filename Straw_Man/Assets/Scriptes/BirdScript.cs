@@ -26,6 +26,8 @@ public class BirdScript : MonoBehaviour
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         GetComponent<Entity>().m_speed = 3;
         GetComponent<Entity>().m_health = 40;
+        GetComponent<Entity>().m_MaxHealth = 40;
+
         GetComponent<Entity>().m_attackCooldown = 10;
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 

@@ -57,6 +57,12 @@ public class PlayerController : MonoBehaviour
         if (Application.loadedLevelName == "LoseScene")
             Destroy(this.gameObject);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (m_lastLevel == "CourtyardScene" || m_lastLevel == "tutorialScene" || m_lastLevel == "TowerScene" || m_lastLevel == "DungeonScene" || m_lastLevel == "EvilWizardScene")
+                EnterPlayerMenu();                
+        }
+
         if (m_inMenu)
             return;
 
@@ -110,12 +116,6 @@ public class PlayerController : MonoBehaviour
         {
             Bomb();
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            EnterPlayerMenu();
-        }
-
 
     }
 
@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
     {
         music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerRevive"].Play();
         if (m_RevivePositon == Vector3.zero)
-            gameObject.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            gameObject.transform.position = GameObject.FindGameObjectWithTag("Start").transform.position;
         else
             gameObject.transform.position = m_RevivePositon;
 
@@ -248,6 +248,10 @@ public class PlayerController : MonoBehaviour
         m_player.GetComponent<PlayerInventory>().UseRevives();
         m_player.GetComponent<Entity>().m_health = 200;
         m_player.GetComponent<Entity>().m_isAlive = true;
+
+        if (gameObject.GetComponent<PlayerScript>().m_inBossRoom == true)
+            gameObject.GetComponent<PlayerScript>().m_inBossRoom = false;
+
     }
 
     public void EnterExitMenu() 
@@ -260,11 +264,23 @@ public class PlayerController : MonoBehaviour
 
     void EnterPlayerMenu()
     {
+        if (m_inMenu == true)
+        {
+            gameObject.transform.position = m_reLoadPosition;
+
+            m_reLoadPosition = Vector3.zero;
+
+            m_inMenu = false;
+            return;
+        }
+
         if (m_reLoadPosition == Vector3.zero)
             m_reLoadPosition = gameObject.transform.position;
 
         EnterExitMenu();
 
-        Application.LoadLevel("PlayerMenuScene");
+        Transform menuLocation = GameObject.FindGameObjectWithTag("PlayerMenuLocation").transform;
+
+        gameObject.transform.position = menuLocation.position;
     }
 }

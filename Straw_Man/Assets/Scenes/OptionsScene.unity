@@ -225,7 +225,7 @@ GameObject:
   - 114: {fileID: 63758051}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,6 +340,45 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 271482654}
+--- !u!1 &286000855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 286000857}
+  - 114: {fileID: 286000856}
+  m_Layer: 0
+  m_Name: SetSliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &286000856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286000855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b122ceb9dcf26943a2c094e363009a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &286000857
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286000855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 150.112274, y: 46.3503799, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &485315906
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +389,7 @@ GameObject:
   - 224: {fileID: 485315907}
   m_Layer: 5
   m_Name: Handle Slide Area
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,7 +633,7 @@ GameObject:
   - 114: {fileID: 686313641}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,7 +699,7 @@ GameObject:
   - 114: {fileID: 802577050}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -719,7 +758,7 @@ GameObject:
   - 224: {fileID: 866234711}
   m_Layer: 5
   m_Name: Fill Area
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -752,7 +791,7 @@ GameObject:
   - 224: {fileID: 889712630}
   m_Layer: 5
   m_Name: Handle Slide Area
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -787,7 +826,7 @@ GameObject:
   - 114: {fileID: 1031775209}
   m_Layer: 5
   m_Name: Text
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -853,7 +892,7 @@ GameObject:
   - 114: {fileID: 1116745011}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -914,7 +953,7 @@ GameObject:
   - 114: {fileID: 1194211967}
   m_Layer: 5
   m_Name: Handle
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,7 +1061,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 1256734528}
   - 114: {fileID: 1256734529}
-  - 114: {fileID: 1256734530}
   m_Layer: 5
   m_Name: Music
   m_TagString: Music
@@ -1097,8 +1135,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1256734530}
-        m_MethodName: PlayMusic
+      - m_Target: {fileID: 11442794, guid: f7eb713f401a12e46b9221119bde1288, type: 2}
+        m_MethodName: AdjustMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1108,23 +1146,9 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1256734530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256734527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd6c652d05c63c479be4dc20d2501a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_slider: {fileID: 0}
-  m_sound: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
-  music: {fileID: 0}
 --- !u!1 &1376878850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1275,7 @@ GameObject:
   - 224: {fileID: 1438881068}
   m_Layer: 5
   m_Name: Fill Area
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,7 +1310,7 @@ GameObject:
   - 114: {fileID: 1447888913}
   m_Layer: 5
   m_Name: Background
-  m_TagString: SFX
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1431,7 +1455,7 @@ GameObject:
   - 114: {fileID: 1779987818}
   m_Layer: 5
   m_Name: Handle
-  m_TagString: Music
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1509,8 +1533,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_buttonClick: {fileID: 8300000, guid: 7afe0dc4e8ba4eb41b7954fe963dddff, type: 3}
   m_buttonSwoosh: {fileID: 8300000, guid: 69f1ee81cf0c4ad42aed6affe7297a3d, type: 3}
+  sound: {fileID: 0}
   up: {fileID: 0}
   m_player: {fileID: 0}
+  highlighted: {r: 0, g: 0, b: 0, a: 0}
+  pushed: {r: 0, g: 0, b: 0, a: 0}
+  level: 0
 --- !u!4 &1795891735
 Transform:
   m_ObjectHideFlags: 0
@@ -1532,7 +1560,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 2059308492}
   - 114: {fileID: 2059308493}
-  - 114: {fileID: 2059308494}
   m_Layer: 5
   m_Name: SFX
   m_TagString: SFX
@@ -1607,8 +1634,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2059308494}
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 11442794, guid: f7eb713f401a12e46b9221119bde1288, type: 2}
+        m_MethodName: AdjustSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1618,20 +1645,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2059308494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2059308491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd6c652d05c63c479be4dc20d2501a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_slider: {fileID: 0}
-  m_sound: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
-  music: {fileID: 0}

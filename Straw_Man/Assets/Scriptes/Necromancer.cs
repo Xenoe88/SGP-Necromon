@@ -31,6 +31,8 @@ public class Necromancer : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_health = 300;
+        m_Entity.m_MaxHealth = 300;
+
     }
 
     // Update is called once per frame
@@ -130,6 +132,13 @@ public class Necromancer : MonoBehaviour
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);
+
+        if (SFX.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].isPlaying == true)
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].Stop();
+
+        m_target.GetComponent<PlayerController>().m_reLoadPosition = Vector3.zero;
+        m_target.GetComponent<PlayerController>().m_RevivePositon = Vector3.zero;
+
         Application.LoadLevel(12); 
     }
     void Necromance()

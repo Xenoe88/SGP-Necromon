@@ -4,10 +4,13 @@ using System.Collections;
 public class InstructionsChangeScene : MonoBehaviour {
 
     private bool LoadLock;
+
+    private GameObject m_player;
+
     // Use this for initialization
     void Start()
     {
-
+        m_player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -18,6 +21,7 @@ public class InstructionsChangeScene : MonoBehaviour {
     }
     void LoadScene()
     {
+        Destroy(m_player);
         Application.LoadLevel(1);
     }
 }

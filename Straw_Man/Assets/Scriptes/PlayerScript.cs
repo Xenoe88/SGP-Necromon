@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     public Rank m_rank;
 
     public int m_gameStatus = 0;
-
+    public bool m_inBossRoom = false;
 
     //public string m_resource;
     public Texture[] m_hudSprites;

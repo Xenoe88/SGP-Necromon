@@ -15,7 +15,7 @@ public class Demon : MonoBehaviour
 
     public int m_arrayIndex = 8;
 
-                public GameObject SFX;
+    public GameObject SFX;
 
 
     // Use this for initialization
@@ -29,6 +29,8 @@ public class Demon : MonoBehaviour
         m_Entity.m_speed = 3;
         m_Entity.m_dmg = 10;
         m_Entity.m_health = 70;
+        m_Entity.m_MaxHealth = 70;
+
         m_Entity.m_attackCooldown = 1.0f;
 
         m_animator.SetInteger("AnimState", 1);
@@ -129,6 +131,8 @@ public class Demon : MonoBehaviour
     //}
     void Destroy()
     {
+        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonDie"].Play();
+
         int randomVariable = Random.Range(0, 100);
 
         //TODO - also need to test if we've already collected this enemies rune
@@ -142,7 +146,7 @@ public class Demon : MonoBehaviour
         {
             GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.DontRequireReceiver);
         }
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonDie"].Play();
+
         Destroy(this.gameObject);
     }
 }

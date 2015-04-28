@@ -29,6 +29,8 @@ public class EthrealBeing : MonoBehaviour
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         GetComponent<Entity>().m_speed = 1;
         GetComponent<Entity>().m_health = 70;
+        GetComponent<Entity>().m_MaxHealth = 70;
+
         GetComponent<Entity>().m_attackCooldown = 8;
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 
