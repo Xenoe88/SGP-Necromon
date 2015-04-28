@@ -25,6 +25,7 @@ public class MageScript : MonoBehaviour
 
         mage.m_speed = 1;
         mage.m_health = 300;
+        mage.m_MaxHealth = 300;
 
     }
 
@@ -52,27 +53,26 @@ public class MageScript : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 
-            if (!attack && distance < 10.0f)
+            if (!attack && distance < 15.0f)
             {
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
-                transform.position = new Vector3(transform.position.x + (transform.localScale.x * -1.0f) * mage.m_speed * 0.08f, transform.position.y);
+                rigidbody2D.isKinematic = true;
+                transform.position = new Vector3(transform.position.x + (transform.localScale.x * -1.0f * mage.m_speed * .02f), transform.position.y);
 
             }
             if (mage.m_attackCooldown <= 0)
             {
 
-                //rigidbody2D.isKinematic = true;
-                mage.m_attackCooldown = 10;
+                mage.m_attackCooldown = 5;
 
                 attack = true;
 
 
-                if (mage.m_health < 100)
+                if (mage.m_health < 150)
                     mage.m_animator.SetInteger("AnimState", 2);
-                else if (distance <= 4)
+                else if (distance <= 8)
                 {
                     mage.m_animator.SetInteger("AnimState", 1);
-
                 }
                 else
                     attack = false;

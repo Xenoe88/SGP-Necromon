@@ -31,6 +31,8 @@ public class Necromancer : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_health = 300;
+        m_Entity.m_MaxHealth = 300;
+
     }
 
     // Update is called once per frame

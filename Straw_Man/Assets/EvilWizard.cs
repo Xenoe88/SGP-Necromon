@@ -31,6 +31,8 @@ public class EvilWizard : MonoBehaviour {
         m_animator = GetComponent<Animator>();
         m_Entity.m_speed = 1;
         m_Entity.m_health = 500;
+        m_Entity.m_MaxHealth = 500;
+
         m_Entity.m_dmg = 50;
 	}
 	
