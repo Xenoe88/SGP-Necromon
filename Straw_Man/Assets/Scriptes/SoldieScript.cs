@@ -29,7 +29,9 @@ public class SoldieScript : MonoBehaviour
         GetComponent<Entity>().m_dmg = -2;
         GetComponent<Entity>().m_facingDirection = new Vector2(1, 0);
         GetComponent<Entity>().m_speed = 1;
-        GetComponent<Entity>().m_health = 100;
+        GetComponent<Entity>().m_health = 70;
+        GetComponent<Entity>().m_MaxHealth = 70;
+
         GetComponent<Entity>().m_attackCooldown = 0;
         music = GameObject.FindGameObjectWithTag("MusicController");
 

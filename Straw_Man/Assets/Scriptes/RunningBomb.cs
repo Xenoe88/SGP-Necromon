@@ -37,6 +37,8 @@ public class RunningBomb : MonoBehaviour
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 20;
         m_Entity.m_health = 10;
+        m_Entity.m_MaxHealth = 10;
+
     }
 
     // Update is called once per frame

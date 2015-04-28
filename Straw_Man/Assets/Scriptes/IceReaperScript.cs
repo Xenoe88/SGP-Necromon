@@ -30,6 +30,8 @@ public class IceReaperScript : MonoBehaviour
         GetComponent<Entity>().m_facingDirection = new Vector2(-1, 0);
         spd = GetComponent<Entity>().m_speed = 50;
         GetComponent<Entity>().m_health = 60;
+        GetComponent<Entity>().m_MaxHealth = 60;
+
         GetComponent<Entity>().m_attackCooldown = 14;
         GetComponent<Entity>().m_animator = GetComponent<Animator>();
 

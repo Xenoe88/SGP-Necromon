@@ -29,6 +29,8 @@ public class Demon : MonoBehaviour
         m_Entity.m_speed = 3;
         m_Entity.m_dmg = 10;
         m_Entity.m_health = 70;
+        m_Entity.m_MaxHealth = 70;
+
         m_Entity.m_attackCooldown = 1.0f;
 
         m_animator.SetInteger("AnimState", 1);

@@ -33,6 +33,8 @@ public class Wolf : MonoBehaviour
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 5;
         m_Entity.m_health = 20;
+        m_Entity.m_MaxHealth = 20;
+
         m_Entity.m_attackCooldown = 1.0f;
     }
 
