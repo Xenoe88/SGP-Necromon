@@ -21,6 +21,10 @@ public class Teleporter : MonoBehaviour {
     {
         if (target.tag == "Player")
         {
+            if (target.gameObject.GetComponent<PlayerScript>().m_inBossRoom == false)
+            {
+                target.gameObject.GetComponent<PlayerScript>().m_inBossRoom = true;
+            }
             target.transform.position = m_reciever.transform.position;
         }
     }

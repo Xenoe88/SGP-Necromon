@@ -5,12 +5,12 @@ using System.Collections;
 public class VolumeControl : MonoBehaviour
 {
     public Slider m_slider;
-    public AudioClip m_sound;
+    //public AudioClip m_sound;
     public GameObject music;
-   // public float prevVol, newVol;
+    // public float prevVol, newVol;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         music = GameObject.FindGameObjectWithTag("MusicController");
 
@@ -20,62 +20,59 @@ public class VolumeControl : MonoBehaviour
         {
             //print("music");
             m_slider.value = music.GetComponent<LoadSoundFX>().m_backgroundMusicVolume;
-            //m_slider.value = AudioListener.volume;
+            m_slider.value = AudioListener.volume;
         }
         else if (m_slider.tag == "SFX")
         {
             //print("sfx");
             m_slider.value = music.GetComponent<LoadSoundFX>().m_soundFXVoume;
-            //m_slider.value = AudioListener.volume;
+            m_slider.value = AudioListener.volume;
         }
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-       // prevVol = AudioListener.volume;
+        // prevVol = AudioListener.volume;
         //AudioListener.volume = m_slider.value;
         //newVol = AudioListener.volume;
 
-        if (m_slider.tag == "Music" && Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0) && music.GetComponent<LoadSoundFX>().m_backgroundMusicVolume != m_slider.value)
         {
             print("music");
             music.GetComponent<LoadSoundFX>().m_backgroundMusicVolume = m_slider.value;
             //m_slider.value = AudioListener.volume;
 
             //if (Input.GetKeyUp(KeyCode.Mouse0))
-                PlayMusicSFX(m_slider.tag);
+            //PlayMusicSFX(m_slider.tag);
         }
-        else if (m_slider.tag == "SFX" && Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Mouse0) && music.GetComponent<LoadSoundFX>().m_soundFXVoume != m_slider.value)
         {
-            print("sfx");
+            //  print("sfx");
             music.GetComponent<LoadSoundFX>().m_soundFXVoume = m_slider.value;
             //m_slider.value = AudioListener.volume;
 
             //if (Input.GetKeyUp(KeyCode.Mouse0))
-                PlayMusicSFX(m_slider.tag);
+            music.GetComponent<LoadSoundFX>().m_soundFXsources["BombPickup"].Play();
+
+            //            PlayMusicSFX(m_slider.tag);
         }
 
 
 
     }
 
-    void OnMouseUp()
+    public void OnMouseUp()
     {
         //AudioSource.PlayClipAtPoint(m_sound, Camera.main.transform.position);
     }
 
-    void PlayMusicSFX(string _tag)
+    public void PlayMusicSFX(string _tag)
     {
-        print(_tag);
+        //music.GetComponent<LoadSoundFX>().m_soundFXVoume = m_slider.value;
 
-        if (_tag == "Music")
-        {
-            music.GetComponent<LoadSoundFX>().m_soundFXsources["CourtyardBGM"].Play();            
-        }
-        else if (_tag == "SFX")
-        {
-            music.GetComponent<LoadSoundFX>().m_soundFXsources["BombPickup"].Play();            
-        }
+
+        music.GetComponent<LoadSoundFX>().m_soundFXsources["BombPickup"].Play();
+        //}
     }
 }
