@@ -15,6 +15,6 @@ public class WinSceneChange : MonoBehaviour
     }
     void LoadScene()
     {
-        Application.LoadLevel(9);
+        Application.LoadLevel("CreditsScene");
     }
 }

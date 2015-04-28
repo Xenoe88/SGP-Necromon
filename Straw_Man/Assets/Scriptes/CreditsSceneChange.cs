@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class CreditsSceneChange : MonoBehaviour {
-
-    private bool LoadLock;
-
+    
     private GameObject m_player;
 
 	// Use this for initialization
@@ -14,18 +12,18 @@ public class CreditsSceneChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Return) && !LoadLock)
+        if (Input.GetKeyDown(KeyCode.Return))
             LoadScene();
 	}
     void LoadScene()
     {
-
         if (m_player.GetComponent<PlayerController>().m_lastLevel == "LoseScene" || m_player.GetComponent<PlayerController>().m_lastLevel == "WinScene")
         {
             Destroy(m_player);
-            Destroy(GameObject.FindGameObjectWithTag("MusicController"));
+            GameObject temp = GameObject.FindGameObjectWithTag("MusicController");
+            Destroy(temp);
 
-            Application.LoadLevel(0);
+            Application.LoadLevel("TitleScene");
             return;
         }
 

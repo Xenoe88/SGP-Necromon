@@ -16,7 +16,6 @@ GameObject:
   - 61: {fileID: 6182268}
   - 58: {fileID: 5881014}
   - 114: {fileID: 11497560}
-  - 114: {fileID: 11456404}
   m_Layer: 0
   m_Name: Running Bomb
   m_TagString: Enemy
@@ -61,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.95266867, y: -11.24298, z: 0}
+  m_LocalPosition: {x: -2.68539381, y: -.284638375, z: 0}
   m_LocalScale: {x: -3, y: 3, z: 3}
   m_Children:
   - {fileID: 482270}
@@ -169,6 +168,7 @@ MonoBehaviour:
   m_area: {fileID: 110006, guid: 2a4689e195328504782b7dcf950ca679, type: 2}
   slot: 4
   m_arrayIndex: 4
+  SFX: {fileID: 0}
 --- !u!114 &11437224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 0
+  m_MaxHealth: 0
   m_dmg: 0
   m_speed: 0
   m_ID: 0
@@ -194,28 +195,10 @@ MonoBehaviour:
   m_stunTexture: {fileID: 0}
   m_slowTexture: {fileID: 0}
   m_confuseTexture: {fileID: 0}
-  m_entityHitSFX: {fileID: 0}
-  m_AttackSFX: {fileID: 0}
-  m_takeDmgSFX: {fileID: 0}
-  m_deathSFX: {fileID: 0}
-  m_battlecrySFX: {fileID: 0}
+  SFX: {fileID: 0}
+  HealthBar: {fileID: 0}
   Owner: {fileID: 0}
   m_status: 0
---- !u!114 &11456404
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b8efe680011ffb4cad300c204946a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sightStart: {fileID: 437224}
-  sightEnd: {fileID: 456404}
-  needsCollision: 1
-  collision: 0
 --- !u!114 &11497560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightStart: {fileID: 437224}
-  sightEnd: {fileID: 482270}
-  needsCollision: 0
+  sightEnd: {fileID: 456404}
+  needsCollision: 1
 --- !u!212 &21237224
 SpriteRenderer:
   m_ObjectHideFlags: 1

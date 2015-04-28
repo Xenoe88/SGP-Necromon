@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Application.loadedLevelName == "LoseScene")
-            Destroy(this.gameObject);
+        //if (Application.loadedLevelName == "LoseScene")
+        //    //Destroy(this.gameObject);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
