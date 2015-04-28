@@ -32,6 +32,7 @@ public class Knight : MonoBehaviour
         m_Entity.m_speed = 1;
         m_Entity.m_dmg = 10;
         m_Entity.m_health = 50;
+        m_Entity.m_MaxHealth = 50;
         m_Entity.m_attackCooldown = 1.0f;
     }
 

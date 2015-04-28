@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool m_inMenu = false;
     public string m_lastLevel;
     private float m_deathTimer = 0.0f;
-
+    private bool attacking = false;
     private Animator m_animator;
 
     public AudioSource m_audioSource ;
@@ -86,14 +86,19 @@ public class PlayerController : MonoBehaviour
         }
 
         // left/right
-        Move();
-
+        if (attacking == false)
+        {
+            Move();
+        }
         Jump();
 
         //attack (function called in animation)
         if (Input.GetKeyDown("k"))
         {
+            attacking = true;
             m_animator.SetInteger("PlayerAnim", 3);
+            rigidbody2D.velocity = Vector2.zero;
+
         }
 
         if (Input.GetKeyDown("l") && m_player.GetComponent<PlayerInventory>().m_selectedRune != -1)
@@ -181,10 +186,22 @@ public class PlayerController : MonoBehaviour
     void Summon()
     {
 
+        Vector3 check = new Vector3(gameObject.collider2D.bounds.center.x +( gameObject.collider2D.bounds.extents.x * m_facingDirection)+.01f, gameObject.collider2D.bounds.center.y, 0);
+        
+        RaycastHit2D areaCheck = Physics2D.Raycast(check, Vector3.right * m_facingDirection, 1);
+      //  RaycastHit2D areaCheckright = Physics2D.Raycast(check, Vector3.right, 1);
         music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerSummon"].Play();
-        print("jk;");
+
         m_animator.SetInteger("PlayerAnim", 4);
-        m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(1 * m_facingDirection, 0, 0));
+  
+        if( areaCheck.collider == null)
+            m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + (new Vector3(1, 0, 0)* m_facingDirection));
+        else
+            m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + (new Vector3(1, 0, 0) ));
+
+        //else if (areaCheckright.collider == null)
+        //    m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(-1, 0, 0));
+
         //print("pooi");
 
         //GameObject temp = (GameObject)Instantiate(m_player.GetComponent<PlayerInventory>().m_selectedRune,m_player.transform.position + new Vector3(1*m_facingDirection,0), Camera.main.transform.rotation);
@@ -210,6 +227,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreCollision(temp.collider2D, m_player.collider2D);
         temp.SendMessage("SetPlayer", this.gameObject, SendMessageOptions.DontRequireReceiver);
         Destroy(temp, 0.2f);
+        attacking = false; 
     }
 
     void SwingSound() { music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerAttackHit"].Play(); }

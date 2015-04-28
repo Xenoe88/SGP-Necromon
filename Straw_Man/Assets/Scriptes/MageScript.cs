@@ -38,7 +38,7 @@ public class MageScript : MonoBehaviour
             mage.m_animator.SetInteger("AnimState", 5);
             return;
         }
-        if (target )
+        if (target)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -66,7 +66,7 @@ public class MageScript : MonoBehaviour
 
                 attack = true;
 
-            
+
                 if (mage.m_health < 100)
                     mage.m_animator.SetInteger("AnimState", 2);
                 else if (distance <= 4)
@@ -80,10 +80,12 @@ public class MageScript : MonoBehaviour
             }
 
         }
-        GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
+        else
+        {
+            GetComponent<Entity>().m_animator.SetInteger("AnimState", 0);
 
-        rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
-
+            rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
+        }
 
 
 
