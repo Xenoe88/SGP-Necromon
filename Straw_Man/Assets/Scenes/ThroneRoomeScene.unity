@@ -2693,7 +2693,7 @@ GameObject:
   - 114: {fileID: 1472239928}
   m_Layer: 0
   m_Name: StartPosition
-  m_TagString: Respawn
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

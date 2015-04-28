@@ -51,7 +51,7 @@ public class Button : MonoBehaviour
         //AudioSource.PlayClipAtPoint(m_buttonSwoosh, Camera.main.transform.position);
         sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuMove"].Play();
 
-        while (sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuMove"].isPlaying) { }
+        //while (sound.GetComponent<LoadSoundFX>().m_soundFXsources["MenuMove"].isPlaying) { }
 
         //only works during runtime, will not quit in Unity Editor
                 Application.Quit();
