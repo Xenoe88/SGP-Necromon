@@ -43,6 +43,16 @@ public class Necromancer : MonoBehaviour
         }
         if (m_target != null)
         {
+            if (m_target.transform.position.y > (transform.position.y + 1))
+            {
+                this.rigidbody2D.gravityScale = 0;
+                this.gameObject.collider2D.enabled = false;
+            }
+            else
+            {
+                this.gameObject.collider2D.enabled = true;
+                this.rigidbody2D.gravityScale = 1;
+            }
             if (m_target.transform.position.x < transform.position.x)
             {
                 transform.localScale = new Vector3(1, 1, 1);
