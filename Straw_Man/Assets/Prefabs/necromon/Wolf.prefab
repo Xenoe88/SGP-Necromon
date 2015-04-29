@@ -15,21 +15,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &137398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 437398}
-  m_Layer: 0
-  m_Name: AvoidGap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &137400
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +45,7 @@ GameObject:
   - 50: {fileID: 5075676}
   - 114: {fileID: 11495750}
   - 61: {fileID: 6137398}
-  - 61: {fileID: 6137400}
+  - 58: {fileID: 5894464}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -83,21 +68,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &195750
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 495750}
-  m_Layer: 0
-  m_Name: AvoidForward
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &408086
 Transform:
   m_ObjectHideFlags: 1
@@ -106,18 +76,6 @@ Transform:
   m_GameObject: {fileID: 108086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0417809486, y: -.00744867325, z: 2.20300007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 449338}
-  m_RootOrder: 4
---- !u!4 &437398
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .412999988, y: -.433999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449338}
@@ -141,13 +99,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27200007, y: -.0610000007, z: 0}
+  m_LocalPosition: {x: 30.6700001, y: -22.3299999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475676}
   - {fileID: 437400}
-  - {fileID: 437398}
-  - {fileID: 495750}
   - {fileID: 408086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -163,18 +119,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449338}
   m_RootOrder: 0
---- !u!4 &495750
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .768648505, y: .0300342739, z: -.310000002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 449338}
-  m_RootOrder: 3
 --- !u!50 &5075676
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -190,6 +134,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5894464
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149338}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .298177719
+  m_Center: {x: 0, y: .300000012}
 --- !u!61 &6137398
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -201,17 +156,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 4.02544212, y: .600000024}
   m_Center: {x: .0412302017, y: .300000012}
---- !u!61 &6137400
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149338}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .75999999, y: .600000024}
-  m_Center: {x: 0, y: .300000012}
 --- !u!95 &9549338
 Animator:
   serializedVersion: 3
@@ -239,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightStart: {fileID: 449338}
-  sightEnd: {fileID: 437398}
+  sightEnd: {fileID: 475676}
   m_groundCheck: {fileID: 408086}
   m_Entity: {fileID: 0}
   m_needsCollision: 0
@@ -298,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightStart: {fileID: 449338}
-  sightEnd: {fileID: 495750}
+  sightEnd: {fileID: 437400}
   needsCollision: 1
   collision: 0
 --- !u!212 &21249338
