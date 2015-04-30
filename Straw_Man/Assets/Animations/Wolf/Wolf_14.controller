@@ -212,7 +212,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Wolf-Die_Animation
-  m_Speed: .5
+  m_Speed: .800000012
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: a3e702a61be2da14481c14f2be7b2b31, type: 2}
