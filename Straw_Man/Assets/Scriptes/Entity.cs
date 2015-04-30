@@ -21,6 +21,7 @@ public class Entity : MonoBehaviour
     public float m_statusModifier;
     public float m_statusTimer;
     public float m_NecroCooldown;
+    private float hitTimer = 0.0f;
 
     public bool m_isAlive;
 
@@ -58,15 +59,22 @@ public class Entity : MonoBehaviour
             m_health = 0;
         }
 
-        // HEALTH BAR
-
+       // HEALTH BAR
         if (m_health < m_MaxHealth)
             HealthBar.transform.localScale = new Vector3((float)m_health / (float)m_MaxHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
         else
             HealthBar.transform.localScale = new Vector3(0.0f, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
 
 
-        if (m_attackCooldown > 0)
+        if (hitTimer > 0.0f)
+        {
+            hitTimer -= Time.deltaTime;
+            GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f);
+        }
+        else if (hitTimer < 0.0f)
+            GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
+        
+        if(m_attackCooldown > 0)
         {
             m_attackCooldown -= Time.deltaTime;
 
@@ -89,11 +97,20 @@ public class Entity : MonoBehaviour
         if (m_attackCooldown > 0)
             m_attackCooldown -= Time.deltaTime;
 
+        if (hitTimer > 0.0f)
+        {
+            hitTimer -= Time.deltaTime;
+        }
+        
+	}
+
     }
 
     public void ModifyHealth(int _dmg)
     {
         m_health += _dmg;
+
+        hitTimer = 0.25f;
 
         //
         // if (_dmg < 0)
