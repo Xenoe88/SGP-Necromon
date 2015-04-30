@@ -36,6 +36,8 @@ public class MageScript : MonoBehaviour
 
         if (mage.m_health <= 0)
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageDie"].Play();
+
             mage.m_animator.SetInteger("AnimState", 5);
             return;
         }
@@ -122,7 +124,6 @@ public class MageScript : MonoBehaviour
     }
     void Die()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["MageDie"].Play();
 
         Destroy(this.gameObject);
         target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);

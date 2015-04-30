@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
         // move
         m_player.rigidbody2D.velocity = new Vector2(m_movement * m_player.GetComponent<Entity>().m_speed * m_player.GetComponent<Entity>().m_statusModifier, m_player.rigidbody2D.velocity.y);
-
+        //print(m_player.GetComponent<Entity>().m_statusModifier);
 
 
     }
@@ -191,14 +191,17 @@ public class PlayerController : MonoBehaviour
         Vector3 check = new Vector3(gameObject.collider2D.bounds.center.x +( gameObject.collider2D.bounds.extents.x * m_facingDirection)+.01f, gameObject.collider2D.bounds.center.y, 0);
         
         RaycastHit2D areaCheck = Physics2D.Raycast(check, Vector3.right * m_facingDirection, 1);
+        RaycastHit2D areaCheck2 = Physics2D.Raycast(check, Vector3.right * -m_facingDirection, 1);
+
         music.GetComponent<LoadSoundFX>().m_soundFXsources["PlayerSummon"].Play();
 
         m_animator.SetInteger("PlayerAnim", 4);
   
         if( areaCheck.collider == null)
             m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + (new Vector3(1, 0, 0)* m_facingDirection));
-        else
+        else if (areaCheck2.collider == null)
             m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + (new Vector3(1, 0, 0) * -m_facingDirection));
+        
 
         //else if (areaCheckright.collider == null)
         //    m_player.GetComponent<PlayerInventory>().Summon(m_player.transform.position + new Vector3(-1, 0, 0));

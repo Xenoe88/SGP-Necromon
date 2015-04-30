@@ -31,8 +31,11 @@ public class FireReaper : MonoBehaviour
     {
         //die
         if (m_fireReaper.m_isAlive == false)
-            m_animation.SetInteger("FireReaperAnim", 3);
+        {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperDie"].Play();
 
+            m_animation.SetInteger("FireReaperAnim", 3);
+        }
         //if we aren't already targeting someone to attack, set target to the closest enemy
         if (m_isTargeting == false)
             m_target = FindClosestTarget();
@@ -172,7 +175,6 @@ public class FireReaper : MonoBehaviour
         {
            GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperDie"].Play();
 
         Destroy(gameObject);
     }

@@ -42,6 +42,8 @@ public class EvilWizard : MonoBehaviour {
         if (m_Entity.m_health <= 0)
         {
             m_animator.SetInteger("AnimState", 3);
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EvilWizardDie"].Play();
+
             return;
         }
         if (m_target != null)
@@ -104,7 +106,6 @@ public class EvilWizard : MonoBehaviour {
 
     void Die()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EvilWizardDie"].Play();
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);

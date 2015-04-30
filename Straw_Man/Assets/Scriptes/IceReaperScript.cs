@@ -152,6 +152,7 @@ public class IceReaperScript : MonoBehaviour
     {
         if (GetComponent<Entity>().m_health <= 0)
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
             
 
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
@@ -191,7 +192,6 @@ public class IceReaperScript : MonoBehaviour
 
         }
 
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperDie"].Play();
         Destroy(this.gameObject);
     }
 }

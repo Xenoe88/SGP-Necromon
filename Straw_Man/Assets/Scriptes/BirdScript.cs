@@ -68,6 +68,8 @@ public class BirdScript : MonoBehaviour
         }
         else
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BirdDie"].Play();
+
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 4);
 
             //Destroy(gameObject);
@@ -135,7 +137,6 @@ public class BirdScript : MonoBehaviour
             // GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
 
         }
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["BirdDie"].Play();
         Destroy(gameObject);
     }
 }

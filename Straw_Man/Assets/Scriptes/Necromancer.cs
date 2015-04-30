@@ -40,6 +40,8 @@ public class Necromancer : MonoBehaviour
     {
         if (m_Entity.m_health <= 0)
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerDie"].Play();
+
             m_animator.SetInteger("AnimState", 3);
             return;
         }
@@ -128,7 +130,6 @@ public class Necromancer : MonoBehaviour
     }
     void Die()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["NecromancerDie"].Play();
 
         Destroy(this.gameObject);
         m_target.SendMessage("ModifyGameStatus", SendMessageOptions.DontRequireReceiver);

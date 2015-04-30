@@ -41,6 +41,8 @@ public class Knight : MonoBehaviour
     {
         if (m_Entity.m_health <= 0)
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["KnightDie"].Play();
+
             m_animator.SetInteger("AnimState", 3);
             return;
         }
@@ -145,7 +147,6 @@ public class Knight : MonoBehaviour
             print("line");
             m_Entity.Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_arrayIndex, SendMessageOptions.RequireReceiver);
         }
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["KnightDie"].Play();
 
         Destroy(this.gameObject);
     }

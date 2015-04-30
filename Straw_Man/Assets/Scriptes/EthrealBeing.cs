@@ -89,8 +89,11 @@ public class EthrealBeing : MonoBehaviour
             rigidbody2D.velocity = new Vector2(-transform.localScale.x, 0) * GetComponent<Entity>().m_speed;
         }
         else
+        {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingDie"].Play();
+
             GetComponent<Entity>().m_animator.SetInteger("AnimState", 3);
-            
+        }  
     }
 
 
@@ -194,7 +197,6 @@ public class EthrealBeing : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
 
         }
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingDie"].Play();
 
         Destroy(gameObject);
     }

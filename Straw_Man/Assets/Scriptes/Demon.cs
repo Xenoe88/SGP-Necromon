@@ -43,6 +43,8 @@ public class Demon : MonoBehaviour
     {
         if (m_Entity.m_health <= 0)
         {
+            SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonDie"].Play();
+
             m_animator.SetInteger("AnimState", 3);
             return;
         }
@@ -131,7 +133,6 @@ public class Demon : MonoBehaviour
     //}
     void Destroy()
     {
-        SFX.GetComponent<LoadSoundFX>().m_soundFXsources["DemonDie"].Play();
 
         int randomVariable = Random.Range(0, 100);
 

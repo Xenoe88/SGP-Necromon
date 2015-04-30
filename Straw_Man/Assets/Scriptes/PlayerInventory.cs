@@ -95,7 +95,7 @@ public class PlayerInventory : MonoBehaviour
   
     public void AddRune(int _enemyID)
     {
-        print(_enemyID);
+    
 
         runes[_enemyID].collected = true;
 

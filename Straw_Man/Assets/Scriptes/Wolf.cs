@@ -154,7 +154,7 @@ public class Wolf : MonoBehaviour
             slow._statMod = 0.5f;
             slow._statTimer = 2.0f;
             m_target.SendMessage("ModifyStatus", slow, SendMessageOptions.DontRequireReceiver);
-            print("slowed");
+        
         }
     }
     public void Die()

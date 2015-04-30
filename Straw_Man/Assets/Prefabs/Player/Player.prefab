@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -164.5, y: -106.699997, z: 0}
+  m_LocalPosition: {x: -8.7303524, y: -1.23061514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405058}
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_player: {fileID: 11405062}
   m_rank: 0
   m_gameStatus: 0
+  m_inBossRoom: 0
   m_hudSprites:
   - {fileID: 2800000, guid: 4de10e44bf63ad34c9ca9d7453464247, type: 3}
   - {fileID: 2800000, guid: edd6e6404ddb6ca4886adbb96fd3ac61, type: 3}
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 200
+  m_MaxHealth: 0
   m_dmg: -5
   m_speed: 2
   m_ID: 0
@@ -216,11 +218,8 @@ MonoBehaviour:
   m_stunTexture: {fileID: 2800000, guid: e19f0e53ca04e534783c75f7e315f0a6, type: 3}
   m_slowTexture: {fileID: 2800000, guid: b50e4b6b5ea293842926b1c295b103a6, type: 3}
   m_confuseTexture: {fileID: 2800000, guid: d20c0dbf75609254cab3de878a8336f5, type: 3}
-  m_entityHitSFX: {fileID: 8300000, guid: 21352c33342487f43a936fa3b6b632e6, type: 3}
-  m_AttackSFX: {fileID: 0}
-  m_takeDmgSFX: {fileID: 0}
-  m_deathSFX: {fileID: 0}
-  m_battlecrySFX: {fileID: 0}
+  SFX: {fileID: 0}
+  HealthBar: {fileID: 191328, guid: 3bbd0cc3846afec41a24da7ff194f20c, type: 2}
   Owner: {fileID: 0}
   m_status: 0
 --- !u!114 &11417786
@@ -261,14 +260,13 @@ MonoBehaviour:
   m_numActiveNecromon: 0
   m_hitBox: {fileID: 191826, guid: e1a12ce88939d044db78b359e5f0d76d, type: 2}
   m_player: {fileID: 105060}
+  music: {fileID: 0}
   m_RevivePositon: {x: 0, y: 0, z: 0}
   m_reLoadPosition: {x: 0, y: 0, z: 0}
   m_inMenu: 0
   m_lastLevel: 0
   m_audioSource: {fileID: 0}
-  m_swingSFX: {fileID: 8300000, guid: 56bcbc39c2c77c94c97ea5d27b1c535f, type: 3}
-  m_jumpSFX: {fileID: 8300000, guid: abbba1d39b05ffc40a006e6595286e83, type: 3}
-  m_doubleJumpSFX: {fileID: 8300000, guid: 6d5989b9db1f3fa4da76e53695be5b04, type: 3}
+  m_Player: {fileID: 0}
 --- !u!114 &11479718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,7 +299,7 @@ MonoBehaviour:
   - {fileID: 166294, guid: 79f78cadb1b3c3d4b84674b9f5e3ae46, type: 2}
   - {fileID: 139754, guid: ae74f6d2081eba244a630a077e94ac49, type: 2}
   - {fileID: 120202, guid: e4b95bf681b7d4443a8d1697f2ca6cfd, type: 2}
-  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
+  - {fileID: 0}
   numBombs: 0
   numRevives: 0
   equipped: 00000000000000000000000000000000

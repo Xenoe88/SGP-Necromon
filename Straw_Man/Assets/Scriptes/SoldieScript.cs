@@ -94,6 +94,8 @@ public class SoldieScript : MonoBehaviour
             }
             else
             {
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierDie"].Play();
+
                 GetComponent<Entity>().m_animator.SetInteger("AnimState", 1);
             }
 
@@ -143,7 +145,6 @@ public class SoldieScript : MonoBehaviour
             GetComponent<Entity>().Owner.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.RequireReceiver);
             GetComponent<PlayerInventory>().SendMessage("EnemyActive", m_rune, SendMessageOptions.DontRequireReceiver);
         }
-        music.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierDie"].Play();
 
         Destroy(gameObject);
     }
