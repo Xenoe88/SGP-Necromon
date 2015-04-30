@@ -168,12 +168,13 @@ public class FireReaper : MonoBehaviour
         if (randomVariable >= 0 && randomVariable <= 20 && m_isNecro == false)
         {
             GameObject temp = (GameObject)Instantiate(m_rune, transform.position, transform.rotation);
-            temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
+           temp.SendMessage("SetID", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         if (m_isNecro)
         {
-           GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+           player.GetComponent<PlayerInventory>().SendMessage("EnemyActive", slot, SendMessageOptions.DontRequireReceiver);
         }
 
         Destroy(gameObject);
@@ -183,6 +184,8 @@ public class FireReaper : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["FireReaperBattleCry"].Play();
 
     }

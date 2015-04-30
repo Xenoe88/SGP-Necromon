@@ -128,6 +128,8 @@ public class EthrealBeing : MonoBehaviour
     {
         isNecro = true;
         tag = "Player";
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["EtheralBeingBattleCry"].Play();
 
     }

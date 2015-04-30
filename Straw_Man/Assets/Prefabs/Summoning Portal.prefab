@@ -58,9 +58,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_summoners:
   - {fileID: 149338, guid: 0cf097e306f709e419b581317eb92642, type: 2}
-  - {fileID: 145570, guid: fd4d82c2fa105a545b999a9015f90d30, type: 2}
+  - {fileID: 120202, guid: e4b95bf681b7d4443a8d1697f2ca6cfd, type: 2}
   - {fileID: 137224, guid: 42e653577d2004b48a19a6a4c04e9903, type: 2}
   - {fileID: 155698, guid: 88f0d40bd03fc294ab5887c81631b0d3, type: 2}
+  - {fileID: 166294, guid: 79f78cadb1b3c3d4b84674b9f5e3ae46, type: 2}
+  - {fileID: 197588, guid: 0b3a2d66f67d6cd47b76b2a2599da9a6, type: 2}
+  - {fileID: 139754, guid: ae74f6d2081eba244a630a077e94ac49, type: 2}
+  - {fileID: 178132, guid: 170c646f902b99349a549b0c6ea0c9e7, type: 2}
+  - {fileID: 171368, guid: 7dd5f56d011b9314492a5d47c1549f10, type: 2}
 --- !u!212 &21252884
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -20,6 +20,10 @@ public class PlayerMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_necroID == 20 || m_necroID == 21)
+            return;
+
+
         if (m_player.GetComponent<PlayerInventory>().runes[m_necroID].collected == false)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f);
         else if (m_player.GetComponent<PlayerInventory>().runes[m_necroID].collected == true)
@@ -28,6 +32,34 @@ public class PlayerMenu : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (m_necroID == 20)
+        {
+            GameObject music = GameObject.FindGameObjectWithTag("MusicController");
+
+            if (music.GetComponent<LoadSoundFX>().m_soundFXsources["CourtyardBGM"].isPlaying == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["CourtyardBGM"].Stop();
+            else if (music.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].isPlaying == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["TowerBGM"].Stop();
+            else if (music.GetComponent<LoadSoundFX>().m_soundFXsources["DungeonBGM"].isPlaying == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["DungeonBGM"].Stop();
+            else if (music.GetComponent<LoadSoundFX>().m_soundFXsources["BossBGM"].isPlaying == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["BossBGM"].Stop();
+            else if (music.GetComponent<LoadSoundFX>().m_soundFXsources["HUBBGM"].isPlaying == true)
+                music.GetComponent<LoadSoundFX>().m_soundFXsources["HUBBGM"].Stop();
+
+            Destroy(m_player);
+            Application.LoadLevel("MainMenuScene");
+
+            return;
+        }
+
+        if (m_necroID == 21)
+        {
+            Application.Quit();
+
+            return;
+        }
+
         if (m_player.GetComponent<PlayerInventory>().runes[m_necroID].collected)
         {
             m_player.GetComponent<PlayerInventory>().m_selectedRune = m_necroID;

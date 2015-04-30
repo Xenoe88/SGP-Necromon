@@ -59,7 +59,7 @@ public class Entity : MonoBehaviour
             m_health = 0;
         }
 
-       // HEALTH BAR
+        // HEALTH BAR
         if (m_health < m_MaxHealth)
             HealthBar.transform.localScale = new Vector3((float)m_health / (float)m_MaxHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
         else
@@ -73,8 +73,8 @@ public class Entity : MonoBehaviour
         }
         else if (hitTimer < 0.0f)
             GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
-        
-        if(m_attackCooldown > 0)
+
+        if (m_attackCooldown > 0)
         {
             m_attackCooldown -= Time.deltaTime;
 
@@ -101,10 +101,10 @@ public class Entity : MonoBehaviour
         {
             hitTimer -= Time.deltaTime;
         }
-        
-	}
 
     }
+
+
 
     public void ModifyHealth(int _dmg)
     {

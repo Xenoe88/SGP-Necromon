@@ -200,6 +200,8 @@ public class SoldieScript : MonoBehaviour
     {
         isNecro = true;
         this.tag = "Player";
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SoldierWarCry"].Play();
     }
 

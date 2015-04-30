@@ -167,6 +167,8 @@ public class IceReaperScript : MonoBehaviour
 
         isNecro = true;
         tag = "Player";
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["IceReaperBattleCry"].Play();
 
     }

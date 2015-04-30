@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.2202606, y: -43.9032593, z: 0}
+  m_LocalPosition: {x: -6.85658884, y: -36.5487709, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479708}
@@ -159,7 +159,7 @@ MonoBehaviour:
   move: {x: 0, y: 0, z: 0}
   m_isNecro: 0
   m_isTargeting: 0
-  m_rune: {fileID: 0}
+  m_rune: {fileID: 11487404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 1
   m_target: {fileID: 0}
   m_fireBall: {fileID: 183570, guid: 470ff0876bf944a4b859882e13ddf5e4, type: 2}

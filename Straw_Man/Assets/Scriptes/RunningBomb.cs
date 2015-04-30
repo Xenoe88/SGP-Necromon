@@ -162,6 +162,7 @@ public class RunningBomb : MonoBehaviour
 
     public void Explodesound()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["RunningBombExplode"].Play();
         
     }

@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.6199999, y: .519999981, z: 0}
+  m_LocalPosition: {x: -7.61045933, y: -37.3549347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406378}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Ethreal: {fileID: 0}
   target: {fileID: 0}
   phased: 0
-  m_rune: {fileID: 0}
+  m_rune: {fileID: 187404, guid: 4f146f5c54aeb2443b07588dacc82413, type: 2}
   slot: 5
   SFX: {fileID: 0}
 --- !u!212 &21213886

@@ -132,6 +132,13 @@ public class Slimer : MonoBehaviour
             else if (transform.localScale.x < 0)
                 transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
+        else if (_target.tag == "Player" && m_isNecro == true)
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
+            else if (transform.localScale.x < 0)
+                transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
 
 
     }
@@ -151,6 +158,8 @@ public class Slimer : MonoBehaviour
 
     public void MakeNecro()
     {
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
+
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["SlimerBattleCry"].Play();
 
         m_isNecro = true;

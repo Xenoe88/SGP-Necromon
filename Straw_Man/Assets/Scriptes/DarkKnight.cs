@@ -9,7 +9,7 @@ public class DarkKnight : MonoBehaviour
     public float m_attack1Timer = 10.0f, m_attack2Timer = 30.0f;
     public AudioClip m_atk1SFX, m_atk2SFX;
 
-            public GameObject SFX;
+    public GameObject SFX;
 
     // Use this for initialization
     void Start()
@@ -17,6 +17,7 @@ public class DarkKnight : MonoBehaviour
         SFX = GameObject.FindGameObjectWithTag("MusicController");
 
         m_animator = GetComponent<Animator>();
+        m_animator.SetInteger("KnightAnim", 0);
         m_darkKnight = GetComponent<Entity>();
     }
 
@@ -92,7 +93,7 @@ public class DarkKnight : MonoBehaviour
         print("DK CHANGED SCENES!");
 
 
-        Application.LoadLevel(12); 
+        Application.LoadLevel(12);
     }
 
     void Attack1()
@@ -109,7 +110,7 @@ public class DarkKnight : MonoBehaviour
             offset = -1;
         else
             offset = 1;
-  
+
         GameObject temp = (GameObject)Instantiate(m_specialAttack, transform.position + new Vector3(offset * 3.0f, 0f, 0.0f), m_target.transform.rotation);
         Physics2D.IgnoreCollision(temp.collider2D, gameObject.collider2D);
         temp.SendMessage("SetPlayer", gameObject, SendMessageOptions.RequireReceiver);

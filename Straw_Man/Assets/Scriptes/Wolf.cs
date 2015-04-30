@@ -179,6 +179,8 @@ public class Wolf : MonoBehaviour
     {
         m_isNecro = true;
         this.tag = "Player";
+
+        SFX = GameObject.FindGameObjectWithTag("MusicController");
         SFX.GetComponent<LoadSoundFX>().m_soundFXsources["WolfBattleCry"].Play();
          
     }
