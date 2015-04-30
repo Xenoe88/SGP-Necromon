@@ -44,7 +44,7 @@ public class DarkKnight : MonoBehaviour
             transform.localScale = new Vector3(m_target.transform.position.x < transform.position.x ? 0.5f : -0.5f, 0.5f, 0.5f);
 
             //if he's alive, do Dark Knight stuff
-            if (m_target.GetComponent<Entity>().m_isAlive)
+            if (m_target.GetComponent<Entity>().m_isAlive && m_target.GetComponent<PlayerScript>().m_inBossRoom == true)
             {
                 //check distance to him, while it's greater than 3, move in his direction
                 float distanceToPlayer = Vector3.Distance(m_target.transform.position, transform.position);

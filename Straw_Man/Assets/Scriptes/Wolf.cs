@@ -5,6 +5,7 @@ public class Wolf : MonoBehaviour
 {
 
     public Transform sightStart, sightEnd;
+    public Transform m_groundCheck;
 
     public Entity m_Entity;
 
@@ -12,16 +13,19 @@ public class Wolf : MonoBehaviour
     public bool m_collision = false;
     public bool m_moving = true;
     public bool m_isNecro = false;
+    public bool m_isGrounded;
 
     public Animator m_animator;
 
     public GameObject m_target;
     public GameObject m_rune;
+    public GameObject SFX;
 
     public int m_arrayIndex = 2;
 
-                public GameObject SFX;
+    public LayerMask m_whatIsGround;
 
+    public float m_groundRadius;
 
     // Use this for initialization
     void Start()
@@ -41,6 +45,17 @@ public class Wolf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_isGrounded = Physics2D.OverlapCircle(m_groundCheck.position, m_groundRadius, m_whatIsGround);
+        if (!m_isGrounded)
+        {
+            rigidbody2D.gravityScale = 3;
+            m_moving = false;
+        }
+        else
+        {
+            rigidbody2D.gravityScale = 1;
+            m_moving = true;
+        }
         //if (m_Entity.m_isAlive == false)
         //{
         //    m_animator.SetInteger("AnimState", 3);
